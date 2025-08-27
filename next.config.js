@@ -34,7 +34,7 @@ const nextConfig = {
       },
     },
   },
-  distDir: '.next-build',
+  // distDir: '.next-build', // Comentado para Vercel
   // Production optimizations
   productionBrowserSourceMaps: false,
   poweredByHeader: false,
