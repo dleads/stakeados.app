@@ -12,29 +12,6 @@ const withNextIntl = createNextIntlPlugin('./src/i18n.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // experimental: {
-  //   optimizeCss: true,
-  //   optimizePackageImports: [
-  //     'lucide-react',
-  //     '@supabase/supabase-js',
-  //     'recharts',
-  //     'react-hook-form',
-  //     '@hookform/resolvers',
-  //     'zod',
-  //     'date-fns',
-  //     'clsx',
-  //     'tailwind-merge',
-  //   ],
-  //   turbo: {
-  //     rules: {
-  //       '*.svg': {
-  //         loaders: ['@svgr/webpack'],
-  //         as: '*.js',
-  //       },
-  //     },
-  //   },
-  // },
-  // distDir: '.next-build', // Comentado para Vercel
   // Production optimizations
   productionBrowserSourceMaps: false,
   poweredByHeader: false,
