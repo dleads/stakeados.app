@@ -1,6 +1,10 @@
 # Stakeados Platform v4
 
-Una plataforma completa de educación blockchain y Web3 con contenido multilingüe, gamificación y certificados NFT.
+Una plataforma moderna de contenido y comunidad para la Web3.
+
+## 🚀 **Última actualización: Configuración optimizada para Vercel**
+
+Esta versión incluye una configuración mínima de Next.js optimizada para deployment en Vercel.
 
 ## 🚀 Características
 
