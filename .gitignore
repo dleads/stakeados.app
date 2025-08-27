@@ -141,3 +141,7 @@ docs/
 # Config files that might contain secrets
 config/environments/*.env
 !config/environments/example.env
+
+# Large files and temporary directories
+tododoc/
+.next-build/
