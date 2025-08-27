@@ -1,0 +1,1320 @@
+{
+  "common": {
+    "loading": "Cargando",
+    "error": "Error",
+    "success": "Éxito",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "confirm": "Confirmar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "viewAll": "Ver Todo",
+    "learnMore": "Aprender Más",
+    "getStarted": "Comenzar",
+    "signUp": "Registrarse",
+    "signIn": "Iniciar Sesión",
+    "signOut": "Cerrar Sesión",
+    "profile": "Perfil",
+    "settings": "Configuración",
+    "help": "Ayuda",
+    "contact": "Contacto",
+    "about": "Acerca de",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "add": "Agregar",
+    "tryAgain": "Intentar de Nuevo",
+    "reset": "Restablecer"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "articles": "Artículos",
+    "news": "Noticias",
+    "courses": "Cursos",
+    "dashboard": "Panel",
+    "admin": "Administrador"
+  },
+  "admin": {
+    "dashboard": "Panel de administración",
+    "subtitle": "Administra tu plataforma Stakeados con herramientas avanzadas",
+    "metrics": {
+      "users": "Usuarios",
+      "articles": "Artículos",
+      "news": "Noticias",
+      "pending": "Pendientes"
+    },
+    "tags": {
+      "title": "Gestión de Etiquetas",
+      "description": "Descripción",
+      "createTag": "Crear Etiqueta",
+      "editTag": "Editar Etiqueta",
+      "deleteTag": "Eliminar Etiqueta",
+      "confirmDelete": "¿Estás seguro de que quieres eliminar esta etiqueta?",
+      "cannotDeleteInUse": "No se puede eliminar una etiqueta que está en uso",
+      "error": "Error",
+      "dismiss": "Descartar",
+      "searchPlaceholder": "Buscar etiquetas...",
+      "filters": "Filtros",
+      "noTags": "No se encontraron etiquetas",
+      "noTagsDescription": "Comienza creando tu primera etiqueta",
+      "selectedCount": "{count} seleccionadas",
+      "selectAll": "Seleccionar todas",
+      "totalTags": "{count} etiquetas en total",
+      "loading": "Cargando...",
+      "loadMore": "Cargar Más",
+      "name": "Nombre",
+      "slug": "Slug",
+      "usage": "Uso",
+      "created": "Creado",
+      "actions": "Acciones",
+      "form": {
+        "name": "Nombre",
+        "namePlaceholder": "Ingresa el nombre de la etiqueta",
+        "slug": "Slug",
+        "slugPlaceholder": "etiqueta-slug",
+        "slugHelp": "Versión amigable para URL del nombre",
+        "description": "Descripción",
+        "descriptionPlaceholder": "Descripción opcional para esta etiqueta",
+        "color": "Color",
+        "cancel": "Cancelar",
+        "create": "Crear Etiqueta",
+        "update": "Actualizar Etiqueta",
+        "saving": "Guardando...",
+        "validation": {
+          "nameRequired": "El nombre es requerido",
+          "nameTooLong": "El nombre debe tener 50 caracteres o menos",
+          "slugRequired": "El slug es requerido",
+          "slugTooLong": "El slug debe tener 50 caracteres o menos",
+          "slugInvalid": "El slug solo puede contener letras minúsculas, números y guiones",
+          "descriptionTooLong": "La descripción debe tener 500 caracteres o menos"
+        }
+      },
+      "statistics": {
+        "title": "Estadísticas de Etiquetas",
+        "description": "Resumen del uso y distribución de etiquetas en tu contenido",
+        "totalTags": "Total de Etiquetas",
+        "totalTagsDescription": "Número de etiquetas en el sistema",
+        "totalUsage": "Uso Total",
+        "totalUsageDescription": "Total de veces que se usan las etiquetas",
+        "unusedTags": "Etiquetas Sin Usar",
+        "unusedTagsDescription": "Etiquetas no asignadas a ningún contenido",
+        "averageUsage": "Uso Promedio",
+        "averageUsageDescription": "Uso promedio por etiqueta",
+        "usageDistribution": "Distribución de Uso",
+        "highUsage": "Uso Alto (10+ usos)",
+        "mediumUsage": "Uso Medio (5-9 usos)",
+        "lowUsage": "Uso Bajo (1-4 usos)",
+        "noUsage": "Sin Uso (0 usos)",
+        "tags": "etiquetas",
+        "recommendations": {
+          "title": "Recomendaciones",
+          "unusedTags": "Tienes {count} etiquetas sin usar que podrían limpiarse.",
+          "reviewUnused": "Revisa las etiquetas sin usar para posible eliminación",
+          "mergesSimilar": "Busca etiquetas similares que podrían fusionarse",
+          "deleteUnused": "Elimina etiquetas que ya no son necesarias"
+        },
+        "insights": {
+          "tagHealth": "Salud de Etiquetas",
+          "activelyUsed": "Usadas Activamente",
+          "needsAttention": "Necesita Atención",
+          "healthScore": "Puntuación de Salud",
+          "contentCoverage": "Cobertura de Contenido",
+          "totalContent": "Contenido Total",
+          "avgPerTag": "Promedio por Etiqueta",
+          "coverage": "Cobertura"
+        }
+      },
+      "duplicates": {
+        "title": "Gestión de Etiquetas Duplicadas",
+        "description": "Se encontraron {count} grupos de etiquetas potencialmente duplicadas",
+        "scanning": "Escaneando duplicados...",
+        "noDuplicates": "No se Encontraron Duplicados",
+        "noDuplicatesDescription": "Todas las etiquetas parecen ser únicas",
+        "mergeSelected": "Fusionar Seleccionadas ({count})",
+        "warning": {
+          "title": "Aviso Importante",
+          "description": "Fusionar etiquetas combinará permanentemente su uso. Esta acción no se puede deshacer."
+        },
+        "group": "Grupo",
+        "similarity": "Similitud",
+        "totalUsage": "Uso Total",
+        "merge": "Fusionar",
+        "merging": "Fusionando...",
+        "sourceTags": "Etiquetas a Fusionar",
+        "targetTag": "Mantener Esta Etiqueta",
+        "suggestedBecause": "Sugerida porque tiene el mayor uso",
+        "mergePreview": "Vista Previa de Fusión",
+        "mergePreviewDescription": "Esto fusionará {sourceCount} etiquetas en '{targetName}' con un uso total de {totalUsage}"
+      },
+      "bulk": {
+        "selected": "{count} etiquetas seleccionadas",
+        "update": "Actualizar",
+        "delete": "Eliminar",
+        "clear": "Limpiar",
+        "confirmDelete": "¿Estás seguro de que quieres eliminar {count} etiquetas?",
+        "updateTags": "Actualizar {count} Etiquetas",
+        "updateDescription": "Los cambios se aplicarán a todas las etiquetas seleccionadas. Deja los campos vacíos para mantener los valores actuales.",
+        "form": {
+          "description": "Descripción",
+          "descriptionPlaceholder": "Nueva descripción para las etiquetas seleccionadas",
+          "descriptionHelp": "Deja vacío para mantener las descripciones existentes",
+          "color": "Color",
+          "colorHelp": "Deja como predeterminado para mantener los colores existentes",
+          "cancel": "Cancelar",
+          "update": "Actualizar Etiquetas",
+          "updating": "Actualizando..."
+        }
+      }
+    },
+    "articles": {
+      "dashboard": {
+        "title": "Gestión de Artículos",
+        "subtitle": "Administra y supervisa todos los artículos de la plataforma"
+      },
+      "stats": {
+        "overview": "Resumen",
+        "total": "Total",
+        "published": "Publicados",
+        "draft": "Borradores",
+        "review": "En Revisión",
+        "archived": "Archivados",
+        "articles": "artículos",
+        "live": "en vivo",
+        "inProgress": "en progreso",
+        "pending": "pendientes",
+        "inactive": "inactivos",
+        "totalViews": "Vistas Totales",
+        "allTime": "histórico",
+        "avgReadingTime": "Tiempo Promedio de Lectura",
+        "minutes": "minutos",
+        "publishedThisWeek": "Publicados Esta Semana"
+      },
+      "search": {
+        "placeholder": "Buscar artículos por título o contenido..."
+      },
+      "filters": {
+        "toggle": "Filtros",
+        "title": "Filtros de Búsqueda",
+        "reset": "Limpiar",
+        "loading": "Cargando...",
+        "status": {
+          "label": "Estado",
+          "all": "Todos los estados",
+          "draft": "Borrador",
+          "review": "En revisión",
+          "published": "Publicado",
+          "archived": "Archivado"
+        },
+        "author": {
+          "label": "Autor",
+          "all": "Todos los autores"
+        },
+        "category": {
+          "label": "Categoría",
+          "all": "Todas las categorías"
+        },
+        "sortBy": {
+          "label": "Ordenar por",
+          "created": "Fecha de creación",
+          "updated": "Última actualización",
+          "published": "Fecha de publicación",
+          "title": "Título"
+        },
+        "sortOrder": {
+          "desc": "Descendente",
+          "asc": "Ascendente"
+        },
+        "dateRange": {
+          "from": "Desde",
+          "to": "Hasta"
+        }
+      },
+      "views": {
+        "list": "Lista",
+        "calendar": "Calendario"
+      },
+      "actions": {
+        "refresh": "Actualizar",
+        "create": "Crear Artículo",
+        "retry": "Reintentar",
+        "view": "Ver",
+        "edit": "Editar",
+        "delete": "Eliminar"
+      },
+      "error": {
+        "title": "Error al cargar artículos"
+      },
+      "list": {
+        "noArticles": "No hay artículos",
+        "noArticlesDescription": "No se encontraron artículos que coincidan con los filtros actuales.",
+        "confirmDelete": "¿Estás seguro de que quieres eliminar este artículo?",
+        "selectedCount": "{count} artículos seleccionados",
+        "bulkActions": {
+          "publish": "Publicar",
+          "archive": "Archivar"
+        },
+        "columns": {
+          "title": "Título",
+          "author": "Autor",
+          "category": "Categoría",
+          "status": "Estado",
+          "created": "Creado",
+          "metrics": "Métricas",
+          "actions": "Acciones"
+        },
+        "actions": {
+          "view": "Ver",
+          "edit": "Editar",
+          "delete": "Eliminar"
+        },
+        "readingTime": "min de lectura",
+        "noCategory": "Sin categoría",
+        "published": "Publicado",
+        "status": {
+          "draft": "Borrador",
+          "review": "En revisión",
+          "published": "Publicado",
+          "archived": "Archivado"
+        },
+        "pagination": {
+          "previous": "Anterior",
+          "next": "Siguiente",
+          "showing": "Mostrando",
+          "to": "a",
+          "of": "de",
+          "results": "resultados"
+        }
+      },
+      "calendar": {
+        "viewModes": {
+          "all": "Todos",
+          "published": "Publicados",
+          "scheduled": "Programados",
+          "failed": "Fallidos"
+        },
+        "more": "más",
+        "selectDate": "Seleccionar fecha",
+        "by": "por",
+        "noArticlesOnDate": "Sin artículos en esta fecha",
+        "noArticlesOnDateDescription": "No hay artículos programados para esta fecha.",
+        "selectDateToView": "Selecciona una fecha",
+        "selectDateToViewDescription": "Haz clic en una fecha del calendario para ver los artículos.",
+        "selectDateToViewScheduled": "Haz clic en una fecha del calendario para ver artículos programados.",
+        "noScheduledArticles": "No hay artículos programados",
+        "noScheduledArticlesDescription": "No hay artículos programados para esta fecha.",
+        "overdue": "Atrasado",
+        "scheduleStatus": {
+          "scheduled": "Programado",
+          "published": "Publicado",
+          "cancelled": "Cancelado",
+          "failed": "Falló"
+        },
+        "recurringPatterns": {
+          "daily": "Diario",
+          "weekly": "Semanal",
+          "biweekly": "Quincenal",
+          "monthly": "Mensual",
+          "custom": "Personalizado"
+        },
+        "actions": {
+          "view": "Ver",
+          "edit": "Editar",
+          "editSchedule": "Editar Programación",
+          "cancel": "Cancelar"
+        },
+        "legend": {
+          "title": "Leyenda",
+          "recurring": "Recurrente",
+          "overdue": "Atrasado"
+        },
+        "status": {
+          "draft": "Borrador",
+          "review": "En revisión",
+          "published": "Publicado",
+          "archived": "Archivado"
+        }
+      }
+    },
+    "navigation": {
+      "dashboard": "Panel Principal",
+      "dashboardDescription": "Vista general del sistema",
+      "articles": "Artículos",
+      "articlesDescription": "Gestionar artículos y contenido",
+      "news": "Noticias",
+      "newsDescription": "Administrar noticias y fuentes RSS",
+      "categories": "Categorías",
+      "categoriesDescription": "Organizar contenido por categorías",
+      "tags": "Etiquetas",
+      "tagsDescription": "Gestionar etiquetas del sistema",
+      "search": "Búsqueda",
+      "searchDescription": "Búsqueda avanzada de contenido",
+      "analytics": "Analíticas",
+      "analyticsDescription": "Métricas y reportes del contenido",
+      "users": "Usuarios",
+      "usersDescription": "Administrar usuarios y permisos",
+      "settings": "Configuración",
+      "settingsDescription": "Configuración del sistema"
+    },
+    "layout": {
+      "adminPanel": "Panel de Administración",
+      "expandSidebar": "Expandir barra lateral",
+      "collapseSidebar": "Contraer barra lateral",
+      "openMenu": "Abrir menú",
+      "backToSite": "Volver al Sitio",
+      "quickSearch": "Búsqueda rápida",
+      "quickAdd": "Agregar rápido",
+      "customization": {
+        "title": "Personalización del Layout",
+        "theme": "Tema",
+        "darkTheme": "Tema Oscuro",
+        "lightTheme": "Tema Claro",
+        "darkThemeDesc": "Tema oscuro para gaming",
+        "lightThemeDesc": "Tema claro para trabajo",
+        "clickToChange": "Click para cambiar",
+        "density": "Densidad",
+        "compact": "Compacto",
+        "comfortable": "Cómodo",
+        "spacious": "Espacioso",
+        "viewMode": "Modo de Vista",
+        "grid": "Vista de Cuadrícula",
+        "list": "Vista de Lista",
+        "reset": "Restablecer por Defecto"
+      }
+    },
+    "notifications": {
+      "title": "Notificaciones",
+      "unreadCount": "{count} sin leer",
+      "allCaughtUp": "Todo al día",
+      "markAllRead": "Marcar todo como leído",
+      "markAsRead": "Marcar como leído",
+      "removeNotification": "Eliminar notificación",
+      "viewAll": "Ver todas las notificaciones",
+      "empty": "No hay notificaciones",
+      "pendingArticles": {
+        "title": "Artículos Pendientes",
+        "message": "Hay {count} artículos esperando revisión"
+      },
+      "rssSourceDown": {
+        "title": "Fuente RSS No Responde",
+        "message": "La fuente \"{source}\" no ha respondido en las últimas {hours} horas"
+      },
+      "backupCompleted": {
+        "title": "Backup Completado",
+        "message": "El backup automático se completó exitosamente"
+      },
+      "actions": {
+        "review": "Revisar",
+        "verify": "Verificar"
+      },
+      "time": {
+        "now": "Ahora",
+        "minutes": "{count}m",
+        "hours": "{count}h",
+        "days": "{count}d"
+      }
+    },
+    "userMenu": {
+      "role": {
+        "administrator": "Administrador",
+        "adminLevel": "Nivel Admin"
+      },
+      "points": "{count} puntos",
+      "quickAccess": {
+        "title": "Acceso Rápido",
+        "dashboard": "Panel de Control",
+        "dashboardDesc": "Vista general del sistema",
+        "content": "Gestión de Contenido",
+        "contentDesc": "Artículos y noticias",
+        "analytics": "Analíticas",
+        "analyticsDesc": "Métricas y reportes",
+        "users": "Usuarios",
+        "usersDesc": "Gestión de usuarios",
+        "system": "Sistema",
+        "systemDesc": "Configuración avanzada"
+      },
+      "account": {
+        "title": "Cuenta",
+        "profile": "Mi Perfil",
+        "settings": "Configuración",
+        "genesis": "Comunidad Genesis",
+        "signOut": "Cerrar Sesión"
+      },
+      "footer": {
+        "version": "Stakeados Admin v1.0",
+        "systemActive": "Sistema Activo"
+      }
+    },
+    "news": {
+      "title": "Gestión de Noticias",
+      "subtitle": "Gestiona fuentes de noticias, procesamiento IA y revisión de contenido",
+      "loading": "Cargando panel de noticias...",
+      "refresh": "Actualizar",
+      "settings": "Configuración",
+      "stats": {
+        "totalNews": "Total de Noticias",
+        "processed": "procesadas",
+        "pending": "pendientes",
+        "activeSources": "Fuentes Activas",
+        "healthy": "saludables",
+        "trending": "Noticias Tendencia",
+        "highEngagement": "Artículos de alto engagement",
+        "aiProcessing": "Procesamiento IA",
+        "activeJobs": "Trabajos activos"
+      },
+      "tabs": {
+        "overview": "Resumen",
+        "sources": "Fuentes",
+        "processing": "Procesamiento",
+        "queue": "Cola de Revisión"
+      },
+      "overview": {
+        "languageDistribution": "Distribución por Idioma",
+        "recentActivity": "Actividad Reciente"
+      },
+      "sources": {
+        "title": "Fuentes RSS",
+        "subtitle": "Gestiona feeds RSS, fuentes API y scrapers web",
+        "addSource": "Agregar Fuente",
+        "articlesToday": "Artículos Hoy",
+        "priority": "Prioridad",
+        "pause": "Pausar",
+        "activate": "Activar",
+        "loading": "Cargando fuentes...",
+        "searchPlaceholder": "Buscar fuentes por nombre o URL...",
+        "noSources": "No hay fuentes configuradas",
+        "noSourcesFound": "No se encontraron fuentes",
+        "addFirstSource": "Agrega tu primera fuente de noticias para comenzar",
+        "tryDifferentFilters": "Intenta ajustar tu búsqueda o filtros",
+        "never": "Nunca",
+        "filters": {
+          "allTypes": "Todos los Tipos",
+          "allStatus": "Todos los Estados",
+          "active": "Activas",
+          "inactive": "Inactivas",
+          "healthy": "Saludables",
+          "error": "Con Error"
+        },
+        "sort": {
+          "priorityDesc": "Prioridad (Alta a Baja)",
+          "nameAsc": "Nombre (A a Z)",
+          "qualityDesc": "Calidad (Alta a Baja)",
+          "lastFetchDesc": "Última Obtención (Reciente Primero)"
+        },
+        "status": {
+          "active": "Activa",
+          "inactive": "Inactiva",
+          "healthy": "Saludable",
+          "warning": "Advertencia",
+          "error": "Error",
+          "timeout": "Tiempo Agotado",
+          "unknown": "Desconocido"
+        },
+        "health": {
+          "healthy": "Saludable",
+          "warning": "Advertencia",
+          "error": "Error",
+          "timeout": "Tiempo Agotado",
+          "unknown": "Desconocido"
+        },
+        "stats": {
+          "priority": "Prioridad",
+          "interval": "Intervalo",
+          "failures": "Fallos",
+          "lastFetch": "Última Obtención"
+        },
+        "actions": {
+          "edit": "Editar",
+          "delete": "Eliminar",
+          "test": "Probar",
+          "testing": "Probando...",
+          "activate": "Activar",
+          "deactivate": "Desactivar",
+          "fetchNow": "Obtener Ahora"
+        },
+        "test": {
+          "success": "Prueba exitosa",
+          "failed": "Prueba fallida"
+        },
+        "modal": {
+          "createTitle": "Agregar Fuente de Noticias",
+          "editTitle": "Editar Fuente de Noticias",
+          "basicInfo": "Información Básica",
+          "apiConfig": "Configuración de API",
+          "customHeaders": "Encabezados Personalizados",
+          "categories": "Categorías",
+          "configuration": "Configuración",
+          "name": "Nombre",
+          "namePlaceholder": "Ingresa el nombre de la fuente",
+          "description": "Descripción",
+          "descriptionPlaceholder": "Descripción opcional para esta fuente",
+          "sourceType": "Tipo de Fuente",
+          "url": "URL",
+          "rssUrl": "URL del Feed RSS",
+          "apiEndpoint": "Endpoint de API",
+          "apiKey": "Clave de API",
+          "apiKeyPlaceholder": "Clave de API opcional para autenticación",
+          "addHeader": "Agregar Encabezado",
+          "headerKey": "Nombre del Encabezado",
+          "headerValue": "Valor del Encabezado",
+          "language": "Idioma",
+          "priority": "Prioridad",
+          "qualityScore": "Puntuación de Calidad",
+          "fetchInterval": "Intervalo de Obtención",
+          "maxFailures": "Máximo de Fallos",
+          "activeSource": "Fuente Activa",
+          "seconds": "segundos",
+          "minutes": "minutos",
+          "minute": "minuto",
+          "hour": "hora",
+          "hours": "horas",
+          "cancel": "Cancelar",
+          "create": "Crear Fuente",
+          "update": "Actualizar Fuente",
+          "validation": {
+            "nameRequired": "El nombre es requerido",
+            "urlRequired": "La URL es requerida",
+            "urlInvalid": "Por favor ingresa una URL válida",
+            "apiEndpointRequired": "El endpoint de API es requerido para fuentes API",
+            "intervalTooShort": "El intervalo de obtención debe ser de al menos 5 minutos (300 segundos)",
+            "priorityRange": "La prioridad debe estar entre 1 y 10"
+          }
+        },
+        "healthMonitor": {
+          "title": "Monitor de Salud de Fuentes",
+          "healthy": "Saludables",
+          "warning": "Advertencia",
+          "error": "Error",
+          "timeout": "Tiempo Agotado",
+          "status": "Estado",
+          "articlesToday": "Artículos Hoy",
+          "priority": "Prioridad",
+          "failures": "Fallos",
+          "lastFetch": "Última Obtención",
+          "test": "Probar",
+          "noSources": "No hay fuentes configuradas"
+        }
+      },
+      "processing": {
+        "title": "Trabajos de Procesamiento IA",
+        "startBatch": "Iniciar Procesamiento por Lotes",
+        "jobId": "ID de Trabajo",
+        "started": "Iniciado",
+        "remaining": "Restante",
+        "failed": "fallidos",
+        "noJobs": "No hay trabajos de procesamiento ejecutándose",
+        "activeJobs": "Trabajos Activos",
+        "recentJobs": "Trabajos Recientes",
+        "status": {
+          "pending": "Pendiente",
+          "processing": "Procesando",
+          "completed": "Completado",
+          "failed": "Fallido",
+          "cancelled": "Cancelado"
+        },
+        "stats": {
+          "active": "Activos",
+          "completed": "Completados",
+          "failed": "Fallidos",
+          "totalProcessed": "Total Procesados"
+        },
+        "details": {
+          "processed": "Procesados",
+          "failed": "Fallidos",
+          "rate": "Velocidad",
+          "remaining": "Restante",
+          "options": "Opciones de Procesamiento"
+        },
+        "options": {
+          "generate_summary": "Generar Resumen",
+          "extract_keywords": "Extraer Palabras Clave",
+          "calculate_relevance": "Calcular Relevancia",
+          "detect_duplicates": "Detectar Duplicados",
+          "translate": "Traducir",
+          "categorize": "Auto Categorizar"
+        },
+        "actions": {
+          "cancel": "Cancelar",
+          "retry": "Reintentar",
+          "details": "Detalles"
+        },
+        "batchDialog": {
+          "title": "Iniciar Procesamiento por Lotes",
+          "description": "Selecciona las opciones de procesamiento para el trabajo por lotes:",
+          "targetLanguage": "Idioma Objetivo",
+          "cancel": "Cancelar",
+          "start": "Iniciar Procesamiento"
+        },
+        "interface": {
+          "title": "Interfaz de Procesamiento IA de Noticias",
+          "subtitle": "Monitorea operaciones IA, gestiona duplicados y configura parámetros de procesamiento",
+          "tabs": {
+            "monitor": "Monitor de Procesamiento",
+            "duplicates": "Detección de Duplicados",
+            "config": "Configuración IA",
+            "queue": "Cola de Procesamiento"
+          },
+          "duplicates": {
+            "title": "Detección de Duplicados",
+            "filters": {
+              "title": "Filtros de Detección",
+              "similarityThreshold": "Umbral de Similitud",
+              "dateRange": "Rango de Fechas (Días)",
+              "riskLevel": "Nivel de Riesgo",
+              "includeProcessed": "Incluir Procesados",
+              "options": {
+                "allLevels": "Todos los Niveles",
+                "highRisk": "Alto Riesgo",
+                "mediumRisk": "Riesgo Medio",
+                "lowRisk": "Bajo Riesgo",
+                "last7Days": "Últimos 7 días",
+                "last30Days": "Últimos 30 días",
+                "last90Days": "Últimos 90 días",
+                "lastYear": "Último año"
+              }
+            },
+            "groups": {
+              "title": "Duplicados Detectados",
+              "selected": "seleccionados",
+              "clearSelection": "Limpiar Selección",
+              "duplicateGroup": "Grupo de Duplicados",
+              "items": "elementos",
+              "avgSimilarity": "Similitud Promedio",
+              "confidence": "Confianza",
+              "primary": "PRINCIPAL (MANTENER)",
+              "duplicates": "DUPLICADOS (ELIMINAR)",
+              "similar": "similar",
+              "resolve": "Resolver",
+              "riskLevels": {
+                "low": "BAJO RIESGO",
+                "medium": "RIESGO MEDIO",
+                "high": "ALTO RIESGO"
+              },
+              "actions": {
+                "autoDeleteDuplicates": "ELIMINAR DUPLICADOS AUTOMÁTICAMENTE",
+                "keepPrimaryDeleteOthers": "MANTENER PRINCIPAL ELIMINAR OTROS",
+                "manualReviewRequired": "REVISIÓN MANUAL REQUERIDA"
+              },
+              "reasons": {
+                "identicalSourceUrl": "url de fuente idéntica",
+                "similarSourceUrl": "url de fuente similar",
+                "verySimilarTitle": "título muy similar",
+                "similarTitle": "título similar",
+                "publishedWithin2Hours": "publicado dentro de 2 horas",
+                "publishedSameDay": "publicado el mismo día",
+                "similarContentLength": "longitud de contenido similar"
+              }
+            },
+            "empty": {
+              "detecting": "Detectando duplicados...",
+              "noDuplicates": "No se encontraron duplicados con los filtros actuales"
+            }
+          },
+          "config": {
+            "processingOptions": {
+              "title": "Opciones de Procesamiento",
+              "batchSize": "Tamaño de Lote",
+              "similarityThreshold": "Umbral de Similitud"
+            },
+            "duplicateDetection": {
+              "title": "Configuración de Detección de Duplicados",
+              "titleWeight": "Peso del Título",
+              "contentWeight": "Peso del Contenido",
+              "detectionRange": "Rango de Detección (Días)",
+              "options": {
+                "7days": "7 días",
+                "30days": "30 días",
+                "90days": "90 días",
+                "1year": "1 año"
+              }
+            },
+            "rateLimiting": {
+              "title": "Limitación de Velocidad y Rendimiento",
+              "requestsPerMinute": "Solicitudes por Minuto",
+              "concurrentJobs": "Trabajos Concurrentes",
+              "retryAttempts": "Intentos de Reintento"
+            },
+            "saveConfiguration": "Guardar Configuración"
+          },
+          "queue": {
+            "overview": {
+              "pending": "Pendientes",
+              "processing": "Procesando",
+              "completed": "Completados",
+              "failed": "Fallidos",
+              "totalItems": "Total de Elementos"
+            },
+            "management": {
+              "title": "Gestión de Cola de Procesamiento",
+              "status": "Estado de la Cola",
+              "processingInProgress": "Procesamiento en progreso",
+              "queueIdle": "Cola inactiva",
+              "estimatedCompletion": "Finalización Estimada",
+              "actions": {
+                "pauseQueue": "Pausar Cola",
+                "resumeQueue": "Reanudar Cola",
+                "processAllPending": "Procesar Todos los Pendientes",
+                "retryFailedItems": "Reintentar Elementos Fallidos",
+                "clearFailedQueue": "Limpiar Cola de Fallidos"
+              },
+              "statistics": {
+                "title": "Estadísticas de Cola",
+                "successRate": "Tasa de Éxito",
+                "failureRate": "Tasa de Fallo",
+                "queueUtilization": "Utilización de Cola"
+              }
+            }
+          }
+        }
+      },
+      "queue": {
+        "title": "Cola de Revisión de Noticias",
+        "search": "Buscar noticias...",
+        "filter": "Filtrar",
+        "empty": "No hay elementos en la cola"
+      },
+      "categorization": {
+        "categories": {
+          "title": "Categorías",
+          "all": "Todas las Categorías"
+        },
+        "filters": {
+          "search": "Buscar noticias...",
+          "allCategories": "Todas las Categorías",
+          "allStatus": "Todos los Estados",
+          "processed": "Procesadas",
+          "unprocessed": "Sin Procesar"
+        },
+        "aiSuggestions": {
+          "categories": "Categorías Sugeridas por IA:",
+          "tags": "Etiquetas Sugeridas por IA:"
+        },
+        "currentCategory": "Categoría Actual:",
+        "selectCategory": "Seleccionar Categoría",
+        "tags": {
+          "title": "Etiquetas",
+          "addPlaceholder": "Agregar etiqueta..."
+        },
+        "actions": {
+          "preview": "Vista Previa",
+          "approve": "Aprobar",
+          "reject": "Rechazar"
+        },
+        "noNews": "No se encontraron noticias"
+      }
+    },
+    "sections": {
+      "articles": {
+        "title": "Artículos",
+        "description": "Gestiona y revisa los artículos de la comunidad",
+        "stats": "Revisar envíos pendientes"
+      },
+      "news": {
+        "title": "Gestión de noticias",
+        "description": "Agregación y procesamiento de noticias con IA",
+        "stats": "Procesamiento automático desde 8+ fuentes"
+      },
+      "categories": {
+        "title": "Categorías",
+        "description": "Organiza el contenido con categorías",
+        "stats": "Organización de contenido"
+      },
+      "tags": {
+        "title": "Etiquetas",
+        "description": "Gestiona etiquetas y palabras clave",
+        "stats": "Sistema de etiquetas"
+      },
+      "analytics": {
+        "title": "Analíticas",
+        "subtitle": "Rendimiento integral del contenido e insights",
+        "description": "Rendimiento de la plataforma e insights",
+        "stats": "Insights basados en datos",
+        "error": {
+          "loadFailed": "Error al cargar datos de analíticas"
+        },
+        "actions": {
+          "retry": "Reintentar",
+          "export": "Exportar",
+          "refresh": "Actualizar"
+        },
+        "periods": {
+          "week": "Últimos 7 días",
+          "month": "Últimos 30 días",
+          "quarter": "Últimos 90 días",
+          "year": "Últimos 365 días"
+        },
+        "granularity": {
+          "daily": "Diario",
+          "weekly": "Semanal",
+          "monthly": "Mensual"
+        },
+        "metrics": {
+          "totalArticles": "Total de Artículos",
+          "totalNews": "Total de Noticias",
+          "totalViews": "Total de Visualizaciones",
+          "totalLikes": "Total de Me Gusta"
+        },
+        "tabs": {
+          "overview": "Resumen",
+          "content": "Contenido",
+          "trends": "Tendencias",
+          "engagement": "Engagement"
+        },
+        "charts": {
+          "contentDistribution": "Distribución de Contenido",
+          "contentComparison": "Artículos vs Noticias",
+          "categoryDistribution": "Distribución por Categoría",
+          "contentTrends": "Tendencias de Contenido",
+          "engagementPatterns": "Patrones de Engagement",
+          "weeklyDistribution": "Distribución Semanal"
+        },
+        "sections": {
+          "recentActivity": "Actividad Reciente",
+          "topPerforming": "Contenido Más Popular",
+          "trendingTopics": "Temas Trending"
+        },
+        "content": {
+          "published": "Publicado",
+          "draft": "Borrador",
+          "review": "En Revisión",
+          "articles": "Artículos",
+          "news": "Noticias"
+        },
+        "activity": {
+          "unknownArticle": "Artículo Desconocido"
+        },
+        "days": {
+          "0": "Domingo",
+          "1": "Lunes",
+          "2": "Martes",
+          "3": "Miércoles",
+          "4": "Jueves",
+          "5": "Viernes",
+          "6": "Sábado"
+        },
+        "export": {
+          "title": "Exportar Datos de Analíticas",
+          "subtitle": "Elige los datos que quieres exportar y configura las opciones de exportación",
+          "fields": {
+            "exportType": "Tipo de Exportación",
+            "format": "Formato",
+            "dateRange": "Rango de Fechas",
+            "options": "Opciones"
+          },
+          "types": {
+            "articles": "Artículos",
+            "news": "Noticias",
+            "authors": "Autores",
+            "categories": "Categorías",
+            "analytics": "Resumen de Analíticas"
+          },
+          "descriptions": {
+            "articles": "Exportar datos de artículos con metadatos y métricas de rendimiento",
+            "news": "Exportar datos de noticias con información de procesamiento IA",
+            "authors": "Exportar estadísticas de autores y métricas de productividad",
+            "categories": "Exportar datos de categorías con conteos de contenido",
+            "analytics": "Exportar resumen de analíticas y datos de tendencias"
+          },
+          "ranges": {
+            "week": "Últimos 7 días",
+            "month": "Últimos 30 días",
+            "quarter": "Últimos 90 días",
+            "year": "Últimos 365 días",
+            "all": "Todo el tiempo"
+          },
+          "options": {
+            "includeMetrics": "Incluir métricas de rendimiento"
+          },
+          "preview": {
+            "title": "Vista Previa de Exportación",
+            "type": "Tipo",
+            "format": "Formato",
+            "period": "Período",
+            "metrics": "Métricas",
+            "included": "Incluidas",
+            "excluded": "Excluidas",
+            "lastDays": "Últimos {days} días"
+          },
+          "actions": {
+            "cancel": "Cancelar",
+            "export": "Exportar",
+            "exporting": "Exportando..."
+          }
+        }
+      },
+      "ai": {
+        "title": "Procesamiento IA",
+        "description": "Procesamiento y análisis automatizado",
+        "stats": "Automatización con GPT-4"
+      },
+      "courses": {
+        "title": "Cursos",
+        "description": "Gestión de contenido educativo",
+        "stats": "Plataforma de aprendizaje"
+      },
+      "notifications": {
+        "title": "Notificaciones",
+        "description": "Sistema de notificaciones a usuarios",
+        "stats": "Alertas push y email"
+      },
+      "email": {
+        "title": "Gestión de email",
+        "description": "Newsletter y campañas de correo",
+        "stats": "Centro de comunicación"
+      },
+      "discord": {
+        "title": "Integración Discord",
+        "description": "Gestión de la comunidad en Discord",
+        "stats": "Engagement de comunidad"
+      },
+      "proposals": {
+        "title": "Propuestas",
+        "description": "Propuestas de gobernanza de la comunidad",
+        "stats": "Gobernanza DAO"
+      },
+      "sources": {
+        "title": "Fuentes de noticias",
+        "description": "Gestión de fuentes y RSS",
+        "stats": "Configuración de fuentes"
+      }
+    },
+    "settings": {
+      "tabs": {
+        "aiProcessing": "Procesamiento IA",
+        "notifications": "Notificaciones",
+        "users": "Usuarios",
+        "seo": "SEO",
+        "storage": "Almacenamiento",
+        "backup": "Respaldo"
+      },
+      "aiProcessing": {
+        "title": "Configuración de Procesamiento IA",
+        "description": "Configurar parámetros de procesamiento de inteligencia artificial",
+        "errors": {
+          "noConfig": "No se encontró configuración de IA"
+        },
+        "actions": {
+          "retry": "Reintentar"
+        }
+      },
+      "notifications": {
+        "title": "Configuración de Notificaciones",
+        "description": "Gestionar configuraciones de notificaciones del sistema"
+      },
+      "seo": {
+        "title": "Configuración SEO",
+        "description": "Optimizar configuraciones para motores de búsqueda"
+      },
+      "storage": {
+        "title": "Configuración de Almacenamiento",
+        "description": "Gestionar configuraciones de almacenamiento y archivos"
+      },
+      "backup": {
+        "title": "Configuración de Respaldo",
+        "description": "Configurar respaldos automáticos del sistema"
+      },
+      "users": {
+        "title": "Gestión de Usuarios",
+        "description": "Administrar usuarios, roles y permisos",
+        "users": {
+          "title": "Usuarios",
+          "description": "Administrar usuarios del sistema y su acceso",
+          "searchPlaceholder": "Buscar usuarios...",
+          "allRoles": "Todos los Roles",
+          "addUser": "Agregar Usuario",
+          "active": "Activo",
+          "inactive": "Inactivo",
+          "permissions": "permisos"
+        },
+        "roles": {
+          "title": "Roles y Permisos",
+          "description": "Administrar roles de usuario y sus permisos",
+          "addRole": "Agregar Rol",
+          "system": "Sistema",
+          "permissions": "Permisos"
+        },
+        "fields": {
+          "fullName": "Nombre Completo",
+          "email": "Correo Electrónico",
+          "role": "Rol",
+          "roleName": "Nombre del Rol",
+          "description": "Descripción",
+          "permissions": "Permisos"
+        },
+        "dialogs": {
+          "addUser": "Agregar Nuevo Usuario",
+          "editUser": "Editar Usuario",
+          "addUserDescription": "Crear una nueva cuenta de usuario",
+          "editUserDescription": "Actualizar información y permisos del usuario",
+          "addRole": "Agregar Nuevo Rol",
+          "editRole": "Editar Rol",
+          "addRoleDescription": "Crear un nuevo rol con permisos específicos",
+          "editRoleDescription": "Actualizar permisos y configuraciones del rol"
+        },
+        "tabs": {
+          "users": "Usuarios",
+          "roles": "Roles",
+          "activity": "Actividad",
+          "audit": "Auditoría"
+        },
+        "actions": {
+          "cancel": "Cancelar",
+          "save": "Guardar"
+        },
+        "success": {
+          "userCreated": "Usuario creado exitosamente",
+          "userUpdated": "Usuario actualizado exitosamente",
+          "userActivated": "Usuario activado exitosamente",
+          "userDeactivated": "Usuario desactivado exitosamente",
+          "roleCreated": "Rol creado exitosamente",
+          "roleUpdated": "Rol actualizado exitosamente",
+          "roleDeleted": "Rol eliminado exitosamente"
+        },
+        "errors": {
+          "loadFailed": "Error al cargar datos de usuario",
+          "saveFailed": "Error al guardar usuario",
+          "statusUpdateFailed": "Error al actualizar estado del usuario",
+          "deleteFailed": "Error al eliminar rol"
+        },
+        "activity": {
+          "title": "Monitor de Actividad de Usuarios",
+          "description": "Monitorear actividades de usuarios e interacciones del sistema",
+          "searchPlaceholder": "Buscar actividades...",
+          "filters": {
+            "action": "Tipo de Acción",
+            "allActions": "Todas las Acciones",
+            "resourceType": "Tipo de Recurso",
+            "allResources": "Todos los Recursos"
+          },
+          "actions": {
+            "clearFilters": "Limpiar Filtros",
+            "refresh": "Actualizar"
+          },
+          "noActivities": "No se encontraron actividades",
+          "showDetails": "Mostrar Detalles",
+          "pagination": {
+            "page": "Página",
+            "of": "de",
+            "previous": "Anterior",
+            "next": "Siguiente"
+          }
+        },
+        "audit": {
+          "title": "Registro de Auditoría de Usuario",
+          "titleAll": "Registro de Auditoría del Sistema",
+          "description": "Ver cambios de roles y modificaciones de usuarios",
+          "descriptionAll": "Ver todos los cambios de roles y modificaciones de usuarios",
+          "noEntries": "No se encontraron entradas de auditoría",
+          "changedBy": "Cambiado por",
+          "actions": {
+            "refresh": "Actualizar"
+          },
+          "pagination": {
+            "page": "Página",
+            "of": "de",
+            "previous": "Anterior",
+            "next": "Siguiente"
+          },
+          "errors": {
+            "loadFailed": "Error al cargar registro de auditoría"
+          }
+        }
+      }
+    }
+  },
+  "homepage": {
+    "hero": {
+      "title": "Stakeados",
+      "subtitle": "Plataforma de Aprendizaje Descentralizada",
+      "description": "Descubre, Aprende y Contribuye al Futuro de la Educación",
+      "primaryCta": "Explorar Artículos",
+      "secondaryCta": "Ver Cursos"
+    },
+    "seo": {
+      "title": "Stakeados - Plataforma de Aprendizaje Descentralizada",
+      "description": "Descubre artículos, noticias y cursos sobre aprendizaje descentralizado. Únete a nuestra comunidad de educadores y estudiantes construyendo el futuro de la educación Web3.",
+      "keywords": "educación blockchain, aprendizaje descentralizado, cursos crypto, artículos web3, stakeados, certificados NFT"
+    },
+    "sections": {
+      "featuredNews": {
+        "title": "Últimas Noticias",
+        "subtitle": "Mantente actualizado con los últimos desarrollos en aprendizaje descentralizado"
+      },
+      "featuredArticles": {
+        "title": "Artículos Destacados",
+        "subtitle": "Descubre contenido educativo de nuestra comunidad"
+      },
+      "quickNavigation": {
+        "title": "Explorar Plataforma",
+        "subtitle": "Descubre todo lo que nuestra plataforma de aprendizaje descentralizada tiene para ofrecer",
+        "cards": {
+          "articles": {
+            "title": "Artículos",
+            "description": "Lee contenido generado por la comunidad",
+            "statsLabel": "artículos"
+          },
+          "news": {
+            "title": "Noticias",
+            "description": "Mantente actualizado con los últimos desarrollos",
+            "statsLabel": "noticias"
+          },
+          "courses": {
+            "title": "Cursos",
+            "description": "Aprende a través de contenido estructurado",
+            "statsLabel": "cursos"
+          },
+          "community": {
+            "title": "Comunidad",
+            "description": "Conecta con otros estudiantes",
+            "statsLabel": "usuarios activos"
+          }
+        }
+      },
+      "coursesPreview": {
+        "title": "Cursos Destacados",
+        "subtitle": "Comienza tu viaje de aprendizaje con cursos estructurados"
+      }
+    },
+    "errors": {
+      "title": "Algo salió mal",
+      "description": "Encontramos un error al cargar esta sección.",
+      "retry": "Intentar de nuevo",
+      "retrying": "Reintentando...",
+      "fallback": {
+        "news": {
+          "title": "Noticias Recientes No Disponibles",
+          "description": "No pudimos cargar las noticias recientes. Puedes explorar todas las noticias en su lugar.",
+          "action": "Ver Todas las Noticias"
+        },
+        "articles": {
+          "title": "Artículos Destacados No Disponibles",
+          "description": "No pudimos cargar los artículos destacados. Puedes explorar todos los artículos en su lugar.",
+          "action": "Ver Todos los Artículos"
+        },
+        "courses": {
+          "title": "Cursos Destacados No Disponibles",
+          "description": "No pudimos cargar los cursos destacados. Puedes explorar todos los cursos en su lugar.",
+          "action": "Ver Todos los Cursos"
+        },
+        "navigation": {
+          "title": "Navegación No Disponible",
+          "description": "La navegación rápida no está disponible temporalmente. Puedes usar el menú principal en su lugar.",
+          "action": "Ir al Inicio"
+        },
+        "generic": {
+          "title": "Contenido No Disponible",
+          "description": "Esta sección no está disponible temporalmente. Por favor, inténtalo más tarde.",
+          "action": "Ir al Inicio"
+        }
+      },
+      "loading": "Cargando...",
+      "section": "Sección",
+      "maxRetriesReached": "Se alcanzó el máximo de intentos. Por favor, actualiza la página.",
+      "technicalDetails": "Detalles Técnicos",
+      "errorMessage": "Mensaje de Error",
+      "connectionType": "Tipo de Conexión",
+      "timestamp": "Marca de Tiempo",
+      "errorTypes": {
+        "offline": {
+          "title": "Estás desconectado",
+          "description": "Por favor, verifica tu conexión a internet e inténtalo de nuevo."
+        },
+        "network": {
+          "title": "Error de Red",
+          "description": "No se pudo conectar a nuestros servidores. Por favor, verifica tu conexión."
+        },
+        "timeout": {
+          "title": "Tiempo de Espera Agotado",
+          "description": "La solicitud tardó demasiado en completarse. Por favor, inténtalo de nuevo."
+        },
+        "notFound": {
+          "title": "Contenido No Encontrado",
+          "description": "El contenido solicitado no se pudo encontrar."
+        },
+        "server": {
+          "title": "Error del Servidor",
+          "description": "Nuestros servidores están experimentando problemas. Por favor, inténtalo más tarde."
+        },
+        "generic": {
+          "title": "Algo salió mal",
+          "description": "Ocurrió un error inesperado. Por favor, inténtalo de nuevo."
+        }
+      },
+      "networkStatus": {
+        "offline": "Sin conexión a internet"
+      }
+    },
+    "emptyStates": {
+      "news": {
+        "title": "No Hay Noticias Disponibles",
+        "description": "Actualmente no hay artículos de noticias para mostrar. Vuelve más tarde para las últimas actualizaciones.",
+        "primaryAction": "Ver Todas las Noticias",
+        "secondaryAction": "Crear Artículo de Noticias"
+      },
+      "articles": {
+        "title": "No Hay Artículos Disponibles",
+        "description": "Actualmente no hay artículos destacados para mostrar. Explora nuestra colección completa de artículos en su lugar.",
+        "primaryAction": "Ver Todos los Artículos",
+        "secondaryAction": "Escribir Artículo"
+      },
+      "courses": {
+        "title": "No Hay Cursos Disponibles",
+        "description": "Actualmente no hay cursos destacados para mostrar. Explora nuestro catálogo completo de cursos en su lugar.",
+        "primaryAction": "Ver Todos los Cursos",
+        "secondaryAction": "Crear Curso"
+      },
+      "navigation": {
+        "title": "Navegación No Disponible",
+        "description": "La navegación rápida no está disponible temporalmente. Usa el menú principal para navegar por la plataforma.",
+        "primaryAction": "Ir al Inicio"
+      },
+      "generic": {
+        "title": "No Hay Contenido Disponible",
+        "description": "Esta sección está actualmente vacía. Por favor, vuelve más tarde para actualizaciones.",
+        "primaryAction": "Ir al Inicio"
+      }
+    }
+  },
+  "articles": {
+    "title": "Artículos",
+    "create": "Crear Artículo",
+    "edit": "Editar Artículo",
+    "publish": "Publicar",
+    "draft": "Borrador",
+    "published": "Publicado",
+    "readMore": "Leer Más",
+    "author": "Autor",
+    "publishedAt": "Publicado el",
+    "readingTime": "Tiempo de lectura",
+    "minutes": "minutos"
+  },
+  "news": {
+    "title": "Noticias",
+    "trending": "Tendencias",
+    "latest": "Últimas",
+    "categories": "Categorías",
+    "source": "Fuente",
+    "readMore": "Leer Más"
+  },
+  "courses": {
+    "title": "Cursos Destacados",
+    "browseAll": "Ver Todos los Cursos",
+    "continueCourse": "Continuar Curso",
+    "completed": "Completado",
+    "enrollNow": "Inscribirse Ahora",
+    "subtitle": "Comienza tu viaje de aprendizaje con cursos estructurados"
+  },
+  "forms": {
+    "title": "Título",
+    "content": "Contenido",
+    "description": "Descripción",
+    "category": "Categoría",
+    "tags": "Etiquetas",
+    "submit": "Enviar",
+    "required": "Campo requerido"
+  }
+}

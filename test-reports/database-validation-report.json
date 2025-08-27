@@ -1,0 +1,550 @@
+{
+  "timestamp": "2025-08-15T00:06:56.148Z",
+  "summary": {
+    "totalPassed": 27,
+    "totalFailed": 11
+  },
+  "categories": {
+    "schemaValidation": {
+      "passed": 8,
+      "failed": 0,
+      "tests": [
+        {
+          "testName": "Table profiles accessibility",
+          "passed": true,
+          "message": "Table exists and is accessible",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:51.979Z"
+        },
+        {
+          "testName": "Table categories accessibility",
+          "passed": true,
+          "message": "Table exists and is accessible",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:52.190Z"
+        },
+        {
+          "testName": "Table articles accessibility",
+          "passed": true,
+          "message": "Table exists and is accessible",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:52.296Z"
+        },
+        {
+          "testName": "Table news accessibility",
+          "passed": true,
+          "message": "Table exists and is accessible",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:52.398Z"
+        },
+        {
+          "testName": "Table role_audit_log accessibility",
+          "passed": true,
+          "message": "Table exists and is accessible",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:52.641Z"
+        },
+        {
+          "testName": "Function has_role_or_higher execution",
+          "passed": true,
+          "message": "Function exists and is executable",
+          "details": {
+            "result": true
+          },
+          "timestamp": "2025-08-15T00:06:52.750Z"
+        },
+        {
+          "testName": "Function get_role_permissions execution",
+          "passed": true,
+          "message": "Function exists and is executable",
+          "details": {
+            "result": {
+              "role": "student",
+              "admin": {
+                "view_analytics": false,
+                "database_access": false,
+                "access_admin_panel": false,
+                "manage_permissions": false,
+                "system_maintenance": false,
+                "manage_system_settings": false
+              },
+              "level": 1,
+              "users": {
+                "ban_users": false,
+                "delete_users": false,
+                "view_audit_logs": false,
+                "edit_any_profile": false,
+                "manage_user_roles": false,
+                "view_all_profiles": false
+              },
+              "common": {
+                "read_news": true,
+                "like_articles": true,
+                "share_content": true,
+                "read_categories": true,
+                "edit_own_profile": true,
+                "view_own_profile": true,
+                "comment_on_articles": true,
+                "read_published_articles": true
+              },
+              "content": {
+                "manage_news": false,
+                "view_drafts": false,
+                "create_articles": false,
+                "moderate_content": false,
+                "publish_articles": false,
+                "edit_any_articles": false,
+                "edit_own_articles": false,
+                "manage_categories": false,
+                "delete_any_articles": false,
+                "delete_own_articles": false
+              },
+              "original_role": "student"
+            }
+          },
+          "timestamp": "2025-08-15T00:06:52.850Z"
+        },
+        {
+          "testName": "Default categories check",
+          "passed": true,
+          "message": "Found 6 categories (expected at least 6)",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:52.960Z"
+        }
+      ]
+    },
+    "functionalityTesting": {
+      "passed": 7,
+      "failed": 2,
+      "tests": [
+        {
+          "testName": "Setup test user admin",
+          "passed": true,
+          "message": "Test user created successfully",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:53.075Z"
+        },
+        {
+          "testName": "Setup test user genesis",
+          "passed": true,
+          "message": "Test user created successfully",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:53.175Z"
+        },
+        {
+          "testName": "Setup test user citizen",
+          "passed": true,
+          "message": "Test user created successfully",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:53.280Z"
+        },
+        {
+          "testName": "Setup test user student",
+          "passed": true,
+          "message": "Test user created successfully",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:53.391Z"
+        },
+        {
+          "testName": "Profile update functionality",
+          "passed": true,
+          "message": "Profile update works correctly",
+          "details": {},
+          "timestamp": "2025-08-15T00:06:53.500Z"
+        },
+        {
+          "testName": "Article creation functionality",
+          "passed": false,
+          "message": "Article creation failed: insert or update on table \"articles\" violates foreign key constraint \"articles_author_id_fkey\"",
+          "details": {
+            "error": "insert or update on table \"articles\" violates foreign key constraint \"articles_author_id_fkey\""
+          },
+          "timestamp": "2025-08-15T00:06:53.706Z"
+        },
+        {
+          "testName": "Timestamp triggers test",
+          "passed": false,
+          "message": "Test user not found for trigger testing",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:55.736Z"
+        },
+        {
+          "testName": "Deployment documentation creation",
+          "passed": true,
+          "message": "Deployment guide created successfully",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:56.142Z"
+        },
+        {
+          "testName": "Troubleshooting script creation",
+          "passed": true,
+          "message": "Troubleshooting script created successfully",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:56.143Z"
+        }
+      ]
+    },
+    "rbacTesting": {
+      "passed": 10,
+      "failed": 8,
+      "tests": [
+        {
+          "testName": "Role hierarchy admin -> student",
+          "passed": true,
+          "message": "Correctly returned true for admin accessing student",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:53.804Z"
+        },
+        {
+          "testName": "Role hierarchy admin -> citizen",
+          "passed": false,
+          "message": "Expected true, got false",
+          "details": {
+            "expected": true,
+            "actual": false
+          },
+          "timestamp": "2025-08-15T00:06:53.900Z"
+        },
+        {
+          "testName": "Role hierarchy admin -> genesis",
+          "passed": false,
+          "message": "Expected true, got false",
+          "details": {
+            "expected": true,
+            "actual": false
+          },
+          "timestamp": "2025-08-15T00:06:54.007Z"
+        },
+        {
+          "testName": "Role hierarchy admin -> admin",
+          "passed": false,
+          "message": "Expected true, got false",
+          "details": {
+            "expected": true,
+            "actual": false
+          },
+          "timestamp": "2025-08-15T00:06:54.220Z"
+        },
+        {
+          "testName": "Role hierarchy genesis -> student",
+          "passed": true,
+          "message": "Correctly returned true for genesis accessing student",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:54.319Z"
+        },
+        {
+          "testName": "Role hierarchy genesis -> citizen",
+          "passed": false,
+          "message": "Expected true, got false",
+          "details": {
+            "expected": true,
+            "actual": false
+          },
+          "timestamp": "2025-08-15T00:06:54.426Z"
+        },
+        {
+          "testName": "Role hierarchy genesis -> genesis",
+          "passed": false,
+          "message": "Expected true, got false",
+          "details": {
+            "expected": true,
+            "actual": false
+          },
+          "timestamp": "2025-08-15T00:06:54.533Z"
+        },
+        {
+          "testName": "Role hierarchy genesis -> admin",
+          "passed": true,
+          "message": "Correctly returned false for genesis accessing admin",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:54.633Z"
+        },
+        {
+          "testName": "Role hierarchy citizen -> student",
+          "passed": true,
+          "message": "Correctly returned true for citizen accessing student",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:54.733Z"
+        },
+        {
+          "testName": "Role hierarchy citizen -> citizen",
+          "passed": false,
+          "message": "Expected true, got false",
+          "details": {
+            "expected": true,
+            "actual": false
+          },
+          "timestamp": "2025-08-15T00:06:54.828Z"
+        },
+        {
+          "testName": "Role hierarchy citizen -> genesis",
+          "passed": true,
+          "message": "Correctly returned false for citizen accessing genesis",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:54.922Z"
+        },
+        {
+          "testName": "Role hierarchy student -> student",
+          "passed": true,
+          "message": "Correctly returned true for student accessing student",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:55.017Z"
+        },
+        {
+          "testName": "Role hierarchy student -> citizen",
+          "passed": true,
+          "message": "Correctly returned false for student accessing citizen",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:55.117Z"
+        },
+        {
+          "testName": "Role permissions for admin",
+          "passed": false,
+          "message": "Permission validation failed: Admin should have user management permissions",
+          "details": {
+            "permissions": {
+              "role": "student",
+              "admin": {
+                "view_analytics": false,
+                "database_access": false,
+                "access_admin_panel": false,
+                "manage_permissions": false,
+                "system_maintenance": false,
+                "manage_system_settings": false
+              },
+              "level": 1,
+              "users": {
+                "ban_users": false,
+                "delete_users": false,
+                "view_audit_logs": false,
+                "edit_any_profile": false,
+                "manage_user_roles": false,
+                "view_all_profiles": false
+              },
+              "common": {
+                "read_news": true,
+                "like_articles": true,
+                "share_content": true,
+                "read_categories": true,
+                "edit_own_profile": true,
+                "view_own_profile": true,
+                "comment_on_articles": true,
+                "read_published_articles": true
+              },
+              "content": {
+                "manage_news": false,
+                "view_drafts": false,
+                "create_articles": false,
+                "moderate_content": false,
+                "publish_articles": false,
+                "edit_any_articles": false,
+                "edit_own_articles": false,
+                "manage_categories": false,
+                "delete_any_articles": false,
+                "delete_own_articles": false
+              },
+              "original_role": "student"
+            },
+            "errors": ["Admin should have user management permissions"]
+          },
+          "timestamp": "2025-08-15T00:06:55.211Z"
+        },
+        {
+          "testName": "Role permissions for genesis",
+          "passed": true,
+          "message": "Permissions are correctly configured",
+          "details": {
+            "permissions": {
+              "role": "student",
+              "admin": {
+                "view_analytics": false,
+                "database_access": false,
+                "access_admin_panel": false,
+                "manage_permissions": false,
+                "system_maintenance": false,
+                "manage_system_settings": false
+              },
+              "level": 1,
+              "users": {
+                "ban_users": false,
+                "delete_users": false,
+                "view_audit_logs": false,
+                "edit_any_profile": false,
+                "manage_user_roles": false,
+                "view_all_profiles": false
+              },
+              "common": {
+                "read_news": true,
+                "like_articles": true,
+                "share_content": true,
+                "read_categories": true,
+                "edit_own_profile": true,
+                "view_own_profile": true,
+                "comment_on_articles": true,
+                "read_published_articles": true
+              },
+              "content": {
+                "manage_news": false,
+                "view_drafts": false,
+                "create_articles": false,
+                "moderate_content": false,
+                "publish_articles": false,
+                "edit_any_articles": false,
+                "edit_own_articles": false,
+                "manage_categories": false,
+                "delete_any_articles": false,
+                "delete_own_articles": false
+              },
+              "original_role": "student"
+            }
+          },
+          "timestamp": "2025-08-15T00:06:55.314Z"
+        },
+        {
+          "testName": "Role permissions for citizen",
+          "passed": true,
+          "message": "Permissions are correctly configured",
+          "details": {
+            "permissions": {
+              "role": "student",
+              "admin": {
+                "view_analytics": false,
+                "database_access": false,
+                "access_admin_panel": false,
+                "manage_permissions": false,
+                "system_maintenance": false,
+                "manage_system_settings": false
+              },
+              "level": 1,
+              "users": {
+                "ban_users": false,
+                "delete_users": false,
+                "view_audit_logs": false,
+                "edit_any_profile": false,
+                "manage_user_roles": false,
+                "view_all_profiles": false
+              },
+              "common": {
+                "read_news": true,
+                "like_articles": true,
+                "share_content": true,
+                "read_categories": true,
+                "edit_own_profile": true,
+                "view_own_profile": true,
+                "comment_on_articles": true,
+                "read_published_articles": true
+              },
+              "content": {
+                "manage_news": false,
+                "view_drafts": false,
+                "create_articles": false,
+                "moderate_content": false,
+                "publish_articles": false,
+                "edit_any_articles": false,
+                "edit_own_articles": false,
+                "manage_categories": false,
+                "delete_any_articles": false,
+                "delete_own_articles": false
+              },
+              "original_role": "student"
+            }
+          },
+          "timestamp": "2025-08-15T00:06:55.418Z"
+        },
+        {
+          "testName": "Role permissions for student",
+          "passed": true,
+          "message": "Permissions are correctly configured",
+          "details": {
+            "permissions": {
+              "role": "student",
+              "admin": {
+                "view_analytics": false,
+                "database_access": false,
+                "access_admin_panel": false,
+                "manage_permissions": false,
+                "system_maintenance": false,
+                "manage_system_settings": false
+              },
+              "level": 1,
+              "users": {
+                "ban_users": false,
+                "delete_users": false,
+                "view_audit_logs": false,
+                "edit_any_profile": false,
+                "manage_user_roles": false,
+                "view_all_profiles": false
+              },
+              "common": {
+                "read_news": true,
+                "like_articles": true,
+                "share_content": true,
+                "read_categories": true,
+                "edit_own_profile": true,
+                "view_own_profile": true,
+                "comment_on_articles": true,
+                "read_published_articles": true
+              },
+              "content": {
+                "manage_news": false,
+                "view_drafts": false,
+                "create_articles": false,
+                "moderate_content": false,
+                "publish_articles": false,
+                "edit_any_articles": false,
+                "edit_own_articles": false,
+                "manage_categories": false,
+                "delete_any_articles": false,
+                "delete_own_articles": false
+              },
+              "original_role": "student"
+            }
+          },
+          "timestamp": "2025-08-15T00:06:55.527Z"
+        },
+        {
+          "testName": "Role update with audit logging",
+          "passed": false,
+          "message": "Role update failed: Authentication required: No authenticated user found",
+          "details": {
+            "error": "Authentication required: No authenticated user found"
+          },
+          "timestamp": "2025-08-15T00:06:55.630Z"
+        }
+      ]
+    },
+    "securityTesting": {
+      "passed": 2,
+      "failed": 1,
+      "tests": [
+        {
+          "testName": "Profiles RLS - anonymous access",
+          "passed": true,
+          "message": "Anonymous users correctly denied access to profiles",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:55.840Z"
+        },
+        {
+          "testName": "Profiles RLS - service role access",
+          "passed": true,
+          "message": "Service role correctly has access to profiles",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:55.937Z"
+        },
+        {
+          "testName": "Articles RLS testing",
+          "passed": false,
+          "message": "Failed to create test article for RLS testing",
+          "details": null,
+          "timestamp": "2025-08-15T00:06:56.140Z"
+        }
+      ]
+    },
+    "performanceTesting": {
+      "passed": 0,
+      "failed": 0,
+      "tests": []
+    }
+  },
+  "status": "FAILED"
+}

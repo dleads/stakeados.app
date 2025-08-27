@@ -1,0 +1,384 @@
+/* Stakeados Global Design System */
+
+/* Elegant glow animations */
+@keyframes elegant-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.6);
+  }
+}
+
+/* Text truncation utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Text glow effect */
+.glow-text {
+  text-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+/* Background floating orbs */
+.stakeados-bg-orbs {
+  position: fixed;
+  inset: 0;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.stakeados-bg-orbs::before {
+  content: '';
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+  width: 24rem;
+  height: 24rem;
+  background: #22c55e;
+  border-radius: 50%;
+  filter: blur(3rem);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.stakeados-bg-orbs::after {
+  content: '';
+  position: absolute;
+  bottom: 5rem;
+  right: 5rem;
+  width: 24rem;
+  height: 24rem;
+  background: #4ade80;
+  border-radius: 50%;
+  filter: blur(3rem);
+  animation: pulse 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes neon-border {
+  0%,
+  100% {
+    box-shadow:
+      0 0 5px #00ff88,
+      0 0 10px #00ff88,
+      0 0 15px #00ff88,
+      inset 0 0 5px rgba(0, 255, 136, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 10px #00ff88,
+      0 0 20px #00ff88,
+      0 0 30px #00ff88,
+      inset 0 0 10px rgba(0, 255, 136, 0.2);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes matrix-rain {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes cyber-scan {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes glitch {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+}
+
+/* Global utility classes */
+.stakeados-gradient-text {
+  background: linear-gradient(to right, #4ade80, #22c55e, #16a34a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.stakeados-card {
+  background: rgba(17, 24, 39, 0.5);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(107, 114, 128, 0.3);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.stakeados-card:hover {
+  border-color: rgba(34, 197, 94, 0.5);
+  box-shadow: 0 25px 50px -12px rgba(34, 197, 94, 0.2);
+  transform: translateY(-2px);
+}
+
+.stakeados-button-primary {
+  background: linear-gradient(to right, #22c55e, #16a34a);
+  color: black;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.stakeados-button-primary:hover {
+  background: linear-gradient(to right, #4ade80, #22c55e);
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.5);
+  transform: scale(1.05);
+}
+
+.stakeados-button-secondary {
+  border: 2px solid #22c55e;
+  color: #4ade80;
+  background: transparent;
+  font-weight: bold;
+  padding: 10px 22px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.stakeados-button-secondary:hover {
+  background: #22c55e;
+  color: black;
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.5);
+}
+
+.matrix-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.matrix-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(0, 255, 136, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(0, 191, 255, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 80%,
+      rgba(255, 0, 136, 0.1) 0%,
+      transparent 50%
+    );
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Holographic effect */
+.holographic {
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(0, 255, 136, 0.1) 50%,
+    transparent 70%
+  );
+  background-size: 200% 200%;
+  animation: holographic-shift 3s ease-in-out infinite;
+}
+
+@keyframes holographic-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Cyber button effects */
+.cyber-button {
+  position: relative;
+  background: linear-gradient(45deg, #00ff88, #00bfff);
+  border: none;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cyber-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.cyber-button:hover::before {
+  left: 100%;
+}
+
+.cyber-button:hover {
+  box-shadow:
+    0 0 20px #00ff88,
+    0 0 40px #00ff88,
+    0 0 60px #00ff88;
+  transform: translateY(-2px);
+}
+
+/* Gaming card effects */
+.gaming-card {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.gaming-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00ff88, #00bfff, #ff0088, #00ff88);
+  background-size: 400% 400%;
+  z-index: -1;
+  animation: gradient-shift 4s ease infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gaming-card:hover::before {
+  opacity: 1;
+}
+
+.gaming-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow:
+    0 10px 30px rgba(0, 255, 136, 0.3),
+    0 0 50px rgba(0, 255, 136, 0.1);
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Scan line effect */
+.scan-lines {
+  position: relative;
+}
+
+.scan-lines::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 136, 0.03) 2px,
+    rgba(0, 255, 136, 0.03) 4px
+  );
+  pointer-events: none;
+}
+
+/* Terminal/console effect */
+.terminal-text {
+  font-family: 'Courier New', monospace;
+  color: #00ff88;
+  text-shadow: 0 0 10px #00ff88;
+}
+
+.terminal-cursor::after {
+  content: '_';
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}

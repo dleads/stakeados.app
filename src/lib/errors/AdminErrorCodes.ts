@@ -1,0 +1,89 @@
+/**
+ * Comprehensive error codes for admin operations
+ * Used for consistent error handling across the admin system
+ */
+export enum AdminErrorCodes {
+  // Article Management Errors
+  ARTICLE_NOT_FOUND = 'ARTICLE_NOT_FOUND',
+  ARTICLE_VALIDATION_ERROR = 'ARTICLE_VALIDATION_ERROR',
+  ARTICLE_PERMISSION_DENIED = 'ARTICLE_PERMISSION_DENIED',
+  ARTICLE_SCHEDULE_CONFLICT = 'ARTICLE_SCHEDULE_CONFLICT',
+  ARTICLE_REVIEW_ERROR = 'ARTICLE_REVIEW_ERROR',
+
+  // News Management Errors
+  NEWS_NOT_FOUND = 'NEWS_NOT_FOUND',
+  RSS_FETCH_FAILED = 'RSS_FETCH_FAILED',
+  AI_PROCESSING_FAILED = 'AI_PROCESSING_FAILED',
+  DUPLICATE_DETECTION_ERROR = 'DUPLICATE_DETECTION_ERROR',
+  NEWS_SOURCE_INVALID = 'NEWS_SOURCE_INVALID',
+
+  // Category and Tag Errors
+  CATEGORY_NOT_FOUND = 'CATEGORY_NOT_FOUND',
+  CATEGORY_HIERARCHY_ERROR = 'CATEGORY_HIERARCHY_ERROR',
+  TAG_MERGE_FAILED = 'TAG_MERGE_FAILED',
+  TAG_VALIDATION_ERROR = 'TAG_VALIDATION_ERROR',
+
+  // User and Permission Errors
+  INSUFFICIENT_PERMISSIONS = 'INSUFFICIENT_PERMISSIONS',
+  USER_NOT_FOUND = 'USER_NOT_FOUND',
+  ROLE_ASSIGNMENT_FAILED = 'ROLE_ASSIGNMENT_FAILED',
+  AUTHENTICATION_FAILED = 'AUTHENTICATION_FAILED',
+
+  // File and Upload Errors
+  IMAGE_UPLOAD_FAILED = 'IMAGE_UPLOAD_FAILED',
+  FILE_SIZE_EXCEEDED = 'FILE_SIZE_EXCEEDED',
+  INVALID_FILE_TYPE = 'INVALID_FILE_TYPE',
+  STORAGE_QUOTA_EXCEEDED = 'STORAGE_QUOTA_EXCEEDED',
+
+  // System and Configuration Errors
+  DATABASE_CONNECTION_ERROR = 'DATABASE_CONNECTION_ERROR',
+  EXTERNAL_SERVICE_ERROR = 'EXTERNAL_SERVICE_ERROR',
+  CONFIGURATION_ERROR = 'CONFIGURATION_ERROR',
+  BACKUP_FAILED = 'BACKUP_FAILED',
+
+  // Analytics and Reporting Errors
+  ANALYTICS_DATA_ERROR = 'ANALYTICS_DATA_ERROR',
+  REPORT_GENERATION_FAILED = 'REPORT_GENERATION_FAILED',
+  METRICS_COLLECTION_ERROR = 'METRICS_COLLECTION_ERROR',
+
+  // Bulk Operations Errors
+  BULK_OPERATION_FAILED = 'BULK_OPERATION_FAILED',
+  BULK_VALIDATION_ERROR = 'BULK_VALIDATION_ERROR',
+  BULK_TIMEOUT_ERROR = 'BULK_TIMEOUT_ERROR',
+
+  // Search and Filtering Errors
+  SEARCH_INDEX_ERROR = 'SEARCH_INDEX_ERROR',
+  FILTER_VALIDATION_ERROR = 'FILTER_VALIDATION_ERROR',
+
+  // Real-time and Collaboration Errors
+  REALTIME_CONNECTION_ERROR = 'REALTIME_CONNECTION_ERROR',
+  COLLABORATION_CONFLICT = 'COLLABORATION_CONFLICT',
+
+  // Generic Errors
+  VALIDATION_ERROR = 'VALIDATION_ERROR',
+  NETWORK_ERROR = 'NETWORK_ERROR',
+  TIMEOUT_ERROR = 'TIMEOUT_ERROR',
+  UNKNOWN_ERROR = 'UNKNOWN_ERROR',
+}
+
+export interface AdminError {
+  code: AdminErrorCodes;
+  message: string;
+  details?: Record<string, any>;
+  timestamp: Date;
+  userId?: string;
+  operation?: string;
+  context?: Record<string, any>;
+}
+
+export interface ErrorRecoveryAction {
+  label: string;
+  action: () => void | Promise<void>;
+  type: 'retry' | 'redirect' | 'refresh' | 'custom';
+}
+
+export interface AdminErrorWithRecovery extends AdminError {
+  recoveryActions?: ErrorRecoveryAction[];
+  userFriendlyMessage?: string;
+  severity: 'low' | 'medium' | 'high' | 'critical';
+}

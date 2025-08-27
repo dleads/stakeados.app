@@ -1,0 +1,1787 @@
+{
+  "common": {
+    "loading": "Loading",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "viewAll": "View All",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "signUp": "Sign Up",
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "profile": "Profile",
+    "settings": "Settings",
+    "help": "Help",
+    "contact": "Contact",
+    "about": "About",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "add": "Add",
+    "tryAgain": "Try Again",
+    "reset": "Reset"
+  },
+  "navigation": {
+    "home": "Home",
+    "articles": "Articles",
+    "news": "News",
+    "courses": "Courses",
+    "dashboard": "Dashboard",
+    "admin": "Admin"
+  },
+  "admin": {
+    "dashboard": "Admin Dashboard",
+    "subtitle": "Manage your Stakeados platform with advanced tools",
+    "metrics": {
+      "users": "Users",
+      "articles": "Articles",
+      "news": "News",
+      "pending": "Pending"
+    },
+    "settings": {
+      "title": "System Settings",
+      "description": "Configure global system settings and preferences",
+      "tabs": {
+        "aiProcessing": "AI Processing",
+        "notifications": "Notifications",
+        "users": "Users",
+        "seo": "SEO",
+        "storage": "Storage",
+        "backup": "Backup"
+      },
+      "aiProcessing": {
+        "title": "AI Processing Configuration",
+        "description": "Configure OpenAI and AI processing parameters",
+        "openai": {
+          "title": "OpenAI Settings",
+          "description": "Configure OpenAI API settings",
+          "model": "Model",
+          "temperature": "Temperature",
+          "maxTokens": "Max Tokens",
+          "timeout": "Timeout (seconds)"
+        },
+        "processing": {
+          "title": "Processing Settings",
+          "description": "Configure batch processing parameters",
+          "autoProcessing": "Enable automatic processing",
+          "batchSize": "Batch Size",
+          "retryAttempts": "Retry Attempts",
+          "duplicateThreshold": "Duplicate Threshold",
+          "schedule": "Processing Schedule",
+          "schedules": {
+            "every15min": "Every 15 minutes",
+            "hourly": "Every hour",
+            "every6hours": "Every 6 hours",
+            "daily": "Daily"
+          }
+        },
+        "translation": {
+          "title": "Translation Settings",
+          "description": "Configure automatic translation",
+          "enabled": "Enable translation",
+          "qualityThreshold": "Quality Threshold"
+        },
+        "summarization": {
+          "title": "Summarization Settings",
+          "description": "Configure automatic summarization",
+          "enabled": "Enable summarization",
+          "minLength": "Minimum Length",
+          "maxLength": "Maximum Length"
+        },
+        "actions": {
+          "test": "Test Configuration",
+          "save": "Save Configuration",
+          "retry": "Retry"
+        },
+        "success": {
+          "saved": "Configuration saved successfully",
+          "testPassed": "Configuration test passed (Response time: {responseTime})"
+        },
+        "errors": {
+          "loadFailed": "Failed to load configuration",
+          "saveFailed": "Failed to save configuration",
+          "testFailed": "Configuration test failed: {error}",
+          "noConfig": "No configuration found"
+        }
+      },
+      "notifications": {
+        "title": "Notification Settings",
+        "description": "Configure notification channels and rules",
+        "email": {
+          "title": "Email Configuration",
+          "description": "Configure SMTP settings for email notifications",
+          "enabled": "Enable email notifications",
+          "smtpHost": "SMTP Host",
+          "smtpPort": "SMTP Port",
+          "fromAddress": "From Address",
+          "fromName": "From Name",
+          "testConnection": "Test Email"
+        },
+        "slack": {
+          "title": "Slack Configuration",
+          "description": "Configure Slack webhook for notifications",
+          "enabled": "Enable Slack notifications",
+          "webhookUrl": "Webhook URL",
+          "channel": "Channel",
+          "testConnection": "Test Slack"
+        },
+        "inApp": {
+          "title": "In-App Notifications",
+          "description": "Configure in-app notification settings",
+          "enabled": "Enable in-app notifications",
+          "retentionDays": "Retention Days"
+        },
+        "rules": {
+          "title": "Notification Rules",
+          "description": "Configure when and how notifications are sent",
+          "activeRules": "Active Rules",
+          "addRule": "Add Rule",
+          "newRule": "New Rule",
+          "event": "Event",
+          "channels": "Channels",
+          "events": {
+            "articlePublished": "Article Published",
+            "articleSubmitted": "Article Submitted",
+            "newsProcessed": "News Processed",
+            "systemError": "System Error",
+            "backupCompleted": "Backup Completed"
+          },
+          "channelTypes": {
+            "inApp": "In-App",
+            "email": "Email",
+            "slack": "Slack"
+          }
+        },
+        "actions": {
+          "save": "Save Configuration"
+        },
+        "success": {
+          "saved": "Configuration saved successfully",
+          "emailTestSent": "Test email sent successfully",
+          "slackTestSent": "Test message sent to Slack successfully"
+        },
+        "errors": {
+          "loadFailed": "Failed to load configuration",
+          "saveFailed": "Failed to save configuration",
+          "emailTestFailed": "Email test failed: {error}",
+          "slackTestFailed": "Slack test failed: {error}",
+          "noConfig": "No configuration found"
+        }
+      },
+      "seo": {
+        "title": "SEO Configuration",
+        "description": "Configure SEO settings for better search visibility",
+        "global": {
+          "title": "Global SEO Settings",
+          "description": "Configure site-wide SEO settings",
+          "siteName": "Site Name",
+          "siteDescription": "Site Description",
+          "defaultTitle": "Default Title",
+          "titleTemplate": "Title Template",
+          "titleTemplateHelp": "Use %s as placeholder for page title",
+          "twitterHandle": "Twitter Handle",
+          "facebookAppId": "Facebook App ID"
+        },
+        "articles": {
+          "title": "Article SEO",
+          "description": "Configure SEO settings for articles",
+          "titleTemplate": "Title Template",
+          "descriptionTemplate": "Description Template",
+          "autoGenerateDescription": "Auto-generate descriptions",
+          "maxDescriptionLength": "Max Description Length",
+          "includeAuthor": "Include author in metadata",
+          "includePublishDate": "Include publish date"
+        },
+        "news": {
+          "title": "News SEO",
+          "description": "Configure SEO settings for news",
+          "titleTemplate": "Title Template",
+          "descriptionTemplate": "Description Template",
+          "autoGenerateDescription": "Auto-generate descriptions",
+          "maxDescriptionLength": "Max Description Length",
+          "includeSource": "Include source in metadata"
+        },
+        "sitemap": {
+          "title": "Sitemap Configuration",
+          "description": "Configure XML sitemap generation",
+          "enabled": "Enable sitemap",
+          "includeImages": "Include images",
+          "changeFrequency": "Change Frequency",
+          "priority": "Priority"
+        },
+        "robots": {
+          "title": "Robots.txt Configuration",
+          "description": "Configure robots.txt file",
+          "enabled": "Enable robots.txt",
+          "allowIndexing": "Allow indexing",
+          "crawlDelay": "Crawl Delay (seconds)",
+          "customRules": "Custom Rules",
+          "addRule": "Add Rule"
+        },
+        "analytics": {
+          "title": "Analytics Configuration",
+          "description": "Configure analytics tracking",
+          "enabled": "Enable analytics",
+          "googleAnalyticsId": "Google Analytics ID",
+          "googleTagManagerId": "Google Tag Manager ID",
+          "facebookPixelId": "Facebook Pixel ID"
+        },
+        "actions": {
+          "testStructuredData": "Test Structured Data",
+          "save": "Save Configuration"
+        },
+        "success": {
+          "saved": "Configuration saved successfully",
+          "structuredDataValid": "Structured data is valid"
+        },
+        "errors": {
+          "loadFailed": "Failed to load configuration",
+          "saveFailed": "Failed to save configuration",
+          "structuredDataInvalid": "Structured data validation failed: {error}",
+          "testFailed": "Test failed",
+          "noConfig": "No configuration found"
+        }
+      },
+      "storage": {
+        "title": "Storage Management",
+        "description": "Manage file storage and optimization settings",
+        "overview": {
+          "title": "Storage Overview",
+          "description": "Current storage usage and statistics",
+          "used": "Used",
+          "nearLimit": "Storage is near limit",
+          "images": "Images",
+          "documents": "Documents",
+          "videos": "Videos",
+          "other": "Other"
+        },
+        "limits": {
+          "title": "Storage Limits",
+          "description": "Configure storage limits and policies",
+          "maxFileSize": "Max File Size (MB)",
+          "maxFileSizeHelp": "Maximum size for individual files",
+          "maxTotalStorage": "Max Total Storage (GB)",
+          "maxTotalStorageHelp": "Maximum total storage allowed",
+          "imageOptimization": "Enable image optimization",
+          "autoCleanup": "Enable automatic cleanup",
+          "cleanupAfterDays": "Cleanup after (days)"
+        },
+        "cdn": {
+          "title": "CDN Configuration",
+          "description": "Configure Content Delivery Network",
+          "enabled": "Enable CDN",
+          "provider": "CDN Provider",
+          "baseUrl": "Base URL"
+        },
+        "compression": {
+          "title": "Image Compression",
+          "description": "Configure image compression settings",
+          "enabled": "Enable compression",
+          "quality": "Quality",
+          "format": "Format",
+          "generateThumbnails": "Generate thumbnails"
+        },
+        "files": {
+          "title": "File Management",
+          "description": "Manage uploaded files",
+          "optimizeImages": "Optimize Images",
+          "cleanup": "Cleanup Old Files",
+          "deleteSelected": "Delete Selected ({count})",
+          "noFiles": "No files found",
+          "optimized": "Optimized"
+        },
+        "actions": {
+          "save": "Save Configuration"
+        },
+        "success": {
+          "configSaved": "Configuration saved successfully",
+          "optimizationStarted": "Image optimization started for {count} files",
+          "cleanupCompleted": "Cleanup completed: {count} files deleted, {size} freed",
+          "filesDeleted": "{count} files deleted successfully"
+        },
+        "errors": {
+          "loadConfigFailed": "Failed to load configuration",
+          "saveConfigFailed": "Failed to save configuration",
+          "loadStatsFailed": "Failed to load storage statistics",
+          "optimizationFailed": "Image optimization failed",
+          "cleanupFailed": "Cleanup failed",
+          "deleteFailed": "Failed to delete files",
+          "noData": "No data available"
+        }
+      },
+      "backup": {
+        "title": "Backup & Maintenance",
+        "description": "Configure backups and run maintenance tasks",
+        "configuration": {
+          "title": "Backup Configuration",
+          "description": "Configure automatic backup settings",
+          "automaticEnabled": "Enable automatic backups",
+          "frequency": "Backup Frequency",
+          "retention": "Retention (days)",
+          "includeMedia": "Include media files",
+          "compression": "Enable compression",
+          "frequencies": {
+            "daily": "Daily at 2 AM",
+            "weekly": "Weekly on Sunday",
+            "monthly": "Monthly on 1st"
+          }
+        },
+        "storage": {
+          "title": "Backup Storage",
+          "description": "Configure where backups are stored",
+          "type": "Storage Type",
+          "path": "Storage Path",
+          "accessKey": "Access Key",
+          "secretKey": "Secret Key",
+          "types": {
+            "local": "Local Storage",
+            "s3": "Amazon S3",
+            "gcs": "Google Cloud Storage"
+          }
+        },
+        "manual": {
+          "title": "Manual Backup",
+          "description": "Create a backup immediately",
+          "createBackup": "Create Backup Now"
+        },
+        "history": {
+          "title": "Backup History",
+          "description": "View and manage previous backups",
+          "noBackups": "No backups found",
+          "types": {
+            "automatic": "Automatic",
+            "manual": "Manual"
+          }
+        },
+        "maintenance": {
+          "title": "Maintenance Tasks",
+          "description": "Run system maintenance tasks",
+          "lastRun": "Last run: {date}",
+          "nextRun": "Next run: {date}",
+          "neverRun": "Never run",
+          "complete": "complete"
+        },
+        "actions": {
+          "save": "Save Configuration"
+        },
+        "success": {
+          "configSaved": "Configuration saved successfully",
+          "backupCreated": "Backup created successfully",
+          "backupDeleted": "Backup deleted successfully",
+          "maintenanceStarted": "Maintenance task started"
+        },
+        "errors": {
+          "loadConfigFailed": "Failed to load configuration",
+          "saveConfigFailed": "Failed to save configuration",
+          "loadBackupsFailed": "Failed to load backups",
+          "backupCreationFailed": "Failed to create backup",
+          "downloadFailed": "Failed to download backup",
+          "deleteFailed": "Failed to delete backup",
+          "maintenanceFailed": "Failed to run maintenance task",
+          "noConfig": "No configuration found"
+        }
+      },
+      "users": {
+        "title": "User Management",
+        "description": "Manage users, roles, and permissions",
+        "users": {
+          "title": "Users",
+          "description": "Manage system users and their access",
+          "searchPlaceholder": "Search users...",
+          "allRoles": "All Roles",
+          "addUser": "Add User",
+          "active": "Active",
+          "inactive": "Inactive",
+          "permissions": "permissions"
+        },
+        "roles": {
+          "title": "Roles & Permissions",
+          "description": "Manage user roles and their permissions",
+          "addRole": "Add Role",
+          "system": "System",
+          "permissions": "Permissions"
+        },
+        "fields": {
+          "fullName": "Full Name",
+          "email": "Email",
+          "role": "Role",
+          "roleName": "Role Name",
+          "description": "Description",
+          "permissions": "Permissions"
+        },
+        "dialogs": {
+          "addUser": "Add New User",
+          "editUser": "Edit User",
+          "addUserDescription": "Create a new user account",
+          "editUserDescription": "Update user information and permissions",
+          "addRole": "Add New Role",
+          "editRole": "Edit Role",
+          "addRoleDescription": "Create a new role with specific permissions",
+          "editRoleDescription": "Update role permissions and settings"
+        },
+        "actions": {
+          "cancel": "Cancel",
+          "save": "Save"
+        },
+        "success": {
+          "userCreated": "User created successfully",
+          "userUpdated": "User updated successfully",
+          "userActivated": "User activated successfully",
+          "userDeactivated": "User deactivated successfully",
+          "roleCreated": "Role created successfully",
+          "roleUpdated": "Role updated successfully",
+          "roleDeleted": "Role deleted successfully"
+        },
+        "tabs": {
+          "users": "Users",
+          "roles": "Roles",
+          "activity": "Activity",
+          "audit": "Audit Trail"
+        },
+        "errors": {
+          "loadFailed": "Failed to load user data",
+          "saveFailed": "Failed to save user",
+          "statusUpdateFailed": "Failed to update user status",
+          "deleteFailed": "Failed to delete role"
+        },
+        "activity": {
+          "title": "User Activity Monitor",
+          "description": "Monitor user activities and system interactions",
+          "searchPlaceholder": "Search activities...",
+          "filters": {
+            "action": "Action Type",
+            "allActions": "All Actions",
+            "resourceType": "Resource Type",
+            "allResources": "All Resources"
+          },
+          "actions": {
+            "clearFilters": "Clear Filters",
+            "refresh": "Refresh"
+          },
+          "noActivities": "No activities found",
+          "showDetails": "Show Details",
+          "pagination": {
+            "page": "Page",
+            "of": "of",
+            "previous": "Previous",
+            "next": "Next"
+          }
+        },
+        "audit": {
+          "title": "User Audit Trail",
+          "titleAll": "System Audit Trail",
+          "description": "View role changes and user modifications",
+          "descriptionAll": "View all role changes and user modifications",
+          "noEntries": "No audit entries found",
+          "changedBy": "Changed by",
+          "actions": {
+            "refresh": "Refresh"
+          },
+          "pagination": {
+            "page": "Page",
+            "of": "of",
+            "previous": "Previous",
+            "next": "Next"
+          },
+          "errors": {
+            "loadFailed": "Failed to load audit trail"
+          }
+        }
+      }
+    },
+    "tags": {
+      "title": "Tag Management",
+      "description": "Description",
+      "createTag": "Create Tag",
+      "editTag": "Edit Tag",
+      "deleteTag": "Delete Tag",
+      "confirmDelete": "Are you sure you want to delete this tag?",
+      "cannotDeleteInUse": "Cannot delete tag that is currently in use",
+      "error": "Error",
+      "dismiss": "Dismiss",
+      "searchPlaceholder": "Search tags...",
+      "filters": "Filters",
+      "noTags": "No tags found",
+      "noTagsDescription": "Get started by creating your first tag",
+      "selectedCount": "{count} selected",
+      "selectAll": "Select all",
+      "totalTags": "{count} tags total",
+      "loading": "Loading...",
+      "loadMore": "Load More",
+      "name": "Name",
+      "slug": "Slug",
+      "usage": "Usage",
+      "created": "Created",
+      "actions": "Actions",
+      "form": {
+        "name": "Name",
+        "namePlaceholder": "Enter tag name",
+        "slug": "Slug",
+        "slugPlaceholder": "tag-slug",
+        "slugHelp": "URL-friendly version of the name",
+        "description": "Description",
+        "descriptionPlaceholder": "Optional description for this tag",
+        "color": "Color",
+        "cancel": "Cancel",
+        "create": "Create Tag",
+        "update": "Update Tag",
+        "saving": "Saving...",
+        "validation": {
+          "nameRequired": "Name is required",
+          "nameTooLong": "Name must be 50 characters or less",
+          "slugRequired": "Slug is required",
+          "slugTooLong": "Slug must be 50 characters or less",
+          "slugInvalid": "Slug can only contain lowercase letters, numbers, and hyphens",
+          "descriptionTooLong": "Description must be 500 characters or less"
+        }
+      },
+      "statistics": {
+        "title": "Tag Statistics",
+        "description": "Overview of tag usage and distribution across your content",
+        "totalTags": "Total Tags",
+        "totalTagsDescription": "Number of tags in the system",
+        "totalUsage": "Total Usage",
+        "totalUsageDescription": "Total times tags are used",
+        "unusedTags": "Unused Tags",
+        "unusedTagsDescription": "Tags not assigned to any content",
+        "averageUsage": "Average Usage",
+        "averageUsageDescription": "Average usage per tag",
+        "usageDistribution": "Usage Distribution",
+        "highUsage": "High Usage (10+ uses)",
+        "mediumUsage": "Medium Usage (5-9 uses)",
+        "lowUsage": "Low Usage (1-4 uses)",
+        "noUsage": "No Usage (0 uses)",
+        "tags": "tags",
+        "recommendations": {
+          "title": "Recommendations",
+          "unusedTags": "You have {count} unused tags that could be cleaned up.",
+          "reviewUnused": "Review unused tags for potential deletion",
+          "mergesSimilar": "Look for similar tags that could be merged",
+          "deleteUnused": "Delete tags that are no longer needed"
+        },
+        "insights": {
+          "tagHealth": "Tag Health",
+          "activelyUsed": "Actively Used",
+          "needsAttention": "Needs Attention",
+          "healthScore": "Health Score",
+          "contentCoverage": "Content Coverage",
+          "totalContent": "Total Content",
+          "avgPerTag": "Avg per Tag",
+          "coverage": "Coverage"
+        }
+      },
+      "duplicates": {
+        "title": "Duplicate Tag Management",
+        "description": "Found {count} groups of potentially duplicate tags",
+        "scanning": "Scanning for duplicates...",
+        "noDuplicates": "No Duplicates Found",
+        "noDuplicatesDescription": "All tags appear to be unique",
+        "mergeSelected": "Merge Selected ({count})",
+        "warning": {
+          "title": "Important Notice",
+          "description": "Merging tags will permanently combine their usage. This action cannot be undone."
+        },
+        "group": "Group",
+        "similarity": "Similarity",
+        "totalUsage": "Total Usage",
+        "merge": "Merge",
+        "merging": "Merging...",
+        "sourceTags": "Tags to Merge",
+        "targetTag": "Keep This Tag",
+        "suggestedBecause": "Suggested because it has the highest usage",
+        "mergePreview": "Merge Preview",
+        "mergePreviewDescription": "This will merge {sourceCount} tags into '{targetName}' with a total usage of {totalUsage}"
+      },
+      "bulk": {
+        "selected": "{count} tags selected",
+        "update": "Update",
+        "delete": "Delete",
+        "clear": "Clear",
+        "confirmDelete": "Are you sure you want to delete {count} tags?",
+        "updateTags": "Update {count} Tags",
+        "updateDescription": "Changes will be applied to all selected tags. Leave fields empty to keep current values.",
+        "form": {
+          "description": "Description",
+          "descriptionPlaceholder": "New description for selected tags",
+          "descriptionHelp": "Leave empty to keep existing descriptions",
+          "color": "Color",
+          "colorHelp": "Leave as default to keep existing colors",
+          "cancel": "Cancel",
+          "update": "Update Tags",
+          "updating": "Updating..."
+        }
+      }
+    },
+    "articles": {
+      "dashboard": {
+        "title": "Article Management",
+        "subtitle": "Manage and monitor all platform articles"
+      },
+      "stats": {
+        "overview": "Overview",
+        "total": "Total",
+        "published": "Published",
+        "draft": "Drafts",
+        "review": "Under Review",
+        "archived": "Archived",
+        "articles": "articles",
+        "live": "live",
+        "inProgress": "in progress",
+        "pending": "pending",
+        "inactive": "inactive",
+        "totalViews": "Total Views",
+        "allTime": "all time",
+        "avgReadingTime": "Average Reading Time",
+        "minutes": "minutes",
+        "publishedThisWeek": "Published This Week"
+      },
+      "search": {
+        "placeholder": "Search articles by title or content..."
+      },
+      "filters": {
+        "toggle": "Filters",
+        "title": "Search Filters",
+        "reset": "Clear",
+        "loading": "Loading...",
+        "status": {
+          "label": "Status",
+          "all": "All statuses",
+          "draft": "Draft",
+          "review": "Under review",
+          "published": "Published",
+          "archived": "Archived"
+        },
+        "author": {
+          "label": "Author",
+          "all": "All authors"
+        },
+        "category": {
+          "label": "Category",
+          "all": "All categories"
+        },
+        "sortBy": {
+          "label": "Sort by",
+          "created": "Creation date",
+          "updated": "Last updated",
+          "published": "Publication date",
+          "title": "Title"
+        },
+        "sortOrder": {
+          "desc": "Descending",
+          "asc": "Ascending"
+        },
+        "dateRange": {
+          "from": "From",
+          "to": "To"
+        }
+      },
+      "views": {
+        "list": "List",
+        "calendar": "Calendar"
+      },
+      "actions": {
+        "refresh": "Refresh",
+        "create": "Create Article",
+        "retry": "Retry",
+        "view": "View",
+        "edit": "Edit",
+        "delete": "Delete"
+      },
+      "error": {
+        "title": "Error loading articles"
+      },
+      "list": {
+        "noArticles": "No articles found",
+        "noArticlesDescription": "No articles match the current filters.",
+        "confirmDelete": "Are you sure you want to delete this article?",
+        "selectedCount": "{count} articles selected",
+        "bulkActions": {
+          "publish": "Publish",
+          "archive": "Archive"
+        },
+        "columns": {
+          "title": "Title",
+          "author": "Author",
+          "category": "Category",
+          "status": "Status",
+          "created": "Created",
+          "metrics": "Metrics",
+          "actions": "Actions"
+        },
+        "actions": {
+          "view": "View",
+          "edit": "Edit",
+          "delete": "Delete"
+        },
+        "readingTime": "min read",
+        "noCategory": "No category",
+        "published": "Published",
+        "pagination": {
+          "previous": "Previous",
+          "next": "Next",
+          "showing": "Showing",
+          "to": "to",
+          "of": "of",
+          "results": "results"
+        }
+      },
+      "status": {
+        "draft": "Draft",
+        "review": "Under review",
+        "published": "Published",
+        "archived": "Archived"
+      },
+      "calendar": {
+        "viewModes": {
+          "failed": "Failed"
+        },
+        "more": "more",
+        "selectDate": "Select date",
+        "by": "by",
+        "noArticlesOnDate": "No articles on this date",
+        "noArticlesOnDateDescription": "No articles are scheduled for this date.",
+        "selectDateToView": "Select a date",
+        "selectDateToViewDescription": "Click on a calendar date to view articles.",
+        "selectDateToViewScheduled": "Click on a calendar date to view scheduled articles.",
+        "noScheduledArticles": "No scheduled articles",
+        "noScheduledArticlesDescription": "No articles are scheduled for this date.",
+        "overdue": "Overdue",
+        "scheduleStatus": {
+          "scheduled": "Scheduled",
+          "published": "Published",
+          "cancelled": "Cancelled",
+          "failed": "Failed"
+        },
+        "recurringPatterns": {
+          "daily": "Daily",
+          "weekly": "Weekly",
+          "biweekly": "Bi-weekly",
+          "monthly": "Monthly",
+          "custom": "Custom"
+        },
+        "actions": {
+          "edit": "Edit"
+        },
+        "legend": {
+          "recurring": "Recurring",
+          "overdue": "Overdue",
+          "title": "Legend"
+        },
+        "status": {
+          "draft": "Draft",
+          "review": "Under review",
+          "published": "Published",
+          "archived": "Archived"
+        }
+      }
+    },
+    "navigation": {
+      "dashboard": "Dashboard",
+      "dashboardDescription": "System overview and metrics",
+      "articles": "Articles",
+      "articlesDescription": "Manage articles and content",
+      "news": "News",
+      "newsDescription": "Manage news and RSS sources",
+      "categories": "Categories",
+      "categoriesDescription": "Organize content by categories",
+      "tags": "Tags",
+      "tagsDescription": "Manage system tags",
+      "search": "Search",
+      "searchDescription": "Advanced content search",
+      "analytics": "Analytics",
+      "analyticsDescription": "Content metrics and reports",
+      "users": "Users",
+      "usersDescription": "Manage users and permissions",
+      "settings": "Settings",
+      "settingsDescription": "System configuration"
+    },
+    "layout": {
+      "adminPanel": "Admin Panel",
+      "expandSidebar": "Expand sidebar",
+      "collapseSidebar": "Collapse sidebar",
+      "openMenu": "Open menu",
+      "backToSite": "Back to Site",
+      "quickSearch": "Quick search",
+      "quickAdd": "Quick add",
+      "customization": {
+        "title": "Layout Customization",
+        "theme": "Theme",
+        "darkTheme": "Dark Theme",
+        "lightTheme": "Light Theme",
+        "darkThemeDesc": "Dark theme for gaming",
+        "lightThemeDesc": "Light theme for work",
+        "clickToChange": "Click to change",
+        "density": "Density",
+        "compact": "Compact",
+        "comfortable": "Comfortable",
+        "spacious": "Spacious",
+        "viewMode": "View Mode",
+        "grid": "Grid View",
+        "list": "List View",
+        "reset": "Reset to Default"
+      }
+    },
+    "notifications": {
+      "title": "Notifications",
+      "unreadCount": "{count} unread",
+      "allCaughtUp": "All caught up",
+      "markAllRead": "Mark all as read",
+      "markAsRead": "Mark as read",
+      "removeNotification": "Remove notification",
+      "viewAll": "View all notifications",
+      "empty": "No notifications",
+      "pendingArticles": {
+        "title": "Pending Articles",
+        "message": "There are {count} articles waiting for review"
+      },
+      "rssSourceDown": {
+        "title": "RSS Source Not Responding",
+        "message": "The source \"{source}\" hasn't responded in the last {hours} hours"
+      },
+      "backupCompleted": {
+        "title": "Backup Completed",
+        "message": "Automatic backup completed successfully"
+      },
+      "actions": {
+        "review": "Review",
+        "verify": "Verify"
+      },
+      "time": {
+        "now": "Now",
+        "minutes": "{count}m",
+        "hours": "{count}h",
+        "days": "{count}d"
+      }
+    },
+    "userMenu": {
+      "role": {
+        "administrator": "Administrator",
+        "adminLevel": "Admin Level"
+      },
+      "points": "{count} points",
+      "quickAccess": {
+        "title": "Quick Access",
+        "dashboard": "Dashboard",
+        "dashboardDesc": "System overview",
+        "content": "Content Management",
+        "contentDesc": "Articles and news",
+        "analytics": "Analytics",
+        "analyticsDesc": "Metrics and reports",
+        "users": "Users",
+        "usersDesc": "User management",
+        "system": "System",
+        "systemDesc": "Advanced configuration"
+      },
+      "account": {
+        "title": "Account",
+        "profile": "My Profile",
+        "settings": "Settings",
+        "genesis": "Genesis Community",
+        "signOut": "Sign Out"
+      },
+      "footer": {
+        "version": "Stakeados Admin v1.0",
+        "systemActive": "System Active"
+      }
+    },
+    "news": {
+      "title": "News Management",
+      "subtitle": "Manage news sources, AI processing, and content review",
+      "loading": "Loading news dashboard...",
+      "refresh": "Refresh",
+      "settings": "Settings",
+      "stats": {
+        "totalNews": "Total News",
+        "processed": "processed",
+        "pending": "pending",
+        "activeSources": "Active Sources",
+        "healthy": "healthy",
+        "trending": "Trending News",
+        "highEngagement": "High engagement articles",
+        "aiProcessing": "AI Processing",
+        "activeJobs": "Active jobs"
+      },
+      "tabs": {
+        "overview": "Overview",
+        "sources": "Sources",
+        "processing": "Processing",
+        "queue": "Review Queue"
+      },
+      "overview": {
+        "languageDistribution": "Language Distribution",
+        "recentActivity": "Recent Activity"
+      },
+      "sources": {
+        "title": "RSS Sources",
+        "subtitle": "Manage RSS feeds, API sources, and web scrapers",
+        "addSource": "Add Source",
+        "articlesToday": "Articles Today",
+        "priority": "Priority",
+        "pause": "Pause",
+        "activate": "Activate",
+        "loading": "Loading sources...",
+        "searchPlaceholder": "Search sources by name or URL...",
+        "noSources": "No sources configured",
+        "noSourcesFound": "No sources found",
+        "addFirstSource": "Add your first news source to get started",
+        "tryDifferentFilters": "Try adjusting your search or filters",
+        "never": "Never",
+        "filters": {
+          "allTypes": "All Types",
+          "allStatus": "All Status",
+          "active": "Active",
+          "inactive": "Inactive",
+          "healthy": "Healthy",
+          "error": "Error"
+        },
+        "sort": {
+          "priorityDesc": "Priority (High to Low)",
+          "nameAsc": "Name (A to Z)",
+          "qualityDesc": "Quality (High to Low)",
+          "lastFetchDesc": "Last Fetch (Recent First)"
+        },
+        "status": {
+          "active": "Active",
+          "inactive": "Inactive",
+          "healthy": "Healthy",
+          "warning": "Warning",
+          "error": "Error",
+          "timeout": "Timeout",
+          "unknown": "Unknown"
+        },
+        "health": {
+          "healthy": "Healthy",
+          "warning": "Warning",
+          "error": "Error",
+          "timeout": "Timeout",
+          "unknown": "Unknown"
+        },
+        "stats": {
+          "priority": "Priority",
+          "interval": "Interval",
+          "failures": "Failures",
+          "lastFetch": "Last Fetch"
+        },
+        "actions": {
+          "edit": "Edit",
+          "delete": "Delete",
+          "test": "Test",
+          "testing": "Testing...",
+          "activate": "Activate",
+          "deactivate": "Deactivate",
+          "fetchNow": "Fetch Now"
+        },
+        "test": {
+          "success": "Test successful",
+          "failed": "Test failed"
+        },
+        "modal": {
+          "createTitle": "Add News Source",
+          "editTitle": "Edit News Source",
+          "basicInfo": "Basic Information",
+          "apiConfig": "API Configuration",
+          "customHeaders": "Custom Headers",
+          "categories": "Categories",
+          "configuration": "Configuration",
+          "name": "Name",
+          "namePlaceholder": "Enter source name",
+          "description": "Description",
+          "descriptionPlaceholder": "Optional description for this source",
+          "sourceType": "Source Type",
+          "url": "URL",
+          "rssUrl": "RSS Feed URL",
+          "apiEndpoint": "API Endpoint",
+          "apiKey": "API Key",
+          "apiKeyPlaceholder": "Optional API key for authentication",
+          "addHeader": "Add Header",
+          "headerKey": "Header Name",
+          "headerValue": "Header Value",
+          "language": "Language",
+          "priority": "Priority",
+          "qualityScore": "Quality Score",
+          "fetchInterval": "Fetch Interval",
+          "maxFailures": "Max Failures",
+          "activeSource": "Active Source",
+          "seconds": "seconds",
+          "minutes": "minutes",
+          "minute": "minute",
+          "hour": "hour",
+          "hours": "hours",
+          "cancel": "Cancel",
+          "create": "Create Source",
+          "update": "Update Source",
+          "validation": {
+            "nameRequired": "Name is required",
+            "urlRequired": "URL is required",
+            "urlInvalid": "Please enter a valid URL",
+            "apiEndpointRequired": "API endpoint is required for API sources",
+            "intervalTooShort": "Fetch interval must be at least 5 minutes (300 seconds)",
+            "priorityRange": "Priority must be between 1 and 10"
+          }
+        },
+        "healthMonitor": {
+          "title": "Source Health Monitor",
+          "healthy": "Healthy",
+          "warning": "Warning",
+          "error": "Error",
+          "timeout": "Timeout",
+          "status": "Status",
+          "articlesToday": "Articles Today",
+          "priority": "Priority",
+          "failures": "Failures",
+          "lastFetch": "Last Fetch",
+          "test": "Test",
+          "noSources": "No sources configured"
+        }
+      },
+      "processing": {
+        "title": "AI Processing Jobs",
+        "startBatch": "Start Batch Processing",
+        "jobId": "Job ID",
+        "started": "Started",
+        "remaining": "Remaining",
+        "failed": "failed",
+        "noJobs": "No processing jobs running",
+        "activeJobs": "Active Jobs",
+        "recentJobs": "Recent Jobs",
+        "status": {
+          "pending": "Pending",
+          "processing": "Processing",
+          "completed": "Completed",
+          "failed": "Failed",
+          "cancelled": "Cancelled"
+        },
+        "stats": {
+          "active": "Active",
+          "completed": "Completed",
+          "failed": "Failed",
+          "totalProcessed": "Total Processed"
+        },
+        "details": {
+          "processed": "Processed",
+          "failed": "Failed",
+          "rate": "Rate",
+          "remaining": "Remaining",
+          "options": "Processing Options"
+        },
+        "options": {
+          "generate_summary": "Generate Summary",
+          "extract_keywords": "Extract Keywords",
+          "calculate_relevance": "Calculate Relevance",
+          "detect_duplicates": "Detect Duplicates",
+          "translate": "Translate",
+          "categorize": "Auto Categorize"
+        },
+        "actions": {
+          "cancel": "Cancel",
+          "retry": "Retry",
+          "details": "Details"
+        },
+        "batchDialog": {
+          "title": "Start Batch Processing",
+          "description": "Select the processing options for the batch job:",
+          "targetLanguage": "Target Language",
+          "cancel": "Cancel",
+          "start": "Start Processing"
+        },
+        "interface": {
+          "title": "AI News Processing Interface",
+          "subtitle": "Monitor AI operations, manage duplicates, and configure processing parameters",
+          "tabs": {
+            "monitor": "Processing Monitor",
+            "duplicates": "Duplicate Detection",
+            "config": "AI Configuration",
+            "queue": "Processing Queue"
+          },
+          "duplicates": {
+            "title": "Duplicate Detection",
+            "filters": {
+              "title": "Detection Filters",
+              "similarityThreshold": "Similarity Threshold",
+              "dateRange": "Date Range (Days)",
+              "riskLevel": "Risk Level",
+              "includeProcessed": "Include Processed",
+              "options": {
+                "allLevels": "All Levels",
+                "highRisk": "High Risk",
+                "mediumRisk": "Medium Risk",
+                "lowRisk": "Low Risk",
+                "last7Days": "Last 7 days",
+                "last30Days": "Last 30 days",
+                "last90Days": "Last 90 days",
+                "lastYear": "Last year"
+              }
+            },
+            "groups": {
+              "title": "Detected Duplicates",
+              "selected": "selected",
+              "clearSelection": "Clear Selection",
+              "duplicateGroup": "Duplicate Group",
+              "items": "items",
+              "avgSimilarity": "Avg Similarity",
+              "confidence": "Confidence",
+              "primary": "PRIMARY (KEEP)",
+              "duplicates": "DUPLICATES (DELETE)",
+              "similar": "similar",
+              "resolve": "Resolve",
+              "riskLevels": {
+                "low": "LOW RISK",
+                "medium": "MEDIUM RISK",
+                "high": "HIGH RISK"
+              },
+              "actions": {
+                "autoDeleteDuplicates": "AUTO DELETE DUPLICATES",
+                "keepPrimaryDeleteOthers": "KEEP PRIMARY DELETE OTHERS",
+                "manualReviewRequired": "MANUAL REVIEW REQUIRED"
+              },
+              "reasons": {
+                "identicalSourceUrl": "identical source url",
+                "similarSourceUrl": "similar source url",
+                "verySimilarTitle": "very similar title",
+                "similarTitle": "similar title",
+                "publishedWithin2Hours": "published within 2 hours",
+                "publishedSameDay": "published same day",
+                "similarContentLength": "similar content length"
+              }
+            },
+            "empty": {
+              "detecting": "Detecting duplicates...",
+              "noDuplicates": "No duplicates found with current filters"
+            }
+          },
+          "config": {
+            "processingOptions": {
+              "title": "Processing Options",
+              "batchSize": "Batch Size",
+              "similarityThreshold": "Similarity Threshold"
+            },
+            "duplicateDetection": {
+              "title": "Duplicate Detection Configuration",
+              "titleWeight": "Title Weight",
+              "contentWeight": "Content Weight",
+              "detectionRange": "Detection Range (Days)",
+              "options": {
+                "7days": "7 days",
+                "30days": "30 days",
+                "90days": "90 days",
+                "1year": "1 year"
+              }
+            },
+            "rateLimiting": {
+              "title": "Rate Limiting & Performance",
+              "requestsPerMinute": "Requests per Minute",
+              "concurrentJobs": "Concurrent Jobs",
+              "retryAttempts": "Retry Attempts"
+            },
+            "saveConfiguration": "Save Configuration"
+          },
+          "queue": {
+            "overview": {
+              "pending": "Pending",
+              "processing": "Processing",
+              "completed": "Completed",
+              "failed": "Failed",
+              "totalItems": "Total Items"
+            },
+            "management": {
+              "title": "Processing Queue Management",
+              "status": "Queue Status",
+              "processingInProgress": "Processing in progress",
+              "queueIdle": "Queue is idle",
+              "estimatedCompletion": "Estimated Completion",
+              "actions": {
+                "pauseQueue": "Pause Queue",
+                "resumeQueue": "Resume Queue",
+                "processAllPending": "Process All Pending",
+                "retryFailedItems": "Retry Failed Items",
+                "clearFailedQueue": "Clear Failed Queue"
+              },
+              "statistics": {
+                "title": "Queue Statistics",
+                "successRate": "Success Rate",
+                "failureRate": "Failure Rate",
+                "queueUtilization": "Queue Utilization"
+              }
+            }
+          }
+        }
+      },
+      "queue": {
+        "title": "News Review Queue",
+        "search": "Search news...",
+        "filter": "Filter",
+        "empty": "No news items in queue"
+      },
+      "categorization": {
+        "categories": {
+          "title": "Categories",
+          "all": "All Categories"
+        },
+        "filters": {
+          "search": "Search news...",
+          "allCategories": "All Categories",
+          "allStatus": "All Status",
+          "processed": "Processed",
+          "unprocessed": "Unprocessed"
+        },
+        "aiSuggestions": {
+          "categories": "AI Suggested Categories:",
+          "tags": "AI Suggested Tags:"
+        },
+        "currentCategory": "Current Category:",
+        "selectCategory": "Select Category",
+        "tags": {
+          "title": "Tags",
+          "addPlaceholder": "Add tag..."
+        },
+        "actions": {
+          "preview": "Preview",
+          "approve": "Approve",
+          "reject": "Reject"
+        },
+        "noNews": "No news items found"
+      }
+    },
+    "sections": {
+      "articles": {
+        "title": "Articles",
+        "description": "Manage and review community articles",
+        "stats": "Review pending submissions"
+      },
+      "categories": {
+        "title": "Categories",
+        "description": "Organize content with categories",
+        "stats": "Content organization"
+      },
+      "tags": {
+        "title": "Tags",
+        "description": "Manage tags and keywords",
+        "stats": "Tagging system"
+      },
+      "analytics": {
+        "title": "Analytics",
+        "subtitle": "Comprehensive content performance and insights",
+        "description": "Platform performance and insights",
+        "stats": "Data-driven insights",
+        "error": {
+          "loadFailed": "Failed to load analytics data"
+        },
+        "actions": {
+          "retry": "Retry",
+          "export": "Export",
+          "refresh": "Refresh"
+        },
+        "periods": {
+          "week": "Last 7 days",
+          "month": "Last 30 days",
+          "quarter": "Last 90 days",
+          "year": "Last 365 days"
+        },
+        "granularity": {
+          "hourly": "Hourly",
+          "daily": "Daily",
+          "weekly": "Weekly",
+          "monthly": "Monthly"
+        },
+        "metrics": {
+          "totalArticles": "Total Articles",
+          "totalNews": "Total News",
+          "totalViews": "Total Views",
+          "totalLikes": "Total Likes",
+          "views": "Views",
+          "likes": "Likes",
+          "shares": "Shares",
+          "readingTime": "Reading Time",
+          "engagementRate": "Engagement Rate",
+          "bounceRate": "Bounce Rate",
+          "conversionRate": "Conversion Rate",
+          "avgReadingTime": "Avg Reading Time",
+          "engagement": "Engagement",
+          "readTime": "Read Time",
+          "conversion": "Conversion",
+          "dropoff": "Dropoff",
+          "users": "Users"
+        },
+        "tabs": {
+          "overview": "Overview",
+          "content": "Content",
+          "trends": "Trends",
+          "engagement": "Engagement",
+          "performance": "Performance",
+          "demographics": "Demographics",
+          "related": "Related",
+          "contentPerformance": "Content Performance",
+          "userBehavior": "User Behavior",
+          "engagementFunnel": "Engagement Funnel",
+          "cohortAnalysis": "Cohort Analysis",
+          "contentTrends": "Content Trends",
+          "categoryTrends": "Category Trends",
+          "topicTrends": "Topic Trends",
+          "seasonalPatterns": "Seasonal Patterns",
+          "contentGaps": "Content Gaps"
+        },
+        "charts": {
+          "contentDistribution": "Content Distribution",
+          "contentComparison": "Articles vs News",
+          "categoryDistribution": "Category Distribution",
+          "contentTrends": "Content Trends",
+          "engagementPatterns": "Engagement Patterns",
+          "weeklyDistribution": "Weekly Distribution",
+          "performanceOverTime": "Performance Over Time",
+          "engagementMetrics": "Engagement Metrics",
+          "readingTimeDistribution": "Reading Time Distribution",
+          "topCountries": "Top Countries",
+          "deviceTypes": "Device Types",
+          "referralSources": "Referral Sources",
+          "articleCreationTrend": "Article Creation Trend",
+          "newsProcessingTrend": "News Processing Trend",
+          "viewsTrend": "Views Trend",
+          "engagementRateTrend": "Engagement Rate Trend",
+          "likesTrend": "Likes Trend",
+          "sessionDurationTrend": "Session Duration Trend",
+          "hourlyPatterns": "Hourly Patterns",
+          "weeklyPatterns": "Weekly Patterns",
+          "deviceBreakdown": "Device Breakdown",
+          "timeOfDayPatterns": "Time of Day Patterns",
+          "dayOfWeekPatterns": "Day of Week Patterns",
+          "geographicDistribution": "Geographic Distribution",
+          "engagementFunnel": "Engagement Funnel",
+          "cohortAnalysis": "Cohort Analysis"
+        },
+        "sections": {
+          "recentActivity": "Recent Activity",
+          "topPerforming": "Top Performing Content",
+          "trendingTopics": "Trending Topics",
+          "relatedArticles": "Related Articles",
+          "categoryPerformance": "Category Performance",
+          "topPerformingContent": "Top Performing Content",
+          "conversionPaths": "Conversion Paths",
+          "contentGaps": "Content Gaps"
+        },
+        "content": {
+          "published": "Published",
+          "draft": "Draft",
+          "review": "Under Review",
+          "articles": "Articles",
+          "news": "News"
+        },
+        "contentType": {
+          "all": "All Content",
+          "articles": "Articles",
+          "news": "News"
+        },
+        "activity": {
+          "unknownArticle": "Unknown Article"
+        },
+        "days": {
+          "0": "Sunday",
+          "1": "Monday",
+          "2": "Tuesday",
+          "3": "Wednesday",
+          "4": "Thursday",
+          "5": "Friday",
+          "6": "Saturday"
+        },
+        "articlePerformance": {
+          "title": "Article Performance"
+        },
+        "article": {
+          "author": "Author",
+          "published": "Published",
+          "notPublished": "Not Published",
+          "readingTime": "Reading Time",
+          "minutes": "min",
+          "category": "Category",
+          "noCategory": "No Category",
+          "similarity": "Similarity"
+        },
+        "trendAnalysis": {
+          "title": "Content Trend Analysis",
+          "subtitle": "Analyze content trends and patterns",
+          "predictiveInsights": "Predictive Insights"
+        },
+        "predictions": {
+          "nextWeekArticles": "Next Week Articles",
+          "nextWeekNews": "Next Week News",
+          "nextWeekViews": "Next Week Views",
+          "confidence": "confidence",
+          "potentialViews": "potential views"
+        },
+        "topics": {
+          "mentions": "mentions"
+        },
+        "engagement": {
+          "title": "Engagement Analytics",
+          "subtitle": "Analyze user engagement and behavior",
+          "metrics": {
+            "totalViews": "Total Views",
+            "totalLikes": "Total Likes",
+            "engagementRate": "Engagement Rate",
+            "avgSessionDuration": "Avg Session Duration"
+          },
+          "cohort": {
+            "period": "Cohort Period",
+            "week0": "Week 0",
+            "week1": "Week 1",
+            "week2": "Week 2",
+            "week3": "Week 3",
+            "week4": "Week 4"
+          }
+        },
+        "reportBuilder": {
+          "title": "Custom Report Builder",
+          "subtitle": "Create custom analytics reports",
+          "configuration": "Configuration",
+          "dataSource": "Data Source",
+          "dateRange": {
+            "relative": "Relative",
+            "absolute": "Absolute"
+          },
+          "metrics": "Metrics",
+          "groupBy": {
+            "createdDate": "Created Date",
+            "publishedDate": "Published Date",
+            "category": "Category",
+            "author": "Author",
+            "language": "Language",
+            "status": "Status"
+          },
+          "chartType": "Chart Type",
+          "savedReports": "Saved Reports",
+          "results": "Results",
+          "actions": {
+            "generate": "Generate Report",
+            "generating": "Generating...",
+            "save": "Save Report"
+          },
+          "dataSources": {
+            "articles": "Articles",
+            "news": "News",
+            "categories": "Categories",
+            "authors": "Authors",
+            "mixed": "Mixed Content"
+          },
+          "summary": {
+            "totalRecords": "Total Records",
+            "dateRange": "Date Range",
+            "generatedAt": "Generated At"
+          },
+          "messages": {
+            "noResults": "Generate a report to see results here",
+            "generating": "Generating report...",
+            "reportGenerated": "Report generated successfully",
+            "generationFailed": "Failed to generate report",
+            "reportSaved": "Report saved successfully",
+            "saveFailed": "Failed to save report",
+            "reportLoaded": "Report loaded successfully",
+            "reportDeleted": "Report deleted successfully",
+            "deleteFailed": "Failed to delete report",
+            "exportCompleted": "Export completed successfully",
+            "exportFailed": "Export failed"
+          },
+          "saveDialog": {
+            "title": "Save Report",
+            "name": "Report Name",
+            "namePlaceholder": "Enter report name",
+            "description": "Description",
+            "descriptionPlaceholder": "Enter report description (optional)",
+            "save": "Save Report"
+          }
+        },
+        "chartTypes": {
+          "table": "Table",
+          "line": "Line Chart",
+          "bar": "Bar Chart",
+          "pie": "Pie Chart",
+          "area": "Area Chart",
+          "doughnut": "Doughnut Chart"
+        },
+        "export": {
+          "title": "Export Analytics Data",
+          "subtitle": "Choose the data you want to export and configure the export settings",
+          "fields": {
+            "exportType": "Export Type",
+            "format": "Format",
+            "dateRange": "Date Range",
+            "options": "Options"
+          },
+          "types": {
+            "articles": "Articles",
+            "news": "News",
+            "authors": "Authors",
+            "categories": "Categories",
+            "analytics": "Analytics Summary"
+          },
+          "descriptions": {
+            "articles": "Export article data with metadata and performance metrics",
+            "news": "Export news data with AI processing information",
+            "authors": "Export author statistics and productivity metrics",
+            "categories": "Export category data with content counts",
+            "analytics": "Export summary analytics and trend data"
+          },
+          "ranges": {
+            "week": "Last 7 days",
+            "month": "Last 30 days",
+            "quarter": "Last 90 days",
+            "year": "Last 365 days",
+            "all": "All time"
+          },
+          "options": {
+            "includeMetrics": "Include performance metrics"
+          },
+          "preview": {
+            "title": "Export Preview",
+            "type": "Type",
+            "format": "Format",
+            "period": "Period",
+            "metrics": "Metrics",
+            "included": "Included",
+            "excluded": "Excluded",
+            "lastDays": "Last {days} days"
+          },
+          "actions": {
+            "cancel": "Cancel",
+            "export": "Export",
+            "exporting": "Exporting..."
+          }
+        }
+      },
+      "ai": {
+        "title": "AI Processing",
+        "description": "Automated processing and analysis",
+        "stats": "GPT-4 automation"
+      },
+      "courses": {
+        "title": "Courses",
+        "description": "Educational content management",
+        "stats": "Learning platform"
+      },
+      "notifications": {
+        "title": "Notifications",
+        "description": "User notification system",
+        "stats": "Push and email alerts"
+      },
+      "email": {
+        "title": "Email Management",
+        "description": "Newsletter and email campaigns",
+        "stats": "Communication hub"
+      },
+      "discord": {
+        "title": "Discord Integration",
+        "description": "Community management on Discord",
+        "stats": "Community engagement"
+      },
+      "proposals": {
+        "title": "Proposals",
+        "description": "Community governance proposals",
+        "stats": "DAO governance"
+      },
+      "sources": {
+        "title": "News Sources",
+        "description": "Source and RSS management",
+        "stats": "Source configuration"
+      }
+    }
+  },
+  "homepage": {
+    "hero": {
+      "title": "Stakeados",
+      "subtitle": "Decentralized Learning Platform",
+      "description": "Discover, Learn, and Contribute to the Future of Education",
+      "primaryCta": "Explore Articles",
+      "secondaryCta": "Browse Courses"
+    },
+    "seo": {
+      "title": "Stakeados - Decentralized Learning Platform",
+      "description": "Discover articles, news, and courses on decentralized learning. Join our community of educators and learners building the future of Web3 education.",
+      "keywords": "blockchain education, decentralized learning, crypto courses, web3 articles, stakeados, NFT certificates"
+    },
+    "sections": {
+      "featuredNews": {
+        "title": "Latest News",
+        "subtitle": "Stay updated with the latest developments in decentralized learning"
+      },
+      "featuredArticles": {
+        "title": "Featured Articles",
+        "subtitle": "Discover educational content from our community"
+      },
+      "quickNavigation": {
+        "title": "Explore Platform",
+        "subtitle": "Discover everything our decentralized learning platform has to offer",
+        "cards": {
+          "articles": {
+            "title": "Articles",
+            "description": "Read community-generated content",
+            "statsLabel": "articles"
+          },
+          "news": {
+            "title": "News",
+            "description": "Stay updated with latest developments",
+            "statsLabel": "news items"
+          },
+          "courses": {
+            "title": "Courses",
+            "description": "Learn through structured content",
+            "statsLabel": "courses"
+          },
+          "community": {
+            "title": "Community",
+            "description": "Connect with other learners",
+            "statsLabel": "active users"
+          }
+        }
+      },
+      "coursesPreview": {
+        "title": "Featured Courses",
+        "subtitle": "Start your learning journey with structured courses"
+      }
+    },
+    "errors": {
+      "title": "Something went wrong",
+      "description": "We encountered an error loading this section.",
+      "retry": "Try Again",
+      "retrying": "Retrying...",
+      "fallback": {
+        "news": {
+          "title": "Latest News Unavailable",
+          "description": "We couldn't load the latest news. You can browse all news articles instead.",
+          "action": "Browse All News"
+        },
+        "articles": {
+          "title": "Featured Articles Unavailable",
+          "description": "We couldn't load featured articles. You can browse all articles instead.",
+          "action": "Browse All Articles"
+        },
+        "courses": {
+          "title": "Featured Courses Unavailable",
+          "description": "We couldn't load featured courses. You can browse all courses instead.",
+          "action": "Browse All Courses"
+        },
+        "navigation": {
+          "title": "Navigation Unavailable",
+          "description": "Quick navigation is temporarily unavailable. You can use the main menu instead.",
+          "action": "Go to Homepage"
+        },
+        "generic": {
+          "title": "Content Unavailable",
+          "description": "This section is temporarily unavailable. Please try again later.",
+          "action": "Go to Homepage"
+        }
+      },
+      "loading": "Loading...",
+      "section": "Section",
+      "maxRetriesReached": "Maximum retry attempts reached. Please try refreshing the page.",
+      "technicalDetails": "Technical Details",
+      "errorMessage": "Error Message",
+      "connectionType": "Connection Type",
+      "timestamp": "Timestamp",
+      "errorTypes": {
+        "offline": {
+          "title": "You're offline",
+          "description": "Please check your internet connection and try again."
+        },
+        "network": {
+          "title": "Network Error",
+          "description": "Unable to connect to our servers. Please check your connection."
+        },
+        "timeout": {
+          "title": "Request Timeout",
+          "description": "The request took too long to complete. Please try again."
+        },
+        "notFound": {
+          "title": "Content Not Found",
+          "description": "The requested content could not be found."
+        },
+        "server": {
+          "title": "Server Error",
+          "description": "Our servers are experiencing issues. Please try again later."
+        },
+        "generic": {
+          "title": "Something went wrong",
+          "description": "An unexpected error occurred. Please try again."
+        }
+      },
+      "networkStatus": {
+        "offline": "No internet connection"
+      }
+    },
+    "emptyStates": {
+      "news": {
+        "title": "No News Available",
+        "description": "There are currently no news articles to display. Check back later for the latest updates.",
+        "primaryAction": "Browse All News",
+        "secondaryAction": "Create News Article"
+      },
+      "articles": {
+        "title": "No Articles Available",
+        "description": "There are currently no featured articles to display. Explore our full article collection instead.",
+        "primaryAction": "Browse All Articles",
+        "secondaryAction": "Write Article"
+      },
+      "courses": {
+        "title": "No Courses Available",
+        "description": "There are currently no featured courses to display. Browse our full course catalog instead.",
+        "primaryAction": "Browse All Courses",
+        "secondaryAction": "Create Course"
+      },
+      "navigation": {
+        "title": "Navigation Unavailable",
+        "description": "Quick navigation is temporarily unavailable. Use the main menu to navigate the platform.",
+        "primaryAction": "Go to Homepage"
+      },
+      "generic": {
+        "title": "No Content Available",
+        "description": "This section is currently empty. Please check back later for updates.",
+        "primaryAction": "Go to Homepage"
+      }
+    }
+  },
+  "articles": {
+    "title": "Articles",
+    "create": "Create Article",
+    "edit": "Edit Article",
+    "publish": "Publish",
+    "draft": "Draft",
+    "published": "Published",
+    "readMore": "Read More",
+    "author": "Author",
+    "publishedAt": "Published at",
+    "readingTime": "Reading time",
+    "minutes": "minutes"
+  },
+  "news": {
+    "title": "News",
+    "trending": "Trending",
+    "latest": "Latest",
+    "categories": "Categories",
+    "source": "Source",
+    "readMore": "Read More"
+  },
+  "courses": {
+    "title": "Featured Courses",
+    "browseAll": "Browse All Courses",
+    "continueCourse": "Continue Course",
+    "completed": "Completed",
+    "enrollNow": "Enroll Now",
+    "subtitle": "Start your learning journey with structured courses"
+  },
+  "forms": {
+    "title": "Title",
+    "content": "Content",
+    "description": "Description",
+    "category": "Category",
+    "tags": "Tags",
+    "submit": "Submit",
+    "required": "Required field"
+  }
+}

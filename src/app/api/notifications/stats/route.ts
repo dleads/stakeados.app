@@ -1,0 +1,29 @@
+import { NextRequest, NextResponse } from 'next/server';
+import { cookies } from 'next/headers';
+import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
+import type { Database } from '@/types/supabase';
+import { NotificationService } from '@/lib/services/notificationService';
+
+export async function GET(_request: NextRequest) {
+  try {
+    const supabase = createRouteHandlerClient<Database>({ cookies });
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser();
+
+    if (authError || !user) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+    const service = new NotificationService(supabase);
+    const stats = await service.getNotificationStats(user.id);
+
+    return NextResponse.json({ stats });
+  } catch (error) {
+    console.error('Error fetching notification stats:', error);
+    return NextResponse.json(
+      { error: 'Failed to fetch notification stats' },
+      { status: 500 }
+    );
+  }
+}

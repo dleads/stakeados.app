@@ -1,0 +1,21 @@
+# Docker
+.dockerignore
+Dockerfile
+
+# Git
+.git
+.gitignore
+
+# Node
+node_modules
+npm-debug.log
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Project specific
+.github
+.vscode
+README.md

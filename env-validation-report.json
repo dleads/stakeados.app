@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-08-26T23:27:40.721Z",
+  "environment": "development",
+  "validation": {
+    "passed": false,
+    "errors": [
+      "NODE_ENV: Must be one of: production",
+      "OPENAI_API_KEY: Does not match required pattern",
+      "RESEND_API_KEY: Does not match required pattern",
+      "NEXT_PUBLIC_GA_MEASUREMENT_ID: Does not match required pattern"
+    ],
+    "missing": [
+      "JWT_SECRET: JWT secret key",
+      "ENCRYPTION_KEY: Encryption key"
+    ],
+    "warnings": [
+      "SENTRY_DSN: Recommended for production",
+      "BACKUP_S3_BUCKET: Recommended for production",
+      "SLACK_WEBHOOK_URL: Recommended for production"
+    ]
+  },
+  "summary": {
+    "totalRequired": 11,
+    "configured": 9,
+    "recommendedConfigured": 2,
+    "totalRecommended": 5
+  }
+}

@@ -1,0 +1,28 @@
+services:
+  app:
+    # Desarrollo: usa Node 20 para evitar discrepancias de versión
+    image: node:20.19-slim
+    working_dir: /app
+    ports:
+      - "3001:3000"
+    env_file:
+      - .env.local
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    command: sh -c "npm ci && npm run dev"
+
+  # Producción: construye con el Dockerfile existente (Node 20 multi-stage)
+  app_prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "3000:3000"
+    # En prod suele inyectarse config como secrets o variables de entorno
+    # Si quieres reutilizar .env.local bajo tu responsabilidad, descomenta:
+    # env_file:
+    #   - .env.local
+    command: ["npm", "start"]
