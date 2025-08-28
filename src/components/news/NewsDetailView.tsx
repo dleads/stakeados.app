@@ -8,7 +8,7 @@ import {
   getNewsTitle,
   getNewsSummary,
   getNewsContent,
-} from '@/lib/supabase/news';
+} from '@/lib/supabase/news-client';
 import {
   formatDate,
   formatRelativeTime,
