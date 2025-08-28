@@ -1,5 +1,4 @@
 import { createAnonClient } from './anon';
-import { createClient as createServerClient } from './server';
 import type { Locale } from '@/types';
 
 type NewsArticle = {
@@ -344,7 +343,9 @@ export const getPersonalizedNewsFeed = async (
 
 // Create news article (for manual addition)
 export const createNewsArticle = async (article: NewsArticleInsert) => {
-  const supabase = await createServerClient();
+  // Lazy-load server client to avoid pulling server-only modules into client bundles
+  const { createClient: createServerClient } = await import('./server');
+  const supabase = createServerClient();
   const { data, error } = await supabase
     .from('news')
     .insert(article as any)
@@ -364,7 +365,8 @@ export const updateNewsArticle = async (
   id: string,
   updates: NewsArticleUpdate
 ) => {
-  const supabase = await createServerClient();
+  const { createClient: createServerClient } = await import('./server');
+  const supabase = createServerClient();
   const { data, error } = await supabase
     .from('news')
     .update(updates as any)
@@ -382,7 +384,8 @@ export const updateNewsArticle = async (
 
 // Delete news article
 export const deleteNewsArticle = async (id: string) => {
-  const supabase = await createServerClient();
+  const { createClient: createServerClient } = await import('./server');
+  const supabase = createServerClient();
   const { error } = await supabase.from('news').delete().eq('id', id);
 
   if (error) {
