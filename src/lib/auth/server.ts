@@ -1,7 +1,7 @@
-import { supabaseServer as supabase } from '@/lib/supabase/server';
+import { createClient as createSupabaseServerClient } from '@/lib/supabase/server';
 
 export async function createServerClient() {
-  return supabase;
+  return createSupabaseServerClient();
 }
 
 export async function getServerSession() {
