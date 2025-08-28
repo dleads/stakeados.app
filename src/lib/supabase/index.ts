@@ -1,8 +1,8 @@
-// Re-export client functions
-export { createClient, supabase } from './client';
+// Re-export client factory (no module-scoped client to keep SSR safe)
+export { createClient } from './client';
 
-// Re-export server functions
-export { createClient as createServerClient, supabaseServer } from './server';
+// Re-export server factory
+export { createClient as createServerClient } from './server';
 
 // Re-export auth functions
 export { getUser, getCurrentUser } from './auth';
@@ -14,7 +14,8 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 export async function getUserProfile(
   userId: string
 ): Promise<DatabaseExtended['public']['Tables']['profiles']['Row']> {
-  const { supabase } = await import('./client');
+  const { createClient } = await import('./client');
+  const supabase = createClient();
   const { data, error } = await supabase
     .from('profiles')
     .select('*')
@@ -29,7 +30,8 @@ export async function updateUserProfile(
   userId: string,
   updates: Partial<DatabaseExtended['public']['Tables']['profiles']['Update']>
 ): Promise<DatabaseExtended['public']['Tables']['profiles']['Row']> {
-  const { supabase } = await import('./client');
+  const { createClient } = await import('./client');
+  const supabase = createClient();
   const { data, error } = await supabase
     .from('profiles')
     .update(updates as any)
@@ -42,7 +44,8 @@ export async function updateUserProfile(
 }
 
 export async function getUserPoints(userId: string): Promise<number> {
-  const { supabase } = await import('./client');
+  const { createClient } = await import('./client');
+  const supabase = createClient();
   type Row = {
     total_points: number;
   };
@@ -57,7 +60,8 @@ export async function getUserPoints(userId: string): Promise<number> {
 }
 
 export async function isGenesisHolder(userId: string): Promise<boolean> {
-  const { supabase } = await import('./client');
+  const { createClient } = await import('./client');
+  const supabase = createClient();
   type Row = {
     genesis_nft_verified: boolean;
   };

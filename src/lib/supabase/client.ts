@@ -29,5 +29,3 @@ export const createClient = () =>
     }
   );
 
-// Instancia por defecto
-export const supabase = createClient();

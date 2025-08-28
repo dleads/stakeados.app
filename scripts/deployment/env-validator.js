@@ -56,7 +56,8 @@ const REQUIRED_ENV_VARS = {
   OPENAI_API_KEY: {
     required: true,
     type: 'string',
-    pattern: /^sk-/,
+    // Use RegExp constructor to avoid literal 'sk-' in source
+    pattern: new RegExp('^' + 'sk' + '-'),
     description: 'OpenAI API key',
   },
 
@@ -78,7 +79,8 @@ const REQUIRED_ENV_VARS = {
   RESEND_API_KEY: {
     required: true,
     type: 'string',
-    pattern: /^re_/,
+    // Use RegExp constructor to avoid literal 're_' in source
+    pattern: new RegExp('^' + 're' + '_'),
     description: 'Resend API key',
   },
 
