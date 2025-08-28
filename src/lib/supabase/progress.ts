@@ -1,4 +1,5 @@
-import { supabase } from './client';
+import { createAnonClient } from './anon';
+import { createClient as createServerClient } from './server';
 import type { Database } from './types';
 import { mintCertificate } from '@/lib/web3/nft';
 import type { Address } from 'viem';
@@ -10,6 +11,7 @@ type UserProgressInsert =
 
 // Get points for a specific activity from the gamification_rules table
 const getPointsForActivity = async (activityType: string): Promise<number> => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('gamification_rules' as any)
     .select('points')
@@ -29,6 +31,7 @@ export const getUserCourseProgress = async (
   userId: string,
   courseId: string
 ) => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('user_progress')
     .select('*')
@@ -46,6 +49,7 @@ export const getUserCourseProgress = async (
 
 // Get all user progress
 export const getUserProgress = async (userId: string) => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('user_progress')
     .select(
@@ -72,6 +76,7 @@ export const getUserProgress = async (userId: string) => {
 
 // Create or update progress entry
 export const upsertProgress = async (progress: UserProgressInsert) => {
+  const supabase = await createServerClient();
   const { data, error } = await supabase
     .from('user_progress')
     .upsert(progress as any, {
@@ -188,6 +193,7 @@ export const handleCourseCompletion = async (
 ) => {
   try {
     // Get user profile with wallet address
+    const supabase = createAnonClient();
     const { data: profile } = await supabase
       .from('profiles')
       .select('wallet_address')
@@ -249,6 +255,7 @@ export const handleCourseCompletion = async (
 
 // Get detailed progress analytics for a user
 export const getUserProgressAnalytics = async (userId: string) => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('user_progress')
     .select(
@@ -316,6 +323,7 @@ export const getUserProgressAnalytics = async (userId: string) => {
 export const getUserLearningStreak = async (
   userId: string
 ): Promise<number> => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('user_progress')
     .select('created_at, completed_at')
@@ -364,6 +372,7 @@ export const getWeeklyProgressSummary = async (userId: string) => {
   const oneWeekAgo = new Date();
   oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
 
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('user_progress')
     .select('*')
@@ -415,6 +424,7 @@ export const getWeeklyProgressSummary = async (userId: string) => {
 
 // Get completion statistics for a user
 export const getUserCompletionStats = async (userId: string) => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('user_progress')
     .select(
@@ -471,6 +481,7 @@ export const getUserCompletionStats = async (userId: string) => {
 export const hasCourseCompleted = async (userId: string, courseId: string) => {
   // This is a simplified check - in a real implementation, you'd need to know
   // the total number of content items in a course and check if all are completed
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('user_progress')
     .select('content_id')
@@ -490,6 +501,7 @@ export const hasCourseCompleted = async (userId: string, courseId: string) => {
 
 // Get leaderboard data
 export const getLeaderboard = async (limit: number = 10) => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('profiles')
     .select('id, display_name, username, avatar_url, total_points, is_genesis')
@@ -506,6 +518,7 @@ export const getLeaderboard = async (limit: number = 10) => {
 
 // Get user's rank in leaderboard
 export const getUserRank = async (userId: string) => {
+  const supabase = createAnonClient();
   const { data: userProfile, error: userError } = await supabase
     .from('profiles')
     .select('total_points')
@@ -543,6 +556,7 @@ export const awardActivityPoints = async (
     return 0;
   }
 
+  const supabase = await createServerClient();
   const { error } = await supabase
     .from('profiles')
     .update({
@@ -560,6 +574,7 @@ export const awardActivityPoints = async (
 
 // Get user achievements
 export const getUserAchievements = async (userId: string) => {
+  const supabase = createAnonClient();
   const { data: progress } = await supabase
     .from('user_progress')
     .select('*')
@@ -674,6 +689,7 @@ export const checkNewAchievements = async (
 };
 // Get contributor statistics
 export const getContributorStats = async (userId: string) => {
+  const supabase = createAnonClient();
   const { data: articles, error } = await supabase
     .from('articles')
     .select('status, created_at, published_at')

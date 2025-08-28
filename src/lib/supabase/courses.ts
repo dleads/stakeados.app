@@ -1,4 +1,5 @@
-import { supabase } from './client';
+import { createAnonClient } from './anon';
+import { createClient as createServerClient } from './server';
 import { withCache, apiCache } from '@/lib/cache';
 import type { Database } from './types';
 import type { Locale } from '@/types';
@@ -44,6 +45,7 @@ export interface CourseWithProgress extends Course {
 const _getPublishedCourses = async (
   userId?: string
 ): Promise<CourseWithProgress[]> => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('courses')
     .select('*')
@@ -80,6 +82,7 @@ export const getPublishedCourses = withCache(
 );
 // Get all courses (including unpublished) for admin
 export const getAllCourses = async () => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('courses')
     .select('*')
@@ -98,6 +101,7 @@ export const getCourseById = async (
   id: string,
   userId?: string
 ): Promise<CourseWithProgress | null> => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('courses')
     .select('*')
@@ -125,6 +129,7 @@ export const getCourseById = async (
 
 // Get course progress for a user
 export const getCourseProgress = async (userId: string, courseId: string) => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('user_progress')
     .select('*')
@@ -164,6 +169,7 @@ export const getCourseProgress = async (userId: string, courseId: string) => {
 export const getCoursesByDifficulty = async (
   difficulty: 'basic' | 'intermediate' | 'advanced'
 ) => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('courses')
     .select('*')
@@ -181,6 +187,7 @@ export const getCoursesByDifficulty = async (
 
 // Get courses by category/tag
 export const getCoursesByCategory = async (category: string) => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('courses')
     .select('*')
@@ -223,6 +230,7 @@ export const searchCourses = async (
     published?: boolean;
   }
 ) => {
+  const supabase = createAnonClient();
   let queryBuilder = supabase.from('courses').select('*');
 
   if (filters?.published !== undefined) {
@@ -276,6 +284,7 @@ export const createCourse = async (course: CourseInsert) => {
     throw new Error('User must be authenticated to create courses');
   }
 
+  const supabase = await createServerClient();
   const { data, error } = await supabase
     .from('courses')
     .insert(course as any)
@@ -297,6 +306,7 @@ export const updateCourse = async (id: string, updates: CourseUpdate) => {
     throw new Error('User must be authenticated to update courses');
   }
 
+  const supabase = await createServerClient();
   const { data, error } = await supabase
     .from('courses')
     .update(updates as any)
@@ -319,6 +329,7 @@ export const deleteCourse = async (id: string) => {
     throw new Error('User must be authenticated to delete courses');
   }
 
+  const supabase = await createServerClient();
   const { error } = await supabase.from('courses').delete().eq('id', id);
 
   if (error) {
@@ -337,6 +348,7 @@ export const toggleCoursePublication = async (
 
 // Get course statistics
 export const getCourseStatistics = async (courseId: string) => {
+  const supabase = createAnonClient();
   const { data: enrollments, error: enrollmentError } = await supabase
     .from('user_progress')
     .select('user_id')
@@ -436,6 +448,7 @@ export const getDifficultyBadgeClass = (difficulty: string): string => {
 };
 // Get user's enrolled courses
 export const getUserEnrolledCourses = async (userId: string) => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('user_progress')
     .select(
@@ -465,6 +478,7 @@ export const getUserEnrolledCourses = async (userId: string) => {
 // Enroll user in course
 export const enrollUserInCourse = async (userId: string, courseId: string) => {
   // Check if already enrolled
+  const supabase = await createServerClient();
   const { data: existing } = await supabase
     .from('user_progress')
     .select('id')
@@ -503,6 +517,7 @@ export const getCourseCompletionPercentage = async (
 ) => {
   // This is a simplified version - in a real implementation, you'd need to know
   // the total number of content items in a course
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('user_progress')
     .select('*')

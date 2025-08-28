@@ -1,7 +1,7 @@
 import { createClient } from './server';
 
 export async function getUser() {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   try {
     const {

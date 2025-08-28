@@ -1,6 +1,6 @@
 // Content Management Service - Database operations for articles and news
 
-import { supabase } from '@/lib/supabase';
+import { createClient } from '@/lib/supabase/client';
 import type {
   Article,
   ArticleWithMetrics,
@@ -31,6 +31,7 @@ export class ContentService {
   static async createArticleProposal(
     proposal: CreateArticleProposal
   ): Promise<ArticleProposal> {
+    const supabase = createClient();
     const { data: user } = await supabase.auth.getUser();
     if (!user.user) throw new Error('User not authenticated');
 
@@ -52,6 +53,7 @@ export class ContentService {
     page = 0,
     limit = 20
   ): Promise<PaginatedResponse<ArticleProposalWithProposer>> {
+    const supabase = createClient();
     let query = supabase
       .from('article_proposals')
       .select('*')
@@ -109,6 +111,7 @@ export class ContentService {
 
   // Article Methods
   static async createArticle(article: CreateArticle): Promise<Article> {
+    const supabase = createClient();
     const { data: user } = await supabase.auth.getUser();
     if (!user.user) throw new Error('User not authenticated');
 
@@ -156,6 +159,7 @@ export class ContentService {
   }
 
   static async updateArticle(article: UpdateArticle): Promise<Article> {
+    const supabase = createClient();
     const { data: user } = await supabase.auth.getUser();
     if (!user.user) throw new Error('User not authenticated');
 
@@ -207,6 +211,7 @@ export class ContentService {
     page = 0,
     limit = 20
   ): Promise<PaginatedResponse<ArticleWithMetrics>> {
+    const supabase = createClient();
     const { data, error } = await supabase
       .from('articles')
       .select('*')
@@ -284,6 +289,7 @@ export class ContentService {
   }
 
   static async getArticleById(id: string): Promise<ArticleWithMetrics | null> {
+    const supabase = createClient();
     const { data, error } = await supabase
       .from('articles')
       .select('*')
@@ -331,6 +337,7 @@ export class ContentService {
     params: SearchParams
   ): Promise<SearchResult<SearchArticleResult>> {
     // Simple search implementation since search_articles function doesn't exist
+    const supabase = createClient();
     const { data, error } = await supabase
       .from('articles')
       .select('*')
@@ -386,6 +393,7 @@ export class ContentService {
     limit = 5
   ): Promise<RelatedArticleResult[]> {
     // Get the current article to find related articles by category
+    const supabase = createClient();
     const { data: currentArticle, error: currentError } = await supabase
       .from('articles')
       .select('category_id')
@@ -446,6 +454,7 @@ export class ContentService {
       updateData.published_at = publishAt.toISOString();
     }
 
+    const supabase = createClient();
     const { error } = await supabase
       .from('articles')
       .update(updateData)

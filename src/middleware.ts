@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { LOCALES, DEFAULT_LOCALE } from '@/lib/constants';
 import { ROUTE_PROTECTION } from '@/types/roles';
+import { updateSession } from '@/lib/supabase/middleware';
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const search = request.nextUrl.search;
 
@@ -19,6 +20,9 @@ export function middleware(request: NextRequest) {
   ) {
     return NextResponse.next();
   }
+
+  // Update Supabase session for all other requests
+  let response = await updateSession(request);
 
   // Check if the pathname starts with a supported locale
   const pathnameHasLocale = LOCALES.some(
@@ -66,25 +70,25 @@ export function middleware(request: NextRequest) {
 
     // Handle root path
     if (pathname === '/') {
-      const res = NextResponse.redirect(
+      response = NextResponse.redirect(
         new URL(`/${defaultLocale}`, request.url)
       );
-      res.cookies.set('locale', defaultLocale, {
+      response.cookies.set('locale', defaultLocale, {
         path: '/',
         maxAge: 60 * 60 * 24 * 365,
       });
-      return res;
+      return response;
     }
 
     // Handle other paths - redirect to proper default version
-    const res = NextResponse.redirect(
+    response = NextResponse.redirect(
       new URL(`/${defaultLocale}${pathname}${search}`, request.url)
     );
-    res.cookies.set('locale', defaultLocale, {
+    response.cookies.set('locale', defaultLocale, {
       path: '/',
       maxAge: 60 * 60 * 24 * 365,
     });
-    return res;
+    return response;
   }
 
   // Extract locale from pathname
@@ -93,24 +97,24 @@ export function middleware(request: NextRequest) {
   // Validate locale
   if (!LOCALES.includes(locale)) {
     const targetLocale = getPreferredLocale(isAdminPath);
-    const res = NextResponse.redirect(
+    response = NextResponse.redirect(
       new URL(`/${targetLocale}${pathname}${search}`, request.url)
     );
-    res.cookies.set('locale', targetLocale, {
+    response.cookies.set('locale', targetLocale, {
       path: '/',
       maxAge: 60 * 60 * 24 * 365,
     });
-    return res;
+    return response;
   }
 
   // Enforce Spanish locale for admin routes
   if (isAdminPath && locale !== 'es') {
     const adminPath = routePathWithoutLocale;
-    const res = NextResponse.redirect(
+    response = NextResponse.redirect(
       new URL(`/es${adminPath}${search}`, request.url)
     );
-    res.cookies.set('locale', 'es', { path: '/', maxAge: 60 * 60 * 24 * 365 });
-    return res;
+    response.cookies.set('locale', 'es', { path: '/', maxAge: 60 * 60 * 24 * 365 });
+    return response;
   }
 
   // Check for admin-only route protection
@@ -121,11 +125,11 @@ export function middleware(request: NextRequest) {
     // For admin routes, we'll let the client-side components handle the protection
     // This is because we need user session data which is only available client-side
     // The AdminOnlyRoute component will handle the actual protection
-    return NextResponse.next();
+    return response;
   }
 
   // Continue with the request
-  return NextResponse.next();
+  return response;
 }
 
 // Helper function to get route protection
@@ -158,7 +162,7 @@ function getRouteProtection(pathname: string): 'public' | 'admin' {
 
 export const config = {
   matcher: [
-    // Skip all internal paths (_next, api, etc.)
-    '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml).*)',
+    // Skip all internal paths (_next, api, etc.) and static files
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
   ],
 };

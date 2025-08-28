@@ -1,4 +1,4 @@
-import { supabase } from '@/lib/supabase';
+import { createClient } from '@/lib/supabase/client';
 import { processNewsArticle, detectDuplicateArticle } from './openai';
 
 // Interface for RSS feed item
@@ -63,6 +63,7 @@ export async function processAndStoreNewsArticle(
     };
 
     // Store in database
+    const supabase = createClient();
     const { data, error } = await supabase
       .from('articles')
       .insert(articleData)
@@ -93,6 +94,7 @@ export async function checkForDuplicateArticle(
 ): Promise<boolean> {
   try {
     // First check by URL (exact duplicates)
+    const supabase = createClient();
     const { data: existingByUrl } = await supabase
       .from('articles')
       .select('id')
@@ -209,6 +211,7 @@ export async function reprocessExistingArticles(limit: number = 10): Promise<{
 
   try {
     // Get articles that haven't been AI processed or need reprocessing
+    const supabase = createClient();
     const { data: articles } = await supabase
       .from('news')
       .select('*')
@@ -272,6 +275,7 @@ export async function getProcessingStatistics(): Promise<{
   processingRate: number;
 }> {
   try {
+    const supabase = createClient();
     const { data: articles } = await supabase
       .from('news')
       .select('tags, importance_score, ai_processed, fetched_at');
@@ -345,6 +349,7 @@ export async function cleanupLowQualityArticles(): Promise<{
   const results = { deleted: 0, errors: 0 };
 
   try {
+    const supabase = createClient();
     const { data: lowQualityArticles } = await supabase
       .from('articles')
       .select('id')

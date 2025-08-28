@@ -1,4 +1,17 @@
-import { createClient } from '@/lib/supabase/client';
+// SSR-safe Supabase selector: use server client on server, browser client on client
+function getSupabase() {
+  if (typeof window === 'undefined') {
+    // Server/runtime (Netlify/Node): use service role client without browser APIs
+    // Use require to avoid static import in edge build graph
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const { createClient } = require('@/lib/supabase/server');
+    return createClient();
+  }
+  // Browser runtime
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const { createClient } = require('@/lib/supabase/client');
+  return createClient();
+}
 import type { Database } from '@/types/supabase';
 
 type Category = Database['public']['Tables']['categories']['Row'];
@@ -29,7 +42,10 @@ export interface CategoryStats {
 }
 
 class CategoryService {
-  private supabase = createClient();
+  // Lazy getter ensures correct client per runtime and avoids SSR import-time pitfalls
+  private get supabase() {
+    return getSupabase();
+  }
 
   async getCategories(_includeInactive: boolean = false): Promise<Category[]> {
     let query = this.supabase
@@ -280,8 +296,11 @@ class CategoryService {
       .eq('category_id', id);
 
     const totalViews =
-      articleViews?.reduce((sum, article) => sum + (article.views || 0), 0) ||
-      0;
+      articleViews?.reduce(
+        (sum: number, article: { views?: number | null }) =>
+          sum + (article.views || 0),
+        0
+      ) || 0;
     const totalInteractions = 0; // TODO: Implement when news interactions are available
 
     return {

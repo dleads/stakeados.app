@@ -1,7 +1,7 @@
 import { createPublicClient, http } from 'viem';
 // import { base, baseSepolia } from 'viem/chains';
 import { getCurrentChain, getContractAddress } from './config';
-import { supabase } from '@/lib/supabase';
+import { createClient } from '@/lib/supabase/client';
 import { mintCertificateGasless, mintCitizenshipGasless } from './paymaster';
 import type { Address } from 'viem';
 import type { DatabaseExtended } from '@/types/database-extended';
@@ -529,6 +529,7 @@ async function storeCertificateInDatabase(
   try {
     // Get user profile
     // Tipar explícitamente la fila de perfiles para evitar never
+    const supabase = createClient();
     const { data: profile } = await supabase
       .from('profiles')
       .select('id')
@@ -548,9 +549,8 @@ async function storeCertificateInDatabase(
       transaction_hash: transactionHash,
     };
 
-    // Asegurar cliente tipado fuerte para from('nft_certificates')
-    const typed: SupabaseClient<DatabaseExtended> = supabase as SupabaseClient<DatabaseExtended>;
-    const { error } = await typed
+    // Insert certificate record
+    const { error } = await supabase
       .from('nft_certificates')
       .insert(insertPayload);
 

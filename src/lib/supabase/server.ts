@@ -1,34 +1,31 @@
-import { createClient as createSupabaseClient } from '@supabase/supabase-js';
+import { createServerClient } from '@supabase/ssr';
+import { cookies } from 'next/headers';
 import type { DatabaseExtended } from '@/types/database-extended';
 
-let supabaseServerInstance: ReturnType<
-  typeof createSupabaseClient<DatabaseExtended>
-> | null = null;
+export async function createClient() {
+  const cookieStore = await cookies();
 
-export const createClient = () => {
-  if (!supabaseServerInstance) {
-    const supabaseUrl =
-      process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-
-    if (!supabaseUrl || !supabaseServiceKey) {
-      throw new Error(
-        'Missing Supabase server env vars. Set SUPABASE_URL/NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY'
-      );
-    }
-
-    supabaseServerInstance = createSupabaseClient<DatabaseExtended>(
-      supabaseUrl,
-      supabaseServiceKey,
-      {
-        auth: {
-          autoRefreshToken: false,
-          persistSession: false,
+  return createServerClient<DatabaseExtended>(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return cookieStore.getAll();
         },
-      }
-    );
-  }
-  return supabaseServerInstance;
-};
+        setAll(cookiesToSet) {
+          try {
+            cookiesToSet.forEach(({ name, value, options }) =>
+              cookieStore.set(name, value, options)
+            );
+          } catch {
+            // Server Component cannot write cookies
+            // This is handled in middleware
+          }
+        },
+      },
+    }
+  );
+}
 
 // Note: do NOT instantiate at module scope to avoid build-time env issues on Netlify

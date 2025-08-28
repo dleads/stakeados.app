@@ -1,4 +1,5 @@
-import { supabase } from './client';
+import { createAnonClient } from './anon';
+import { createClient as createServerClient } from './server';
 import type { Database } from './types';
 import type { Locale } from '@/types';
 
@@ -8,6 +9,7 @@ type ArticleUpdate = Database['public']['Tables']['articles']['Update'];
 
 // Get all published articles
 export const getPublishedArticles = async () => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('articles')
     .select(
@@ -34,6 +36,7 @@ export const getPublishedArticles = async () => {
 
 // Get article by ID
 export const getArticleById = async (id: string) => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('articles')
     .select(
@@ -60,6 +63,7 @@ export const getArticleById = async (id: string) => {
 
 // Get articles by category
 export const getArticlesByCategory = async (category: string) => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('articles')
     .select(
@@ -87,6 +91,7 @@ export const getArticlesByCategory = async (category: string) => {
 
 // Get articles by author
 export const getArticlesByAuthor = async (authorId: string) => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('articles')
     .select(
@@ -113,6 +118,7 @@ export const getArticlesByAuthor = async (authorId: string) => {
 
 // Create a new article
 export const createArticle = async (article: ArticleInsert) => {
+  const supabase = await createServerClient();
   const { data, error } = await supabase
     .from('articles' as any)
     .insert(article as any)
@@ -129,6 +135,7 @@ export const createArticle = async (article: ArticleInsert) => {
 
 // Update article
 export const updateArticle = async (id: string, updates: ArticleUpdate) => {
+  const supabase = await createServerClient();
   const { data, error } = await supabase
     .from('articles' as any)
     .update(updates as any)
@@ -146,6 +153,7 @@ export const updateArticle = async (id: string, updates: ArticleUpdate) => {
 
 // Delete article
 export const deleteArticle = async (id: string) => {
+  const supabase = await createServerClient();
   const { error } = await supabase.from('articles').delete().eq('id', id);
 
   if (error) {
@@ -156,6 +164,7 @@ export const deleteArticle = async (id: string) => {
 
 // Get articles pending review
 export const getArticlesPendingReview = async () => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('articles')
     .select(
@@ -200,6 +209,7 @@ export const getArticleContent = (
 
 // Search articles
 export const searchArticles = async (query: string) => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('articles')
     .select(
@@ -229,6 +239,7 @@ export const searchArticles = async (query: string) => {
 
 // Get articles by tags
 export const getArticlesByTags = async (tags: string[]) => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('articles')
     .select(
@@ -256,6 +267,7 @@ export const getArticlesByTags = async (tags: string[]) => {
 
 // Get all unique categories
 export const getArticleCategories = async () => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('articles')
     .select('category')
@@ -275,6 +287,7 @@ export const getArticleCategories = async () => {
 
 // Get all unique tags
 export const getArticleTags = async () => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('articles')
     .select('tags')
@@ -292,6 +305,7 @@ export const getArticleTags = async () => {
 
 // Submit article for review
 export const submitArticleForReview = async (id: string) => {
+  const supabase = await createServerClient();
   const { data, error } = await supabase
     .from('articles')
     .update({ status: 'review' })
@@ -309,6 +323,7 @@ export const submitArticleForReview = async (id: string) => {
 
 // Approve article (admin only)
 export const approveArticle = async (id: string) => {
+  const supabase = await createServerClient();
   const { data, error } = await supabase
     .from('articles')
     .update({ status: 'published' })
@@ -326,6 +341,7 @@ export const approveArticle = async (id: string) => {
 
 // Reject article (admin only)
 export const rejectArticle = async (id: string) => {
+  const supabase = await createServerClient();
   const { data, error } = await supabase
     .from('articles')
     .update({ status: 'draft' })
@@ -343,6 +359,7 @@ export const rejectArticle = async (id: string) => {
 
 // Get article statistics
 export const getArticleStatistics = async () => {
+  const supabase = createAnonClient();
   const { data: allArticles, error: allError } = await supabase
     .from('articles')
     .select('status, author_id') as { data: Array<{ status: string; author_id: string }> | null; error: any };
@@ -371,6 +388,7 @@ export const getArticleStatistics = async () => {
 
 // Get trending articles (most recent published)
 export const getTrendingArticles = async (limit: number = 5) => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('articles')
     .select(

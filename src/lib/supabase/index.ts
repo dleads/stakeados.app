@@ -1,87 +1,53 @@
-// Re-export client factory and backward-compatible instance
-export { createClient, supabase } from './client';
+// Cliente del navegador - para Client Components
+export { createClient } from './client';
 
-// Re-export server factory
+// Cliente del servidor - para Server Components, Server Actions y Route Handlers  
 export { createClient as createServerClient } from './server';
 
-// Re-export auth functions
+// Utilidades de middleware
+export { updateSession } from './middleware';
+
+// Re-export auth functions (server-side)
 export { getUser, getCurrentUser } from './auth';
+
+// Re-export backward-compatible instance for existing code
+export { supabase } from './client';
+
+// Anonymous client for server-side operations without auth
+export { createAnonClient } from './anon';
+
+// Re-export tipos útiles
+export type { DatabaseExtended } from '@/types/database-extended';
 
 import type { DatabaseExtended } from '@/types/database-extended';
 import type { SupabaseClient } from '@supabase/supabase-js';
 
-// Additional utility functions
-export async function getUserProfile(
-  userId: string
-): Promise<DatabaseExtended['public']['Tables']['profiles']['Row']> {
-  const { createClient } = await import('./client');
-  const supabase = createClient();
-  const { data, error } = await supabase
-    .from('profiles')
-    .select('*')
-    .eq('id', userId)
-    .single();
+// Optimized admin client with service role key - singleton pattern
+let _adminClient: SupabaseClient<DatabaseExtended> | null = null;
 
-  if (error) throw error;
-  return data!;
-}
-
-export async function updateUserProfile(
-  userId: string,
-  updates: Partial<DatabaseExtended['public']['Tables']['profiles']['Update']>
-): Promise<DatabaseExtended['public']['Tables']['profiles']['Row']> {
-  const { createClient } = await import('./client');
-  const supabase = createClient();
-  const { data, error } = await supabase
-    .from('profiles')
-    .update(updates as any)
-    .eq('id', userId)
-    .select()
-    .single();
-
-  if (error) throw error;
-  return data!;
-}
-
-export async function getUserPoints(userId: string): Promise<number> {
-  const { createClient } = await import('./client');
-  const supabase = createClient();
-  type Row = {
-    total_points: number;
-  };
-  const { data, error } = await supabase
-    .from('profiles')
-    .select('total_points')
-    .eq('id', userId)
-    .single<Row>();
-
-  if (error) throw error;
-  return data?.total_points ?? 0;
-}
-
-export async function isGenesisHolder(userId: string): Promise<boolean> {
-  const { createClient } = await import('./client');
-  const supabase = createClient();
-  type Row = {
-    genesis_nft_verified: boolean;
-  };
-  const { data, error } = await supabase
-    .from('profiles')
-    .select('genesis_nft_verified')
-    .eq('id', userId)
-    .single<Row>();
-
-  if (error) throw error;
-  return data?.genesis_nft_verified ?? false;
-}
-
-// Admin client with service role key tipado
-export const supabaseAdmin = async (): Promise<
-  SupabaseClient<DatabaseExtended>
-> => {
-  const { createClient } = await import('@supabase/supabase-js');
-  return createClient<DatabaseExtended>(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
+export const supabaseAdmin = (): SupabaseClient<DatabaseExtended> => {
+  if (!_adminClient) {
+    const { createClient } = require('@supabase/supabase-js');
+    
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
+      throw new Error('Missing NEXT_PUBLIC_SUPABASE_URL environment variable');
+    }
+    
+    if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
+      throw new Error('Missing SUPABASE_SERVICE_ROLE_KEY environment variable');
+    }
+    
+    _adminClient = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL,
+      process.env.SUPABASE_SERVICE_ROLE_KEY,
+      {
+        auth: {
+          autoRefreshToken: false,
+          persistSession: false
+        }
+      }
+    ) as SupabaseClient<DatabaseExtended>;
+  }
+  
+  return _adminClient;
 };

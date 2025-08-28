@@ -1,10 +1,22 @@
-import { createClient } from '@/lib/supabase/client';
+// SSR-safe Supabase selector: use server client on server, browser client on client
+function getSupabase() {
+  if (typeof window === 'undefined') {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const { createClient } = require('@/lib/supabase/server');
+    return createClient();
+  }
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const { createClient } = require('@/lib/supabase/client');
+  return createClient();
+}
 import { AIContentService } from './aiContentService';
 import type { ProcessedNewsArticle } from '@/types/news';
 import type { Locale } from '@/types/content';
 
 export class NewsProcessingService {
-  private supabase = createClient();
+  private get supabase() {
+    return getSupabase();
+  }
   private aiService = new AIContentService();
 
   // Process raw articles with AI and store as processed news articles

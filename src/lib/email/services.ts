@@ -2,7 +2,7 @@
 
 import { EmailTemplateFactory, emailQueue } from './templates';
 import { sendEmail } from './resend';
-import { supabase } from '@/lib/supabase';
+import { createClient } from '@/lib/supabase/client';
 import type { Locale } from '@/types';
 
 // Send welcome email when user signs up
@@ -179,6 +179,7 @@ export async function sendNewsletterToSubscribers(content: {
 }): Promise<{ success: boolean; sent: number; errors: number }> {
   try {
     // Get all newsletter subscribers
+    const supabase = createClient();
     const { data: subscribers, error } = await supabase
       .from('profiles')
       .select('id, email, display_name, username')

@@ -1,4 +1,4 @@
-import { supabase } from '@/lib/supabase';
+import { createClient } from '@/lib/supabase/client';
 import { signMessage } from '@wagmi/core';
 import { wagmiConfig } from './config';
 import type { Address } from 'viem';
@@ -46,6 +46,7 @@ export async function verifyAndLinkWallet(
     // For now, we'll trust the client-side signature
 
     // Update user profile with wallet address
+    const supabase = createClient();
     const { error } = await supabase
       .from('profiles')
       .update({
@@ -74,6 +75,7 @@ export async function unlinkWallet(
   userId: string
 ): Promise<{ success: boolean; error?: string }> {
   try {
+    const supabase = createClient();
     const { error } = await supabase
       .from('profiles')
       .update({
@@ -107,6 +109,7 @@ export async function checkWalletAvailability(
   error?: string;
 }> {
   try {
+    const supabase = createClient();
     const { data, error } = await supabase
       .from('profiles')
       .select('id, display_name, username')
@@ -145,6 +148,7 @@ export async function checkWalletAvailability(
 // Get user profile by wallet address
 export async function getUserByWalletAddress(address: Address) {
   try {
+    const supabase = createClient();
     const { data, error } = await supabase
       .from('profiles')
       .select('*')

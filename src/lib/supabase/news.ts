@@ -1,4 +1,5 @@
-import { supabase } from './client';
+import { createAnonClient } from './anon';
+import { createClient as createServerClient } from './server';
 import type { Locale } from '@/types';
 
 type NewsArticle = {
@@ -39,6 +40,7 @@ export const getNewsArticles = async (
   hasNextPage: boolean;
   hasPreviousPage: boolean;
 }> => {
+  const supabase = createAnonClient();
   let query = supabase
     .from('news')
     .select('*')
@@ -81,6 +83,7 @@ export const getNewsArticles = async (
 
 // Get news article by ID
 export const getNewsArticleById = async (id: string): Promise<NewsArticle> => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('news')
     .select('*')
@@ -99,6 +102,7 @@ export const getNewsArticleById = async (id: string): Promise<NewsArticle> => {
 export const getTrendingNews = async (
   limit: number = 10
 ): Promise<NewsArticle[]> => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('news')
     .select('*')
@@ -122,6 +126,7 @@ export const searchNews = async (
     dateRange?: { start: Date; end: Date };
   }
 ): Promise<NewsArticle[]> => {
+  const supabase = createAnonClient();
   let searchQuery = supabase.from('news').select('*');
 
   // Text search in title and content
@@ -157,6 +162,7 @@ export const searchNews = async (
 
 // Get all unique sources
 export const getNewsSources = async () => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('news')
     .select('source')
@@ -174,7 +180,8 @@ export const getNewsSources = async () => {
   // Count articles per source
   const sourcesWithCount = await Promise.all(
     uniqueSources.map(async source => {
-      const { count } = await supabase
+      const supabaseInner = createAnonClient();
+      const { count } = await supabaseInner
         .from('news_articles' as any)
         .select('*', { count: 'exact', head: true })
         .eq('source_name', source);
@@ -188,6 +195,7 @@ export const getNewsSources = async () => {
 
 // Get popular keywords
 export const getPopularKeywords = async (limit: number = 20) => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase.from('news').select('keywords');
 
   if (error) {
@@ -214,6 +222,7 @@ export const getPopularKeywords = async (limit: number = 20) => {
 
 // Get news statistics
 export const getNewsStatistics = async () => {
+  const supabase = createAnonClient();
   const { data: allNews, error } = await supabase
     .from('news')
     .select('relevance_score, ai_processed_at, created_at, source_name');
@@ -280,6 +289,7 @@ export const getPersonalizedNewsFeed = async (
   limit: number = 20
 ): Promise<NewsArticle[]> => {
   // Get user's interests from their course progress and article interactions
+  const supabase = createAnonClient();
   const { data: userProgress } = await supabase
     .from('user_progress')
     .select(
@@ -334,6 +344,7 @@ export const getPersonalizedNewsFeed = async (
 
 // Create news article (for manual addition)
 export const createNewsArticle = async (article: NewsArticleInsert) => {
+  const supabase = await createServerClient();
   const { data, error } = await supabase
     .from('news')
     .insert(article as any)
@@ -353,6 +364,7 @@ export const updateNewsArticle = async (
   id: string,
   updates: NewsArticleUpdate
 ) => {
+  const supabase = await createServerClient();
   const { data, error } = await supabase
     .from('news')
     .update(updates as any)
@@ -370,6 +382,7 @@ export const updateNewsArticle = async (
 
 // Delete news article
 export const deleteNewsArticle = async (id: string) => {
+  const supabase = await createServerClient();
   const { error } = await supabase.from('news').delete().eq('id', id);
 
   if (error) {
@@ -415,6 +428,7 @@ export const getRelatedNews = async (
   keywords: string[],
   limit: number = 5
 ) => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('news')
     .select('*')
@@ -438,6 +452,7 @@ export const getNewsByDateRange = async (
   endDate: Date,
   limit: number = 50
 ) => {
+  const supabase = createAnonClient();
   const { data, error } = await supabase
     .from('news')
     .select('*')

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { supabase } from '@/lib/supabase';
+import { createClient } from '@/lib/supabase/client';
 
 export default function SupabaseStatus() {
   const t = useTranslations('home.status');
@@ -10,6 +10,7 @@ export default function SupabaseStatus() {
   useEffect(() => {
     const checkConnection = async () => {
       try {
+        const supabase = createClient();
         const { error } = await supabase
           .from('profiles')
           .select('count', { count: 'exact', head: true });
