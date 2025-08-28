@@ -29,3 +29,20 @@ export const createClient = () =>
     }
   );
 
+// Backward-compatible instance for modules importing { supabase }
+// SSR-safe: only instantiate on the client. On the server, expose a proxy that throws if accessed.
+let _client: ReturnType<typeof createClient> | null = null;
+export const supabase = ((): any => {
+  if (typeof window === 'undefined') {
+    return new Proxy(
+      {},
+      {
+        get() {
+          throw new Error('Supabase browser client accessed on the server. Use server client instead.');
+        },
+      }
+    );
+  }
+  if (!_client) _client = createClient();
+  return _client;
+})();

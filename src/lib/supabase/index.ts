@@ -1,5 +1,5 @@
-// Re-export client factory (no module-scoped client to keep SSR safe)
-export { createClient } from './client';
+// Re-export client factory and backward-compatible instance
+export { createClient, supabase } from './client';
 
 // Re-export server factory
 export { createClient as createServerClient } from './server';
