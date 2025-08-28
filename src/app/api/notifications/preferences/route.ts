@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
-import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
+import { createServerClient } from '@supabase/ssr';
 import type { Database } from '@/types/supabase';
 import { NotificationPreferencesService } from '@/lib/services/notificationPreferencesService';
 import type { NotificationPreferences } from '@/types/notifications';

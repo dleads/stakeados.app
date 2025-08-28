@@ -1,12 +1,33 @@
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import { createBrowserClient } from '@supabase/ssr';
 import type { DatabaseExtended } from '@/types/database-extended';
 
-// Instanciación directa para evitar estados null/undefined
-const supabaseInstance = createClientComponentClient<DatabaseExtended>();
-
-// Exportamos sin anotaciones explícitas de SupabaseClient para mantener la compatibilidad
-// con la firma de tipos de auth-helpers y evitar desajustes de genéricos.
-export const createClient = () => supabaseInstance;
+// Crear cliente de Supabase para el lado del cliente
+export const createClient = () =>
+  createBrowserClient<DatabaseExtended>(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        get: (name: string) => {
+          const cookie = document.cookie
+            .split('; ')
+            .find((row) => row.startsWith(`${name}=`))
+            ?.split('=')[1];
+          return cookie || '';
+        },
+        set: (name: string, value: string, options: any) => {
+          document.cookie = `${name}=${value}; ${Object.entries(options)
+            .map(([key, val]) => `${key}=${val}`)
+            .join('; ')}`;
+        },
+        remove: (name: string, options: any) => {
+          document.cookie = `${name}=; Max-Age=0; ${Object.entries(options)
+            .map(([key, val]) => `${key}=${val}`)
+            .join('; ')}`;
+        },
+      },
+    }
+  );
 
 // Instancia por defecto
-export const supabase = supabaseInstance;
+export const supabase = createClient();

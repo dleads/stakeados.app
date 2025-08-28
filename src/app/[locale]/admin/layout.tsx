@@ -2,7 +2,7 @@ import React from 'react';
 import AdminLayout from '@/components/admin/AdminLayout';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
+import { createServerComponentClient } from '@supabase/ssr';
 import type { Database } from '@/types/supabase';
 
 export default async function AdminLayoutWrapper({

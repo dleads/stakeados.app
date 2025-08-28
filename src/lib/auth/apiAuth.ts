@@ -1,8 +1,9 @@
-import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
+import { createServerClient, type CookieOptions } from '@supabase/ssr';
 import { createClient } from '@/lib/supabase/server';
 import { createAnonClient } from '@/lib/supabase/anon';
 import { cookies } from 'next/headers';
 import { NextRequest } from 'next/server';
+import type { Database } from '@/types/supabase';
 
 // TEMPORAL: Flag para debuggear - cambiar a true solo si se requiere simular admin
 const DEBUG_MODE = false;
@@ -25,9 +26,23 @@ export async function getAuthenticatedUser(request: NextRequest) {
     // Método 1: Intentar con createRouteHandlerClient (método preferido)
     try {
       const cookieStore = cookies();
-      const supabaseWithCookies = createRouteHandlerClient({
-        cookies: () => cookieStore,
-      });
+      const supabaseWithCookies = createServerClient<Database>(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+        {
+          cookies: {
+            get(name: string) {
+              return cookieStore.get(name)?.value;
+            },
+            set(name: string, value: string, options: CookieOptions) {
+              cookieStore.set({ name, value, ...options });
+            },
+            remove(name: string, options: CookieOptions) {
+              cookieStore.set({ name, value: '', ...options, maxAge: 0 });
+            },
+          },
+        }
+      );
 
       const {
         data: { user: cookieUser },
