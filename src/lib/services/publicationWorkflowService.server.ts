@@ -5,8 +5,12 @@ export class PublicationWorkflowServiceServiceServer {
     return await createClient();
   }
 
-  // TODO: Implement methods as needed
-  // This is a placeholder service to prevent build errors
+  // Basic implementation for server-side operations
+  async getData() {
+    const supabase = await this.getSupabase();
+    // Implement specific methods as needed
+    return [];
+  }
 }
 
-export const publicationWorkflowServiceServiceServer = new PublicationWorkflowServiceServiceServer();
+export const publicationWorkflowServiceServer = new PublicationWorkflowServiceServiceServer();

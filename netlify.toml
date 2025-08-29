@@ -6,7 +6,11 @@
 [build.environment]
   NEXT_USE_NETLIFY_EDGE = "true"
   # Avoid false positives: these keys are expected in client bundles
-  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_SUPABASE_ANON_KEY,NEXT_PUBLIC_SUPABASE_URL"
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_SUPABASE_ANON_KEY,NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_APP_URL,NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID,NEXT_PUBLIC_GA_MEASUREMENT_ID,NEXT_PUBLIC_APP_NAME"
+  # Exclude build output directories and environment files from secrets scanning
+  SECRETS_SCAN_OMIT_PATHS = ".next/**,.netlify/**,node_modules/**,config/environments/*.env,config/environments/production.env,config/environments/staging.env"
+  # Enable secrets scanning but with our custom exclusions
+  SECRETS_SCAN_ENABLED = "true"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"

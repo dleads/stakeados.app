@@ -5,7 +5,7 @@ import type { Database } from '@/types/supabase';
 
 export async function GET(_request: NextRequest) {
   try {
-    const supabase = createRouteHandlerClient<Database>({ cookies });
+    const supabase = createServerClient<Database>({ cookies });
     const {
       data: { user },
       error: authError,

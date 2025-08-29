@@ -13,7 +13,7 @@ export async function PATCH(
   { params }: { params: { id: string } }
 ) {
   try {
-    const supabase = createRouteHandlerClient({ cookies });
+    const supabase = createServerClient({ cookies });
 
     // Check authentication
     const {

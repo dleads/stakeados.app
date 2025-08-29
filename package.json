@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000",
+    "prebuild": "node scripts/deployment/clean-secrets.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -75,6 +76,7 @@
     "deploy:validate-env": "node scripts/deployment/env-validator.js",
     "deploy:security-audit": "node scripts/deployment/security-audit.js",
     "deploy:pentest": "node scripts/deployment/penetration-test.js",
+    "deploy:test-secrets-fix": "node scripts/deployment/test-secrets-fix.js",
     "deploy:performance-check": "node scripts/deployment/performance-check.js",
     "optimize:images": "echo 'Image optimization placeholder - implement with imagemin or similar'",
     "test:unit": "vitest run --reporter=verbose",

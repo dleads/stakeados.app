@@ -7,7 +7,7 @@ import type { CreateSubscriptionRequest } from '@/types/notifications';
 
 export async function GET(request: NextRequest) {
   try {
-    const supabase = createRouteHandlerClient<Database>({ cookies });
+    const supabase = createServerClient<Database>({ cookies });
     const {
       data: { user },
       error: authError,
@@ -51,7 +51,7 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const supabase = createRouteHandlerClient<Database>({ cookies });
+    const supabase = createServerClient<Database>({ cookies });
     const {
       data: { user },
       error: authError,

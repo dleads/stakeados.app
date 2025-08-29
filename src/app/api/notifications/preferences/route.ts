@@ -7,7 +7,7 @@ import type { NotificationPreferences } from '@/types/notifications';
 
 export async function GET(_request: NextRequest) {
   try {
-    const supabase = createRouteHandlerClient<Database>({ cookies });
+    const supabase = createServerClient<Database>({ cookies });
     const {
       data: { user },
       error: authError,
@@ -33,7 +33,7 @@ export async function GET(_request: NextRequest) {
 
 export async function PATCH(request: NextRequest) {
   try {
-    const supabase = createRouteHandlerClient<Database>({ cookies });
+    const supabase = createServerClient<Database>({ cookies });
     const {
       data: { user },
       error: authError,
@@ -92,7 +92,7 @@ export async function PATCH(request: NextRequest) {
 
 export async function DELETE(_request: NextRequest) {
   try {
-    const supabase = createRouteHandlerClient<Database>({ cookies });
+    const supabase = createServerClient<Database>({ cookies });
     const {
       data: { user },
       error: authError,

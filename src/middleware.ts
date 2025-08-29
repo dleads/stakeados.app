@@ -165,4 +165,6 @@ export const config = {
     // Skip all internal paths (_next, api, etc.) and static files
     '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
   ],
+  // Force Node.js runtime instead of Edge Runtime for Netlify compatibility
+  runtime: 'nodejs',
 };

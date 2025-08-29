@@ -6,7 +6,7 @@ import { NotificationServiceServer } from '@/lib/services/notificationService.se
 
 export async function PATCH(_request: NextRequest) {
   try {
-    const supabase = createRouteHandlerClient<Database>({ cookies });
+    const supabase = createServerClient<Database>({ cookies });
     const {
       data: { user },
       error: authError,

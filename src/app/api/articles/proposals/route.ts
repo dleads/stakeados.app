@@ -5,7 +5,7 @@ import { articleProposalSchema } from '@/lib/schemas/articles';
 
 export async function POST(req: NextRequest) {
   try {
-    const supabase = createRouteHandlerClient({ cookies });
+    const supabase = createServerClient({ cookies });
 
     // Check authentication
     const {
@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
 
 export async function GET(req: NextRequest) {
   try {
-    const supabase = createRouteHandlerClient({ cookies });
+    const supabase = createServerClient({ cookies });
 
     // Check authentication
     const {

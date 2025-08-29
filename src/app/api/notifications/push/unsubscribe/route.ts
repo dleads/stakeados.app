@@ -6,7 +6,7 @@ import { PushNotificationServiceServer } from '@/lib/services/pushNotificationSe
 
 export async function POST(request: NextRequest) {
   try {
-    const supabase = createRouteHandlerClient<Database>({ cookies });
+    const supabase = createServerClient<Database>({ cookies });
     const {
       data: { user },
       error: authError,

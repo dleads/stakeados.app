@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid token' }, { status: 400 });
     }
 
-    const supabase = createRouteHandlerClient<Database>({ cookies });
+    const supabase = createServerClient<Database>({ cookies });
     const subSvc = new SubscriptionService(supabase);
     const prefSvc = new NotificationPreferencesServiceServer(supabase as any);
 

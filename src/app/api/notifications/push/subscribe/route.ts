@@ -6,7 +6,7 @@ import { PushNotificationServiceServer } from '@/lib/services/pushNotificationSe
 
 export async function POST(request: NextRequest) {
   try {
-    const supabase = createRouteHandlerClient<Database>({ cookies });
+    const supabase = createServerClient<Database>({ cookies });
     const {
       data: { user },
       error: authError,
@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
 
 export async function GET(_request: NextRequest) {
   try {
-    const supabase = createRouteHandlerClient<Database>({ cookies });
+    const supabase = createServerClient<Database>({ cookies });
     const service = new PushNotificationServiceServer(supabase);
     const vapidPublicKey = await service.getVapidPublicKey();
 
