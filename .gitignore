@@ -86,7 +86,8 @@ jspm_packages/
 
 # Gatsby files
 .cache/
-public
+# Do not ignore public assets; needed for Next.js static files (e.g., /logo.svg)
+# public
 
 # Storybook build outputs
 .out

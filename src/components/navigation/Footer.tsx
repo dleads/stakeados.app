@@ -2,6 +2,8 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { Twitter, Github, Mail } from 'lucide-react';
 import { useTranslation, getLocalizedUrl } from '@/lib/i18n';
 import type { Locale } from '@/types/content';
 
@@ -11,94 +13,49 @@ export interface FooterProps {
 
 export default function Footer({ locale }: FooterProps) {
   const { t } = useTranslation(locale);
-
-  const footerSections = [
-    {
-      title: 'Platform',
-      links: [
-        {
-          label: t('nav.articles'),
-          href: getLocalizedUrl('/articles', locale),
-        },
-        { label: t('nav.news'), href: getLocalizedUrl('/news', locale) },
-        {
-          label: t('nav.community'),
-          href: getLocalizedUrl('/community', locale),
-        },
-      ],
-    },
-    {
-      title: 'Resources',
-      links: [
-        { label: 'Documentation', href: '#' },
-        { label: 'API', href: '#' },
-        { label: 'Help Center', href: '#' },
-      ],
-    },
-    {
-      title: 'Company',
-      links: [
-        { label: 'About', href: '#' },
-        { label: 'Blog', href: '#' },
-        { label: 'Careers', href: '#' },
-      ],
-    },
-    {
-      title: 'Legal',
-      links: [
-        { label: 'Privacy Policy', href: '#' },
-        { label: 'Terms of Service', href: '#' },
-        { label: 'Cookie Policy', href: '#' },
-      ],
-    },
-  ];
+  
 
   const socialLinks = [
-    {
-      name: 'GitHub',
-      href: 'https://github.com/stakeados',
-      icon: '🐙',
-    },
-    {
-      name: 'Twitter',
-      href: 'https://twitter.com/stakeados',
-      icon: '🐦',
-    },
-    {
-      name: 'Discord',
-      href: 'https://discord.gg/stakeados',
-      icon: '💬',
-    },
-    {
-      name: 'Email',
-      href: 'mailto:hello@stakeados.com',
-      icon: '📧',
-    },
+    { name: 'Twitter', href: 'https://twitter.com/stakeados', icon: Twitter },
+    { name: 'GitHub', href: 'https://github.com/stakeados', icon: Github },
+    { name: 'Email', href: 'mailto:hello@stakeados.com', icon: Mail },
   ];
 
   return (
     <footer className="bg-black border-t border-green-500/20">
       <div className="container mx-auto px-4 py-12">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
-          {/* Brand Section */}
-          <div className="lg:col-span-2">
+        {/* Main Footer Content - single row: logo | text | socials */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 items-center">
+          {/* Brand (Logo) */}
+          <div className="lg:col-span-1">
             <Link
               href={getLocalizedUrl('/', locale)}
-              className="flex items-center space-x-3 mb-4"
+              className="flex items-center space-x-3 mb-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-400 rounded-md"
+              aria-label="Stakeados Home"
             >
-              <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-green-600 rounded-lg flex items-center justify-center">
-                <span className="text-black font-bold text-sm">S</span>
-              </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-green-400 via-green-300 to-green-500 bg-clip-text text-transparent">
-                STAKEADOS
-              </span>
+              <Image
+                src="https://res.cloudinary.com/dvmtkwrme/image/upload/v1756440936/logo_2_yrsudy.svg"
+                alt="Stakeados logo"
+                width={64}
+                height={64}
+                priority
+                sizes="(min-width: 1024px) 56px, (min-width: 768px) 48px, 40px"
+                className="h-10 w-auto md:h-12 lg:h-14 drop-shadow-[0_0_6px_rgba(0,0,0,0.35)]"
+              />
+              <span className="sr-only">Stakeados</span>
             </Link>
-            <p className="text-gray-400 mb-6 max-w-sm">
+            {/* Empty below logo to keep alignment */}
+          </div>
+
+          {/* Middle text */}
+          <div className="lg:col-span-1 flex items-center justify-center">
+            <p className="text-gray-400 leading-relaxed text-center max-w-xl">
               {t('home.hero.subtitle')}
             </p>
+          </div>
 
-            {/* Social Links */}
+          {/* Socials (right) */}
+          <div className="lg:col-span-1 flex items-center justify-center lg:justify-end">
             <div className="flex space-x-4">
               {socialLinks.map(social => (
                 <a
@@ -106,56 +63,12 @@ export default function Footer({ locale }: FooterProps) {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors text-xl"
+                  className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
                   aria-label={social.name}
                 >
-                  {social.icon}
+                  <social.icon className="w-5 h-5" />
                 </a>
               ))}
-            </div>
-          </div>
-
-          {/* Footer Links */}
-          {footerSections.map(section => (
-            <div key={section.title}>
-              <h3 className="text-white font-semibold mb-4">{section.title}</h3>
-              <ul className="space-y-3">
-                {section.links.map(link => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors flex items-center group"
-                    >
-                      {link.label}
-                      {link.href.startsWith('http') && (
-                        <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                          ↗
-                        </span>
-                      )}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        {/* Newsletter Signup */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="max-w-md">
-            <h3 className="text-white font-semibold mb-2">Stay Updated</h3>
-            <p className="text-gray-400 text-sm mb-4">
-              Get the latest news and updates from the Web3 world.
-            </p>
-            <div className="flex">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-l-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-400"
-              />
-              <button className="stakeados-button-primary rounded-l-none rounded-r-lg">
-                Subscribe
-              </button>
             </div>
           </div>
         </div>
@@ -163,7 +76,7 @@ export default function Footer({ locale }: FooterProps) {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} Stakeados. All rights reserved.
+            &copy; {new Date().getFullYear()} Stakeados. All rights reserved.
           </div>
 
           <div className="flex items-center space-x-6 text-sm text-gray-400">

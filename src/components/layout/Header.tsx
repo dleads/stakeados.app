@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/lib/utils/navigation';
 import { useAuthContext } from '@/components/auth/AuthProvider';
@@ -8,7 +9,7 @@ import UserMenu from '@/components/ui/UserMenu';
 import AuthModal from '@/components/auth/AuthModal';
 import WalletAuthModal from '@/components/auth/WalletAuthModal';
 import { NotificationCenter } from '@/components/notifications/NotificationCenter';
-import { Menu, X, Zap, Crown, Search, Bell } from 'lucide-react';
+import { Menu, X, Crown, Search, Bell } from 'lucide-react';
 
 export default function Header() {
   const t = useTranslations();
@@ -52,13 +53,21 @@ export default function Header() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 bg-gradient-to-r from-stakeados-primary to-stakeados-primary-light rounded-gaming flex items-center justify-center group-hover:shadow-glow transition-all">
-                <Zap className="w-5 h-5 text-stakeados-dark" />
-              </div>
-              <span className="text-xl font-bold text-neon group-hover:text-glow transition-all">
-                Stakeados
-              </span>
+            <Link
+              href="/"
+              className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-stakeados-primary rounded-md"
+              aria-label="Stakeados Home"
+            >
+              <Image
+                src="https://res.cloudinary.com/dvmtkwrme/image/upload/v1756440936/logo_2_yrsudy.svg"
+                alt="Stakeados logo"
+                width={64}
+                height={64}
+                priority
+                sizes="(min-width: 1024px) 56px, (min-width: 768px) 48px, 40px"
+                className="h-10 w-auto md:h-12 lg:h-14 drop-shadow-[0_0_6px_rgba(0,0,0,0.35)]"
+              />
+              <span className="sr-only">Stakeados</span>
             </Link>
 
             {/* Desktop Navigation */}

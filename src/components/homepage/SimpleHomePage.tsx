@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation, getLocalizedUrl } from '@/lib/i18n';
 import MainNavigation from '@/components/navigation/MainNavigation';
 import Footer from '@/components/navigation/Footer';
@@ -27,6 +27,9 @@ export interface SimpleHomePageProps {
 
 export default function SimpleHomePage({ locale }: SimpleHomePageProps) {
   const { t } = useTranslation(locale);
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<null | { ok: boolean; msg: string }>(null);
 
   return (
     <GamingBackground>
@@ -39,18 +42,10 @@ export default function SimpleHomePage({ locale }: SimpleHomePageProps) {
           <div className="absolute inset-0 bg-gradient-to-r from-green-400/10 to-blue-500/10"></div>
           <div className="container mx-auto px-4 py-20 relative">
             <div className="text-center max-w-4xl mx-auto">
-              <div className="flex justify-center mb-6">
-                <div className="relative">
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center">
-                    <span className="text-black font-bold text-2xl">₿</span>
-                  </div>
-                  <div className="absolute inset-0 bg-green-400/20 rounded-full blur-xl"></div>
-                </div>
-              </div>
-
-              <h1 className="text-5xl md:text-7xl font-bold mb-6">
+              {/* Title */}
+              <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
                 <span className="bg-gradient-to-r from-green-400 via-green-300 to-green-500 bg-clip-text text-transparent">
-                  {locale === 'es' ? 'APRENDE' : 'LEARN'}
+                  STAKEADOS
                 </span>
                 <br />
                 <span className="text-white">
@@ -554,67 +549,68 @@ export default function SimpleHomePage({ locale }: SimpleHomePageProps) {
               </span>
             </div>
 
-            {/* Coming Soon Message */}
+            {/* Coming Soon Message with inline CTA */}
             <div className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 rounded-lg p-8 text-center mb-8">
               <div className="text-4xl mb-4">🚧</div>
               <h3 className="text-xl font-semibold text-yellow-400 mb-3">
                 {t('course.comingSoon')}
               </h3>
               <p className="text-gray-300 mb-4">{t('course.inDevelopment')}</p>
-              <div className="text-sm text-gray-400">
-                {t('course.stayTuned')}
-              </div>
+              <div className="text-sm text-gray-400 mb-4">{t('course.stayTuned')}</div>
+
+              {/* Inline newsletter CTA */}
+              <form
+                className="mx-auto max-w-xl flex flex-col sm:flex-row gap-3 justify-center"
+                onSubmit={async e => {
+                  e.preventDefault();
+                  if (!email) return;
+                  setLoading(true);
+                  setStatus(null);
+                  try {
+                    const res = await fetch('/api/newsletter', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ email, locale }),
+                    });
+                    const data = await res.json();
+                    if (res.ok) {
+                      setStatus({ ok: true, msg: '¡Gracias por suscribirte!' });
+                      setEmail('');
+                    } else {
+                      setStatus({ ok: false, msg: data?.error || 'No se pudo suscribir' });
+                    }
+                  } catch (err) {
+                    setStatus({ ok: false, msg: 'Error de red' });
+                  } finally {
+                    setLoading(false);
+                  }
+                }}
+              >
+                <input
+                  type="email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  required
+                  placeholder="Tu email"
+                  aria-label="Correo electrónico"
+                  className="w-full sm:w-auto flex-1 min-w-[260px] bg-gray-900/60 border border-yellow-500/30 text-white rounded-gaming px-4 h-10 text-sm focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all"
+                />
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="bg-green-600 hover:bg-green-500 text-white font-semibold px-6 h-10 rounded-gaming transition-colors disabled:opacity-60"
+                >
+                  {loading ? 'Enviando…' : 'Suscribirse'}
+                </button>
+              </form>
+              {status && (
+                <div role="status" className={`mt-3 text-sm text-center ${status.ok ? 'text-green-400' : 'text-red-400'}`}>
+                  {status.msg}
+                </div>
+              )}
             </div>
 
-            {/* Preview of Future Courses */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 opacity-60">
-              {[
-                {
-                  title: 'Blockchain Fundamentals',
-                  level: 'beginner',
-                  duration: '4 weeks',
-                },
-                {
-                  title: 'Smart Contract Development',
-                  level: 'intermediate',
-                  duration: '6 weeks',
-                },
-                {
-                  title: 'DeFi Protocol Design',
-                  level: 'advanced',
-                  duration: '8 weeks',
-                },
-              ].map((course, i) => (
-                <div key={i} className="bg-gray-800 rounded-lg p-6 relative">
-                  <div className="absolute inset-0 bg-gray-900/50 rounded-lg flex items-center justify-center">
-                    <span className="text-yellow-400 font-semibold">
-                      {t('course.comingSoon')}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">
-                      {t(`course.level.${course.level}` as any)}
-                    </span>
-                    <span className="text-xs text-gray-400">
-                      {course.duration}
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-white mb-3">
-                    {course.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm mb-4">
-                    Master the fundamentals of blockchain technology and Web3
-                    development.
-                  </p>
-                  <button
-                    disabled
-                    className="w-full bg-gray-600 text-gray-400 py-2 rounded-lg cursor-not-allowed"
-                  >
-                    {t('course.comingSoon')}
-                  </button>
-                </div>
-              ))}
-            </div>
+            {/* Preview of Future Courses removed intentionally to avoid empty placeholders */}
           </div>
         </section>
 

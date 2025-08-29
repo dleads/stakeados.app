@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   useTranslation,
   getLocalizedUrl,
@@ -78,14 +79,18 @@ export default function MainNavigation({
           {/* Logo */}
           <Link
             href={getLocalizedUrl('/', locale)}
-            className="flex items-center space-x-3 group"
+            className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-green-400 rounded-md"
+            aria-label="Stakeados Home"
           >
-            <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-blue-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-              <span className="text-white font-bold text-sm">S</span>
-            </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-green-400 via-green-300 to-green-500 bg-clip-text text-transparent">
-              STAKEADOS
-            </span>
+            <Image
+              src="https://res.cloudinary.com/dvmtkwrme/image/upload/v1756440936/logo_2_yrsudy.svg"
+              alt="Stakeados logo"
+              width={64}
+              height={64}
+              priority
+              sizes="(min-width: 1024px) 56px, (min-width: 768px) 48px, 40px"
+              className="h-10 w-auto md:h-12 lg:h-14 drop-shadow-[0_0_6px_rgba(0,0,0,0.35)]"
+            />
           </Link>
 
           {/* Desktop Navigation */}

@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://stakeados.com/sitemap.xml
+
+# Disallow admin pages
+Disallow: /admin/
+Disallow: /api/
+
+# Allow specific paths
+Allow: /en/
+Allow: /es/
+Allow: /courses/
+Allow: /cursos/
+Allow: /community/
+Allow: /comunidad/
+Allow: /news/
+Allow: /noticias/
+Allow: /genesis/
+
+# Crawl delay
+Crawl-delay: 1
