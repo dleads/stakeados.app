@@ -1,8 +1,17 @@
 import { Resend } from 'resend';
 import { env } from '@/lib/env';
 
-// Initialize Resend client
-export const resend = new Resend(env.RESEND_API_KEY);
+// Lazy initializer to avoid throwing at import-time when key is missing during build
+let _resend: Resend | null = null;
+export function getResend(): Resend {
+  if (!_resend) {
+    if (!env.RESEND_API_KEY) {
+      throw new Error('Resend API key not configured');
+    }
+    _resend = new Resend(env.RESEND_API_KEY);
+  }
+  return _resend;
+}
 
 // Email configuration
 export const EMAIL_CONFIG = {
@@ -690,7 +699,7 @@ export async function sendEmail(
       throw new Error('Resend API key not configured');
     }
 
-    const { data, error } = await resend.emails.send({
+    const { data, error } = await getResend().emails.send({
       from: template.from || EMAIL_CONFIG.from,
       to: template.to,
       subject: template.subject,
