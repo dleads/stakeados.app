@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function GET(request: NextRequest) {
   try {
     // TODO: Use supabase client when database functions are available
-    // const supabase = createClient()
+    // const supabase = await createClient()
     const { searchParams } = new URL(request.url);
     const contentType = searchParams.get('content_type') as
       | 'article'

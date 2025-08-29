@@ -8,7 +8,7 @@ import {
 import { getDashboardActivity } from '@/lib/services/dashboardService';
 
 async function requireAdmin() {
-  const supabase = createClient();
+  const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();

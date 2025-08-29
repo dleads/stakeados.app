@@ -299,7 +299,7 @@ function detectAdvancedDuplicates(
 
 export async function GET(request: NextRequest) {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
     const {
       data: { user },
     } = await supabase.auth.getUser();
@@ -541,7 +541,7 @@ export async function GET(request: NextRequest) {
 // POST endpoint to resolve duplicates (delete or merge)
 export async function POST(request: NextRequest) {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
     const {
       data: { user },
     } = await supabase.auth.getUser();

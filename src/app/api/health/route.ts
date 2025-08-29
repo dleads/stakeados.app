@@ -23,7 +23,7 @@ export async function GET(_request: NextRequest) {
 
     // Database connectivity check
     try {
-      const supabase = createClient();
+      const supabase = await createClient();
       const dbStart = Date.now();
       const { error } = await supabase
         .from('profiles')

@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase/client';
+import { createClient as createBrowserClient } from '@/lib/supabase/client';
 import type {
   NewsSource,
   NewsSourceCategory,
@@ -11,13 +11,16 @@ import type {
 } from '@/types/news';
 
 export class NewsSourceService {
-  private supabase = createClient();
+  private db() {
+    return createBrowserClient();
+  }
 
   // Get all news sources with optional filtering
   async getNewsSources(
     filters?: NewsSourceFilters
   ): Promise<NewsSourceWithHealth[]> {
-    let query = this.supabase
+    const supabase = this.db();
+    let query = supabase
       .from('news_sources' as any)
       .select(
         `
@@ -75,7 +78,8 @@ export class NewsSourceService {
 
   // Get a single news source by ID
   async getNewsSource(id: string): Promise<NewsSourceWithHealth | null> {
-    const { data, error } = await this.supabase
+    const supabase = this.db();
+    const { data, error } = await supabase
       .from('news_sources' as any)
       .select(
         `
@@ -113,7 +117,8 @@ export class NewsSourceService {
   async createNewsSource(
     request: CreateNewsSourceRequest
   ): Promise<NewsSource> {
-    const { data, error } = await this.supabase
+    const supabase = this.db();
+    const { data, error } = await supabase
       .from('news_sources' as any)
       .insert({
         name: request.name,
@@ -128,7 +133,7 @@ export class NewsSourceService {
         fetch_interval: request.fetch_interval || 3600,
         priority: request.priority || 1,
         quality_score: request.quality_score || 5.0,
-      })
+      } as any)
       .select()
       .single();
 
@@ -170,9 +175,10 @@ export class NewsSourceService {
     if (request.max_failures !== undefined)
       updateData.max_failures = request.max_failures;
 
-    const { data, error } = await this.supabase
+    const supabase = this.db();
+    const { data, error } = await supabase
       .from('news_sources' as any)
-      .update(updateData)
+      .update(updateData as any)
       .eq('id', id)
       .select()
       .single();
@@ -186,7 +192,8 @@ export class NewsSourceService {
 
   // Delete a news source
   async deleteNewsSource(id: string): Promise<void> {
-    const { error } = await this.supabase
+    const supabase = this.db();
+    const { error } = await supabase
       .from('news_sources' as any)
       .delete()
       .eq('id', id);
@@ -198,7 +205,8 @@ export class NewsSourceService {
 
   // Get sources ready for fetching
   async getSourcesReadyForFetch(): Promise<NewsSource[]> {
-    const { data, error } = await this.supabase.rpc(
+    const supabase = this.db();
+    const { data, error } = await supabase.rpc(
       'get_sources_ready_for_fetch' as any
     );
 
@@ -221,7 +229,8 @@ export class NewsSourceService {
     httpStatusCode?: number,
     metadata?: Record<string, any>
   ): Promise<NewsSourceHealth> {
-    const { data, error } = await this.supabase
+    const supabase = this.db();
+    const { data, error } = await supabase
       .from('news_source_health' as any)
       .insert({
         source_id: sourceId,
@@ -231,7 +240,7 @@ export class NewsSourceService {
         error_message: errorMessage,
         http_status_code: httpStatusCode,
         metadata: metadata || {},
-      })
+      } as any)
       .select()
       .single();
 
@@ -247,7 +256,8 @@ export class NewsSourceService {
     sourceId: string,
     limit: number = 50
   ): Promise<NewsSourceHealth[]> {
-    const { data, error } = await this.supabase
+    const supabase = this.db();
+    const { data, error } = await supabase
       .from('news_source_health' as any)
       .select('*')
       .eq('source_id', sourceId)
@@ -263,7 +273,8 @@ export class NewsSourceService {
 
   // Get news source categories
   async getNewsSourceCategories(): Promise<NewsSourceCategory[]> {
-    const { data, error } = await this.supabase
+    const supabase = this.db();
+    const { data, error } = await supabase
       .from('news_source_categories' as any)
       .select('*')
       .order('name');
@@ -284,14 +295,15 @@ export class NewsSourceService {
     color?: string,
     icon?: string
   ): Promise<NewsSourceCategory> {
-    const { data, error } = await this.supabase
+    const supabase = this.db();
+    const { data, error } = await supabase
       .from('news_source_categories' as any)
       .insert({
         name,
         description,
         color: color || '#00FF88',
         icon,
-      })
+      } as any)
       .select()
       .single();
 
@@ -307,7 +319,8 @@ export class NewsSourceService {
   // Get news source statistics
   async getNewsSourceStats(): Promise<NewsSourceStats> {
     // Get basic source counts
-    const { data: sourceCounts, error: sourceError } = await this.supabase
+    const supabase = this.db();
+    const { data: sourceCounts, error: sourceError } = await supabase
       .from('news_sources' as any)
       .select('is_active, quality_score');
 
@@ -316,7 +329,7 @@ export class NewsSourceService {
     }
 
     // Get health status counts
-    const { data: healthCounts, error: healthError } = await this.supabase
+    const { data: healthCounts, error: healthError } = await supabase
       .from('news_source_health' as any)
       .select('status, source_id')
       .gte(

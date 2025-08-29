@@ -6,7 +6,7 @@ export async function POST(
   { params }: { params: { id: string } }
 ) {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
 
     // Check if user is authenticated and has admin role
     const {

@@ -8,7 +8,7 @@ import {
 import { getQuickActions } from '@/lib/services/dashboardService';
 
 async function requireAdmin() {
-  const supabase = createClient();
+  const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();

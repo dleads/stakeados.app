@@ -3,7 +3,7 @@ import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import type { Database } from '@/types/supabase';
 import { SubscriptionService } from '@/lib/services/subscriptionService';
-import { NotificationPreferencesService } from '@/lib/services/notificationPreferencesService';
+import { NotificationPreferencesServiceServer } from '@/lib/services/notificationPreferencesService.server';
 
 export async function GET(request: NextRequest) {
   try {
@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
 
     const supabase = createRouteHandlerClient<Database>({ cookies });
     const subSvc = new SubscriptionService(supabase);
-    const prefSvc = new NotificationPreferencesService(supabase as any);
+    const prefSvc = new NotificationPreferencesServiceServer(supabase as any);
 
     // Verify user exists
     const { data: user, error: userError } = await supabase

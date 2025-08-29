@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import type { Database } from '@/types/supabase';
-import { NotificationPreferencesService } from '@/lib/services/notificationPreferencesService';
+import { NotificationPreferencesServiceServer } from '@/lib/services/notificationPreferencesService.server';
 import type { NotificationPreferences } from '@/types/notifications';
 
 export async function GET(_request: NextRequest) {
@@ -17,7 +17,7 @@ export async function GET(_request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const preferences = await new NotificationPreferencesService(supabase).getUserPreferences(
+    const preferences = await new NotificationPreferencesServiceServer(supabase).getUserPreferences(
       user.id
     );
 
@@ -78,7 +78,7 @@ export async function PATCH(request: NextRequest) {
     }
 
     const preferences =
-      await new NotificationPreferencesService(supabase).updateUserPreferences(user.id, body);
+      await new NotificationPreferencesServiceServer(supabase).updateUserPreferences(user.id, body);
 
     return NextResponse.json({ preferences });
   } catch (error) {
@@ -102,7 +102,7 @@ export async function DELETE(_request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const preferences = await new NotificationPreferencesService(supabase).resetToDefaults(
+    const preferences = await new NotificationPreferencesServiceServer(supabase).resetToDefaults(
       user.id
     );
 

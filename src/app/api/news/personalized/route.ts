@@ -178,7 +178,7 @@ export async function GET(request: NextRequest) {
     const page = parseInt(searchParams.get('page') || '0');
     const limit = Math.min(parseInt(searchParams.get('limit') || '20'), 50);
 
-    const supabase = createClient();
+    const supabase = await createClient();
 
     // Get user preferences
     const { data: subscriptions } = await supabase

@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import type { Database } from '@/types/supabase';
-import { PushNotificationService } from '@/lib/services/pushNotificationService';
+import { PushNotificationServiceServer } from '@/lib/services/pushNotificationService.server';
 
 export async function POST(request: NextRequest) {
   try {
@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const service = new PushNotificationService(supabase);
+    const service = new PushNotificationServiceServer(supabase);
     await service.unsubscribeFromPush(user.id, body.endpoint);
 
     return NextResponse.json({ success: true });

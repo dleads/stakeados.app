@@ -8,7 +8,7 @@ export async function GET(_request: NextRequest) {
   const start = Date.now();
 
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
 
     // Test basic connectivity
     const { error: connectivityError } = await supabase

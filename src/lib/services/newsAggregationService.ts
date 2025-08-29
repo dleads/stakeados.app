@@ -1,11 +1,13 @@
-import { createClient } from '@/lib/supabase/client';
+import { createClient } from '@/lib/supabase/server';
 import { newsFetchingService } from './newsFetchingService';
 import { newsProcessingService } from './newsProcessingService';
 
 type NewsAggregationJob = any;
 
 export class NewsAggregationService {
-  private supabase = createClient();
+  private async db() {
+    return await createClient();
+  }
 
   // Create a new aggregation job
   async createAggregationJob(
@@ -13,13 +15,14 @@ export class NewsAggregationService {
     sourceId?: string,
     metadata?: Record<string, any>
   ): Promise<NewsAggregationJob> {
-    const { data, error } = await this.supabase
+    const supabase = await this.db();
+    const { data, error } = await supabase
       .from('news_aggregation_jobs' as any)
       .insert({
         job_type: jobType,
         source_id: sourceId,
         metadata: metadata || {},
-      })
+      } as any)
       .select()
       .single();
 
@@ -57,9 +60,10 @@ export class NewsAggregationService {
       Object.assign(updateData, updates);
     }
 
-    const { error } = await this.supabase
+    const supabase = await this.db();
+    const { error } = await supabase
       .from('news_aggregation_jobs' as any)
-      .update(updateData)
+      .update(updateData as any)
       .eq('id', jobId);
 
     if (error) {
@@ -153,7 +157,8 @@ export class NewsAggregationService {
       await this.updateJobStatus(job.id, 'running');
 
       // Cleanup old processed articles
-      const { data: deletedCount, error } = await this.supabase.rpc(
+      const supabase = await this.db();
+      const { data: deletedCount, error } = await supabase.rpc(
         'cleanup_old_raw_articles' as any
       );
 
@@ -181,7 +186,8 @@ export class NewsAggregationService {
 
   // Get job history
   async getJobHistory(limit: number = 50): Promise<NewsAggregationJob[]> {
-    const { data, error } = await this.supabase
+    const supabase = await this.db();
+    const { data, error } = await supabase
       .from('news_aggregation_jobs' as any)
       .select('*')
       .order('created_at', { ascending: false })
@@ -203,9 +209,10 @@ export class NewsAggregationService {
     total_articles_processed: number;
     avg_processing_time: string | null;
   }> {
-    const { data, error } = await this.supabase.rpc(
+    const supabase = await this.db();
+    const { data, error } = await supabase.rpc(
       'get_aggregation_stats' as any,
-      { days_back: daysBack }
+      { days_back: daysBack } as any
     );
 
     if (error) {
@@ -264,7 +271,8 @@ export class NewsAggregationService {
   async schedulePeriodicAggregation(): Promise<void> {
     try {
       // Check if there's already a running job
-      const { data: runningJobs, error } = await this.supabase
+      const supabase = await this.db();
+      const { data: runningJobs, error } = await supabase
         .from('news_aggregation_jobs' as any)
         .select('id')
         .eq('status', 'running')

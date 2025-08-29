@@ -33,7 +33,9 @@ interface PublicationResult {
 }
 
 export class AutomaticPublicationService {
-  private supabase = createClient();
+  private async db() {
+    return await createClient();
+  }
 
   /**
    * Process all scheduled publications that are due
@@ -43,7 +45,8 @@ export class AutomaticPublicationService {
       const now = new Date();
 
       // Get all scheduled publications that are due
-      const { data: scheduledPublications, error } = await this.supabase
+      const supabase = await this.db();
+      const { data: scheduledPublications, error } = await supabase
         .from('publication_schedule')
         .select('*')
         .eq('status', 'scheduled')
@@ -132,7 +135,8 @@ export class AutomaticPublicationService {
       const now = new Date();
 
       // Update article status to published
-      const { error: updateError } = await this.supabase
+      const supabase = await this.db();
+      const { error: updateError } = await supabase
         .from('articles')
         .update({
           status: 'published',
@@ -179,7 +183,8 @@ export class AutomaticPublicationService {
       const now = new Date();
 
       // Update news status to published
-      const { error: updateError } = await this.supabase
+      const supabase = await this.db();
+      const { error: updateError } = await supabase
         .from('news')
         .update({
           published_at: now.toISOString(),
@@ -396,7 +401,8 @@ export class AutomaticPublicationService {
       updateData.published_at = publishedAt;
     }
 
-    const { error } = await this.supabase
+    const supabase = await this.db();
+    const { error } = await supabase
       .from('publication_schedule')
       .update(updateData)
       .eq('id', publicationId);
@@ -417,7 +423,8 @@ export class AutomaticPublicationService {
     notes?: string
   ): Promise<void> {
     try {
-      const { error } = await this.supabase.from('article_history').insert({
+      const supabase = await this.db();
+      const { error } = await supabase.from('article_history').insert({
         article_id: articleId,
         changed_by: null, // System change
         change_type: changeType,
@@ -444,7 +451,8 @@ export class AutomaticPublicationService {
   async getUpcomingPublications(
     limit: number = 10
   ): Promise<ScheduledPublication[]> {
-    const { data, error } = await this.supabase
+    const supabase = await this.db();
+    const { data, error } = await supabase
       .from('publication_schedule')
       .select('*')
       .eq('status', 'scheduled')
@@ -464,7 +472,8 @@ export class AutomaticPublicationService {
    * Get overdue publications
    */
   async getOverduePublications(): Promise<ScheduledPublication[]> {
-    const { data, error } = await this.supabase
+    const supabase = await this.db();
+    const { data, error } = await supabase
       .from('publication_schedule')
       .select('*')
       .eq('status', 'scheduled')
@@ -483,7 +492,8 @@ export class AutomaticPublicationService {
    */
   async cancelScheduledPublication(publicationId: string): Promise<boolean> {
     try {
-      const { error } = await this.supabase
+      const supabase = await this.db();
+      const { error } = await supabase
         .from('publication_schedule')
         .update({
           status: 'cancelled',
@@ -521,7 +531,8 @@ export class AutomaticPublicationService {
         updateData.timezone = timezone;
       }
 
-      const { error } = await this.supabase
+      const supabase = await this.db();
+      const { error } = await supabase
         .from('publication_schedule')
         .update(updateData)
         .eq('id', publicationId);

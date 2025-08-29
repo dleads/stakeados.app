@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { gamificationService } from '@/lib/services/gamificationService';
+import { gamificationServiceServer } from '@/lib/services/gamificationService.server';
 
 export async function GET(request: NextRequest) {
   try {
@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
     const type = searchParams.get('type') || 'points'; // points, articles, quality
 
     // Get leaderboard
-    const leaderboard = await gamificationService.getLeaderboard(limit);
+    const leaderboard = await gamificationServiceServer.getLeaderboard(limit);
 
     // Sort based on type
     let sortedLeaderboard = leaderboard;

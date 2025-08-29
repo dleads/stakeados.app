@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '../../../../lib/supabase/server';
-import { gamificationService } from '@/lib/services/gamificationService';
+import { gamificationServiceServer } from '@/lib/services/gamificationService.server';
 
 export async function POST(request: NextRequest) {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
     const {
       data: { user },
       error: authError,
@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Award points
-    const contribution = await gamificationService.awardContentPoints({
+          const contribution = await gamificationServiceServer.awardContentPoints({
       userId,
       contentId,
       contentType,
@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
 
     // Check for new achievements
     const newAchievements =
-      await gamificationService.checkAndAwardAchievements(userId);
+      await gamificationServiceServer.checkAndAwardAchievements(userId);
 
     return NextResponse.json({
       contribution,
@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
 
 export async function GET(request: NextRequest) {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
     const {
       data: { user },
       error: authError,
@@ -84,13 +84,13 @@ export async function GET(request: NextRequest) {
     const limit = parseInt(searchParams.get('limit') || '20');
 
     // Get user contributions
-    const contributions = await gamificationService.getUserContributions(
+          const contributions = await gamificationServiceServer.getUserContributions(
       userId,
       limit
     );
 
     // Get points breakdown
-    const breakdown = await gamificationService.getPointsBreakdown(userId);
+          const breakdown = await gamificationServiceServer.getPointsBreakdown(userId);
 
     return NextResponse.json({
       contributions,

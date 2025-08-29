@@ -1,5 +1,4 @@
 import { createAnonClient } from './anon';
-import { createClient as createServerClient } from './server';
 import type { Database } from './types';
 import { mintCertificate } from '@/lib/web3/nft';
 import type { Address } from 'viem';
@@ -58,8 +57,8 @@ export const getUserProgress = async (userId: string) => {
       courses (
         id,
         title,
-        difficulty,
-        estimated_time
+        level,
+        duration_minutes
       )
     `
     )
@@ -76,21 +75,22 @@ export const getUserProgress = async (userId: string) => {
 
 // Create or update progress entry
 export const upsertProgress = async (progress: UserProgressInsert) => {
-  const supabase = await createServerClient();
-  const { data, error } = await supabase
-    .from('user_progress')
-    .upsert(progress as any, {
-      onConflict: 'user_id,course_id,content_id',
-    })
-    .select()
-    .single();
+  // Use server API route to avoid importing server-only code in client
+  const res = await fetch('/api/progress', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(progress),
+    credentials: 'include',
+  });
 
-  if (error) {
-    console.error('Error upserting progress:', error);
-    throw error;
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    console.error('Error upserting progress via API:', err);
+    throw new Error(err?.error || 'Failed to upsert progress');
   }
 
-  return data;
+  const json = await res.json();
+  return json.data as UserProgress;
 };
 
 // Mark content as completed
@@ -432,7 +432,7 @@ export const getUserCompletionStats = async (userId: string) => {
       course_id,
       completed_at,
       courses (
-        difficulty
+        level
       )
     `
     )
@@ -457,7 +457,7 @@ export const getUserCompletionStats = async (userId: string) => {
     if (progress.courses) {
       stats.uniqueCoursesCompleted.add(progress.course_id);
 
-      switch ((progress.courses as any).difficulty) {
+      switch ((progress.courses as any).level) {
         case 'basic':
           stats.basicCompleted++;
           break;
@@ -556,20 +556,28 @@ export const awardActivityPoints = async (
     return 0;
   }
 
-  const supabase = await createServerClient();
-  const { error } = await supabase
-    .from('profiles')
-    .update({
-      total_points: (supabase as any).raw(`total_points + ${pointsToAdd}`),
-    } as any)
-    .eq('id', userId);
+  // Delegate to server API that handles auth/user context
+  const res = await fetch('/api/gamification/points', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    body: JSON.stringify({
+      userId,
+      contentId: 'activity',
+      contentType: 'generic',
+      contributionType: activityType,
+      basePoints: pointsToAdd,
+    }),
+  });
 
-  if (error) {
-    console.error('Error awarding activity points:', error);
-    throw error;
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    console.error('Error awarding activity points via API:', err);
+    throw new Error(err?.error || 'Failed to award points');
   }
 
-  return pointsToAdd;
+  const json = await res.json();
+  return json?.contribution?.points ?? pointsToAdd;
 };
 
 // Get user achievements

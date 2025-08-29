@@ -26,7 +26,7 @@ export async function GET(_request: NextRequest) {
       );
     }
 
-    const supabase = createClient();
+    const supabase = await createClient();
 
     // Get user preferences from user_subscriptions table
     const { data: subscriptions, error: subscriptionsError } = await supabase
@@ -111,7 +111,7 @@ export async function PUT(request: NextRequest) {
     }
 
     const preferences: NewsPreferences = await request.json();
-    const supabase = createClient();
+    const supabase = await createClient();
 
     // Update user subscriptions
     // First, delete existing subscriptions

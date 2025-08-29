@@ -1,9 +1,12 @@
-import { createClient } from '@/lib/supabase/client';
-import { newsSourceService } from './newsSourceService';
+import { createClient } from '@/lib/supabase/server';
+import { newsSourceServiceServer } from './newsSourceService.server';
 import type { NewsSource, RawNewsArticle } from '@/types/news';
+import { XMLParser } from 'fast-xml-parser';
 
 export class NewsFetchingService {
-  private supabase = createClient();
+  private async db() {
+    return await createClient();
+  }
 
   // Fetch news from RSS feeds
   async fetchFromRSS(source: NewsSource): Promise<RawNewsArticle[]> {
@@ -36,59 +39,69 @@ export class NewsFetchingService {
     source: NewsSource
   ): Promise<RawNewsArticle[]> {
     try {
-      // Use DOMParser to parse XML (works in browser environment)
-      const parser = new DOMParser();
-      const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+      const parser = new XMLParser({
+        ignoreAttributes: false,
+        attributeNamePrefix: '',
+        trimValues: true,
+      });
+      const doc = parser.parse(xmlText);
 
-      // Check for parsing errors
-      const parserError = xmlDoc.querySelector('parsererror');
-      if (parserError) {
-        throw new Error('Invalid XML format');
-      }
+      // Support RSS 2.0 (rss.channel.item) and Atom (feed.entry)
+      const rssItems = doc?.rss?.channel?.item;
+      const atomEntries = doc?.feed?.entry;
+      const items: any[] = Array.isArray(rssItems)
+        ? rssItems
+        : rssItems
+        ? [rssItems]
+        : Array.isArray(atomEntries)
+        ? atomEntries
+        : atomEntries
+        ? [atomEntries]
+        : [];
 
       const articles: RawNewsArticle[] = [];
-      const items = xmlDoc.querySelectorAll('item, entry'); // Support both RSS and Atom
-
-      items.forEach(item => {
+      for (const item of items) {
         try {
-          const title = this.getTextContent(item, 'title');
-          const link =
-            this.getTextContent(item, 'link') ||
-            this.getAttributeContent(item, 'link', 'href');
-          const description = this.getTextContent(
-            item,
-            'description, summary, content'
-          );
-          const pubDate = this.getTextContent(
-            item,
-            'pubDate, published, updated'
-          );
-          const author = this.getTextContent(item, 'author, dc\\:creator');
+          const title: string | undefined = item.title?.['#text'] || item.title;
+          const link: string | undefined =
+            typeof item.link === 'string'
+              ? item.link
+              : item.link?.href || item.link?.url;
+          const description: string | undefined =
+            item.description || item.summary || item.content || item['content:encoded'];
+          const pubDate: string | undefined =
+            item.pubDate || item.published || item.updated;
+          const author:
+            | string
+            | undefined = item.author?.name || item.author || item['dc:creator'];
 
-          // Try to get image from various possible locations
-          const imageUrl = this.getImageUrl(item);
+          // Try image candidates (media:content, media:thumbnail, enclosure, etc.)
+          const imageUrl: string | undefined =
+            item?.['media:content']?.url ||
+            item?.['media:thumbnail']?.url ||
+            (typeof item.enclosure === 'object' ? item.enclosure?.url : undefined);
 
-          if (title && link) {
+          if (title && (link || item.id)) {
+            const finalLink = (link || item.id) as string;
             articles.push({
               title: title.trim(),
-              content: description?.trim() || '',
+              content: (description || '').trim(),
               summary: this.extractSummary(description || ''),
-              url: link.trim(),
+              url: finalLink.trim(),
               published_at: pubDate ? new Date(pubDate) : new Date(),
               author: author?.trim(),
-              image_url: imageUrl || undefined,
+              image_url: imageUrl,
               source_id: source.id,
               metadata: {
-                raw_description: description,
-                raw_pub_date: pubDate,
+                raw_item: item,
                 source_categories: source.categories,
               },
             });
           }
         } catch (itemError) {
-          console.warn('Failed to parse RSS item:', itemError);
+          console.warn('Failed to parse RSS/Atom item:', itemError);
         }
-      });
+      }
 
       return articles;
     } catch (error) {
@@ -283,7 +296,7 @@ export class NewsFetchingService {
       }
 
       // Record successful health check
-      await newsSourceService.recordHealthCheck(
+      await newsSourceServiceServer.updateSourceHealth(
         source.id,
         'healthy',
         Date.now() - startTime,
@@ -294,7 +307,7 @@ export class NewsFetchingService {
         fetchError instanceof Error ? fetchError : new Error('Unknown error');
 
       // Record failed health check
-      await newsSourceService.recordHealthCheck(
+      await newsSourceServiceServer.updateSourceHealth(
         source.id,
         'error',
         Date.now() - startTime,
@@ -315,7 +328,7 @@ export class NewsFetchingService {
     failedSources: number;
     errors: Array<{ sourceId: string; sourceName: string; error: string }>;
   }> {
-    const sources = await newsSourceService.getSourcesReadyForFetch();
+    const sources = await newsSourceServiceServer.getSourcesReadyForFetch();
     const results = {
       totalArticles: 0,
       successfulSources: 0,
@@ -370,8 +383,8 @@ export class NewsFetchingService {
   private async storeRawArticles(articles: RawNewsArticle[]): Promise<void> {
     // For now, we'll store them in a simple table
     // In a production system, you might want to use a queue system like Redis
-
-    const { error } = await this.supabase
+    const supabase = await this.db();
+    const { error } = await supabase
       .from('raw_news_articles' as any)
       .insert(
         articles.map(article => ({
@@ -385,7 +398,7 @@ export class NewsFetchingService {
           source_id: article.source_id,
           metadata: article.metadata,
           created_at: new Date().toISOString(),
-        }))
+        })) as any
       );
 
     if (error) {

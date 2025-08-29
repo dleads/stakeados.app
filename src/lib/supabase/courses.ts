@@ -1,9 +1,7 @@
 import { createAnonClient } from './anon';
-import { createClient as createServerClient } from './server';
 import { withCache, apiCache } from '@/lib/cache';
 import type { Database } from './types';
 import type { Locale } from '@/types';
-import { getCurrentUser } from './auth';
 
 type Course = Database['public']['Tables']['courses']['Row'];
 type CourseInsert = Database['public']['Tables']['courses']['Insert'];
@@ -131,7 +129,7 @@ export const getCourseById = async (
 export const getCourseProgress = async (userId: string, courseId: string) => {
   const supabase = createAnonClient();
   const { data, error } = await supabase
-    .from('user_progress')
+    .from('user_progress' as any)
     .select('*')
     .eq('user_id', userId)
     .eq('course_id', courseId);
@@ -279,62 +277,38 @@ export const searchCourses = async (
 
 // Create a new course (admin only)
 export const createCourse = async (course: CourseInsert) => {
-  const user = await getCurrentUser();
-  if (!user) {
-    throw new Error('User must be authenticated to create courses');
+  const res = await fetch('/api/admin/courses', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(course),
+  });
+  if (!res.ok) {
+    const msg = await res.text();
+    throw new Error(msg || 'Failed to create course');
   }
-
-  const supabase = await createServerClient();
-  const { data, error } = await supabase
-    .from('courses')
-    .insert(course as any)
-    .select()
-    .single();
-
-  if (error) {
-    console.error('Error creating course:', error);
-    throw error;
-  }
-
-  return data;
+  return (await res.json()) as any;
 };
 
 // Update course (admin only)
 export const updateCourse = async (id: string, updates: CourseUpdate) => {
-  const user = await getCurrentUser();
-  if (!user) {
-    throw new Error('User must be authenticated to update courses');
+  const res = await fetch(`/api/admin/courses/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(updates),
+  });
+  if (!res.ok) {
+    const msg = await res.text();
+    throw new Error(msg || 'Failed to update course');
   }
-
-  const supabase = await createServerClient();
-  const { data, error } = await supabase
-    .from('courses')
-    .update(updates as any)
-    .eq('id', id)
-    .select()
-    .single();
-
-  if (error) {
-    console.error('Error updating course:', error);
-    throw error;
-  }
-
-  return data;
+  return (await res.json()) as any;
 };
 
 // Delete course (admin only)
 export const deleteCourse = async (id: string) => {
-  const user = await getCurrentUser();
-  if (!user) {
-    throw new Error('User must be authenticated to delete courses');
-  }
-
-  const supabase = await createServerClient();
-  const { error } = await supabase.from('courses').delete().eq('id', id);
-
-  if (error) {
-    console.error('Error deleting course:', error);
-    throw error;
+  const res = await fetch(`/api/admin/courses/${id}`, { method: 'DELETE' });
+  if (!res.ok) {
+    const msg = await res.text();
+    throw new Error(msg || 'Failed to delete course');
   }
 };
 
@@ -350,7 +324,7 @@ export const toggleCoursePublication = async (
 export const getCourseStatistics = async (courseId: string) => {
   const supabase = createAnonClient();
   const { data: enrollments, error: enrollmentError } = await supabase
-    .from('user_progress')
+    .from('user_progress' as any)
     .select('user_id')
     .eq('course_id', courseId);
 
@@ -368,7 +342,7 @@ export const getCourseStatistics = async (courseId: string) => {
 
   // Get completions (users who completed all content)
   const { data: completions } = await supabase
-    .from('user_progress')
+    .from('user_progress' as any)
     .select('user_id')
     .eq('course_id', courseId)
     .not('completed_at', 'is', null);
@@ -450,7 +424,7 @@ export const getDifficultyBadgeClass = (difficulty: string): string => {
 export const getUserEnrolledCourses = async (userId: string) => {
   const supabase = createAnonClient();
   const { data, error } = await supabase
-    .from('user_progress')
+    .from('user_progress' as any)
     .select(
       `
       course_id,
@@ -477,37 +451,16 @@ export const getUserEnrolledCourses = async (userId: string) => {
 
 // Enroll user in course
 export const enrollUserInCourse = async (userId: string, courseId: string) => {
-  // Check if already enrolled
-  const supabase = await createServerClient();
-  const { data: existing } = await supabase
-    .from('user_progress')
-    .select('id')
-    .eq('user_id', userId)
-    .eq('course_id', courseId)
-    .limit(1);
-
-  if (existing && existing.length > 0) {
-    return { alreadyEnrolled: true };
+  const res = await fetch(`/api/admin/courses/${courseId}/enroll`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ userId }),
+  });
+  if (!res.ok) {
+    const msg = await res.text();
+    throw new Error(msg || 'Failed to enroll');
   }
-
-  // Create initial progress entry
-  const { data, error } = await supabase
-    .from('user_progress')
-    .insert({
-      user_id: userId,
-      course_id: courseId,
-      content_id: 'enrollment',
-      created_at: new Date().toISOString(),
-    } as any)
-    .select()
-    .single();
-
-  if (error) {
-    console.error('Error enrolling user in course:', error);
-    throw error;
-  }
-
-  return { data, alreadyEnrolled: false };
+  return (await res.json()) as any;
 };
 
 // Get course completion percentage for user
@@ -519,7 +472,7 @@ export const getCourseCompletionPercentage = async (
   // the total number of content items in a course
   const supabase = createAnonClient();
   const { data, error } = await supabase
-    .from('user_progress')
+    .from('user_progress' as any)
     .select('*')
     .eq('user_id', userId)
     .eq('course_id', courseId)

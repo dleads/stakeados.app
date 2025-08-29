@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '../../../../lib/supabase/server';
-import { gamificationService } from '@/lib/services/gamificationService';
+import { gamificationServiceServer } from '@/lib/services/gamificationService.server';
 
 export async function GET(request: NextRequest) {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
     const {
       data: { user },
       error: authError,
@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
     const userId = searchParams.get('userId') || user.id;
 
     // Get contributor stats
-    const stats = await gamificationService.getContributorStats(userId);
+    const stats = await gamificationServiceServer.getContributorStats(userId);
 
     if (!stats) {
       return NextResponse.json({ error: 'Stats not found' }, { status: 404 });

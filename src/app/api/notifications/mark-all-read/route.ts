@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import type { Database } from '@/types/supabase';
-import { NotificationService } from '@/lib/services/notificationService';
+import { NotificationServiceServer } from '@/lib/services/notificationService.server';
 
 export async function PATCH(_request: NextRequest) {
   try {
@@ -15,7 +15,7 @@ export async function PATCH(_request: NextRequest) {
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
-    const service = new NotificationService(supabase);
+    const service = new NotificationServiceServer(supabase);
     await service.markAllNotificationsAsRead(user.id);
 
     return NextResponse.json({ success: true });

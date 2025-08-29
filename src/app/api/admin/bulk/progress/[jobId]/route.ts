@@ -6,7 +6,7 @@ export async function GET(
   { params }: { params: { jobId: string } }
 ) {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
 
     // Check authentication
     const {

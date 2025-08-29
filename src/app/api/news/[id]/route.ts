@@ -8,7 +8,7 @@ export async function GET(
 ) {
   try {
     const { id } = params;
-    const supabase = createClient();
+    const supabase = await createClient();
 
     // Get the news article
     const { data: article, error } = await supabase
@@ -154,7 +154,7 @@ export async function POST(
       );
     }
 
-    const supabase = createClient();
+    const supabase = await createClient();
 
     // Check if article exists
     const { data: article, error: articleError } = await supabase

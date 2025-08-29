@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '../../../../lib/supabase/server';
-import { gamificationService } from '@/lib/services/gamificationService';
+import { gamificationServiceServer } from '@/lib/services/gamificationService.server';
 
 export async function GET(request: NextRequest) {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
     const {
       data: { user },
       error: authError,
@@ -54,7 +54,7 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
     const {
       data: { user },
       error: authError,
@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
     const { userId } = body;
 
     // Check and award new achievements
-    const newAchievements = await gamificationService.checkAndAwardAchievements(
+          const newAchievements = await gamificationServiceServer.checkAndAwardAchievements(
       userId || user.id
     );
 

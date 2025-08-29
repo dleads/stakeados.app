@@ -4,7 +4,7 @@ import { categoryService } from '@/lib/services/categoryService';
 
 export async function PUT(request: NextRequest) {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
     const {
       data: { user },
     } = await supabase.auth.getUser();

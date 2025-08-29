@@ -6,7 +6,7 @@ export async function DELETE(
   { params: _params }: { params: { id: string } }
 ) {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
 
     // Verify admin authentication
     const {
@@ -66,7 +66,7 @@ export async function PUT(
   { params: _params }: { params: { id: string } }
 ) {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
 
     // Verify admin authentication
     const {

@@ -1,4 +1,4 @@
-import { gamificationService } from './gamificationService';
+import { gamificationServiceServer } from './gamificationService.server';
 import type { CitizenshipProgress } from '@/types/gamification';
 
 export class CitizenshipService {
@@ -7,7 +7,7 @@ export class CitizenshipService {
    */
   async checkCitizenshipEligibility(userId: string): Promise<boolean> {
     try {
-      const progress = await gamificationService.getCitizenshipProgress(userId);
+      const progress = await gamificationServiceServer.getCitizenshipProgress(userId);
       return progress?.isEligible || false;
     } catch (error) {
       console.error('Error checking citizenship eligibility:', error);
@@ -60,7 +60,7 @@ export class CitizenshipService {
   async calculateCitizenshipProgress(
     userId: string
   ): Promise<CitizenshipProgress | null> {
-    return gamificationService.getCitizenshipProgress(userId);
+    return gamificationServiceServer.getCitizenshipProgress(userId);
   }
 
   /**

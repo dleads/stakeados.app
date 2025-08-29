@@ -8,7 +8,7 @@ export async function GET(
 ) {
   try {
     // TODO: Use supabase client when database functions are available
-    // const supabase = createClient()
+    // const supabase = await createClient()
     const { searchParams } = new URL(request.url);
     const contentType = searchParams.get('content_type') as 'article' | 'news';
     const dateFrom = searchParams.get('date_from');

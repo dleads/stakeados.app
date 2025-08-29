@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import type { Database } from '@/types/supabase';
-import { NotificationPreferencesService } from '@/lib/services/notificationPreferencesService';
+import { NotificationPreferencesServiceServer } from '@/lib/services/notificationPreferencesService.server';
 
 export async function POST(request: NextRequest) {
   try {
@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
         ? body.preferences
         : JSON.stringify(body.preferences);
 
-    const preferences = await new NotificationPreferencesService(supabase).importPreferences(
+    const preferences = await new NotificationPreferencesServiceServer(supabase).importPreferences(
       user.id,
       preferencesJson
     );

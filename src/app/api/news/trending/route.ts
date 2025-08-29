@@ -128,7 +128,7 @@ export async function GET(request: NextRequest) {
     const category = searchParams.get('category');
     const minScore = parseFloat(searchParams.get('minScore') || '5.0');
 
-    const supabase = createClient();
+    const supabase = await createClient();
 
     // Get recent articles (within extended time window for trending detection)
     const extendedTimeWindow = timeWindow * 2; // Look back further for trending detection
@@ -280,7 +280,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const supabase = createClient();
+    const supabase = await createClient();
 
     // Get articles
     const { data: articles, error } = await supabase

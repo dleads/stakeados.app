@@ -28,7 +28,7 @@ interface ReportConfig {
 
 export async function POST(request: NextRequest) {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
 
     // Verify admin authentication
     const {

@@ -26,7 +26,7 @@ export async function GET(request: NextRequest) {
   const sortOrder = (searchParams.get('sortOrder') || 'desc') as 'asc' | 'desc';
 
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
 
     let query = supabase.from('articles').select('*', { count: 'exact' });
 

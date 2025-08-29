@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '../../../../../lib/supabase/server';
-import { tagService } from '@/lib/services/tagService';
+import { tagServiceServer } from '@/lib/services/tagService.server';
 
 export async function POST(_request: NextRequest) {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
     const {
       data: { user },
     } = await supabase.auth.getUser();
@@ -24,7 +24,7 @@ export async function POST(_request: NextRequest) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 
-    const deletedCount = await tagService.cleanupUnusedTags();
+    const deletedCount = await tagServiceServer.cleanupUnusedTags();
 
     return NextResponse.json({ deletedCount });
   } catch (error) {

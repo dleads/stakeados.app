@@ -3,7 +3,7 @@ import { createClient } from '@/lib/supabase/server';
 
 export async function PATCH(_request: NextRequest) {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
     const {
       data: { user },
       error: authError,

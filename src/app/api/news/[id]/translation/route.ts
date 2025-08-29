@@ -108,7 +108,7 @@ export async function PUT(
       );
     }
 
-    const supabase = createClient();
+    const supabase = await createClient();
     const {
       data: { user },
       error: authError,

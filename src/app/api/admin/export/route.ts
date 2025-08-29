@@ -12,7 +12,7 @@ function toCSV(rows: any[]): string {
 }
 
 async function requireAdmin() {
-  const supabase = createClient();
+  const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
       { status: auth.status }
     );
   const { type, format = 'csv', from, to } = await request.json();
-  const supabase = createClient();
+  const supabase = await createClient();
   let data: any[] = [];
   if (type === 'articles') {
     const { data: d } = await supabase

@@ -1,5 +1,4 @@
 import { createAnonClient } from './anon';
-import { createClient as createServerClient } from './server';
 import type { Database } from './types';
 import type { Locale } from '@/types';
 
@@ -118,47 +117,49 @@ export const getArticlesByAuthor = async (authorId: string) => {
 
 // Create a new article
 export const createArticle = async (article: ArticleInsert) => {
-  const supabase = await createServerClient();
-  const { data, error } = await supabase
-    .from('articles' as any)
-    .insert(article as any)
-    .select()
-    .single();
+  // Use server-only API route to avoid leaking server code in client bundles
+  const res = await fetch('/api/admin/articles', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(article),
+  });
 
-  if (error) {
-    console.error('Error creating article:', error);
-    throw error;
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    console.error('Error creating article via API:', err);
+    throw new Error(err?.error || 'Failed to create article');
   }
 
-  return data;
+  return res.json();
 };
 
 // Update article
 export const updateArticle = async (id: string, updates: ArticleUpdate) => {
-  const supabase = await createServerClient();
-  const { data, error } = await supabase
-    .from('articles' as any)
-    .update(updates as any)
-    .eq('id', id)
-    .select()
-    .single();
+  const res = await fetch(`/api/admin/articles/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(updates),
+  });
 
-  if (error) {
-    console.error('Error updating article:', error);
-    throw error;
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    console.error('Error updating article via API:', err);
+    throw new Error(err?.error || 'Failed to update article');
   }
 
-  return data;
+  return res.json();
 };
 
 // Delete article
 export const deleteArticle = async (id: string) => {
-  const supabase = await createServerClient();
-  const { error } = await supabase.from('articles').delete().eq('id', id);
+  const res = await fetch(`/api/admin/articles/${id}`, {
+    method: 'DELETE',
+  });
 
-  if (error) {
-    console.error('Error deleting article:', error);
-    throw error;
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    console.error('Error deleting (archiving) article via API:', err);
+    throw new Error(err?.error || 'Failed to delete article');
   }
 };
 
@@ -305,56 +306,56 @@ export const getArticleTags = async () => {
 
 // Submit article for review
 export const submitArticleForReview = async (id: string) => {
-  const supabase = await createServerClient();
-  const { data, error } = await supabase
-    .from('articles')
-    .update({ status: 'review' })
-    .eq('id', id)
-    .select()
-    .single();
+  // Move article to review status via admin update route
+  const res = await fetch(`/api/admin/articles/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ status: 'review' }),
+  });
 
-  if (error) {
-    console.error('Error submitting article for review:', error);
-    throw error;
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    console.error('Error submitting article for review via API:', err);
+    throw new Error(err?.error || 'Failed to submit article for review');
   }
 
-  return data;
+  return res.json();
 };
 
 // Approve article (admin only)
 export const approveArticle = async (id: string) => {
-  const supabase = await createServerClient();
-  const { data, error } = await supabase
-    .from('articles')
-    .update({ status: 'published' })
-    .eq('id', id)
-    .select()
-    .single();
+  const res = await fetch(`/api/admin/articles/${id}/review`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 'approve', feedback: 'Approved by admin' }),
+  });
 
-  if (error) {
-    console.error('Error approving article:', error);
-    throw error;
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    console.error('Error approving article via API:', err);
+    throw new Error(err?.error || 'Failed to approve article');
   }
 
-  return data;
+  const json = await res.json();
+  return json.article ?? json;
 };
 
 // Reject article (admin only)
 export const rejectArticle = async (id: string) => {
-  const supabase = await createServerClient();
-  const { data, error } = await supabase
-    .from('articles')
-    .update({ status: 'draft' })
-    .eq('id', id)
-    .select()
-    .single();
+  const res = await fetch(`/api/admin/articles/${id}/review`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 'reject', feedback: 'Rejected by admin' }),
+  });
 
-  if (error) {
-    console.error('Error rejecting article:', error);
-    throw error;
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    console.error('Error rejecting article via API:', err);
+    throw new Error(err?.error || 'Failed to reject article');
   }
 
-  return data;
+  const json = await res.json();
+  return json.article ?? json;
 };
 
 // Get article statistics
@@ -362,7 +363,7 @@ export const getArticleStatistics = async () => {
   const supabase = createAnonClient();
   const { data: allArticles, error: allError } = await supabase
     .from('articles')
-    .select('status, author_id') as { data: Array<{ status: string; author_id: string }> | null; error: any };
+    .select('status, author_id');
 
   if (allError) {
     console.error('Error fetching article statistics:', allError);
@@ -375,12 +376,13 @@ export const getArticleStatistics = async () => {
     };
   }
 
+  const list = (allArticles ?? []) as Array<{ status: string; author_id: string }>;
   const stats = {
-    total: allArticles.length,
-    published: allArticles.filter(a => a.status === 'published').length,
-    pending: allArticles.filter(a => a.status === 'review').length,
-    drafts: allArticles.filter(a => a.status === 'draft').length,
-    uniqueAuthors: new Set(allArticles.map(a => a.author_id)).size,
+    total: list.length,
+    published: list.filter(a => a.status === 'published').length,
+    pending: list.filter(a => a.status === 'review').length,
+    drafts: list.filter(a => a.status === 'draft').length,
+    uniqueAuthors: new Set(list.map(a => a.author_id)).size,
   };
 
   return stats;

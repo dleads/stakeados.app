@@ -341,58 +341,6 @@ export const getPersonalizedNewsFeed = async (
   return data as any;
 };
 
-// Create news article (for manual addition)
-export const createNewsArticle = async (article: NewsArticleInsert) => {
-  // Lazy-load server client to avoid pulling server-only modules into client bundles
-  const { createClient: createServerClient } = await import('./server');
-  const supabase = createServerClient();
-  const { data, error } = await supabase
-    .from('news')
-    .insert(article as any)
-    .select()
-    .single();
-
-  if (error) {
-    console.error('Error creating news article:', error);
-    throw error;
-  }
-
-  return data;
-};
-
-// Update news article
-export const updateNewsArticle = async (
-  id: string,
-  updates: NewsArticleUpdate
-) => {
-  const { createClient: createServerClient } = await import('./server');
-  const supabase = createServerClient();
-  const { data, error } = await supabase
-    .from('news')
-    .update(updates as any)
-    .eq('id', id)
-    .select()
-    .single();
-
-  if (error) {
-    console.error('Error updating news article:', error);
-    throw error;
-  }
-
-  return data;
-};
-
-// Delete news article
-export const deleteNewsArticle = async (id: string) => {
-  const { createClient: createServerClient } = await import('./server');
-  const supabase = createServerClient();
-  const { error } = await supabase.from('news').delete().eq('id', id);
-
-  if (error) {
-    console.error('Error deleting news article:', error);
-    throw error;
-  }
-};
 
 // Helper function to get localized news title
 export const getNewsTitle = (

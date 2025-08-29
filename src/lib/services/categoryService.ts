@@ -1,16 +1,7 @@
-// SSR-safe Supabase selector: use server client on server, browser client on client
+import { createAnonClient } from '@/lib/supabase/anon';
+// Client-safe Supabase selector: always use anon client to avoid importing server-only code
 function getSupabase() {
-  if (typeof window === 'undefined') {
-    // Server/runtime (Netlify/Node): use service role client without browser APIs
-    // Use require to avoid static import in edge build graph
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const { createClient } = require('@/lib/supabase/server');
-    return createClient();
-  }
-  // Browser runtime
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const { createClient } = require('@/lib/supabase/client');
-  return createClient();
+  return createAnonClient();
 }
 import type { Database } from '@/types/supabase';
 

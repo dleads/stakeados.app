@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { PublicationWorkflowService } from '@/lib/services/publicationWorkflowService';
+import { PublicationWorkflowServiceServer } from '@/lib/services/publicationWorkflowService.server';
 
 export async function POST(_request: NextRequest) {
   try {
@@ -7,7 +7,7 @@ export async function POST(_request: NextRequest) {
     // In production, you'd want to add authentication/authorization
 
     const result =
-      await PublicationWorkflowService.processScheduledPublications();
+      await PublicationWorkflowServiceServer.processScheduledPublications();
 
     return NextResponse.json({
       message: 'Scheduled publications processed',
@@ -30,7 +30,7 @@ export async function GET(request: NextRequest) {
       'month';
 
     const analytics =
-      await PublicationWorkflowService.getWorkflowAnalytics(timeframe);
+      await PublicationWorkflowServiceServer.getWorkflowAnalytics(timeframe);
 
     return NextResponse.json(analytics);
   } catch (error) {

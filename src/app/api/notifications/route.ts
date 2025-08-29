@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import type { Database } from '@/types/supabase';
-import { NotificationService } from '@/lib/services/notificationService';
+import { NotificationServiceServer } from '@/lib/services/notificationService.server';
 import type { NotificationFilters } from '@/types/notifications';
 
 export async function GET(request: NextRequest) {
@@ -36,7 +36,7 @@ export async function GET(request: NextRequest) {
       };
     }
 
-    const service = new NotificationService(supabase);
+    const service = new NotificationServiceServer(supabase);
     const notifications = await service.getUserNotifications(
       user.id,
       filters,
@@ -76,7 +76,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const service = new NotificationService(supabase);
+    const service = new NotificationServiceServer(supabase);
     const notification = await service.createNotification({
       userId: user.id,
       type: body.type,
