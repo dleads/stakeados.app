@@ -1,0 +1,1330 @@
+{
+  "timestamp": "2025-08-29T21:10:38.885Z",
+  "summary": {
+    "total": 30,
+    "identical": 28,
+    "keepDocs": 2,
+    "mergeTododocToDocs": 0,
+    "manualReview": 0
+  },
+  "duplicatesFound": [
+    {
+      "relativePath": "admin-error-handling-monitoring.md",
+      "docsFile": "docs\\admin-error-handling-monitoring.md",
+      "tododocFile": "tododoc\\admin-error-handling-monitoring.md",
+      "docsHash": "6b01a862da50c0b47e38aef29f09d0e9",
+      "tododocHash": "6b01a862da50c0b47e38aef29f09d0e9",
+      "identical": true,
+      "docsStats": {
+        "size": 8842,
+        "mtime": "2025-08-24T21:40:48.960Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 8842,
+        "mtime": "2025-08-24T21:41:46.077Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "admin-user-guide.md",
+      "docsFile": "docs\\admin-user-guide.md",
+      "tododocFile": "tododoc\\admin-user-guide.md",
+      "docsHash": "90e2bf9c9e55f53cb8b63615cc2853a1",
+      "tododocHash": "90e2bf9c9e55f53cb8b63615cc2853a1",
+      "identical": true,
+      "docsStats": {
+        "size": 15145,
+        "mtime": "2025-08-24T21:40:49.083Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 15145,
+        "mtime": "2025-08-24T21:41:46.222Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "admin-user-setup-guide.md",
+      "docsFile": "docs\\admin-user-setup-guide.md",
+      "tododocFile": "tododoc\\admin-user-setup-guide.md",
+      "docsHash": "ce173921b5362cebdd8fbeb836563b81",
+      "tododocHash": "ce173921b5362cebdd8fbeb836563b81",
+      "identical": true,
+      "docsStats": {
+        "size": 10572,
+        "mtime": "2025-08-24T21:40:49.213Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 10572,
+        "mtime": "2025-08-24T21:41:46.312Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "api\\admin-analytics-endpoints.md",
+      "docsFile": "docs\\api\\admin-analytics-endpoints.md",
+      "tododocFile": "tododoc\\api\\admin-analytics-endpoints.md",
+      "docsHash": "fcc2ead3af1601ed6938c8dbc3d6a02b",
+      "tododocHash": "fcc2ead3af1601ed6938c8dbc3d6a02b",
+      "identical": true,
+      "docsStats": {
+        "size": 13926,
+        "mtime": "2025-08-24T21:40:49.384Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 13926,
+        "mtime": "2025-08-24T21:41:46.389Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "api\\admin-article-review-endpoints.md",
+      "docsFile": "docs\\api\\admin-article-review-endpoints.md",
+      "tododocFile": "tododoc\\api\\admin-article-review-endpoints.md",
+      "docsHash": "9911ffdaf10ac70d8c924562dd01278e",
+      "tododocHash": "9911ffdaf10ac70d8c924562dd01278e",
+      "identical": true,
+      "docsStats": {
+        "size": 6654,
+        "mtime": "2025-08-24T21:40:49.457Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 6654,
+        "mtime": "2025-08-24T21:41:46.441Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "api\\admin-bulk-operations-endpoints.md",
+      "docsFile": "docs\\api\\admin-bulk-operations-endpoints.md",
+      "tododocFile": "tododoc\\api\\admin-bulk-operations-endpoints.md",
+      "docsHash": "8502710f3ca22aa06a5cb50c2e82f956",
+      "tododocHash": "8502710f3ca22aa06a5cb50c2e82f956",
+      "identical": true,
+      "docsStats": {
+        "size": 8698,
+        "mtime": "2025-08-24T21:40:49.535Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 8698,
+        "mtime": "2025-08-24T21:41:46.521Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "api\\admin-categories-endpoints.md",
+      "docsFile": "docs\\api\\admin-categories-endpoints.md",
+      "tododocFile": "tododoc\\api\\admin-categories-endpoints.md",
+      "docsHash": "c0c9ded85ac02802f3d623c591d24f0b",
+      "tododocHash": "c0c9ded85ac02802f3d623c591d24f0b",
+      "identical": true,
+      "docsStats": {
+        "size": 6837,
+        "mtime": "2025-08-24T21:40:49.617Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 6837,
+        "mtime": "2025-08-24T21:41:46.570Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "api\\admin-news-endpoints.md",
+      "docsFile": "docs\\api\\admin-news-endpoints.md",
+      "tododocFile": "tododoc\\api\\admin-news-endpoints.md",
+      "docsHash": "6887497ed883b1f255c3c2580e55d98e",
+      "tododocHash": "6887497ed883b1f255c3c2580e55d98e",
+      "identical": true,
+      "docsStats": {
+        "size": 8856,
+        "mtime": "2025-08-24T21:40:49.676Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 8856,
+        "mtime": "2025-08-24T21:41:46.626Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "api\\admin-news-sources-endpoints.md",
+      "docsFile": "docs\\api\\admin-news-sources-endpoints.md",
+      "tododocFile": "tododoc\\api\\admin-news-sources-endpoints.md",
+      "docsHash": "0762740a970285b4ae03950f883d9e16",
+      "tododocHash": "0762740a970285b4ae03950f883d9e16",
+      "identical": true,
+      "docsStats": {
+        "size": 7989,
+        "mtime": "2025-08-24T21:40:49.736Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 7989,
+        "mtime": "2025-08-24T21:41:46.660Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "api\\admin-tags-endpoints.md",
+      "docsFile": "docs\\api\\admin-tags-endpoints.md",
+      "tododocFile": "tododoc\\api\\admin-tags-endpoints.md",
+      "docsHash": "ff01b7f0e468df1b8618602bb8678010",
+      "tododocHash": "ff01b7f0e468df1b8618602bb8678010",
+      "identical": true,
+      "docsStats": {
+        "size": 9261,
+        "mtime": "2025-08-24T21:40:49.798Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 9261,
+        "mtime": "2025-08-24T21:41:46.740Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "api\\enhanced-ai-processing-endpoints.md",
+      "docsFile": "docs\\api\\enhanced-ai-processing-endpoints.md",
+      "tododocFile": "tododoc\\api\\enhanced-ai-processing-endpoints.md",
+      "docsHash": "b07a8cf6de4051c6f5663e0f9d503706",
+      "tododocHash": "b07a8cf6de4051c6f5663e0f9d503706",
+      "identical": true,
+      "docsStats": {
+        "size": 12647,
+        "mtime": "2025-08-24T21:40:49.863Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 12647,
+        "mtime": "2025-08-24T21:41:46.818Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "api\\homepage-stats.md",
+      "docsFile": "docs\\api\\homepage-stats.md",
+      "tododocFile": "tododoc\\api\\homepage-stats.md",
+      "docsHash": "9752b6d53ce610fe0bf4c2c254122a15",
+      "tododocHash": "9752b6d53ce610fe0bf4c2c254122a15",
+      "identical": true,
+      "docsStats": {
+        "size": 5793,
+        "mtime": "2025-08-24T21:40:49.919Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 5793,
+        "mtime": "2025-08-24T21:41:46.889Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "configuration-guide.md",
+      "docsFile": "docs\\configuration-guide.md",
+      "tododocFile": "tododoc\\configuration-guide.md",
+      "docsHash": "1badf7dbc04b40ca874484b882be9313",
+      "tododocHash": "1badf7dbc04b40ca874484b882be9313",
+      "identical": true,
+      "docsStats": {
+        "size": 14527,
+        "mtime": "2025-08-24T21:40:50.010Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 14527,
+        "mtime": "2025-08-24T21:41:46.979Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "content-management\\admin-guide.md",
+      "docsFile": "docs\\content-management\\admin-guide.md",
+      "tododocFile": "tododoc\\content-management\\admin-guide.md",
+      "docsHash": "bc0bac2c0e9f64a2d5754c0317e419d4",
+      "tododocHash": "bc0bac2c0e9f64a2d5754c0317e419d4",
+      "identical": true,
+      "docsStats": {
+        "size": 17574,
+        "mtime": "2025-08-24T21:40:50.120Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 17574,
+        "mtime": "2025-08-24T21:41:47.093Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "content-management\\deployment-guide.md",
+      "docsFile": "docs\\content-management\\deployment-guide.md",
+      "tododocFile": "tododoc\\content-management\\deployment-guide.md",
+      "docsHash": "edf17b5226bfa5cf00b08d6b3cb663da",
+      "tododocHash": "edf17b5226bfa5cf00b08d6b3cb663da",
+      "identical": true,
+      "docsStats": {
+        "size": 16834,
+        "mtime": "2025-08-24T21:40:50.206Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 16834,
+        "mtime": "2025-08-24T21:41:47.169Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "content-management\\moderation-training.md",
+      "docsFile": "docs\\content-management\\moderation-training.md",
+      "tododocFile": "tododoc\\content-management\\moderation-training.md",
+      "docsHash": "af2605ef0e0da501a067a246f9ade9ca",
+      "tododocHash": "af2605ef0e0da501a067a246f9ade9ca",
+      "identical": true,
+      "docsStats": {
+        "size": 23780,
+        "mtime": "2025-08-24T21:40:50.332Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 23780,
+        "mtime": "2025-08-24T21:41:47.284Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "content-management\\README.md",
+      "docsFile": "docs\\content-management\\README.md",
+      "tododocFile": "tododoc\\content-management\\README.md",
+      "docsHash": "04f578545f97de0260b932582ab50ada",
+      "tododocHash": "04f578545f97de0260b932582ab50ada",
+      "identical": true,
+      "docsStats": {
+        "size": 8546,
+        "mtime": "2025-08-24T21:40:50.392Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 8546,
+        "mtime": "2025-08-24T21:41:47.332Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "content-management\\user-guide.md",
+      "docsFile": "docs\\content-management\\user-guide.md",
+      "tododocFile": "tododoc\\content-management\\user-guide.md",
+      "docsHash": "e8bcff979371db33587e484b53bcf557",
+      "tododocHash": "e8bcff979371db33587e484b53bcf557",
+      "identical": true,
+      "docsStats": {
+        "size": 11369,
+        "mtime": "2025-08-24T21:40:50.460Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 11369,
+        "mtime": "2025-08-24T21:41:47.403Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "database-deployment-guide.md",
+      "docsFile": "docs\\database-deployment-guide.md",
+      "tododocFile": "tododoc\\database-deployment-guide.md",
+      "docsHash": "9b07cde0c32716f03144b3ccce3896da",
+      "tododocHash": "9b07cde0c32716f03144b3ccce3896da",
+      "identical": true,
+      "docsStats": {
+        "size": 4616,
+        "mtime": "2025-08-24T21:40:50.532Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 4616,
+        "mtime": "2025-08-24T21:41:47.443Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "database-verification-system.md",
+      "docsFile": "docs\\database-verification-system.md",
+      "tododocFile": "tododoc\\database-verification-system.md",
+      "docsHash": "0d55ce9b93b15a5823b158bf44c9f39a",
+      "tododocHash": "0d55ce9b93b15a5823b158bf44c9f39a",
+      "identical": true,
+      "docsStats": {
+        "size": 7913,
+        "mtime": "2025-08-24T21:40:50.596Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 7913,
+        "mtime": "2025-08-24T21:41:47.478Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "deployment-production-guide.md",
+      "docsFile": "docs\\deployment-production-guide.md",
+      "tododocFile": "tododoc\\deployment-production-guide.md",
+      "docsHash": "f0f4418ad9869721ba029e2974b3479e",
+      "tododocHash": "f0f4418ad9869721ba029e2974b3479e",
+      "identical": true,
+      "docsStats": {
+        "size": 11418,
+        "mtime": "2025-08-24T21:40:50.669Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 11418,
+        "mtime": "2025-08-24T21:41:47.547Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "deployment-script-guide.md",
+      "docsFile": "docs\\deployment-script-guide.md",
+      "tododocFile": "tododoc\\deployment-script-guide.md",
+      "docsHash": "2898b0345ba6791fac44621397bc5b8f",
+      "tododocHash": "2898b0345ba6791fac44621397bc5b8f",
+      "identical": true,
+      "docsStats": {
+        "size": 9237,
+        "mtime": "2025-08-24T21:40:50.731Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 9237,
+        "mtime": "2025-08-24T21:41:47.595Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "FASE-2.md",
+      "docsFile": "docs\\FASE-2.md",
+      "tododocFile": "tododoc\\FASE-2.md",
+      "docsHash": "d9727b18bd8cdc90c6acffc44ea01ba7",
+      "tododocHash": "cfdc83f6a06f80cce98f8ce4668d4952",
+      "identical": false,
+      "docsStats": {
+        "size": 4396,
+        "mtime": "2025-08-24T21:40:50.785Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 1866,
+        "mtime": "2025-08-24T21:41:47.616Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "metrics-collection-system.md",
+      "docsFile": "docs\\metrics-collection-system.md",
+      "tododocFile": "tododoc\\metrics-collection-system.md",
+      "docsHash": "ee2b9462b39e7b07c926c18ad7c54bd8",
+      "tododocHash": "ee2b9462b39e7b07c926c18ad7c54bd8",
+      "identical": true,
+      "docsStats": {
+        "size": 11690,
+        "mtime": "2025-08-24T21:40:50.871Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 11690,
+        "mtime": "2025-08-24T21:41:47.792Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "README.md",
+      "docsFile": "docs\\README.md",
+      "tododocFile": "tododoc\\README.md",
+      "docsHash": "8bbad7e3d93c441ecd14e9fb5d63b1dc",
+      "tododocHash": "a57eaa0693e1634f2676bcf2a90d7d72",
+      "identical": false,
+      "docsStats": {
+        "size": 3552,
+        "mtime": "2025-08-29T20:59:19.606Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 4458,
+        "mtime": "2025-08-24T21:41:47.880Z",
+        "exists": true
+      },
+      "newerFile": "docs"
+    },
+    {
+      "relativePath": "supabase-working-setup.sql",
+      "docsFile": "docs\\supabase-working-setup.sql",
+      "tododocFile": "tododoc\\supabase-working-setup.sql",
+      "docsHash": "2a35eaa398fe420f2571818c5e8c6687",
+      "tododocHash": "2a35eaa398fe420f2571818c5e8c6687",
+      "identical": true,
+      "docsStats": {
+        "size": 14399,
+        "mtime": "2025-08-13T15:22:02.534Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 14399,
+        "mtime": "2025-08-13T15:22:02.534Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "troubleshooting-guide.md",
+      "docsFile": "docs\\troubleshooting-guide.md",
+      "tododocFile": "tododoc\\troubleshooting-guide.md",
+      "docsHash": "7695074f353c58c6ace517c4867a8165",
+      "tododocHash": "7695074f353c58c6ace517c4867a8165",
+      "identical": true,
+      "docsStats": {
+        "size": 15244,
+        "mtime": "2025-08-24T21:40:51.076Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 15244,
+        "mtime": "2025-08-24T21:41:56.689Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "video-tutorials\\04-article-creation-workflow.md",
+      "docsFile": "docs\\video-tutorials\\04-article-creation-workflow.md",
+      "tododocFile": "tododoc\\video-tutorials\\04-article-creation-workflow.md",
+      "docsHash": "7aad3b52822e0203d75026178ab3484a",
+      "tododocHash": "7aad3b52822e0203d75026178ab3484a",
+      "identical": true,
+      "docsStats": {
+        "size": 7863,
+        "mtime": "2025-08-24T21:40:51.155Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 7863,
+        "mtime": "2025-08-24T21:41:56.752Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "video-tutorials\\09-ai-news-processing.md",
+      "docsFile": "docs\\video-tutorials\\09-ai-news-processing.md",
+      "tododocFile": "tododoc\\video-tutorials\\09-ai-news-processing.md",
+      "docsHash": "62c0520986a509dcd979d4362af23da6",
+      "tododocHash": "62c0520986a509dcd979d4362af23da6",
+      "identical": true,
+      "docsStats": {
+        "size": 10178,
+        "mtime": "2025-08-24T21:40:51.247Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 10178,
+        "mtime": "2025-08-24T21:41:56.821Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    },
+    {
+      "relativePath": "video-tutorials\\README.md",
+      "docsFile": "docs\\video-tutorials\\README.md",
+      "tododocFile": "tododoc\\video-tutorials\\README.md",
+      "docsHash": "443828e37209c5479a3dc2aedc1261ac",
+      "tododocHash": "443828e37209c5479a3dc2aedc1261ac",
+      "identical": true,
+      "docsStats": {
+        "size": 3227,
+        "mtime": "2025-08-24T21:40:51.289Z",
+        "exists": true
+      },
+      "tododocStats": {
+        "size": 3227,
+        "mtime": "2025-08-24T21:41:56.847Z",
+        "exists": true
+      },
+      "newerFile": "tododoc"
+    }
+  ],
+  "consolidationPlan": {
+    "identical": [
+      {
+        "relativePath": "admin-error-handling-monitoring.md",
+        "docsFile": "docs\\admin-error-handling-monitoring.md",
+        "tododocFile": "tododoc\\admin-error-handling-monitoring.md",
+        "docsHash": "6b01a862da50c0b47e38aef29f09d0e9",
+        "tododocHash": "6b01a862da50c0b47e38aef29f09d0e9",
+        "identical": true,
+        "docsStats": {
+          "size": 8842,
+          "mtime": "2025-08-24T21:40:48.960Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 8842,
+          "mtime": "2025-08-24T21:41:46.077Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "admin-user-guide.md",
+        "docsFile": "docs\\admin-user-guide.md",
+        "tododocFile": "tododoc\\admin-user-guide.md",
+        "docsHash": "90e2bf9c9e55f53cb8b63615cc2853a1",
+        "tododocHash": "90e2bf9c9e55f53cb8b63615cc2853a1",
+        "identical": true,
+        "docsStats": {
+          "size": 15145,
+          "mtime": "2025-08-24T21:40:49.083Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 15145,
+          "mtime": "2025-08-24T21:41:46.222Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "admin-user-setup-guide.md",
+        "docsFile": "docs\\admin-user-setup-guide.md",
+        "tododocFile": "tododoc\\admin-user-setup-guide.md",
+        "docsHash": "ce173921b5362cebdd8fbeb836563b81",
+        "tododocHash": "ce173921b5362cebdd8fbeb836563b81",
+        "identical": true,
+        "docsStats": {
+          "size": 10572,
+          "mtime": "2025-08-24T21:40:49.213Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 10572,
+          "mtime": "2025-08-24T21:41:46.312Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "api\\admin-analytics-endpoints.md",
+        "docsFile": "docs\\api\\admin-analytics-endpoints.md",
+        "tododocFile": "tododoc\\api\\admin-analytics-endpoints.md",
+        "docsHash": "fcc2ead3af1601ed6938c8dbc3d6a02b",
+        "tododocHash": "fcc2ead3af1601ed6938c8dbc3d6a02b",
+        "identical": true,
+        "docsStats": {
+          "size": 13926,
+          "mtime": "2025-08-24T21:40:49.384Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 13926,
+          "mtime": "2025-08-24T21:41:46.389Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "api\\admin-article-review-endpoints.md",
+        "docsFile": "docs\\api\\admin-article-review-endpoints.md",
+        "tododocFile": "tododoc\\api\\admin-article-review-endpoints.md",
+        "docsHash": "9911ffdaf10ac70d8c924562dd01278e",
+        "tododocHash": "9911ffdaf10ac70d8c924562dd01278e",
+        "identical": true,
+        "docsStats": {
+          "size": 6654,
+          "mtime": "2025-08-24T21:40:49.457Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 6654,
+          "mtime": "2025-08-24T21:41:46.441Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "api\\admin-bulk-operations-endpoints.md",
+        "docsFile": "docs\\api\\admin-bulk-operations-endpoints.md",
+        "tododocFile": "tododoc\\api\\admin-bulk-operations-endpoints.md",
+        "docsHash": "8502710f3ca22aa06a5cb50c2e82f956",
+        "tododocHash": "8502710f3ca22aa06a5cb50c2e82f956",
+        "identical": true,
+        "docsStats": {
+          "size": 8698,
+          "mtime": "2025-08-24T21:40:49.535Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 8698,
+          "mtime": "2025-08-24T21:41:46.521Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "api\\admin-categories-endpoints.md",
+        "docsFile": "docs\\api\\admin-categories-endpoints.md",
+        "tododocFile": "tododoc\\api\\admin-categories-endpoints.md",
+        "docsHash": "c0c9ded85ac02802f3d623c591d24f0b",
+        "tododocHash": "c0c9ded85ac02802f3d623c591d24f0b",
+        "identical": true,
+        "docsStats": {
+          "size": 6837,
+          "mtime": "2025-08-24T21:40:49.617Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 6837,
+          "mtime": "2025-08-24T21:41:46.570Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "api\\admin-news-endpoints.md",
+        "docsFile": "docs\\api\\admin-news-endpoints.md",
+        "tododocFile": "tododoc\\api\\admin-news-endpoints.md",
+        "docsHash": "6887497ed883b1f255c3c2580e55d98e",
+        "tododocHash": "6887497ed883b1f255c3c2580e55d98e",
+        "identical": true,
+        "docsStats": {
+          "size": 8856,
+          "mtime": "2025-08-24T21:40:49.676Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 8856,
+          "mtime": "2025-08-24T21:41:46.626Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "api\\admin-news-sources-endpoints.md",
+        "docsFile": "docs\\api\\admin-news-sources-endpoints.md",
+        "tododocFile": "tododoc\\api\\admin-news-sources-endpoints.md",
+        "docsHash": "0762740a970285b4ae03950f883d9e16",
+        "tododocHash": "0762740a970285b4ae03950f883d9e16",
+        "identical": true,
+        "docsStats": {
+          "size": 7989,
+          "mtime": "2025-08-24T21:40:49.736Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 7989,
+          "mtime": "2025-08-24T21:41:46.660Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "api\\admin-tags-endpoints.md",
+        "docsFile": "docs\\api\\admin-tags-endpoints.md",
+        "tododocFile": "tododoc\\api\\admin-tags-endpoints.md",
+        "docsHash": "ff01b7f0e468df1b8618602bb8678010",
+        "tododocHash": "ff01b7f0e468df1b8618602bb8678010",
+        "identical": true,
+        "docsStats": {
+          "size": 9261,
+          "mtime": "2025-08-24T21:40:49.798Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 9261,
+          "mtime": "2025-08-24T21:41:46.740Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "api\\enhanced-ai-processing-endpoints.md",
+        "docsFile": "docs\\api\\enhanced-ai-processing-endpoints.md",
+        "tododocFile": "tododoc\\api\\enhanced-ai-processing-endpoints.md",
+        "docsHash": "b07a8cf6de4051c6f5663e0f9d503706",
+        "tododocHash": "b07a8cf6de4051c6f5663e0f9d503706",
+        "identical": true,
+        "docsStats": {
+          "size": 12647,
+          "mtime": "2025-08-24T21:40:49.863Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 12647,
+          "mtime": "2025-08-24T21:41:46.818Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "api\\homepage-stats.md",
+        "docsFile": "docs\\api\\homepage-stats.md",
+        "tododocFile": "tododoc\\api\\homepage-stats.md",
+        "docsHash": "9752b6d53ce610fe0bf4c2c254122a15",
+        "tododocHash": "9752b6d53ce610fe0bf4c2c254122a15",
+        "identical": true,
+        "docsStats": {
+          "size": 5793,
+          "mtime": "2025-08-24T21:40:49.919Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 5793,
+          "mtime": "2025-08-24T21:41:46.889Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "configuration-guide.md",
+        "docsFile": "docs\\configuration-guide.md",
+        "tododocFile": "tododoc\\configuration-guide.md",
+        "docsHash": "1badf7dbc04b40ca874484b882be9313",
+        "tododocHash": "1badf7dbc04b40ca874484b882be9313",
+        "identical": true,
+        "docsStats": {
+          "size": 14527,
+          "mtime": "2025-08-24T21:40:50.010Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 14527,
+          "mtime": "2025-08-24T21:41:46.979Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "content-management\\admin-guide.md",
+        "docsFile": "docs\\content-management\\admin-guide.md",
+        "tododocFile": "tododoc\\content-management\\admin-guide.md",
+        "docsHash": "bc0bac2c0e9f64a2d5754c0317e419d4",
+        "tododocHash": "bc0bac2c0e9f64a2d5754c0317e419d4",
+        "identical": true,
+        "docsStats": {
+          "size": 17574,
+          "mtime": "2025-08-24T21:40:50.120Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 17574,
+          "mtime": "2025-08-24T21:41:47.093Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "content-management\\deployment-guide.md",
+        "docsFile": "docs\\content-management\\deployment-guide.md",
+        "tododocFile": "tododoc\\content-management\\deployment-guide.md",
+        "docsHash": "edf17b5226bfa5cf00b08d6b3cb663da",
+        "tododocHash": "edf17b5226bfa5cf00b08d6b3cb663da",
+        "identical": true,
+        "docsStats": {
+          "size": 16834,
+          "mtime": "2025-08-24T21:40:50.206Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 16834,
+          "mtime": "2025-08-24T21:41:47.169Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "content-management\\moderation-training.md",
+        "docsFile": "docs\\content-management\\moderation-training.md",
+        "tododocFile": "tododoc\\content-management\\moderation-training.md",
+        "docsHash": "af2605ef0e0da501a067a246f9ade9ca",
+        "tododocHash": "af2605ef0e0da501a067a246f9ade9ca",
+        "identical": true,
+        "docsStats": {
+          "size": 23780,
+          "mtime": "2025-08-24T21:40:50.332Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 23780,
+          "mtime": "2025-08-24T21:41:47.284Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "content-management\\README.md",
+        "docsFile": "docs\\content-management\\README.md",
+        "tododocFile": "tododoc\\content-management\\README.md",
+        "docsHash": "04f578545f97de0260b932582ab50ada",
+        "tododocHash": "04f578545f97de0260b932582ab50ada",
+        "identical": true,
+        "docsStats": {
+          "size": 8546,
+          "mtime": "2025-08-24T21:40:50.392Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 8546,
+          "mtime": "2025-08-24T21:41:47.332Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "content-management\\user-guide.md",
+        "docsFile": "docs\\content-management\\user-guide.md",
+        "tododocFile": "tododoc\\content-management\\user-guide.md",
+        "docsHash": "e8bcff979371db33587e484b53bcf557",
+        "tododocHash": "e8bcff979371db33587e484b53bcf557",
+        "identical": true,
+        "docsStats": {
+          "size": 11369,
+          "mtime": "2025-08-24T21:40:50.460Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 11369,
+          "mtime": "2025-08-24T21:41:47.403Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "database-deployment-guide.md",
+        "docsFile": "docs\\database-deployment-guide.md",
+        "tododocFile": "tododoc\\database-deployment-guide.md",
+        "docsHash": "9b07cde0c32716f03144b3ccce3896da",
+        "tododocHash": "9b07cde0c32716f03144b3ccce3896da",
+        "identical": true,
+        "docsStats": {
+          "size": 4616,
+          "mtime": "2025-08-24T21:40:50.532Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 4616,
+          "mtime": "2025-08-24T21:41:47.443Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "database-verification-system.md",
+        "docsFile": "docs\\database-verification-system.md",
+        "tododocFile": "tododoc\\database-verification-system.md",
+        "docsHash": "0d55ce9b93b15a5823b158bf44c9f39a",
+        "tododocHash": "0d55ce9b93b15a5823b158bf44c9f39a",
+        "identical": true,
+        "docsStats": {
+          "size": 7913,
+          "mtime": "2025-08-24T21:40:50.596Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 7913,
+          "mtime": "2025-08-24T21:41:47.478Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "deployment-production-guide.md",
+        "docsFile": "docs\\deployment-production-guide.md",
+        "tododocFile": "tododoc\\deployment-production-guide.md",
+        "docsHash": "f0f4418ad9869721ba029e2974b3479e",
+        "tododocHash": "f0f4418ad9869721ba029e2974b3479e",
+        "identical": true,
+        "docsStats": {
+          "size": 11418,
+          "mtime": "2025-08-24T21:40:50.669Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 11418,
+          "mtime": "2025-08-24T21:41:47.547Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "deployment-script-guide.md",
+        "docsFile": "docs\\deployment-script-guide.md",
+        "tododocFile": "tododoc\\deployment-script-guide.md",
+        "docsHash": "2898b0345ba6791fac44621397bc5b8f",
+        "tododocHash": "2898b0345ba6791fac44621397bc5b8f",
+        "identical": true,
+        "docsStats": {
+          "size": 9237,
+          "mtime": "2025-08-24T21:40:50.731Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 9237,
+          "mtime": "2025-08-24T21:41:47.595Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "metrics-collection-system.md",
+        "docsFile": "docs\\metrics-collection-system.md",
+        "tododocFile": "tododoc\\metrics-collection-system.md",
+        "docsHash": "ee2b9462b39e7b07c926c18ad7c54bd8",
+        "tododocHash": "ee2b9462b39e7b07c926c18ad7c54bd8",
+        "identical": true,
+        "docsStats": {
+          "size": 11690,
+          "mtime": "2025-08-24T21:40:50.871Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 11690,
+          "mtime": "2025-08-24T21:41:47.792Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "supabase-working-setup.sql",
+        "docsFile": "docs\\supabase-working-setup.sql",
+        "tododocFile": "tododoc\\supabase-working-setup.sql",
+        "docsHash": "2a35eaa398fe420f2571818c5e8c6687",
+        "tododocHash": "2a35eaa398fe420f2571818c5e8c6687",
+        "identical": true,
+        "docsStats": {
+          "size": 14399,
+          "mtime": "2025-08-13T15:22:02.534Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 14399,
+          "mtime": "2025-08-13T15:22:02.534Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "troubleshooting-guide.md",
+        "docsFile": "docs\\troubleshooting-guide.md",
+        "tododocFile": "tododoc\\troubleshooting-guide.md",
+        "docsHash": "7695074f353c58c6ace517c4867a8165",
+        "tododocHash": "7695074f353c58c6ace517c4867a8165",
+        "identical": true,
+        "docsStats": {
+          "size": 15244,
+          "mtime": "2025-08-24T21:40:51.076Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 15244,
+          "mtime": "2025-08-24T21:41:56.689Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "video-tutorials\\04-article-creation-workflow.md",
+        "docsFile": "docs\\video-tutorials\\04-article-creation-workflow.md",
+        "tododocFile": "tododoc\\video-tutorials\\04-article-creation-workflow.md",
+        "docsHash": "7aad3b52822e0203d75026178ab3484a",
+        "tododocHash": "7aad3b52822e0203d75026178ab3484a",
+        "identical": true,
+        "docsStats": {
+          "size": 7863,
+          "mtime": "2025-08-24T21:40:51.155Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 7863,
+          "mtime": "2025-08-24T21:41:56.752Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "video-tutorials\\09-ai-news-processing.md",
+        "docsFile": "docs\\video-tutorials\\09-ai-news-processing.md",
+        "tododocFile": "tododoc\\video-tutorials\\09-ai-news-processing.md",
+        "docsHash": "62c0520986a509dcd979d4362af23da6",
+        "tododocHash": "62c0520986a509dcd979d4362af23da6",
+        "identical": true,
+        "docsStats": {
+          "size": 10178,
+          "mtime": "2025-08-24T21:40:51.247Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 10178,
+          "mtime": "2025-08-24T21:41:56.821Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      },
+      {
+        "relativePath": "video-tutorials\\README.md",
+        "docsFile": "docs\\video-tutorials\\README.md",
+        "tododocFile": "tododoc\\video-tutorials\\README.md",
+        "docsHash": "443828e37209c5479a3dc2aedc1261ac",
+        "tododocHash": "443828e37209c5479a3dc2aedc1261ac",
+        "identical": true,
+        "docsStats": {
+          "size": 3227,
+          "mtime": "2025-08-24T21:40:51.289Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 3227,
+          "mtime": "2025-08-24T21:41:56.847Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "identical",
+          "action": "remove_tododoc"
+        }
+      }
+    ],
+    "keepDocs": [
+      {
+        "relativePath": "FASE-2.md",
+        "docsFile": "docs\\FASE-2.md",
+        "tododocFile": "tododoc\\FASE-2.md",
+        "docsHash": "d9727b18bd8cdc90c6acffc44ea01ba7",
+        "tododocHash": "cfdc83f6a06f80cce98f8ce4668d4952",
+        "identical": false,
+        "docsStats": {
+          "size": 4396,
+          "mtime": "2025-08-24T21:40:50.785Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 1866,
+          "mtime": "2025-08-24T21:41:47.616Z",
+          "exists": true
+        },
+        "newerFile": "tododoc",
+        "analysis": {
+          "type": "different",
+          "action": "keep_docs",
+          "docsLines": 78,
+          "tododocLines": 38,
+          "sizeDiff": 2530
+        }
+      },
+      {
+        "relativePath": "README.md",
+        "docsFile": "docs\\README.md",
+        "tododocFile": "tododoc\\README.md",
+        "docsHash": "8bbad7e3d93c441ecd14e9fb5d63b1dc",
+        "tododocHash": "a57eaa0693e1634f2676bcf2a90d7d72",
+        "identical": false,
+        "docsStats": {
+          "size": 3552,
+          "mtime": "2025-08-29T20:59:19.606Z",
+          "exists": true
+        },
+        "tododocStats": {
+          "size": 4458,
+          "mtime": "2025-08-24T21:41:47.880Z",
+          "exists": true
+        },
+        "newerFile": "docs",
+        "analysis": {
+          "type": "different",
+          "action": "keep_docs",
+          "docsLines": 102,
+          "tododocLines": 171,
+          "sizeDiff": -906
+        }
+      }
+    ],
+    "mergeTododocToDocs": [],
+    "manualReview": [],
+    "summary": {
+      "total": 30,
+      "identical": 28,
+      "keepDocs": 2,
+      "mergeTododocToDocs": 0,
+      "manualReview": 0
+    }
+  },
+  "executionResults": {
+    "processed": 30,
+    "errors": [],
+    "actions": [
+      "Remove identical file: tododoc\\admin-error-handling-monitoring.md",
+      "Remove identical file: tododoc\\admin-user-guide.md",
+      "Remove identical file: tododoc\\admin-user-setup-guide.md",
+      "Remove identical file: tododoc\\api\\admin-analytics-endpoints.md",
+      "Remove identical file: tododoc\\api\\admin-article-review-endpoints.md",
+      "Remove identical file: tododoc\\api\\admin-bulk-operations-endpoints.md",
+      "Remove identical file: tododoc\\api\\admin-categories-endpoints.md",
+      "Remove identical file: tododoc\\api\\admin-news-endpoints.md",
+      "Remove identical file: tododoc\\api\\admin-news-sources-endpoints.md",
+      "Remove identical file: tododoc\\api\\admin-tags-endpoints.md",
+      "Remove identical file: tododoc\\api\\enhanced-ai-processing-endpoints.md",
+      "Remove identical file: tododoc\\api\\homepage-stats.md",
+      "Remove identical file: tododoc\\configuration-guide.md",
+      "Remove identical file: tododoc\\content-management\\admin-guide.md",
+      "Remove identical file: tododoc\\content-management\\deployment-guide.md",
+      "Remove identical file: tododoc\\content-management\\moderation-training.md",
+      "Remove identical file: tododoc\\content-management\\README.md",
+      "Remove identical file: tododoc\\content-management\\user-guide.md",
+      "Remove identical file: tododoc\\database-deployment-guide.md",
+      "Remove identical file: tododoc\\database-verification-system.md",
+      "Remove identical file: tododoc\\deployment-production-guide.md",
+      "Remove identical file: tododoc\\deployment-script-guide.md",
+      "Remove identical file: tododoc\\metrics-collection-system.md",
+      "Remove identical file: tododoc\\supabase-working-setup.sql",
+      "Remove identical file: tododoc\\troubleshooting-guide.md",
+      "Remove identical file: tododoc\\video-tutorials\\04-article-creation-workflow.md",
+      "Remove identical file: tododoc\\video-tutorials\\09-ai-news-processing.md",
+      "Remove identical file: tododoc\\video-tutorials\\README.md",
+      "Keep docs version, remove tododoc: FASE-2.md",
+      "Keep docs version, remove tododoc: README.md"
+    ]
+  },
+  "recommendations": []
+}

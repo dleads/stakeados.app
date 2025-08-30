@@ -177,9 +177,22 @@ Ver `TYPE_CHECK_STATUS.md` para más detalles.
 
 Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 
+## 📚 Documentación
+
+La documentación completa del proyecto está disponible en la carpeta `/docs`:
+
+- **[Documentación Principal](./docs/README.md)** - Centro de documentación
+- **[Guía de Inicio](./docs/GETTING_STARTED.md)** - Para nuevos desarrolladores
+- **[Arquitectura](./docs/ARCHITECTURE.md)** - Arquitectura del sistema
+- **[API Reference](./docs/API_REFERENCE.md)** - Documentación de APIs
+- **[Troubleshooting](./docs/TROUBLESHOOTING.md)** - Solución de problemas
+
+### Documentación Legacy
+- **[Índice de Documentación Legacy](./docs/current-state/legacy-documentation-index.md)** - Referencia histórica
+
 ## 🆘 Soporte
 
-- **Documentación**: [docs.stakeados.com](https://docs.stakeados.com)
+- **Documentación**: Ver carpeta `/docs` del proyecto
 - **Issues**: [GitHub Issues](https://github.com/tu-usuario/stakeados-platform/issues)
 - **Discord**: [Stakeados Community](https://discord.gg/stakeados)
 

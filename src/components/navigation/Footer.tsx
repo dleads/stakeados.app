@@ -5,13 +5,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Twitter, Github, Mail } from 'lucide-react';
 import { useTranslation, getLocalizedUrl } from '@/lib/i18n';
+import { useNavigation } from './NavigationProvider';
 import type { Locale } from '@/types/content';
 
 export interface FooterProps {
-  locale: Locale;
+  locale?: Locale;
 }
 
-export default function Footer({ locale }: FooterProps) {
+export default function Footer({ locale: propLocale }: FooterProps) {
+  const { currentPath } = useNavigation();
+  
+  // Extract locale from current path or use prop
+  const locale = propLocale || (currentPath.split('/')[1] as Locale) || 'es';
   const { t } = useTranslation(locale);
   
 

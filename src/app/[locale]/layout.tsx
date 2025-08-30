@@ -4,6 +4,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import { AuthProvider } from '@/components/auth/AuthProvider';
 import { RoleProvider } from '@/components/auth/RoleProvider';
 import { Web3Provider } from '@/components/web3/Web3Provider';
+import { NavigationProvider } from '@/components/navigation/NavigationProvider';
+import MainNavigation from '@/components/navigation/MainNavigation';
 
 type Props = {
   children: React.ReactNode;
@@ -31,7 +33,14 @@ export default async function LocaleLayout({
     <NextIntlClientProvider locale={locale} messages={messages} timeZone="UTC">
       <Web3Provider>
         <AuthProvider>
-          <RoleProvider>{children}</RoleProvider>
+          <RoleProvider>
+            <NavigationProvider>
+              <MainNavigation />
+              <main id="main-content" className="min-h-screen">
+                {children}
+              </main>
+            </NavigationProvider>
+          </RoleProvider>
         </AuthProvider>
       </Web3Provider>
     </NextIntlClientProvider>

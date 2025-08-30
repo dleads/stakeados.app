@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
-import StakeadosLayout from '@/components/layout/StakeadosLayout';
+import PageLayout from '@/components/layout/PageLayout';
 import ArticleGrid from '@/components/articles/ArticleGrid';
 import {
   Users,
@@ -22,7 +22,7 @@ export default function ComunidadPage() {
   >('articles');
 
   return (
-    <StakeadosLayout locale={locale}>
+    <PageLayout showBreadcrumbs={true} className="bg-gradient-to-br from-black via-gray-900 to-black text-white">
       <div className="py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
@@ -226,6 +226,6 @@ export default function ComunidadPage() {
           </div>
         </div>
       </div>
-    </StakeadosLayout>
+    </PageLayout>
   );
 }

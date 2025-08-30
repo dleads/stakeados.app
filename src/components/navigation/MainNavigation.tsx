@@ -1,31 +1,50 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import {
-  useTranslation,
-  getLocalizedUrl,
-  getLanguageSwitcherUrls,
-} from '@/lib/i18n';
-import { useFilteredNavigation } from '@/hooks/useFilteredNavigation';
-import { Menu, X, ChevronDown, Globe } from 'lucide-react';
-import type { Locale } from '@/types/content';
+import React, { useState, useEffect, useRef, Suspense } from 'react';
+import { cn } from '@/lib/utils';
+import { useNavigation } from './NavigationProvider';
+import './navigation.css';
+import NavLogo from './NavLogo';
+import NavLinks from './NavLinks';
+import HamburgerButton from './HamburgerButton';
+import { LazyWrapper, NavigationSkeletons } from './optimization/LazyWrapper';
+import { LazyUserMenu, LazyMobileMenu, preloadOnHover } from './lazy';
+import { useNavigationPerformance } from './performance/NavigationPerformanceProvider';
+import { 
+  KeyboardNavigationHandler, 
+  FocusManager, 
+  KEYBOARD_KEYS,
+  a11yUtils 
+} from '@/lib/navigation/accessibility';
 
 export interface MainNavigationProps {
-  locale: Locale;
-  currentPath?: string;
+  className?: string;
+  variant?: 'desktop' | 'mobile' | 'auto';
 }
 
 export default function MainNavigation({
-  locale,
-  currentPath = '',
+  className,
+  variant = 'auto',
 }: MainNavigationProps) {
-  const { t } = useTranslation(locale);
-  const { navigationItems } = useFilteredNavigation(locale);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+  const {
+    isMobileMenuOpen,
+    toggleMobileMenu,
+    closeMobileMenu,
+    getVisibleSections,
+    isAuthenticated,
+    userRole,
+    currentPath,
+  } = useNavigation();
+
+  const { trackUserInteraction, startNavigation } = useNavigationPerformance();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [shouldPreloadUserMenu, setShouldPreloadUserMenu] = useState(false);
+  
+  // Accessibility refs and state
+  const navigationRef = useRef<HTMLElement>(null);
+  const desktopLinksRef = useRef<HTMLDivElement>(null);
+  const [skipLinkId] = useState(() => a11yUtils.generateId('skip-nav'));
 
   // Handle scroll effect
   useEffect(() => {
@@ -36,197 +55,229 @@ export default function MainNavigation({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Add translations and descriptions to navigation items
-  const enhancedNavigationItems = navigationItems.map(item => ({
-    ...item,
-    label:
-      item.key === 'articles'
-        ? t('nav.articles')
-        : item.key === 'news'
-          ? t('nav.news')
-          : item.key === 'community'
-            ? t('nav.community')
-            : item.label,
-    description:
-      item.key === 'articles'
-        ? 'Educational content'
-        : item.key === 'news'
-          ? 'Latest updates'
-          : item.key === 'community'
-            ? 'Join discussions'
-            : item.key === 'courses'
-              ? 'Learning platform'
-              : item.key === 'genesis'
-                ? 'Exclusive access'
-                : item.key === 'dashboard'
-                  ? 'Personal dashboard'
-                  : 'Feature',
-  }));
+  // Enhanced mobile detection with responsive breakpoints and performance optimization
+  useEffect(() => {
+    const checkMobile = () => {
+      const width = window.innerWidth;
+      // Use Tailwind's md breakpoint (768px) for consistency
+      const newIsMobile = width < 768;
+      
+      // Only update state if value actually changed to prevent unnecessary re-renders
+      setIsMobile(prevIsMobile => {
+        if (prevIsMobile !== newIsMobile) {
+          // Track viewport change for analytics
+          trackUserInteraction('viewport_change', 'navigation', {
+            width,
+            isMobile: newIsMobile,
+          });
+          return newIsMobile;
+        }
+        return prevIsMobile;
+      });
+    };
+    
+    checkMobile();
+    
+    // Use ResizeObserver for better performance if available
+    if (typeof ResizeObserver !== 'undefined') {
+      const resizeObserver = new ResizeObserver(() => {
+        checkMobile();
+      });
+      resizeObserver.observe(document.body);
+      
+      return () => {
+        resizeObserver.disconnect();
+      };
+    } else {
+      // Fallback to resize event listener with throttling
+      let timeoutId: NodeJS.Timeout;
+      const throttledCheckMobile = () => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(checkMobile, 100);
+      };
+      
+      window.addEventListener('resize', throttledCheckMobile);
+      return () => {
+        window.removeEventListener('resize', throttledCheckMobile);
+        clearTimeout(timeoutId);
+      };
+    }
+  }, [trackUserInteraction]);
 
-  // Language switcher options
-  const languageOptions = getLanguageSwitcherUrls(currentPath, locale);
+  // Preload user menu on hover/focus for better UX
+  useEffect(() => {
+    if (isAuthenticated && !shouldPreloadUserMenu) {
+      const timer = setTimeout(() => {
+        setShouldPreloadUserMenu(true);
+        preloadOnHover.userMenu();
+      }, 1000); // Preload after 1 second if user is authenticated
+      
+      return () => clearTimeout(timer);
+    }
+  }, [isAuthenticated, shouldPreloadUserMenu]);
+
+  // Determine if we should show mobile or desktop version
+  const showMobile = variant === 'mobile' || (variant === 'auto' && isMobile);
+  const visibleSections = getVisibleSections();
+
+  // Keyboard navigation handler for desktop navigation
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (!desktopLinksRef.current || showMobile) return;
+      
+      // Only handle keyboard navigation if focus is within the navigation
+      const isWithinNavigation = navigationRef.current?.contains(document.activeElement);
+      if (!isWithinNavigation) return;
+
+      KeyboardNavigationHandler.handleHorizontalMenuNavigation(
+        event,
+        desktopLinksRef.current,
+        () => {
+          // On Escape, move focus to skip link or first focusable element
+          const skipLink = document.getElementById(skipLinkId);
+          if (skipLink) {
+            skipLink.focus();
+          }
+        }
+      );
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [showMobile, skipLinkId]);
+
+  // Handle mobile menu focus management
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      // Prevent body scroll and manage focus
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-black/80 backdrop-blur-md border-b border-green-500/20'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link
-            href={getLocalizedUrl('/', locale)}
-            className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-green-400 rounded-md"
-            aria-label="Stakeados Home"
-          >
-            <Image
-              src="https://res.cloudinary.com/dvmtkwrme/image/upload/v1756440936/logo_2_yrsudy.svg"
-              alt="Stakeados logo"
-              width={64}
-              height={64}
-              priority
-              sizes="(min-width: 1024px) 56px, (min-width: 768px) 48px, 40px"
-              className="h-10 w-auto md:h-12 lg:h-14 drop-shadow-[0_0_6px_rgba(0,0,0,0.35)]"
-            />
-          </Link>
+    <>
+      {/* Skip Navigation Link for Screen Readers */}
+      <a
+        id={skipLinkId}
+        href="#main-content"
+        className={cn(
+          'sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100]',
+          'bg-green-600 text-white px-4 py-2 rounded-md font-medium',
+          'transition-all duration-200',
+          a11yUtils.getFocusStyles()
+        )}
+        onFocus={() => {
+          // Announce skip link availability
+          setTimeout(() => {
+            const announcement = 'Enlace de salto al contenido principal disponible';
+            const announcer = a11yUtils.createLiveRegion('polite');
+            announcer.textContent = announcement;
+            document.body.appendChild(announcer);
+            setTimeout(() => document.body.removeChild(announcer), 1000);
+          }, 100);
+        }}
+      >
+        Saltar al contenido principal
+      </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {enhancedNavigationItems.map(item => (
-              <Link
-                key={item.key}
-                href={item.href}
-                className="group relative px-3 py-2 text-gray-300 hover:text-green-400 transition-all duration-300 font-medium"
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  {item.label}
-                  {item.adminOnly && item.badge && (
-                    <span className="px-2 py-0.5 text-xs bg-orange-500 text-white rounded-full">
-                      {item.badge}
-                    </span>
-                  )}
-                </span>
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            ))}
-          </div>
-
-          {/* Right Side Actions */}
-          <div className="flex items-center space-x-4">
-            {/* Language Switcher */}
-            <div className="relative">
-              <button
-                onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-                className="flex items-center space-x-1 p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
-              >
-                <Globe className="w-5 h-5" />
-                <span className="text-sm font-medium">
-                  {locale.toUpperCase()}
-                </span>
-                <ChevronDown
-                  className={`w-4 h-4 transition-transform ${
-                    isLanguageOpen ? 'rotate-180' : ''
-                  }`}
-                />
-              </button>
-
-              {/* Language Dropdown */}
-              {isLanguageOpen && (
-                <div className="absolute right-0 top-full mt-2 w-48 bg-gray-800 border border-gray-700 rounded-lg shadow-xl py-2">
-                  {languageOptions.map(option => (
-                    <Link
-                      key={option.locale}
-                      href={option.url}
-                      className={`block px-4 py-2 text-sm transition-colors ${
-                        option.isActive
-                          ? 'text-green-400 bg-green-500/10'
-                          : 'text-gray-300 hover:text-white hover:bg-gray-700'
-                      }`}
-                      onClick={() => setIsLanguageOpen(false)}
-                    >
-                      {option.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
-              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={isMenuOpen}
-            >
-              {isMenuOpen ? (
-                <X className="w-5 h-5" />
-              ) : (
-                <Menu className="w-5 h-5" />
-              )}
-            </button>
-          </div>
+      <nav
+        ref={navigationRef}
+        className={cn(
+          'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out',
+          isScrolled
+            ? 'bg-black/90 backdrop-blur-lg border-b border-stakeados-primary/20 shadow-lg shadow-stakeados-primary/5'
+            : 'bg-gradient-to-b from-black/20 to-transparent backdrop-blur-sm',
+          'supports-[backdrop-filter]:bg-black/80',
+          className
+        )}
+        role="navigation"
+        aria-label="Navegación principal de Stakeados"
+        aria-describedby="nav-description"
+      >
+        {/* Hidden description for screen readers */}
+        <div id="nav-description" className="sr-only">
+          Navegación principal del sitio web. Use las teclas de flecha para navegar entre opciones, Enter o Espacio para activar enlaces, y Escape para salir del menú.
         </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-800 py-4">
-            <div className="space-y-2">
-              {enhancedNavigationItems.map(item => (
-                <Link
-                  key={item.key}
-                  href={item.href}
-                  className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <div className="font-medium flex items-center gap-2">
-                    {item.label}
-                    {item.adminOnly && item.badge && (
-                      <span className="px-2 py-0.5 text-xs bg-orange-500 text-white rounded-full">
-                        {item.badge}
-                      </span>
-                    )}
-                  </div>
-                  <div className="text-sm text-gray-500">
-                    {item.description}
-                  </div>
-                </Link>
-              ))}
-            </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+          <div className="flex items-center justify-between h-16 sm:h-17 md:h-18 lg:h-20">
+            {/* Logo */}
+            <NavLogo />
 
-            {/* Mobile Language Switcher */}
-            <div className="mt-4 pt-4 border-t border-gray-800">
-              <div className="text-sm text-gray-500 mb-2">Language</div>
-              <div className="space-y-1">
-                {languageOptions.map(option => (
-                  <Link
-                    key={option.locale}
-                    href={option.url}
-                    className={`block px-4 py-2 rounded-lg transition-colors ${
-                      option.isActive
-                        ? 'text-green-400 bg-green-500/10'
-                        : 'text-gray-300 hover:text-white hover:bg-gray-800'
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {option.label}
-                  </Link>
-                ))}
+            {/* Desktop Navigation */}
+            {!showMobile && (
+              <div 
+                ref={desktopLinksRef}
+                className="hidden md:flex items-center space-x-6 lg:space-x-8"
+                role="menubar"
+                aria-label="Navegación principal"
+              >
+                <NavLinks
+                  sections={visibleSections}
+                  currentPath={currentPath}
+                  userRole={userRole}
+                  isAuthenticated={isAuthenticated}
+                  orientation="horizontal"
+                />
               </div>
+            )}
+
+            {/* Right Side Actions */}
+            <div className="flex items-center space-x-3 sm:space-x-4">
+              {/* User Menu (Desktop) - Lazy Loaded */}
+              {!showMobile && (
+                <LazyWrapper
+                  componentName="UserMenu"
+                  fallback={<NavigationSkeletons.UserMenu />}
+                  preloadOnHover={true}
+                >
+                  <LazyUserMenu />
+                </LazyWrapper>
+              )}
+
+              {/* Mobile Menu Button */}
+              {showMobile && (
+                <HamburgerButton
+                  isOpen={isMobileMenuOpen}
+                  onClick={() => {
+                    toggleMobileMenu();
+                    trackUserInteraction('click', 'mobile_menu_toggle', {
+                      isOpen: !isMobileMenuOpen,
+                    });
+                    
+                    // Preload mobile menu if not already done
+                    if (!isMobileMenuOpen) {
+                      preloadOnHover.mobileMenu();
+                    }
+                  }}
+                  className="md:hidden"
+                  size="md"
+                  variant="default"
+                />
+              )}
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      </nav>
 
-      {/* Overlay for mobile menu */}
-      {isMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 -z-10"
-          onClick={() => setIsMenuOpen(false)}
-        />
+      {/* Mobile Menu - Lazy Loaded */}
+      {showMobile && (
+        <LazyWrapper
+          componentName="MobileMenu"
+          fallback={null}
+        >
+          <LazyMobileMenu
+            isOpen={isMobileMenuOpen}
+            onClose={closeMobileMenu}
+          />
+        </LazyWrapper>
       )}
-    </nav>
+    </>
   );
 }

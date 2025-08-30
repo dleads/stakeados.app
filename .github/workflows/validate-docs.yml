@@ -1,0 +1,112 @@
+name: Validate Documentation
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'docs/**'
+      - '.kiro/specs/**'
+      - 'README.md'
+      - 'scripts/validate-documentation.js'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'docs/**'
+      - '.kiro/specs/**'
+      - 'README.md'
+      - 'scripts/validate-documentation.js'
+  schedule:
+    # Run weekly on Sundays at 2 AM UTC
+    - cron: '0 2 * * 0'
+  workflow_dispatch:
+
+jobs:
+  validate-documentation:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Make validation script executable
+      run: chmod +x scripts/validate-documentation.js
+      
+    - name: Run documentation validation
+      run: node scripts/validate-documentation.js
+      
+    - name: Upload validation report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: docs-validation-report
+        path: docs-validation-report.json
+        retention-days: 30
+        
+    - name: Comment PR with validation results
+      if: github.event_name == 'pull_request' && failure()
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          
+          try {
+            const report = JSON.parse(fs.readFileSync('docs-validation-report.json', 'utf8'));
+            
+            let comment = '## 📋 Documentation Validation Report\n\n';
+            comment += `**Summary:**\n`;
+            comment += `- Files validated: ${report.totalFiles}\n`;
+            comment += `- Links checked: ${report.totalLinks}\n`;
+            comment += `- Code blocks validated: ${report.totalCodeBlocks}\n\n`;
+            
+            if (report.brokenLinks.length > 0) {
+              comment += `### 🔗 Broken Links (${report.brokenLinks.length})\n`;
+              report.brokenLinks.slice(0, 10).forEach(link => {
+                comment += `- ❌ \`${link.file}\`: "${link.text}" → ${link.link} (${link.type})\n`;
+              });
+              if (report.brokenLinks.length > 10) {
+                comment += `- ... and ${report.brokenLinks.length - 10} more\n`;
+              }
+              comment += '\n';
+            }
+            
+            if (report.invalidCodeExamples.length > 0) {
+              comment += `### 💻 Invalid Code Examples (${report.invalidCodeExamples.length})\n`;
+              report.invalidCodeExamples.slice(0, 5).forEach(code => {
+                comment += `- ❌ \`${code.file}\` (${code.language}): ${code.error}\n`;
+              });
+              if (report.invalidCodeExamples.length > 5) {
+                comment += `- ... and ${report.invalidCodeExamples.length - 5} more\n`;
+              }
+              comment += '\n';
+            }
+            
+            if (report.outdatedDocs.length > 0) {
+              comment += `### 📅 Potentially Outdated Documentation (${report.outdatedDocs.length})\n`;
+              report.outdatedDocs.slice(0, 5).forEach(doc => {
+                comment += `- ⚠️ \`${doc.file}\` (${doc.daysSinceModified} days old)\n`;
+              });
+              if (report.outdatedDocs.length > 5) {
+                comment += `- ... and ${report.outdatedDocs.length - 5} more\n`;
+              }
+            }
+            
+            comment += '\n📄 Full report available in the workflow artifacts.';
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+          } catch (error) {
+            console.log('Could not read validation report:', error.message);
+          }

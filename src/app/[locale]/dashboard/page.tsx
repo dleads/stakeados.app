@@ -3,6 +3,7 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
+import PageLayout from '@/components/layout/PageLayout';
 import {
   LazyProgressDashboard,
   LazyCourseGrid,
@@ -21,10 +22,11 @@ export default function DashboardPage() {
 
   return (
     <ProtectedRoute>
-      <NotificationSystem />
-      <div className="min-h-screen bg-gradient-gaming py-12">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
+      <PageLayout showBreadcrumbs={true} className="bg-gradient-gaming">
+        <NotificationSystem />
+        <div className="py-12">
+          <div className="container mx-auto px-4">
+            <div className="max-w-7xl mx-auto">
             {/* Header */}
             <div className="text-center mb-12">
               <div className="flex items-center justify-center gap-3 mb-4">
@@ -144,9 +146,10 @@ export default function DashboardPage() {
                 </div>
               </div>
             </div>
+            </div>
           </div>
         </div>
-      </div>
+      </PageLayout>
     </ProtectedRoute>
   );
 }

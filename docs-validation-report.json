@@ -1,0 +1,1729 @@
+{
+  "brokenLinks": [
+    {
+      "file": "docs\\api\\examples.md",
+      "link": "print(f\"📄 {article['title']['es']}\")",
+      "text": "'data'",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\api\\examples.md",
+      "link": "for category in article['categories']:",
+      "text": "'articles'",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\api\\examples.md",
+      "link": "analysis['contribution_types'][contrib_type] = {",
+      "text": "'contribution_types'",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\api\\examples.md",
+      "link": "count = analysis['contribution_types'][contrib_type]['count']",
+      "text": "'contribution_types'",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\api\\examples.md",
+      "link": "analysis['recommendations'].append(",
+      "text": "'contribution_types'",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\api\\examples.md",
+      "link": "print(f\"  - {alert['severity'].upper()}: {alert['message']}\")",
+      "text": "'alerts'",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\CHANGELOG.md",
+      "link": "https://github.com/repo/issues/123",
+      "text": "#123",
+      "type": "external"
+    },
+    {
+      "file": "docs\\CHANGELOG.md",
+      "link": "https://github.com/repo/issues/456",
+      "text": "#456",
+      "type": "external"
+    },
+    {
+      "file": "docs\\CONTRIBUTING.md",
+      "link": "<descripción>",
+      "text": "ámbito opcional",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\current-state\\legacy-documentation-index.md",
+      "link": "/.kiro/specs/project-organization-documentation/",
+      "text": "Project Organization Specification",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\current-state\\legacy-documentation-index.md",
+      "link": "/docs/README.md",
+      "text": "Current Documentation Structure",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\current-state\\legacy-documentation-index.md",
+      "link": "/docs/GETTING_STARTED.md",
+      "text": "Getting Started Guide",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\current-state\\legacy-documentation-index.md",
+      "link": "/docs/ARCHITECTURE.md",
+      "text": "Architecture Documentation",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\deployment\\netlify-secrets-fix.md",
+      "link": "https://docs.netlify.com/configure-builds/environment-variables/secrets-scanning/",
+      "text": "Netlify Secrets Scanning Documentation",
+      "type": "external"
+    },
+    {
+      "file": "docs\\deployment\\netlify-secrets-fix.md",
+      "link": "https://nextjs.org/docs/basic-features/environment-variables",
+      "text": "Next.js Environment Variables",
+      "type": "external"
+    },
+    {
+      "file": "docs\\deployment-production-guide.md",
+      "link": "./troubleshooting-guide.md",
+      "text": "troubleshooting guide",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\DEPLOYMENT.md",
+      "link": "https://openai.com",
+      "text": "OpenAI",
+      "type": "external"
+    },
+    {
+      "file": "docs\\development\\database-guide.md",
+      "link": "https://supabase.com/docs/guides/database/database-design",
+      "text": "Database Design Best Practices",
+      "type": "external"
+    },
+    {
+      "file": "docs\\development\\database-guide.md",
+      "link": "https://supabase.com/docs/guides/database/performance",
+      "text": "Performance Optimization",
+      "type": "external"
+    },
+    {
+      "file": "docs\\development\\documentation-validation.md",
+      "link": "url",
+      "text": "text",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\development\\documentation-validation.md",
+      "link": "url` - Reference links",
+      "text": "text",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\development\\setup-guide.md",
+      "link": "https://platform.openai.com",
+      "text": "platform.openai.com",
+      "type": "external"
+    },
+    {
+      "file": "docs\\DOCUMENTATION_STANDARDS.md",
+      "link": "./otro-documento.md",
+      "text": "texto",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\DOCUMENTATION_STANDARDS.md",
+      "link": "https://example.com",
+      "text": "texto",
+      "type": "external"
+    },
+    {
+      "file": "docs\\README.md",
+      "link": "./operations/monitoring.md",
+      "text": "monitoring.md",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\README.md",
+      "link": "./operations/backup-recovery.md",
+      "text": "backup-recovery.md",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\README.md",
+      "link": "./operations/security.md",
+      "text": "security.md",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\templates\\guide-template.md",
+      "link": "./related-doc.md",
+      "text": "Enlace a documentación relacionada",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\templates\\guide-template.md",
+      "link": "https://example.com",
+      "text": "Recurso externo",
+      "type": "external"
+    },
+    {
+      "file": "docs\\templates\\reference-template.md",
+      "link": "./related-doc.md",
+      "text": "Documentación relacionada",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\templates\\reference-template.md",
+      "link": "./api-reference.md",
+      "text": "API Reference",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\templates\\reference-template.md",
+      "link": "https://example.com",
+      "text": "Recurso externo",
+      "type": "external"
+    },
+    {
+      "file": "docs\\video-tutorials\\04-article-creation-workflow.md",
+      "link": "./05-advanced-editor-features.md",
+      "text": "Advanced Article Editor Features",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\04-article-creation-workflow.md",
+      "link": "./06-article-review-workflow.md",
+      "text": "Article Review Process",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\04-article-creation-workflow.md",
+      "link": "../seo-best-practices.md",
+      "text": "SEO Best Practices Guide",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\04-article-creation-workflow.md",
+      "link": "../content-style-guide.md",
+      "text": "Content Style Guide",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\09-ai-news-processing.md",
+      "link": "./08-rss-source-setup.md",
+      "text": "RSS Source Configuration",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\09-ai-news-processing.md",
+      "link": "./10-news-review-workflow.md",
+      "text": "News Review Workflow",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\09-ai-news-processing.md",
+      "link": "../ai-configuration-guide.md",
+      "text": "AI Configuration Guide",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\09-ai-news-processing.md",
+      "link": "../api-optimization-guide.md",
+      "text": "API Usage Optimization",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\README.md",
+      "link": "./01-admin-panel-overview.md",
+      "text": "Admin Panel Overview",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\README.md",
+      "link": "./02-user-roles-permissions.md",
+      "text": "User Roles and Permissions",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\README.md",
+      "link": "./03-dashboard-navigation.md",
+      "text": "Dashboard Navigation",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\README.md",
+      "link": "./05-advanced-editor-features.md",
+      "text": "Advanced Article Editor",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\README.md",
+      "link": "./06-article-review-workflow.md",
+      "text": "Article Review Process",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\README.md",
+      "link": "./07-content-scheduling.md",
+      "text": "Content Scheduling",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\README.md",
+      "link": "./08-rss-source-setup.md",
+      "text": "RSS Source Configuration",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\README.md",
+      "link": "./10-news-review-workflow.md",
+      "text": "News Review and Approval",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\README.md",
+      "link": "./11-duplicate-management.md",
+      "text": "Duplicate Management",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\README.md",
+      "link": "./12-category-management.md",
+      "text": "Category Management",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\README.md",
+      "link": "./13-tag-management.md",
+      "text": "Tag Management",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\README.md",
+      "link": "./14-analytics-overview.md",
+      "text": "Analytics Dashboard",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\README.md",
+      "link": "./15-custom-reports.md",
+      "text": "Custom Reports",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\README.md",
+      "link": "./16-system-configuration.md",
+      "text": "System Configuration",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\README.md",
+      "link": "./17-user-management.md",
+      "text": "User Management",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\README.md",
+      "link": "./18-backup-maintenance.md",
+      "text": "Backup and Maintenance",
+      "type": "internal"
+    },
+    {
+      "file": "docs\\video-tutorials\\README.md",
+      "link": "./19-troubleshooting.md",
+      "text": "Troubleshooting",
+      "type": "internal"
+    },
+    {
+      "file": ".kiro\\specs\\active\\notification-system\\design.md",
+      "link": "{",
+      "text": "key: string",
+      "type": "internal"
+    },
+    {
+      "file": ".kiro\\specs\\completed\\homepage-production\\design.md",
+      "link": "string | string[] | undefined };",
+      "text": "key: string",
+      "type": "internal"
+    },
+    {
+      "file": ".kiro\\specs\\templates\\design-template.md",
+      "link": "[type];",
+      "text": "property",
+      "type": "internal"
+    },
+    {
+      "file": ".kiro\\specs\\templates\\design-template.md",
+      "link": "[Description and purpose]",
+      "text": "Page Name",
+      "type": "internal"
+    },
+    {
+      "file": ".kiro\\specs\\templates\\design-template.md",
+      "link": "[Description and functionality]",
+      "text": "Component Name",
+      "type": "internal"
+    },
+    {
+      "file": "README.md",
+      "link": "https://github.com/tu-usuario/stakeados-platform/issues",
+      "text": "GitHub Issues",
+      "type": "external"
+    }
+  ],
+  "invalidCodeExamples": [
+    {
+      "file": "docs\\admin-error-handling-monitoring.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Cannot use import statement outside a module",
+      "code": "import { errorHandler } from '@/lib/errors/ErrorHandler';\n\ntry {\n  await someOperation();\n} catch (e..."
+    },
+    {
+      "file": "docs\\admin-error-handling-monitoring.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Cannot use import statement outside a module",
+      "code": "import { usePerformanceMonitoring } from '@/hooks/usePerformanceMonitoring';\n\nfunction ArticleEditor..."
+    },
+    {
+      "file": "docs\\admin-error-handling-monitoring.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Cannot use import statement outside a module",
+      "code": "import { apiPost } from '@/lib/api/errorHandling';\n\nconst createArticle = async articleData => {\n  r..."
+    },
+    {
+      "file": "docs\\admin-user-setup-guide.md",
+      "language": "sql",
+      "error": "SQL code does not contain recognizable SQL keywords",
+      "code": "   admin_email TEXT := 'your-admin@email.com';\n   admin_display_name TEXT := 'Your Admin Name';\n   a..."
+    },
+    {
+      "file": "docs\\admin-user-setup-guide.md",
+      "language": "javascript",
+      "error": "JavaScript syntax error: await is only valid in async functions and the top level bodies of modules",
+      "code": "// Check if current user is admin\nconst { data: permissions } = await supabase.rpc('get_role_permiss..."
+    },
+    {
+      "file": "docs\\admin-user-setup-guide.md",
+      "language": "javascript",
+      "error": "JavaScript syntax error: Unexpected token '<'",
+      "code": "// Protect admin routes\nconst AdminRoute = ({ children }) => {\n  const { user, permissions } = useAu..."
+    },
+    {
+      "file": "docs\\api\\admin-analytics-endpoints.md",
+      "language": "javascript",
+      "error": "JavaScript syntax error: await is only valid in async functions and the top level bodies of modules",
+      "code": "const response = await fetch('/api/admin/analytics/dashboard?days=7', {\n  headers: {\n    Authorizati..."
+    },
+    {
+      "file": "docs\\api\\admin-analytics-endpoints.md",
+      "language": "javascript",
+      "error": "JavaScript syntax error: await is only valid in async functions and the top level bodies of modules",
+      "code": "const response = await fetch('/api/admin/analytics/export', {\n  method: 'POST',\n  headers: {\n    'Co..."
+    },
+    {
+      "file": "docs\\api\\admin-analytics-endpoints.md",
+      "language": "javascript",
+      "error": "JavaScript syntax error: await is only valid in async functions and the top level bodies of modules",
+      "code": "const response = await fetch(\n  '/api/admin/analytics/trends?days=30&granularity=weekly',\n  {\n    he..."
+    },
+    {
+      "file": "docs\\api\\admin-article-review-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected ',' or '}' after property value in JSON at position 24",
+      "code": "{\n  \"action\": \"approve\" | \"reject\" | \"request_changes\",\n  \"feedback\": \"string (min 10 chars)\",\n  \"re..."
+    },
+    {
+      "file": "docs\\api\\admin-article-review-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected property name or '}' in JSON at position 21",
+      "code": "{\n  \"article\": {\n    /* updated article with relations */\n  },\n  \"review\": {\n    /* review data */\n ..."
+    },
+    {
+      "file": "docs\\api\\admin-article-review-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected property name or '}' in JSON at position 21",
+      "code": "{\n  \"article\": {\n    /* updated article */\n  },\n  \"schedule\": {\n    /* schedule info if scheduled */..."
+    },
+    {
+      "file": "docs\\api\\admin-article-review-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected ',' or '}' after property value in JSON at position 142",
+      "code": "{\n  \"reason\": \"string (min 20 chars)\",\n  \"feedback\": \"string (min 10 chars)\",\n  \"suggested_improveme..."
+    },
+    {
+      "file": "docs\\api\\admin-article-review-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected property name or '}' in JSON at position 21",
+      "code": "{\n  \"article\": {\n    /* updated article */\n  },\n  \"rejection\": {\n    /* rejection metadata */\n  },\n ..."
+    },
+    {
+      "file": "docs\\api\\admin-article-review-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected property name or '}' in JSON at position 26",
+      "code": "{\n  \"data\": [\n    {\n      /* article with review_metadata */\n      \"review_metadata\": {\n        \"pri..."
+    },
+    {
+      "file": "docs\\api\\admin-article-review-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected ',' or '}' after property value in JSON at position 47",
+      "code": "{\n  \"reviewer_id\": \"uuid\",\n  \"priority\": \"low\" | \"medium\" | \"high\",\n  \"deadline\": \"datetime (optiona..."
+    },
+    {
+      "file": "docs\\api\\admin-article-review-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected property name or '}' in JSON at position 17",
+      "code": "{\n  \"article\": { /* updated article */ },\n  \"assignment\": {\n    /* assignment data with reviewer inf..."
+    },
+    {
+      "file": "docs\\api\\admin-article-review-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected property name or '}' in JSON at position 82",
+      "code": "{\n  \"assignment\": {\n    \"assigned_at\": \"datetime\",\n    \"assignment_data\": {\n      /* assignment deta..."
+    },
+    {
+      "file": "docs\\api\\admin-bulk-operations-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected double-quoted property name in JSON at position 141",
+      "code": "{\n  \"articleIds\": [\"uuid1\", \"uuid2\", \"uuid3\"],\n  \"operation\": \"publish|archive|categorize|tag|delete..."
+    },
+    {
+      "file": "docs\\api\\admin-bulk-operations-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected double-quoted property name in JSON at position 141",
+      "code": "{\n  \"newsIds\": [\"uuid1\", \"uuid2\", \"uuid3\"],\n  \"operation\": \"categorize|process|approve|reject|delete..."
+    },
+    {
+      "file": "docs\\api\\admin-bulk-operations-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected double-quoted property name in JSON at position 214",
+      "code": "{\n  \"categoryIds\": [\"uuid1\", \"uuid2\", \"uuid3\"],\n  \"operation\": \"reorder|merge|delete|update\",\n  \"dat..."
+    },
+    {
+      "file": "docs\\api\\admin-bulk-operations-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected ',' or '}' after property value in JSON at position 124",
+      "code": "{\n  \"tagIds\": [\"tag-name-1\", \"tag-name-2\"],\n  \"operation\": \"merge|delete\",\n  \"data\": {\n    \"targetTa..."
+    },
+    {
+      "file": "docs\\api\\admin-bulk-operations-endpoints.md",
+      "language": "javascript",
+      "error": "JavaScript syntax error: await is only valid in async functions and the top level bodies of modules",
+      "code": "const response = await fetch('/api/admin/bulk/articles', {\n  method: 'POST',\n  headers: {\n    'Conte..."
+    },
+    {
+      "file": "docs\\api\\admin-bulk-operations-endpoints.md",
+      "language": "javascript",
+      "error": "JavaScript syntax error: await is only valid in async functions and the top level bodies of modules",
+      "code": "const response = await fetch('/api/admin/bulk/news', {\n  method: 'POST',\n  headers: {\n    'Content-T..."
+    },
+    {
+      "file": "docs\\api\\admin-bulk-operations-endpoints.md",
+      "language": "javascript",
+      "error": "JavaScript syntax error: await is only valid in async functions and the top level bodies of modules",
+      "code": "const response = await fetch('/api/admin/bulk/categories', {\n  method: 'POST',\n  headers: {\n    'Con..."
+    },
+    {
+      "file": "docs\\api\\admin-bulk-operations-endpoints.md",
+      "language": "javascript",
+      "error": "JavaScript syntax error: Cannot use import statement outside a module",
+      "code": "import { useBulkOperations } from '@/hooks/useBulkOperations';\n\nconst { executeArticleBulkOperation,..."
+    },
+    {
+      "file": "docs\\api\\admin-categories-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected ',' or '}' after property value in JSON at position 102",
+      "code": "[\n  {\n    \"id\": \"uuid\",\n    \"name\": \"Category Name\",\n    \"article_count\": 15,\n    \"news_count\": 8\n  ..."
+    },
+    {
+      "file": "docs\\api\\admin-categories-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected ',' or '}' after property value in JSON at position 188",
+      "code": "{\n  \"name\": \"New Category\",\n  \"slug\": \"new-category\",\n  \"description\": \"Category description\",\n  \"co..."
+    },
+    {
+      "file": "docs\\api\\admin-categories-endpoints.md",
+      "language": "javascript",
+      "error": "JavaScript syntax error: await is only valid in async functions and the top level bodies of modules",
+      "code": "const response = await fetch('/api/admin/categories', {\n  method: 'POST',\n  headers: {\n    'Content-..."
+    },
+    {
+      "file": "docs\\api\\admin-categories-endpoints.md",
+      "language": "javascript",
+      "error": "JavaScript syntax error: await is only valid in async functions and the top level bodies of modules",
+      "code": "const response = await fetch('/api/admin/categories?hierarchical=true', {\n  headers: {\n    Authoriza..."
+    },
+    {
+      "file": "docs\\api\\admin-categories-endpoints.md",
+      "language": "javascript",
+      "error": "JavaScript syntax error: await is only valid in async functions and the top level bodies of modules",
+      "code": "const response = await fetch('/api/admin/categories/reorder', {\n  method: 'PUT',\n  headers: {\n    'C..."
+    },
+    {
+      "file": "docs\\api\\admin-categories-endpoints.md",
+      "language": "javascript",
+      "error": "JavaScript syntax error: await is only valid in async functions and the top level bodies of modules",
+      "code": "const response = await fetch(\n  `/api/admin/categories/${categoryId}?reassignTo=${newCategoryId}`,\n ..."
+    },
+    {
+      "file": "docs\\api\\admin-news-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Unexpected token 'b', ...\"ocessed\": boolean,\n \"... is not valid JSON",
+      "code": "{\n  \"data\": [\n    {\n      \"id\": \"uuid\",\n      \"title\": \"string\",\n      \"content\": \"string\",\n      \"s..."
+    },
+    {
+      "file": "docs\\api\\admin-news-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected double-quoted property name in JSON at position 64",
+      "code": "{\n  \"id\": \"uuid\",\n  \"title\": \"string\",\n  \"content\": \"string\",\n  // ... other news fields\n  \"category..."
+    },
+    {
+      "file": "docs\\api\\admin-news-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected double-quoted property name in JSON at position 64",
+      "code": "{\n  \"id\": \"uuid\",\n  \"title\": \"string\",\n  \"content\": \"string\",\n  // ... other news fields\n  \"category..."
+    },
+    {
+      "file": "docs\\api\\admin-news-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected double-quoted property name in JSON at position 64",
+      "code": "{\n  \"id\": \"uuid\",\n  \"title\": \"string\",\n  \"content\": \"string\",\n  // ... updated news fields\n  \"catego..."
+    },
+    {
+      "file": "docs\\api\\admin-news-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected ',' or '}' after property value in JSON at position 25",
+      "code": "{\n  \"news_ids\": [\"uuid\"] (optional - if not provided, processes all unprocessed),\n  \"force_reprocess..."
+    },
+    {
+      "file": "docs\\api\\admin-news-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Unexpected token 'm', ...\"essed\": number,\n    \"... is not valid JSON",
+      "code": "{\n  \"message\": \"AI processing completed\",\n  \"results\": {\n    \"processed\": number,\n    \"skipped\": num..."
+    },
+    {
+      "file": "docs\\api\\admin-news-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected double-quoted property name in JSON at position 164",
+      "code": "{\n  \"duplicates\": [\n    {\n      \"group_id\": \"string\",\n      \"primary_item\": {\n        \"id\": \"uuid\",\n..."
+    },
+    {
+      "file": "docs\\api\\admin-news-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Unexpected token 'm', ...\"count\": number,\n  \"d\"... is not valid JSON",
+      "code": "{\n  \"message\": \"Duplicates resolved successfully\",\n  \"group_id\": \"string\",\n  \"kept_item\": {\n    \"id\"..."
+    },
+    {
+      "file": "docs\\api\\admin-news-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected ',' or '}' after property value in JSON at position 46",
+      "code": "{\n  \"error\": \"Error message\",\n  \"details\": [] // Optional validation details for 400 errors\n}\n"
+    },
+    {
+      "file": "docs\\api\\admin-news-sources-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected double-quoted property name in JSON at position 45",
+      "code": "{\n  \"id\": \"uuid\",\n  \"name\": \"Source Name\",\n  // ... all source fields\n  \"health_history\": [\n    {\n  ..."
+    },
+    {
+      "file": "docs\\api\\admin-news-sources-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected double-quoted property name in JSON at position 38",
+      "code": "{\n  \"source_ids\": [\"uuid1\", \"uuid2\"], // Optional: specific sources\n  \"force\": false, // Optional: f..."
+    },
+    {
+      "file": "docs\\api\\admin-tags-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected ',' or '}' after property value in JSON at position 49",
+      "code": "{\n  \"name\": \"Blockchain\",\n  \"slug\": \"blockchain\" // Optional, auto-generated if not provided\n}\n"
+    },
+    {
+      "file": "docs\\api\\admin-tags-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected double-quoted property name in JSON at position 37",
+      "code": "{\n  \"name\": \"Decentralized Finance\", // Optional\n  \"slug\": \"decentralized-finance\" // Optional\n}\n"
+    },
+    {
+      "file": "docs\\api\\admin-tags-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected ',' or '}' after property value in JSON at position 93",
+      "code": "{\n  \"sourceTagIds\": [\"uuid1\", \"uuid2\"],\n  \"targetTagId\": \"uuid3\",\n  \"deleteSourceTags\": true // Opti..."
+    },
+    {
+      "file": "docs\\api\\admin-tags-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected ',' or '}' after property value in JSON at position 371",
+      "code": "{\n  \"message\": \"Tag merge completed\",\n  \"result\": {\n    \"targetTag\": {\n      \"id\": \"uuid3\",\n      \"n..."
+    },
+    {
+      "file": "docs\\api\\admin-tags-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected ',' or '}' after property value in JSON at position 46",
+      "code": "{\n  \"error\": \"Error message\",\n  \"details\": {} // Additional error details when available\n}\n"
+    },
+    {
+      "file": "docs\\api\\enhanced-ai-processing-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected ',' or '}' after property value in JSON at position 33",
+      "code": "{\n  \"news_ids\": [\"uuid\", \"uuid\"] // Optional, specific items to process\n  \"filters\": { // Optional, ..."
+    },
+    {
+      "file": "docs\\api\\enhanced-ai-processing-endpoints.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected ',' or '}' after property value in JSON at position 56",
+      "code": "{\n  \"action\": \"reset\",\n  \"section\": \"string (optional)\" // Reset specific section or entire config\n}..."
+    },
+    {
+      "file": "docs\\api\\homepage-stats.md",
+      "language": "javascript",
+      "error": "JavaScript syntax error: await is only valid in async functions and the top level bodies of modules",
+      "code": "const response = await fetch('/api/stats/homepage');\nconst stats = await response.json();\nconsole.lo..."
+    },
+    {
+      "file": "docs\\api\\homepage-stats.md",
+      "language": "javascript",
+      "error": "JavaScript syntax error: await is only valid in async functions and the top level bodies of modules",
+      "code": "const response = await fetch('/api/stats/homepage?detailed=true');\nconst stats = await response.json..."
+    },
+    {
+      "file": "docs\\api\\homepage-stats.md",
+      "language": "javascript",
+      "error": "JavaScript syntax error: await is only valid in async functions and the top level bodies of modules",
+      "code": "// Invalidate cache\nawait fetch('/api/stats/homepage', {\n  method: 'POST',\n  headers: { Authorizatio..."
+    },
+    {
+      "file": "docs\\database-deployment-guide.md",
+      "language": "sql",
+      "error": "SQL code does not contain recognizable SQL keywords",
+      "code": "-- Run the complete deployment script in Supabase SQL Editor\n-- File: scripts/deploy-complete-databa..."
+    },
+    {
+      "file": "docs\\deployment-script-guide.md",
+      "language": "sql",
+      "error": "SQL code does not contain recognizable SQL keywords",
+      "code": "   -- Export important data before rollback\n   COPY profiles TO '/tmp/profiles_backup.csv' CSV HEADE..."
+    },
+    {
+      "file": "docs\\metrics-collection-system.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Cannot use import statement outside a module",
+      "code": "import { metricsService } from '@/lib/services/metricsService';\n\n// Track a page view\nawait metricsS..."
+    },
+    {
+      "file": "docs\\metrics-collection-system.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Cannot use import statement outside a module",
+      "code": "import { metricsAggregationService } from '@/lib/services/metricsAggregationService';\n\n// Run daily ..."
+    },
+    {
+      "file": "docs\\metrics-collection-system.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Cannot use import statement outside a module",
+      "code": "import { useMetricsCollection } from '@/hooks/useMetricsCollection'\n\nfunction ArticlePage({ articleI..."
+    },
+    {
+      "file": "docs\\metrics-collection-system.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Cannot use import statement outside a module",
+      "code": "import { useMetricsSubscription } from '@/hooks/useMetricsCollection'\n\nfunction MetricsDashboard({ c..."
+    },
+    {
+      "file": "docs\\metrics-collection-system.md",
+      "language": "json",
+      "error": "JSON syntax error: Expected ',' or '}' after property value in JSON at position 23",
+      "code": "{\n  \"jobType\": \"daily\" | \"weekly\" | \"monthly\" | \"cleanup\" | \"trending\",\n  \"targetDate\": \"2024-01-01\"..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\admin-content-management\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'Article'",
+      "code": "interface Article {\n  id: string;\n  title: string;\n  content: string;\n  summary?: string;\n  author_i..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\admin-content-management\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'News'",
+      "code": "interface News {\n  id: string;\n  title: string;\n  content: string;\n  summary?: string;\n  source_url?..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\admin-content-management\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'Category'",
+      "code": "interface Category {\n  id: string;\n  name: string;\n  slug: string;\n  description?: string;\n  color?:..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\admin-content-management\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected reserved word",
+      "code": "enum AdminErrorCodes {\n  ARTICLE_NOT_FOUND = 'ARTICLE_NOT_FOUND',\n  INSUFFICIENT_PERMISSIONS = 'INSU..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\content-management-system\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'ArticleProposal'",
+      "code": "interface ArticleProposal {\n  id: string;\n  title: string;\n  summary: string;\n  outline: string;\n  a..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\content-management-system\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'ArticleEditor'",
+      "code": "interface ArticleEditor {\n  id?: string;\n  title: Record<Locale, string>;\n  content: Record<Locale, ..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\content-management-system\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'NewsSource'",
+      "code": "interface NewsSource {\n  id: string;\n  name: string;\n  url: string;\n  type: 'rss' | 'api';\n  apiKey?..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\content-management-system\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'AIContentProcessor'",
+      "code": "interface AIContentProcessor {\n  summarizeArticle: (\n    content: string,\n    targetLength: number,\n..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\content-management-system\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'ArticleGridProps'",
+      "code": "interface ArticleGridProps {\n  articles: Article[]\n  loading?: boolean\n  filters?: ArticleFilters\n  ..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\content-management-system\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'NewsFeedProps'",
+      "code": "interface NewsFeedProps {\n  personalizedFeed?: boolean\n  categories?: string[]\n  limit?: number\n  sh..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\content-management-system\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'SEOMetadata'",
+      "code": "interface SEOMetadata {\n  title: Record<Locale, string>;\n  description: Record<Locale, string>;\n  ke..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\content-management-system\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected token ':'",
+      "code": "// Article URLs\nconst articleRoutes = {\n  list: {\n    en: '/en/articles',\n    es: '/es/articulos',\n ..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\content-management-system\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'ContentError'",
+      "code": "interface ContentError extends Error {\n  type: 'validation' | 'ai_processing' | 'publication' | 'tra..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\content-management-system\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'ContentCacheConfig'",
+      "code": "interface ContentCacheConfig {\n  articles: {\n    list: { ttl: 300 }; // 5 minutes\n    detail: { ttl:..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\content-management-system\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'ContentSecurityService'",
+      "code": "interface ContentSecurityService {\n  sanitizeHTML: (content: string) => string;\n  validateImageUploa..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\homepage-production\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'HeroSectionProps'",
+      "code": "interface HeroSectionProps {\n  locale: Locale;\n  className?: string;\n}\n"
+    },
+    {
+      "file": ".kiro\\specs\\completed\\homepage-production\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'FeaturedNewsSectionProps'",
+      "code": "interface FeaturedNewsSectionProps {\n  locale: Locale;\n  maxItems?: number;\n  showViewAll?: boolean;..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\homepage-production\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'FeaturedArticlesSectionProps'",
+      "code": "interface FeaturedArticlesSectionProps {\n  locale: Locale;\n  maxItems?: number;\n  showViewAll?: bool..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\homepage-production\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'QuickNavigationSectionProps'",
+      "code": "interface QuickNavigationSectionProps {\n  locale: Locale;\n  className?: string;\n}\n\ninterface Navigat..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\homepage-production\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'CoursesPreviewSectionProps'",
+      "code": "interface CoursesPreviewSectionProps {\n  locale: Locale;\n  maxItems?: number;\n  showViewAll?: boolea..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\homepage-production\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'SEOMetadataProps'",
+      "code": "interface SEOMetadataProps {\n  locale: Locale;\n  title?: string;\n  description?: string;\n  keywords?..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\homepage-production\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'HomepageData'",
+      "code": "interface HomepageData {\n  news: NewsArticle[];\n  articles: ArticleWithMetrics[];\n  courses: Course[..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\homepage-production\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'SectionErrorBoundary'",
+      "code": "interface SectionErrorBoundary {\n  fallback: React.ComponentType<{ error: Error; retry: () => void }..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\homepage-production\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected token 'export'",
+      "code": "// Static generation with revalidation\nexport const revalidate = 300; // 5 minutes\n\n// API response ..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\supabase-database-setup\\design.md",
+      "language": "sql",
+      "error": "SQL code does not contain recognizable SQL keywords",
+      "code": "-- Profiles table (extends Supabase auth.users)\nprofiles:\n  id: UUID (PK, FK to auth.users)\n  email:..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\supabase-database-setup\\design.md",
+      "language": "sql",
+      "error": "SQL code does not contain recognizable SQL keywords",
+      "code": "-- Essential indexes\nidx_profiles_email ON profiles(email)\nidx_profiles_role ON profiles(role)\nidx_a..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\supabase-database-setup\\design.md",
+      "language": "sql",
+      "error": "SQL code does not contain recognizable SQL keywords",
+      "code": "-- Default categories\nDeFi, NFTs, Base, Trading, Technology, Regulation\n"
+    },
+    {
+      "file": ".kiro\\specs\\completed\\supabase-role-authentication\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected token 'export'",
+      "code": "export enum UserRole {\n  ADMIN = 'admin',\n  GENESIS = 'genesis',\n  CITIZEN = 'citizen',\n  STUDENT = ..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\supabase-role-authentication\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'RoleContextType'",
+      "code": "interface RoleContextType {\n  user: User | null;\n  profile: UserProfile | null;\n  role: UserRole | n..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\supabase-role-authentication\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'ProtectedRouteProps'",
+      "code": "interface ProtectedRouteProps {\n  children: React.ReactNode;\n  requireAuth?: boolean;\n  requiredRole..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\supabase-role-authentication\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected token ':'",
+      "code": "class RoleService {\n  static async getUserRole(userId: string): Promise<UserRole | null>;\n  static a..."
+    },
+    {
+      "file": ".kiro\\specs\\completed\\supabase-role-authentication\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected token 'export'",
+      "code": "export class RoleError extends Error {\n  constructor(\n    message: string,\n    public code: 'INSUFFI..."
+    },
+    {
+      "file": ".kiro\\specs\\phase-2\\admin-dashboard-enhancement\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'DashboardMetrics'",
+      "code": "interface DashboardMetrics {\n  users: {\n    total: number;\n    active: number;\n    newToday: number;..."
+    },
+    {
+      "file": ".kiro\\specs\\phase-2\\admin-dashboard-enhancement\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'MetricsCardProps'",
+      "code": "interface MetricsCardProps {\n  title: string;\n  value: number | string;\n  change?: number;\n  changeT..."
+    },
+    {
+      "file": ".kiro\\specs\\phase-2\\admin-dashboard-enhancement\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'ActivityFeedProps'",
+      "code": "interface ActivityFeedProps {\n  activities: ActivityItem[];\n  loading?: boolean;\n  onItemClick?: (it..."
+    },
+    {
+      "file": ".kiro\\specs\\phase-2\\admin-dashboard-enhancement\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'SystemHealthMonitorProps'",
+      "code": "interface SystemHealthMonitorProps {\n  health: SystemHealth;\n  onRefresh?: () => void;\n}\n\nexport fun..."
+    },
+    {
+      "file": ".kiro\\specs\\phase-2\\admin-dashboard-enhancement\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'QuickAction'",
+      "code": "interface QuickAction {\n  id: string;\n  title: string;\n  description: string;\n  count?: number;\n  pr..."
+    },
+    {
+      "file": ".kiro\\specs\\phase-2\\admin-dashboard-enhancement\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected token 'export'",
+      "code": "// API routes for dashboard data\nexport const dashboardAPI = {\n  // GET /api/admin/dashboard/metrics..."
+    },
+    {
+      "file": ".kiro\\specs\\phase-2\\admin-dashboard-enhancement\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'DashboardError'",
+      "code": "interface DashboardError {\n  type: 'metrics' | 'activity' | 'health' | 'actions';\n  message: string;..."
+    },
+    {
+      "file": ".kiro\\specs\\phase-2\\admin-only-features\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'AdminOnlyRouteProps'",
+      "code": "interface AdminOnlyRouteProps {\n  children: React.ReactNode;\n  fallback?: React.ReactNode;\n  showCom..."
+    },
+    {
+      "file": ".kiro\\specs\\phase-2\\admin-only-features\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected token 'export'",
+      "code": "export function AdminBadge({\n  variant = 'development',\n  className = ''\n}: {\n  variant?: 'developme..."
+    },
+    {
+      "file": ".kiro\\specs\\phase-2\\admin-only-features\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'FeatureNotAvailableProps'",
+      "code": "interface FeatureNotAvailableProps {\n  featureName: string;\n  description?: string;\n  showInterest?:..."
+    },
+    {
+      "file": ".kiro\\specs\\phase-2\\admin-only-features\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected identifier 'NavigationItem'",
+      "code": "interface NavigationItem {\n  key: string;\n  label: string;\n  href: string;\n  icon?: React.ComponentT..."
+    },
+    {
+      "file": ".kiro\\specs\\phase-2\\admin-only-features\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Invalid or unexpected token",
+      "code": "// Environment variable for admin email\nNEXT_PUBLIC_ADMIN_EMAIL=tu_email@ejemplo.com\n\n// Or use the ..."
+    },
+    {
+      "file": ".kiro\\specs\\phase-2\\admin-only-features\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected token 'export'",
+      "code": "export const ROUTE_PROTECTION = {\n  // Public routes (no protection needed)\n  '/': 'public',\n  '/art..."
+    },
+    {
+      "file": ".kiro\\specs\\phase-2\\admin-only-features\\design.md",
+      "language": "typescript",
+      "error": "JavaScript syntax error: Unexpected token 'export'",
+      "code": "// middleware.ts\nexport function middleware(request: NextRequest) {\n  const pathname = request.nextU..."
+    }
+  ],
+  "outdatedDocs": [
+    {
+      "file": "docs\\admin-error-handling-monitoring.md",
+      "lastModified": "2025-08-24",
+      "daysSinceModified": 5,
+      "indicators": [],
+      "missingFiles": [
+        "src/lib/errors/AdminErrorCodes.ts",
+        "src/lib/errors/ErrorHandler.ts",
+        "src/lib/monitoring/PerformanceMonitor.ts",
+        "src/hooks/usePerformanceMonitoring.ts",
+        "src/app/api/admin/monitoring/health/route.ts",
+        "src/components/admin/monitoring/SystemHealthDashboard.tsx",
+        "src/app/api/admin/monitoring/errors/route.ts",
+        "src/app/api/admin/monitoring/metrics/route.ts",
+        "src/app/api/admin/monitoring/alerts/route.ts",
+        "src/components/admin/monitoring/ErrorMonitoringDashboard.tsx",
+        "src/components/admin/monitoring/PerformanceMonitoringDashboard.tsx",
+        "src/components/admin/monitoring/SystemHealthDashboard.tsx",
+        "src/components/admin/ErrorBoundary.tsx",
+        "src/lib/api/errorHandling.ts"
+      ]
+    },
+    {
+      "file": "docs\\CONTRIBUTING.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [],
+      "missingFiles": [
+        ".vscode/extensions.json"
+      ]
+    },
+    {
+      "file": "docs\\current-state\\legacy-documentation-index.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [],
+      "missingFiles": [
+        "GEMINI.md",
+        "/tododoc/GEMINI.md",
+        "PROJECT_STATUS.md",
+        "/tododoc/PROJECT_STATUS.md",
+        "README - copia.md",
+        "/tododoc/README - copia.md",
+        "SETUP.md",
+        "/tododoc/SETUP.md",
+        "/docs/GETTING_STARTED.md",
+        "stakeados_all_tasks_complete.md",
+        "/tododoc/stakeados_all_tasks_complete.md",
+        "stakeados_all_tasks_complete2.md",
+        "/tododoc/stakeados_all_tasks_complete2.md",
+        "stakeados_backup_1750029410.md",
+        "/tododoc/stakeados_backup_1750029410.md",
+        "stakeados_complete_guide.md",
+        "/tododoc/stakeados_complete_guide.md",
+        "stakeados_design_ui_tasks.md",
+        "/tododoc/stakeados_design_ui_tasks.md",
+        "stakeados_executive_summary.md",
+        "/tododoc/stakeados_executive_summary.md",
+        "/docs/README.md",
+        "tareasproyectos.md",
+        "/tododoc/tareasproyectos.md",
+        "tareasui.md",
+        "/tododoc/tareasui.md",
+        "/messages/es.json",
+        "/messages/en.json"
+      ]
+    },
+    {
+      "file": "docs\\current-state\\phase-2-roadmap.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [],
+      "missingFiles": [
+        ".tsx",
+        "tsconfig.tests.json"
+      ]
+    },
+    {
+      "file": "docs\\dashboard\\project-status.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [],
+      "missingFiles": [
+        "scripts/project-status-tracker.js",
+        "/docs/API_REFERENCE.md",
+        "/docs/DEPLOYMENT.md",
+        "/docs/TROUBLESHOOTING.md"
+      ]
+    },
+    {
+      "file": "docs\\database-verification-system.md",
+      "lastModified": "2025-08-24",
+      "daysSinceModified": 5,
+      "indicators": [],
+      "missingFiles": [
+        "scripts/verify-complete-database-setup.js",
+        "scripts/verify-database-quick.js",
+        "scripts/generate-verification-report.js",
+        "test/complete-database-verification.test.js",
+        "verify-complete-database-setup.js",
+        "complete-database-verification.test.js"
+      ]
+    },
+    {
+      "file": "docs\\deployment\\netlify-secrets-fix.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 1,
+      "indicators": [],
+      "missingFiles": [
+        "scripts/deployment/clean-secrets.js",
+        "scripts/deployment/verify-no-secrets.js",
+        "package.json"
+      ]
+    },
+    {
+      "file": "docs\\development\\coding-standards.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [],
+      "missingFiles": [
+        "UserProfile.tsx",
+        "formatDate.ts",
+        "user-profile.tsx"
+      ]
+    },
+    {
+      "file": "docs\\development\\documentation-maintenance.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [],
+      "missingFiles": [
+        ".github/ISSUE_TEMPLATE/feature_request.md",
+        ".github/ISSUE_TEMPLATE/bug_report.md",
+        ".github/ISSUE_TEMPLATE/documentation.md",
+        ".github/pull_request_template.md",
+        "docs-validation.config.js",
+        "scripts/validate-documentation.js",
+        "scripts/pre-commit-docs-validation.js"
+      ]
+    },
+    {
+      "file": "docs\\development\\documentation-quality-metrics.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [],
+      "missingFiles": [
+        "scripts/documentation-metrics.js",
+        "docs/metrics/documentation-quality-report.json",
+        "docs/metrics/documentation-quality-report.md",
+        "scripts/onboarding-tracker.js",
+        "docs/metrics/onboarding-data.json",
+        "docs/metrics/onboarding-report.json",
+        "docs/metrics/onboarding-report.md",
+        "scripts/documentation-kpi-dashboard.js",
+        "docs/metrics/kpi-data.json",
+        "docs/metrics/kpi-dashboard.md",
+        "scripts/documentation-quality-system.js",
+        "docs/metrics/unified-quality-summary.json",
+        "docs/metrics/unified-quality-summary.md"
+      ]
+    },
+    {
+      "file": "docs\\development\\documentation-validation.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [
+        "TODO:",
+        "FIXME:",
+        "Coming soon",
+        "Under construction"
+      ],
+      "missingFiles": [
+        "scripts/validate-documentation.js",
+        "scripts/pre-commit-docs-validation.js",
+        "docs-validation.config.js"
+      ]
+    },
+    {
+      "file": "docs\\development\\setup-guide.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [],
+      "missingFiles": [
+        ".vscode/settings.json",
+        ".vscode/launch.json"
+      ]
+    },
+    {
+      "file": "docs\\development\\testing-guide.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [],
+      "missingFiles": [
+        "ComponentName.test.tsx",
+        "functionName.test.ts",
+        "feature.spec.ts"
+      ]
+    },
+    {
+      "file": "docs\\DOCUMENTATION_STANDARDS.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [],
+      "missingFiles": [
+        "setup-guide.md",
+        "docs/templates/guide-template.md",
+        "docs/templates/reference-template.md"
+      ]
+    },
+    {
+      "file": "docs\\FASE-2.md",
+      "lastModified": "2025-08-24",
+      "daysSinceModified": 5,
+      "indicators": [],
+      "missingFiles": [
+        "package.json",
+        "src/components/ui/OptimizedImage.tsx",
+        ".ts",
+        ".tsx",
+        "*.test.tsx",
+        "test-helpers.tsx",
+        "test-setup.tsx",
+        "tsconfig.tests.json",
+        "test/admin-content-management/performance/large-dataset-performance.test.ts",
+        "test/admin-content-management/setup/test-helpers.ts",
+        "test/admin-content-management/setup/test-setup.ts",
+        "test/admin-content-management/unit/hooks/useArticleManagement.test.ts",
+        "src/lib/auth/apiAuth.ts"
+      ]
+    },
+    {
+      "file": "docs\\technical-debt\\correction-plan.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [],
+      "missingFiles": [
+        "src/lib/supabase/progress.ts",
+        "src/lib/supabase/news.ts",
+        "src/lib/web3/auth.ts",
+        "src/lib/web3/nft.ts",
+        "src/lib/web3/basenames.ts",
+        "src/lib/web3/nft.ts",
+        "src/lib/web3/auth.ts",
+        "src/components/admin/realtime/RealTimeAnalyticsWidget.tsx",
+        "src/components/admin/realtime/BackgroundProcessMonitor.tsx",
+        "src/lib/supabase/__tests__/client.test.ts",
+        "RealTimeAnalyticsWidget.tsx",
+        "BackgroundProcessMonitor.tsx",
+        "src/lib/services/contentService.ts",
+        "src/lib/services/metricsAggregationService.ts",
+        "src/lib/services/dashboardService.ts"
+      ]
+    },
+    {
+      "file": "docs\\technical-debt\\legacy-refactoring-plan.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [],
+      "missingFiles": [
+        "fix-imports.js",
+        "fix-relative-imports.js",
+        "src/lib/services/contentService.ts",
+        "src/lib/services/newsAggregationService.ts",
+        "src/lib/services/metricsService.ts"
+      ]
+    },
+    {
+      "file": "docs\\technical-debt\\README.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [],
+      "missingFiles": [
+        "technical-debt-database.md",
+        "TYPE_CHECK_STATUS.md",
+        "debug-*.js",
+        "fix-*.js"
+      ]
+    },
+    {
+      "file": "docs\\technical-debt\\technical-debt-report.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [],
+      "missingFiles": [
+        "docs/FASE-2.md",
+        "src/app/api/admin/backups/route.ts",
+        "src/app/api/admin/settings/backup/route.ts",
+        "src/types/supabase.backup.ts",
+        "tododoc/FASE-2.md",
+        "tododoc/README - copia.md",
+        "tododoc/stakeados_all_tasks_complete2.md",
+        "tododoc/stakeados_backup_1750029410.md",
+        "debug-auth-frontend.js",
+        "fix-imports.js",
+        "fix-relative-imports.js",
+        "scripts/debug-auth-detailed.js",
+        "scripts/debug-auth.js",
+        "scripts/deployment/test-secrets-fix.js",
+        "scripts/deployment/verify-no-secrets.js",
+        "scripts/fix-file-names.js",
+        "scripts/fix-summary.md",
+        "scripts/fix-translations.js",
+        "scripts/reset-admin-password.js",
+        "scripts/test-api-auth.js",
+        "scripts/test-fixed-rls.js",
+        "scripts/test-simple-auth.js",
+        "scripts/verify-admin-setup.js",
+        "src/app/api/admin/settings/notifications/test-email/route.ts",
+        "src/app/api/admin/settings/notifications/test-slack/route.ts",
+        "src/app/api/admin/test-auth/route.ts",
+        "src/app/[locale]/auth/reset-password/page.tsx",
+        "test-reports/database-validation-report.json",
+        "tododoc/admin-error-handling-monitoring.md",
+        "tododoc/admin-user-guide.md",
+        "tododoc/admin-user-setup-guide.md",
+        "tododoc/api/admin-analytics-endpoints.md",
+        "tododoc/api/admin-article-review-endpoints.md",
+        "tododoc/api/admin-bulk-operations-endpoints.md",
+        "tododoc/api/admin-categories-endpoints.md",
+        "tododoc/api/admin-news-endpoints.md",
+        "tododoc/api/admin-news-sources-endpoints.md",
+        "tododoc/api/admin-tags-endpoints.md",
+        "tododoc/api/enhanced-ai-processing-endpoints.md",
+        "tododoc/api/homepage-stats.md",
+        "tododoc/configuration-guide.md",
+        "tododoc/content-management/admin-guide.md",
+        "tododoc/content-management/deployment-guide.md",
+        "tododoc/content-management/moderation-training.md",
+        "tododoc/content-management/README.md",
+        "tododoc/content-management/user-guide.md",
+        "tododoc/database-deployment-guide.md",
+        "tododoc/database-verification-system.md",
+        "tododoc/deployment-production-guide.md",
+        "tododoc/deployment-script-guide.md",
+        "tododoc/FASE-2.md",
+        "tododoc/GEMINI.md",
+        "tododoc/metrics-collection-system.md",
+        "tododoc/PROJECT_STATUS.md",
+        "tododoc/README - copia.md",
+        "tododoc/README.md",
+        "tododoc/SETUP.md",
+        "tododoc/specs/admin-content-management/design.md",
+        "tododoc/specs/admin-content-management/requirements.md",
+        "tododoc/specs/admin-content-management/tasks.md",
+        "tododoc/specs/admin-dashboard-enhancement/design.md",
+        "tododoc/specs/admin-dashboard-enhancement/requirements.md",
+        "tododoc/specs/admin-dashboard-enhancement/tasks.md",
+        "tododoc/specs/admin-only-features/design.md",
+        "tododoc/specs/admin-only-features/requirements.md",
+        "tododoc/specs/admin-only-features/tasks.md",
+        "tododoc/specs/content-management-system/design.md",
+        "tododoc/specs/content-management-system/requirements.md",
+        "tododoc/specs/content-management-system/tasks.md",
+        "tododoc/specs/homepage-production/design.md",
+        "tododoc/specs/homepage-production/requirements.md",
+        "tododoc/specs/homepage-production/tasks.md",
+        "tododoc/specs/supabase-database-setup/design.md",
+        "tododoc/specs/supabase-database-setup/requirements.md",
+        "tododoc/specs/supabase-database-setup/tasks.md",
+        "tododoc/specs/supabase-role-authentication/design.md",
+        "tododoc/specs/supabase-role-authentication/requirements.md",
+        "tododoc/specs/supabase-role-authentication/tasks.md",
+        "tododoc/stakeados_all_tasks_complete.md",
+        "tododoc/stakeados_all_tasks_complete2.md",
+        "tododoc/stakeados_backup_1750029410.md",
+        "tododoc/stakeados_complete_guide.md",
+        "tododoc/stakeados_design_ui_tasks.md",
+        "tododoc/stakeados_executive_summary.md",
+        "tododoc/tareasproyectos.md",
+        "tododoc/tareasui.md",
+        "tododoc/tasmania-tests-archive/src/app/api/admin/settings/ai-processing/test/route.ts",
+        "tododoc/tasmania-tests-archive/src/app/api/notifications/push/test/route.ts",
+        "tododoc/tasmania-tests-archive/src/test/mocks/handlers.ts",
+        "tododoc/tasmania-tests-archive/src/test/mocks/server.ts",
+        "tododoc/tasmania-tests-archive/src/test/README.md",
+        "tododoc/tasmania-tests-archive/src/test/setup.ts",
+        "tododoc/tasmania-tests-archive/src/test/utils/test-utils.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/e2e/accessibility.spec.ts",
+        "tododoc/tasmania-tests-archive/tasmania/e2e/auth.spec.ts",
+        "tododoc/tasmania-tests-archive/tasmania/e2e/content-management.spec.ts",
+        "tododoc/tasmania-tests-archive/tasmania/e2e/courses.spec.ts",
+        "tododoc/tasmania-tests-archive/tasmania/e2e/homepage.spec.ts",
+        "tododoc/tasmania-tests-archive/tasmania/e2e/navigation.spec.ts",
+        "tododoc/tasmania-tests-archive/tasmania/e2e/performance.spec.ts",
+        "tododoc/tasmania-tests-archive/tasmania/e2e/seo.spec.ts",
+        "tododoc/tasmania-tests-archive/tasmania/e2e/web3.spec.ts",
+        "tododoc/tasmania-tests-archive/tasmania/src/app/api/stats/homepage/__tests__/integration.test.ts",
+        "tododoc/tasmania-tests-archive/tasmania/src/app/api/stats/homepage/__tests__/route.test.ts",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/admin/articles/__tests__/AdvancedArticleEditor.simple.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/admin/articles/__tests__/AdvancedArticleEditor.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/admin/articles/__tests__/ArticleSchedulingInterface.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/admin/news/__tests__/NewsProcessingInterface.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/admin/news/__tests__/RSSSourceManager.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/admin/__tests__/CategoryForm.simple.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/admin/__tests__/CategoryForm.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/admin/__tests__/CategoryManager.integration.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/admin/__tests__/CategoryManager.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/articles/__tests__/ArticleEditor.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/articles/__tests__/ArticleProposalForm.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/articles/__tests__/ArticleProposalList.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/homepage/__tests__/Accessibility.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/homepage/__tests__/ApiIntegration.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/homepage/__tests__/ComprehensiveTestingSummary.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/homepage/__tests__/CoursesPreviewSection.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/homepage/__tests__/ErrorHandling.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/homepage/__tests__/FeaturedArticlesSection.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/homepage/__tests__/FeaturedNewsSection.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/homepage/__tests__/HeroSection.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/homepage/__tests__/HomePage.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/homepage/__tests__/HomepageSEO.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/homepage/__tests__/HomepageStructuredData.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/homepage/__tests__/Internationalization.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/homepage/__tests__/QuickNavigationSection.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/homepage/__tests__/SectionSkeleton.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/news/__tests__/NewsGrid.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/ui/__tests__/Button.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/components/ui/__tests__/Card.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/hooks/__tests__/useAuth.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/lib/services/__tests__/aiContentService.test.ts",
+        "tododoc/tasmania-tests-archive/tasmania/src/lib/services/__tests__/contentModerationService.test.ts",
+        "tododoc/tasmania-tests-archive/tasmania/src/lib/services/__tests__/homepageStatsService.test.ts",
+        "tododoc/tasmania-tests-archive/tasmania/src/lib/__tests__/utils.test.ts",
+        "tododoc/tasmania-tests-archive/tasmania/src/test/accessibility/axe.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/test/cross-browser/compatibility.test.ts",
+        "tododoc/tasmania-tests-archive/tasmania/src/test/integration/articleWorkflow.test.ts",
+        "tododoc/tasmania-tests-archive/tasmania/src/test/integration/multilingualSEO.test.ts",
+        "tododoc/tasmania-tests-archive/tasmania/src/test/integration/newsAggregationWorkflow.test.ts",
+        "tododoc/tasmania-tests-archive/tasmania/src/test/mobile/homepage-mobile.test.ts",
+        "tododoc/tasmania-tests-archive/tasmania/src/test/performance/homepage.performance.test.ts",
+        "tododoc/tasmania-tests-archive/tasmania/src/test/performance/performance.test.ts",
+        "tododoc/tasmania-tests-archive/tasmania/src/test/seo/meta.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/src/test/simple.test.ts",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-ai-processing-endpoints.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-analytics-endpoints.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-article-review-api.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-articles-api.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-bulk-operations.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-categories-api.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-content-management/accessibility/admin-interface-accessibility.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-content-management/integration/api/articles-api.test.ts",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-content-management/performance/large-dataset-performance.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-content-management/README.md",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-content-management/run-tests.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-content-management/setup/test-config.ts",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-content-management/setup/test-helpers.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-content-management/setup/test-setup.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-content-management/TESTING_GUIDE.md",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-content-management/unit/components/AdminLayout.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-content-management/unit/components/ArticleManagementDashboard.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-content-management/unit/hooks/useArticleManagement.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-content-management/unit/services/articleService.test.ts",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-content-management/vitest.config.ts",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-news-api-unit.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-news-api.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-news-sources-api.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-realtime-features-unit.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-realtime-features.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-search-components.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-search-system.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-tag-management.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-tags-api.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-tags-integration.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/admin-tags-unit.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/ai-processing-logic.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/articles-table.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/bulk-operations-simple.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/categories-table.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/complete-database-verification.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/database-permissions-simple.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/database-permissions.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/default-categories.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/essential-indexes-simple.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/essential-indexes.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/frontend/Web3Frontend.test.tsx",
+        "tododoc/tasmania-tests-archive/tasmania/test/integration/rbac-access.test.ts",
+        "tododoc/tasmania-tests-archive/tasmania/test/integration/Web3Integration.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/metrics-collection-system.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/news-table.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/profiles-table-structure.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/rbac-end-to-end.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/rls-policies-structure.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/rls-policies.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/role-audit-log-table.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/role-hierarchy-function-simple.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/role-hierarchy-function.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/role-permissions-function.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/role-update-function-basic.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/role-update-function.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/StakeadosCertificate.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/StakeadosCitizenship.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/timestamp-triggers.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/user-management-system.test.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/utils/test-helpers.js",
+        "tododoc/tasmania-tests-archive/tasmania/test/verification-system.test.js",
+        "tododoc/troubleshooting-guide.md",
+        "tododoc/video-tutorials/04-article-creation-workflow.md",
+        "tododoc/video-tutorials/09-ai-news-processing.md",
+        "tododoc/video-tutorials/README.md",
+        "verify-courses-preview-section.js",
+        "verify-featured-articles-section.js",
+        "verify-featured-news-section.js",
+        "verify-hero-section.js",
+        "verify-homepage-seo.js",
+        "verify-internationalization.js",
+        "verify-quick-navigation-section.js"
+      ]
+    },
+    {
+      "file": "docs\\technical-debt\\ts-nocheck-elimination-schedule.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [],
+      "missingFiles": [
+        "src/components/admin/realtime/RealTimeAnalyticsWidget.tsx",
+        "src/components/admin/realtime/BackgroundProcessMonitor.tsx",
+        "src/lib/supabase/__tests__/client.test.ts"
+      ]
+    },
+    {
+      "file": "docs\\technical-debt-database.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [],
+      "missingFiles": [
+        "TYPE_CHECK_STATUS.md",
+        "src/components/admin/realtime/BackgroundProcessMonitor.tsx",
+        "src/components/admin/realtime/RealTimeAnalyticsWidget.tsx",
+        "src/lib/supabase/__tests__/client.test.ts",
+        "src/types/supabase.backup.ts",
+        "docs/FASE-2.md",
+        "tododoc/FASE-2.md",
+        "tododoc/README - copia.md",
+        "tododoc/stakeados_backup_1750029410.md",
+        "debug-auth-frontend.js",
+        "fix-imports.js",
+        "fix-relative-imports.js"
+      ]
+    },
+    {
+      "file": "docs\\TECH_DEBT.md",
+      "lastModified": "2025-08-24",
+      "daysSinceModified": 5,
+      "indicators": [],
+      "missingFiles": [
+        "src/components/admin/realtime/RealTimeAnalyticsWidget.tsx",
+        "src/components/admin/realtime/BackgroundProcessMonitor.tsx",
+        "src/components/admin/settings/StorageManagement.tsx",
+        "src/components/admin/settings/BackupMaintenanceTools.tsx",
+        "src/components/admin/bulk/BulkOperationProgress.tsx",
+        "src/components/admin/bulk/BulkNewsOperations.tsx",
+        "src/components/admin/bulk/BulkCategoryOperations.tsx",
+        "src/components/admin/bulk/BulkArticleOperations.tsx",
+        "src/components/admin/realtime/BackgroundProcessMonitor.tsx",
+        "src/components/admin/realtime/RealTimeAnalyticsWidget.tsx",
+        "src/components/admin/realtime/CollaborationIndicator.tsx",
+        "src/components/admin/realtime/CollaborationIndicator.tsx",
+        "src/components/admin/news/AIProcessingMonitor.tsx",
+        "src/components/admin/news/NewsProcessingInterface.tsx",
+        "src/components/analytics/ContentAnalyticsDashboard.tsx",
+        "src/components/analytics/EditorialAnalyticsDashboard.tsx",
+        "src/components/analytics/PerformanceTracker.tsx",
+        "src/components/analytics/UserEngagementAnalytics.tsx",
+        "src/components/notifications/NotificationPreferences.tsx",
+        "src/components/notifications/SubscriptionManager.tsx",
+        "src/lib/services/automaticPublicationService.ts",
+        "useArticleCollaboration.ts",
+        "ProductionLogger.ts",
+        "ProductionMonitor.ts",
+        "RealTimeAnalyticsWidget.tsx",
+        "BackgroundProcessMonitor.tsx"
+      ]
+    },
+    {
+      "file": ".kiro\\specs\\active\\project-organization-documentation\\tasks.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [],
+      "missingFiles": [
+        "TYPE_CHECK_STATUS.md",
+        "docs/current-state/implemented-features.md",
+        "docs/current-state/phase-1-status.md",
+        "docs/current-state/phase-2-roadmap.md",
+        "docs/FASE-2.md",
+        "docs/GETTING_STARTED.md",
+        "docs/development/setup-guide.md",
+        "docs/CONTRIBUTING.md",
+        "docs/ARCHITECTURE.md",
+        "docs/DEPLOYMENT.md",
+        "docs/API_REFERENCE.md",
+        "docs/TROUBLESHOOTING.md",
+        "docs/README.md",
+        "docs/development/coding-standards.md",
+        "docs/development/testing-guide.md",
+        "docs/development/database-guide.md"
+      ]
+    },
+    {
+      "file": ".kiro\\specs\\completed\\admin-content-management\\design.md",
+      "lastModified": "2025-08-24",
+      "daysSinceModified": 5,
+      "indicators": [],
+      "missingFiles": [
+        "src/components/admin/AdminLayout.tsx",
+        "src/components/admin/articles/ArticleManagementDashboard.tsx",
+        "src/components/admin/articles/AdvancedArticleEditor.tsx",
+        "src/components/admin/articles/ArticleReviewInterface.tsx",
+        "src/components/admin/news/NewsManagementDashboard.tsx",
+        "src/components/admin/news/NewsProcessingInterface.tsx",
+        "src/components/admin/news/RSSSourceManager.tsx",
+        "src/components/admin/categories/CategoryManager.tsx",
+        "src/components/admin/analytics/ContentAnalyticsDashboard.tsx"
+      ]
+    },
+    {
+      "file": ".kiro\\specs\\completed\\homepage-production\\design.md",
+      "lastModified": "2025-08-24",
+      "daysSinceModified": 5,
+      "indicators": [
+        "Coming Soon"
+      ],
+      "missingFiles": []
+    },
+    {
+      "file": ".kiro\\specs\\completed\\supabase-ssr-refactoring\\design.md",
+      "lastModified": "2025-08-28",
+      "daysSinceModified": 2,
+      "indicators": [],
+      "missingFiles": [
+        "src/lib/supabase/client.ts",
+        "src/lib/supabase/server.ts",
+        "src/lib/supabase/middleware.ts",
+        "middleware.ts",
+        "src/lib/supabase/index.ts",
+        "src/types/supabase.ts",
+        "client.ts",
+        "server.ts",
+        "middleware.ts",
+        "middleware.ts"
+      ]
+    },
+    {
+      "file": ".kiro\\specs\\phase-2\\admin-only-features\\design.md",
+      "lastModified": "2025-08-24",
+      "daysSinceModified": 5,
+      "indicators": [
+        "Coming Soon"
+      ],
+      "missingFiles": []
+    },
+    {
+      "file": ".kiro\\specs\\phase-2\\admin-only-features\\requirements.md",
+      "lastModified": "2025-08-24",
+      "daysSinceModified": 5,
+      "indicators": [
+        "Coming Soon"
+      ],
+      "missingFiles": []
+    },
+    {
+      "file": ".kiro\\specs\\phase-2\\admin-only-features\\tasks.md",
+      "lastModified": "2025-08-24",
+      "daysSinceModified": 5,
+      "indicators": [
+        "coming soon",
+        "coming soon"
+      ],
+      "missingFiles": []
+    },
+    {
+      "file": ".kiro\\specs\\project-organization-documentation\\tasks.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [],
+      "missingFiles": [
+        "TYPE_CHECK_STATUS.md",
+        "docs/current-state/implemented-features.md",
+        "docs/current-state/phase-1-status.md",
+        "docs/current-state/phase-2-roadmap.md",
+        "docs/FASE-2.md",
+        "docs/GETTING_STARTED.md",
+        "docs/development/setup-guide.md",
+        "docs/CONTRIBUTING.md",
+        "docs/ARCHITECTURE.md",
+        "docs/DEPLOYMENT.md",
+        "docs/API_REFERENCE.md",
+        "docs/TROUBLESHOOTING.md",
+        "docs/README.md",
+        "docs/development/coding-standards.md",
+        "docs/development/testing-guide.md",
+        "docs/development/database-guide.md"
+      ]
+    },
+    {
+      "file": ".kiro\\specs\\README.md",
+      "lastModified": "2025-08-29",
+      "daysSinceModified": 0,
+      "indicators": [],
+      "missingFiles": [
+        "requirements-template.md",
+        "design-template.md",
+        "tasks-template.md",
+        "docs/current-state/legacy-documentation-index.md"
+      ]
+    }
+  ],
+  "totalFiles": 103,
+  "totalLinks": 287,
+  "totalCodeBlocks": 324
+}

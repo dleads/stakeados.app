@@ -3,6 +3,9 @@
 import { useEffect, useState } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import { useRouter } from 'next/navigation';
+import PageLayout from '@/components/layout/PageLayout';
+
+const supabase = createClient();
 
 export default function ResetPasswordPage() {
   const router = useRouter();
@@ -50,48 +53,50 @@ export default function ResetPasswordPage() {
   };
 
   return (
-    <div className="min-h-[70vh] flex items-center justify-center px-4">
-      <div className="w-full max-w-md bg-white/5 border border-white/10 rounded-xl p-6 shadow">
-        <h1 className="text-2xl font-semibold mb-6">Restablecer contraseña</h1>
-        {!ready ? (
-          <p className="text-sm text-yellow-300">
-            Abre este enlace desde el email de recuperación para continuar.
-          </p>
-        ) : (
-          <form onSubmit={onSubmit} className="space-y-4">
-            <div>
-              <label className="block text-sm mb-1">Nueva contraseña</label>
-              <input
-                type="password"
-                required
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-                className="w-full px-3 py-2 rounded-md bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="••••••••"
-              />
-            </div>
-            <div>
-              <label className="block text-sm mb-1">Confirmar contraseña</label>
-              <input
-                type="password"
-                required
-                value={confirm}
-                onChange={e => setConfirm(e.target.value)}
-                className="w-full px-3 py-2 rounded-md bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="••••••••"
-              />
-            </div>
-            {error && <p className="text-sm text-red-400">{error}</p>}
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full py-2 rounded-md bg-blue-600 hover:bg-blue-700 disabled:opacity-60"
-            >
-              {loading ? 'Guardando…' : 'Guardar contraseña'}
-            </button>
-          </form>
-        )}
+    <PageLayout showBreadcrumbs={false} className="bg-gradient-gaming">
+      <div className="min-h-[calc(100vh-200px)] flex items-center justify-center px-4">
+        <div className="w-full max-w-md bg-white/5 border border-white/10 rounded-xl p-6 shadow">
+          <h1 className="text-2xl font-semibold mb-6">Restablecer contraseña</h1>
+          {!ready ? (
+            <p className="text-sm text-yellow-300">
+              Abre este enlace desde el email de recuperación para continuar.
+            </p>
+          ) : (
+            <form onSubmit={onSubmit} className="space-y-4">
+              <div>
+                <label className="block text-sm mb-1">Nueva contraseña</label>
+                <input
+                  type="password"
+                  required
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
+                  className="w-full px-3 py-2 rounded-md bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="••••••••"
+                />
+              </div>
+              <div>
+                <label className="block text-sm mb-1">Confirmar contraseña</label>
+                <input
+                  type="password"
+                  required
+                  value={confirm}
+                  onChange={e => setConfirm(e.target.value)}
+                  className="w-full px-3 py-2 rounded-md bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="••••••••"
+                />
+              </div>
+              {error && <p className="text-sm text-red-400">{error}</p>}
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full py-2 rounded-md bg-blue-600 hover:bg-blue-700 disabled:opacity-60"
+              >
+                {loading ? 'Guardando…' : 'Guardar contraseña'}
+              </button>
+            </form>
+          )}
+        </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }

@@ -1,0 +1,93 @@
+name: Documentation Review
+
+on:
+  schedule:
+    # Run every Monday at 9 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  documentation-audit:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Run documentation validation
+      run: npm run validate-docs:ci
+      
+    - name: Generate documentation metrics
+      run: |
+        echo "# Documentation Review Report" > doc-review-report.md
+        echo "Generated on: $(date)" >> doc-review-report.md
+        echo "" >> doc-review-report.md
+        
+        # Count documentation files
+        echo "## Documentation Statistics" >> doc-review-report.md
+        echo "- Total markdown files: $(find . -name '*.md' -not -path './node_modules/*' | wc -l)" >> doc-review-report.md
+        echo "- Documentation files in /docs: $(find ./docs -name '*.md' 2>/dev/null | wc -l || echo 0)" >> doc-review-report.md
+        echo "- Specification files: $(find ./.kiro/specs -name '*.md' 2>/dev/null | wc -l || echo 0)" >> doc-review-report.md
+        echo "" >> doc-review-report.md
+        
+        # Check for outdated files (not modified in 90 days)
+        echo "## Potentially Outdated Files (>90 days)" >> doc-review-report.md
+        find ./docs -name '*.md' -mtime +90 2>/dev/null | head -10 | while read file; do
+          echo "- $file (last modified: $(stat -c %y "$file" 2>/dev/null || stat -f %Sm "$file" 2>/dev/null || echo 'unknown'))" >> doc-review-report.md
+        done || echo "- No files found or unable to check modification dates" >> doc-review-report.md
+        echo "" >> doc-review-report.md
+        
+        # Check for TODO/FIXME in documentation
+        echo "## Documentation TODOs" >> doc-review-report.md
+        grep -r "TODO\|FIXME\|XXX" ./docs --include="*.md" | head -5 | while read line; do
+          echo "- $line" >> doc-review-report.md
+        done || echo "- No TODOs found in documentation" >> doc-review-report.md
+        
+    - name: Check for broken links
+      run: |
+        echo "" >> doc-review-report.md
+        echo "## Link Validation Results" >> doc-review-report.md
+        npm run validate-docs 2>&1 | grep -E "(✅|❌|🔗)" | head -10 >> doc-review-report.md || echo "- Link validation completed" >> doc-review-report.md
+        
+    - name: Create issue if problems found
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          
+          // Read the report
+          const report = fs.readFileSync('doc-review-report.md', 'utf8');
+          
+          // Check if there are issues (TODOs, broken links, etc.)
+          const hasIssues = report.includes('TODO') || report.includes('❌') || report.includes('FIXME');
+          
+          if (hasIssues) {
+            // Create an issue
+            const { data: issue } = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `📚 Weekly Documentation Review - ${new Date().toISOString().split('T')[0]}`,
+              body: `## Automated Documentation Review\n\n${report}\n\n---\n\n**Action Required:** Please review the items above and update documentation as needed.\n\n**Labels:** documentation, maintenance`,
+              labels: ['documentation', 'maintenance', 'automated']
+            });
+            
+            console.log(`Created issue #${issue.number}`);
+          } else {
+            console.log('No documentation issues found - no issue created');
+          }
+          
+    - name: Upload report as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: documentation-review-report
+        path: doc-review-report.md
+        retention-days: 30

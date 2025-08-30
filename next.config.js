@@ -40,6 +40,9 @@ const nextConfig = {
       'date-fns',
       'clsx',
       'tailwind-merge',
+      '@radix-ui/react-dialog',
+      '@radix-ui/react-popover',
+      '@radix-ui/react-tooltip',
     ],
     turbo: {
       rules: {
@@ -49,6 +52,39 @@ const nextConfig = {
         },
       },
     },
+  },
+  // Webpack optimizations for navigation components
+  webpack: (config, { dev, isServer }) => {
+    if (!dev && !isServer) {
+      // Split navigation components into separate chunks
+      config.optimization.splitChunks = {
+        ...config.optimization.splitChunks,
+        cacheGroups: {
+          ...config.optimization.splitChunks.cacheGroups,
+          navigationCore: {
+            name: 'navigation-core',
+            test: /[\\/]src[\\/]components[\\/]navigation[\\/](MainNavigation|NavigationProvider|NavLogo|NavLinks|HamburgerButton)\.tsx?$/,
+            chunks: 'all',
+            priority: 30,
+            enforce: true,
+          },
+          navigationLazy: {
+            name: 'navigation-lazy',
+            test: /[\\/]src[\\/]components[\\/]navigation[\\/](UserMenu|MobileMenu|SearchInterface|ComingSoonModal)\.tsx?$/,
+            chunks: 'async',
+            priority: 25,
+          },
+          navigationAdmin: {
+            name: 'navigation-admin',
+            test: /[\\/]src[\\/]components[\\/]navigation[\\/](NavigationConfigPanel|analytics)[\\/]/,
+            chunks: 'async',
+            priority: 20,
+          },
+        },
+      };
+    }
+    
+    return config;
   },
 };
 

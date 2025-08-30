@@ -1,0 +1,42 @@
+{
+  "timestamp": "2025-08-30T15:58:12.455Z",
+  "chunks": [],
+  "recommendations": [
+    {
+      "type": "code-splitting",
+      "severity": "info",
+      "message": "No navigation-core chunk found",
+      "solution": "Ensure webpack configuration is properly splitting navigation components"
+    },
+    {
+      "type": "lazy-loading",
+      "severity": "info",
+      "message": "No lazy-loaded navigation chunks found",
+      "solution": "Consider implementing lazy loading for non-critical navigation components"
+    }
+  ],
+  "checklist": [
+    {
+      "item": "Code splitting implemented",
+      "status": false
+    },
+    {
+      "item": "Lazy loading configured",
+      "status": false
+    },
+    {
+      "item": "Bundle size optimized",
+      "status": true
+    },
+    {
+      "item": "Admin components separated",
+      "status": false
+    }
+  ],
+  "thresholds": {
+    "bundleSize": 51200,
+    "componentLoad": 200,
+    "navigationTime": 500,
+    "renderTime": 100
+  }
+}

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
-import StakeadosLayout from '@/components/layout/StakeadosLayout';
+import PageLayout from '@/components/layout/PageLayout';
 import {
   Newspaper,
   TrendingUp,
@@ -114,7 +114,7 @@ export default function NoticiasPage() {
       : noticias.filter(noticia => noticia.categoria === categoriaActiva);
 
   return (
-    <StakeadosLayout locale={locale}>
+    <PageLayout showBreadcrumbs={true} className="bg-gradient-to-br from-black via-gray-900 to-black text-white">
       <div className="py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
@@ -344,6 +344,6 @@ export default function NoticiasPage() {
           </div>
         </div>
       </div>
-    </StakeadosLayout>
+    </PageLayout>
   );
 }

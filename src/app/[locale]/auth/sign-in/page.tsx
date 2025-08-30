@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
+import PageLayout from '@/components/layout/PageLayout';
 import { Eye, EyeOff, Lock, User } from 'lucide-react';
 
 export default function SignInPage() {
@@ -46,9 +47,10 @@ export default function SignInPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-gaming flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        <div className="bg-stakeados-gray-900/80 backdrop-blur-sm border border-stakeados-gray-700 rounded-xl p-8 shadow-2xl">
+    <PageLayout showBreadcrumbs={false} className="bg-gradient-gaming">
+      <div className="min-h-[calc(100vh-200px)] flex items-center justify-center p-4">
+        <div className="w-full max-w-md">
+          <div className="bg-stakeados-gray-900/80 backdrop-blur-sm border border-stakeados-gray-700 rounded-xl p-8 shadow-2xl">
           <div className="text-center mb-8">
             <div className="w-16 h-16 bg-stakeados-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Lock className="w-8 h-8 text-stakeados-primary" />
@@ -130,8 +132,9 @@ export default function SignInPage() {
               ¿Olvidaste tu contraseña?
             </a>
           </div>
+          </div>
         </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }

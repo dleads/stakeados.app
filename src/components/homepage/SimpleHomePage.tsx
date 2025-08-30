@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { useTranslation, getLocalizedUrl } from '@/lib/i18n';
-import MainNavigation from '@/components/navigation/MainNavigation';
 import Footer from '@/components/navigation/Footer';
 import {
   GamingBackground,
@@ -33,10 +32,7 @@ export default function SimpleHomePage({ locale }: SimpleHomePageProps) {
 
   return (
     <GamingBackground>
-      <div className="min-h-screen bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 text-white">
-        {/* Navigation */}
-        <MainNavigation locale={locale} />
-
+      <div className="bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 text-white">
         {/* Hero Section */}
         <section className="relative overflow-hidden pt-16">
           <div className="absolute inset-0 bg-gradient-to-r from-green-400/10 to-blue-500/10"></div>
@@ -615,7 +611,7 @@ export default function SimpleHomePage({ locale }: SimpleHomePageProps) {
         </section>
 
         {/* Footer */}
-        <Footer locale={locale} />
+        <Footer />
       </div>
     </GamingBackground>
   );

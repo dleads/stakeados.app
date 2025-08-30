@@ -1,0 +1,2779 @@
+{
+  "generatedAt": "2025-08-29T20:23:16.435Z",
+  "projectPath": "C:\\Users\\stake\\Desktop\\Stakeados v4",
+  "analysis": {
+    "duplicates": [
+      {
+        "hash": "6b01a862da50c0b47e38aef29f09d0e9",
+        "files": [
+          {
+            "path": "docs\\admin-error-handling-monitoring.md",
+            "category": "docs",
+            "size": 8842,
+            "lastModified": "2025-08-24T21:40:48.960Z"
+          },
+          {
+            "path": "tododoc\\admin-error-handling-monitoring.md",
+            "category": "tododoc",
+            "size": 8842,
+            "lastModified": "2025-08-24T21:41:46.077Z"
+          }
+        ]
+      },
+      {
+        "hash": "90e2bf9c9e55f53cb8b63615cc2853a1",
+        "files": [
+          {
+            "path": "docs\\admin-user-guide.md",
+            "category": "docs",
+            "size": 15145,
+            "lastModified": "2025-08-24T21:40:49.083Z"
+          },
+          {
+            "path": "tododoc\\admin-user-guide.md",
+            "category": "tododoc",
+            "size": 15145,
+            "lastModified": "2025-08-24T21:41:46.222Z"
+          }
+        ]
+      },
+      {
+        "hash": "ce173921b5362cebdd8fbeb836563b81",
+        "files": [
+          {
+            "path": "docs\\admin-user-setup-guide.md",
+            "category": "docs",
+            "size": 10572,
+            "lastModified": "2025-08-24T21:40:49.213Z"
+          },
+          {
+            "path": "tododoc\\admin-user-setup-guide.md",
+            "category": "tododoc",
+            "size": 10572,
+            "lastModified": "2025-08-24T21:41:46.312Z"
+          }
+        ]
+      },
+      {
+        "hash": "fcc2ead3af1601ed6938c8dbc3d6a02b",
+        "files": [
+          {
+            "path": "docs\\api\\admin-analytics-endpoints.md",
+            "category": "docs",
+            "size": 13926,
+            "lastModified": "2025-08-24T21:40:49.384Z"
+          },
+          {
+            "path": "tododoc\\api\\admin-analytics-endpoints.md",
+            "category": "tododoc",
+            "size": 13926,
+            "lastModified": "2025-08-24T21:41:46.389Z"
+          }
+        ]
+      },
+      {
+        "hash": "9911ffdaf10ac70d8c924562dd01278e",
+        "files": [
+          {
+            "path": "docs\\api\\admin-article-review-endpoints.md",
+            "category": "docs",
+            "size": 6654,
+            "lastModified": "2025-08-24T21:40:49.457Z"
+          },
+          {
+            "path": "tododoc\\api\\admin-article-review-endpoints.md",
+            "category": "tododoc",
+            "size": 6654,
+            "lastModified": "2025-08-24T21:41:46.441Z"
+          }
+        ]
+      },
+      {
+        "hash": "8502710f3ca22aa06a5cb50c2e82f956",
+        "files": [
+          {
+            "path": "docs\\api\\admin-bulk-operations-endpoints.md",
+            "category": "docs",
+            "size": 8698,
+            "lastModified": "2025-08-24T21:40:49.535Z"
+          },
+          {
+            "path": "tododoc\\api\\admin-bulk-operations-endpoints.md",
+            "category": "tododoc",
+            "size": 8698,
+            "lastModified": "2025-08-24T21:41:46.521Z"
+          }
+        ]
+      },
+      {
+        "hash": "c0c9ded85ac02802f3d623c591d24f0b",
+        "files": [
+          {
+            "path": "docs\\api\\admin-categories-endpoints.md",
+            "category": "docs",
+            "size": 6837,
+            "lastModified": "2025-08-24T21:40:49.617Z"
+          },
+          {
+            "path": "tododoc\\api\\admin-categories-endpoints.md",
+            "category": "tododoc",
+            "size": 6837,
+            "lastModified": "2025-08-24T21:41:46.570Z"
+          }
+        ]
+      },
+      {
+        "hash": "6887497ed883b1f255c3c2580e55d98e",
+        "files": [
+          {
+            "path": "docs\\api\\admin-news-endpoints.md",
+            "category": "docs",
+            "size": 8856,
+            "lastModified": "2025-08-24T21:40:49.676Z"
+          },
+          {
+            "path": "tododoc\\api\\admin-news-endpoints.md",
+            "category": "tododoc",
+            "size": 8856,
+            "lastModified": "2025-08-24T21:41:46.626Z"
+          }
+        ]
+      },
+      {
+        "hash": "0762740a970285b4ae03950f883d9e16",
+        "files": [
+          {
+            "path": "docs\\api\\admin-news-sources-endpoints.md",
+            "category": "docs",
+            "size": 7989,
+            "lastModified": "2025-08-24T21:40:49.736Z"
+          },
+          {
+            "path": "tododoc\\api\\admin-news-sources-endpoints.md",
+            "category": "tododoc",
+            "size": 7989,
+            "lastModified": "2025-08-24T21:41:46.660Z"
+          }
+        ]
+      },
+      {
+        "hash": "ff01b7f0e468df1b8618602bb8678010",
+        "files": [
+          {
+            "path": "docs\\api\\admin-tags-endpoints.md",
+            "category": "docs",
+            "size": 9261,
+            "lastModified": "2025-08-24T21:40:49.798Z"
+          },
+          {
+            "path": "tododoc\\api\\admin-tags-endpoints.md",
+            "category": "tododoc",
+            "size": 9261,
+            "lastModified": "2025-08-24T21:41:46.740Z"
+          }
+        ]
+      },
+      {
+        "hash": "b07a8cf6de4051c6f5663e0f9d503706",
+        "files": [
+          {
+            "path": "docs\\api\\enhanced-ai-processing-endpoints.md",
+            "category": "docs",
+            "size": 12647,
+            "lastModified": "2025-08-24T21:40:49.863Z"
+          },
+          {
+            "path": "tododoc\\api\\enhanced-ai-processing-endpoints.md",
+            "category": "tododoc",
+            "size": 12647,
+            "lastModified": "2025-08-24T21:41:46.818Z"
+          }
+        ]
+      },
+      {
+        "hash": "9752b6d53ce610fe0bf4c2c254122a15",
+        "files": [
+          {
+            "path": "docs\\api\\homepage-stats.md",
+            "category": "docs",
+            "size": 5793,
+            "lastModified": "2025-08-24T21:40:49.919Z"
+          },
+          {
+            "path": "tododoc\\api\\homepage-stats.md",
+            "category": "tododoc",
+            "size": 5793,
+            "lastModified": "2025-08-24T21:41:46.889Z"
+          }
+        ]
+      },
+      {
+        "hash": "1badf7dbc04b40ca874484b882be9313",
+        "files": [
+          {
+            "path": "docs\\configuration-guide.md",
+            "category": "docs",
+            "size": 14527,
+            "lastModified": "2025-08-24T21:40:50.010Z"
+          },
+          {
+            "path": "tododoc\\configuration-guide.md",
+            "category": "tododoc",
+            "size": 14527,
+            "lastModified": "2025-08-24T21:41:46.979Z"
+          }
+        ]
+      },
+      {
+        "hash": "bc0bac2c0e9f64a2d5754c0317e419d4",
+        "files": [
+          {
+            "path": "docs\\content-management\\admin-guide.md",
+            "category": "docs",
+            "size": 17574,
+            "lastModified": "2025-08-24T21:40:50.120Z"
+          },
+          {
+            "path": "tododoc\\content-management\\admin-guide.md",
+            "category": "tododoc",
+            "size": 17574,
+            "lastModified": "2025-08-24T21:41:47.093Z"
+          }
+        ]
+      },
+      {
+        "hash": "edf17b5226bfa5cf00b08d6b3cb663da",
+        "files": [
+          {
+            "path": "docs\\content-management\\deployment-guide.md",
+            "category": "docs",
+            "size": 16834,
+            "lastModified": "2025-08-24T21:40:50.206Z"
+          },
+          {
+            "path": "tododoc\\content-management\\deployment-guide.md",
+            "category": "tododoc",
+            "size": 16834,
+            "lastModified": "2025-08-24T21:41:47.169Z"
+          }
+        ]
+      },
+      {
+        "hash": "af2605ef0e0da501a067a246f9ade9ca",
+        "files": [
+          {
+            "path": "docs\\content-management\\moderation-training.md",
+            "category": "docs",
+            "size": 23780,
+            "lastModified": "2025-08-24T21:40:50.332Z"
+          },
+          {
+            "path": "tododoc\\content-management\\moderation-training.md",
+            "category": "tododoc",
+            "size": 23780,
+            "lastModified": "2025-08-24T21:41:47.284Z"
+          }
+        ]
+      },
+      {
+        "hash": "04f578545f97de0260b932582ab50ada",
+        "files": [
+          {
+            "path": "docs\\content-management\\README.md",
+            "category": "docs",
+            "size": 8546,
+            "lastModified": "2025-08-24T21:40:50.392Z"
+          },
+          {
+            "path": "tododoc\\content-management\\README.md",
+            "category": "tododoc",
+            "size": 8546,
+            "lastModified": "2025-08-24T21:41:47.332Z"
+          }
+        ]
+      },
+      {
+        "hash": "e8bcff979371db33587e484b53bcf557",
+        "files": [
+          {
+            "path": "docs\\content-management\\user-guide.md",
+            "category": "docs",
+            "size": 11369,
+            "lastModified": "2025-08-24T21:40:50.460Z"
+          },
+          {
+            "path": "tododoc\\content-management\\user-guide.md",
+            "category": "tododoc",
+            "size": 11369,
+            "lastModified": "2025-08-24T21:41:47.403Z"
+          }
+        ]
+      },
+      {
+        "hash": "9b07cde0c32716f03144b3ccce3896da",
+        "files": [
+          {
+            "path": "docs\\database-deployment-guide.md",
+            "category": "docs",
+            "size": 4616,
+            "lastModified": "2025-08-24T21:40:50.532Z"
+          },
+          {
+            "path": "tododoc\\database-deployment-guide.md",
+            "category": "tododoc",
+            "size": 4616,
+            "lastModified": "2025-08-24T21:41:47.443Z"
+          }
+        ]
+      },
+      {
+        "hash": "0d55ce9b93b15a5823b158bf44c9f39a",
+        "files": [
+          {
+            "path": "docs\\database-verification-system.md",
+            "category": "docs",
+            "size": 7913,
+            "lastModified": "2025-08-24T21:40:50.596Z"
+          },
+          {
+            "path": "tododoc\\database-verification-system.md",
+            "category": "tododoc",
+            "size": 7913,
+            "lastModified": "2025-08-24T21:41:47.478Z"
+          }
+        ]
+      },
+      {
+        "hash": "f0f4418ad9869721ba029e2974b3479e",
+        "files": [
+          {
+            "path": "docs\\deployment-production-guide.md",
+            "category": "docs",
+            "size": 11418,
+            "lastModified": "2025-08-24T21:40:50.669Z"
+          },
+          {
+            "path": "tododoc\\deployment-production-guide.md",
+            "category": "tododoc",
+            "size": 11418,
+            "lastModified": "2025-08-24T21:41:47.547Z"
+          }
+        ]
+      },
+      {
+        "hash": "2898b0345ba6791fac44621397bc5b8f",
+        "files": [
+          {
+            "path": "docs\\deployment-script-guide.md",
+            "category": "docs",
+            "size": 9237,
+            "lastModified": "2025-08-24T21:40:50.731Z"
+          },
+          {
+            "path": "tododoc\\deployment-script-guide.md",
+            "category": "tododoc",
+            "size": 9237,
+            "lastModified": "2025-08-24T21:41:47.595Z"
+          }
+        ]
+      },
+      {
+        "hash": "ee2b9462b39e7b07c926c18ad7c54bd8",
+        "files": [
+          {
+            "path": "docs\\metrics-collection-system.md",
+            "category": "docs",
+            "size": 11690,
+            "lastModified": "2025-08-24T21:40:50.871Z"
+          },
+          {
+            "path": "tododoc\\metrics-collection-system.md",
+            "category": "tododoc",
+            "size": 11690,
+            "lastModified": "2025-08-24T21:41:47.792Z"
+          }
+        ]
+      },
+      {
+        "hash": "49c43362f487c76ebe2ff2c55bb64546",
+        "files": [
+          {
+            "path": "docs\\README.md",
+            "category": "docs",
+            "size": 7579,
+            "lastModified": "2025-08-24T21:40:50.942Z"
+          },
+          {
+            "path": "tododoc\\README - copia.md",
+            "category": "tododoc",
+            "size": 7579,
+            "lastModified": "2025-08-24T21:41:47.862Z"
+          }
+        ]
+      },
+      {
+        "hash": "7695074f353c58c6ace517c4867a8165",
+        "files": [
+          {
+            "path": "docs\\troubleshooting-guide.md",
+            "category": "docs",
+            "size": 15244,
+            "lastModified": "2025-08-24T21:40:51.076Z"
+          },
+          {
+            "path": "tododoc\\troubleshooting-guide.md",
+            "category": "tododoc",
+            "size": 15244,
+            "lastModified": "2025-08-24T21:41:56.689Z"
+          }
+        ]
+      },
+      {
+        "hash": "7aad3b52822e0203d75026178ab3484a",
+        "files": [
+          {
+            "path": "docs\\video-tutorials\\04-article-creation-workflow.md",
+            "category": "docs",
+            "size": 7863,
+            "lastModified": "2025-08-24T21:40:51.155Z"
+          },
+          {
+            "path": "tododoc\\video-tutorials\\04-article-creation-workflow.md",
+            "category": "tododoc",
+            "size": 7863,
+            "lastModified": "2025-08-24T21:41:56.752Z"
+          }
+        ]
+      },
+      {
+        "hash": "62c0520986a509dcd979d4362af23da6",
+        "files": [
+          {
+            "path": "docs\\video-tutorials\\09-ai-news-processing.md",
+            "category": "docs",
+            "size": 10178,
+            "lastModified": "2025-08-24T21:40:51.247Z"
+          },
+          {
+            "path": "tododoc\\video-tutorials\\09-ai-news-processing.md",
+            "category": "tododoc",
+            "size": 10178,
+            "lastModified": "2025-08-24T21:41:56.821Z"
+          }
+        ]
+      },
+      {
+        "hash": "443828e37209c5479a3dc2aedc1261ac",
+        "files": [
+          {
+            "path": "docs\\video-tutorials\\README.md",
+            "category": "docs",
+            "size": 3227,
+            "lastModified": "2025-08-24T21:40:51.289Z"
+          },
+          {
+            "path": "tododoc\\video-tutorials\\README.md",
+            "category": "tododoc",
+            "size": 3227,
+            "lastModified": "2025-08-24T21:41:56.847Z"
+          }
+        ]
+      },
+      {
+        "hash": "fb415ce37aea554c829abf8fb75c3c66",
+        "files": [
+          {
+            "path": "tododoc\\specs\\admin-content-management\\design.md",
+            "category": "tododoc",
+            "size": 11545,
+            "lastModified": "2025-08-24T21:41:47.965Z"
+          },
+          {
+            "path": ".kiro\\specs\\admin-content-management\\design.md",
+            "category": "kiro-specs",
+            "size": 11545,
+            "lastModified": "2025-08-24T21:39:16.406Z"
+          },
+          {
+            "path": "tododoc\\specs\\admin-content-management\\design.md",
+            "category": "tododoc-specs",
+            "size": 11545,
+            "lastModified": "2025-08-24T21:41:47.965Z"
+          }
+        ]
+      },
+      {
+        "hash": "7aef449d448f3da12cda17b9dba47a0c",
+        "files": [
+          {
+            "path": "tododoc\\specs\\admin-content-management\\requirements.md",
+            "category": "tododoc",
+            "size": 8786,
+            "lastModified": "2025-08-24T21:41:48.002Z"
+          },
+          {
+            "path": ".kiro\\specs\\admin-content-management\\requirements.md",
+            "category": "kiro-specs",
+            "size": 8786,
+            "lastModified": "2025-08-24T21:39:16.475Z"
+          },
+          {
+            "path": "tododoc\\specs\\admin-content-management\\requirements.md",
+            "category": "tododoc-specs",
+            "size": 8786,
+            "lastModified": "2025-08-24T21:41:48.002Z"
+          }
+        ]
+      },
+      {
+        "hash": "9c404522a08bad67138b2a2d74b2f615",
+        "files": [
+          {
+            "path": "tododoc\\specs\\admin-content-management\\tasks.md",
+            "category": "tododoc",
+            "size": 12582,
+            "lastModified": "2025-08-24T21:41:48.068Z"
+          },
+          {
+            "path": ".kiro\\specs\\admin-content-management\\tasks.md",
+            "category": "kiro-specs",
+            "size": 12582,
+            "lastModified": "2025-08-24T21:39:16.605Z"
+          },
+          {
+            "path": "tododoc\\specs\\admin-content-management\\tasks.md",
+            "category": "tododoc-specs",
+            "size": 12582,
+            "lastModified": "2025-08-24T21:41:48.068Z"
+          }
+        ]
+      },
+      {
+        "hash": "6f92f004168d45795f997ebedfc0dd70",
+        "files": [
+          {
+            "path": "tododoc\\specs\\admin-dashboard-enhancement\\design.md",
+            "category": "tododoc",
+            "size": 15264,
+            "lastModified": "2025-08-24T21:41:48.126Z"
+          },
+          {
+            "path": ".kiro\\specs\\admin-dashboard-enhancement\\design.md",
+            "category": "kiro-specs",
+            "size": 15264,
+            "lastModified": "2025-08-24T21:39:16.791Z"
+          },
+          {
+            "path": "tododoc\\specs\\admin-dashboard-enhancement\\design.md",
+            "category": "tododoc-specs",
+            "size": 15264,
+            "lastModified": "2025-08-24T21:41:48.126Z"
+          }
+        ]
+      },
+      {
+        "hash": "00f5e8f10e5547c5aa85055aa1f0b1fd",
+        "files": [
+          {
+            "path": "tododoc\\specs\\admin-dashboard-enhancement\\requirements.md",
+            "category": "tododoc",
+            "size": 4644,
+            "lastModified": "2025-08-24T21:41:48.166Z"
+          },
+          {
+            "path": ".kiro\\specs\\admin-dashboard-enhancement\\requirements.md",
+            "category": "kiro-specs",
+            "size": 4644,
+            "lastModified": "2025-08-24T21:39:16.832Z"
+          },
+          {
+            "path": "tododoc\\specs\\admin-dashboard-enhancement\\requirements.md",
+            "category": "tododoc-specs",
+            "size": 4644,
+            "lastModified": "2025-08-24T21:41:48.166Z"
+          }
+        ]
+      },
+      {
+        "hash": "878c510fe36ccacf56a88428f9568702",
+        "files": [
+          {
+            "path": "tododoc\\specs\\admin-dashboard-enhancement\\tasks.md",
+            "category": "tododoc",
+            "size": 7479,
+            "lastModified": "2025-08-24T21:41:48.209Z"
+          },
+          {
+            "path": ".kiro\\specs\\admin-dashboard-enhancement\\tasks.md",
+            "category": "kiro-specs",
+            "size": 7479,
+            "lastModified": "2025-08-24T21:39:16.886Z"
+          },
+          {
+            "path": "tododoc\\specs\\admin-dashboard-enhancement\\tasks.md",
+            "category": "tododoc-specs",
+            "size": 7479,
+            "lastModified": "2025-08-24T21:41:48.209Z"
+          }
+        ]
+      },
+      {
+        "hash": "d903366e7d6609282220d100c1fdfbea",
+        "files": [
+          {
+            "path": "tododoc\\specs\\admin-only-features\\design.md",
+            "category": "tododoc",
+            "size": 7260,
+            "lastModified": "2025-08-24T21:41:48.266Z"
+          },
+          {
+            "path": ".kiro\\specs\\admin-only-features\\design.md",
+            "category": "kiro-specs",
+            "size": 7260,
+            "lastModified": "2025-08-24T21:39:16.982Z"
+          },
+          {
+            "path": "tododoc\\specs\\admin-only-features\\design.md",
+            "category": "tododoc-specs",
+            "size": 7260,
+            "lastModified": "2025-08-24T21:41:48.266Z"
+          }
+        ]
+      },
+      {
+        "hash": "cb3a0dd9b1406f042431d1b398714662",
+        "files": [
+          {
+            "path": "tododoc\\specs\\admin-only-features\\requirements.md",
+            "category": "tododoc",
+            "size": 2589,
+            "lastModified": "2025-08-24T21:41:48.292Z"
+          },
+          {
+            "path": ".kiro\\specs\\admin-only-features\\requirements.md",
+            "category": "kiro-specs",
+            "size": 2589,
+            "lastModified": "2025-08-24T21:39:17.011Z"
+          },
+          {
+            "path": "tododoc\\specs\\admin-only-features\\requirements.md",
+            "category": "tododoc-specs",
+            "size": 2589,
+            "lastModified": "2025-08-24T21:41:48.292Z"
+          }
+        ]
+      },
+      {
+        "hash": "ddd5ebac910a0e99880481d8fa18a035",
+        "files": [
+          {
+            "path": "tododoc\\specs\\admin-only-features\\tasks.md",
+            "category": "tododoc",
+            "size": 5697,
+            "lastModified": "2025-08-24T21:41:48.349Z"
+          },
+          {
+            "path": ".kiro\\specs\\admin-only-features\\tasks.md",
+            "category": "kiro-specs",
+            "size": 5697,
+            "lastModified": "2025-08-24T21:39:17.058Z"
+          },
+          {
+            "path": "tododoc\\specs\\admin-only-features\\tasks.md",
+            "category": "tododoc-specs",
+            "size": 5697,
+            "lastModified": "2025-08-24T21:41:48.349Z"
+          }
+        ]
+      },
+      {
+        "hash": "9a054a8786d03b6319c13f7844316261",
+        "files": [
+          {
+            "path": "tododoc\\specs\\content-management-system\\design.md",
+            "category": "tododoc",
+            "size": 19993,
+            "lastModified": "2025-08-24T21:41:48.431Z"
+          },
+          {
+            "path": ".kiro\\specs\\content-management-system\\design.md",
+            "category": "kiro-specs",
+            "size": 19993,
+            "lastModified": "2025-08-24T21:39:17.280Z"
+          },
+          {
+            "path": "tododoc\\specs\\content-management-system\\design.md",
+            "category": "tododoc-specs",
+            "size": 19993,
+            "lastModified": "2025-08-24T21:41:48.431Z"
+          }
+        ]
+      },
+      {
+        "hash": "59e858332970a06a68d61955982e8153",
+        "files": [
+          {
+            "path": "tododoc\\specs\\content-management-system\\requirements.md",
+            "category": "tododoc",
+            "size": 8947,
+            "lastModified": "2025-08-24T21:41:48.473Z"
+          },
+          {
+            "path": ".kiro\\specs\\content-management-system\\requirements.md",
+            "category": "kiro-specs",
+            "size": 8947,
+            "lastModified": "2025-08-24T21:39:17.348Z"
+          },
+          {
+            "path": "tododoc\\specs\\content-management-system\\requirements.md",
+            "category": "tododoc-specs",
+            "size": 8947,
+            "lastModified": "2025-08-24T21:41:48.473Z"
+          }
+        ]
+      },
+      {
+        "hash": "616f9eb3381082c5851d9770dd3547f3",
+        "files": [
+          {
+            "path": "tododoc\\specs\\content-management-system\\tasks.md",
+            "category": "tododoc",
+            "size": 12053,
+            "lastModified": "2025-08-24T21:41:48.554Z"
+          },
+          {
+            "path": ".kiro\\specs\\content-management-system\\tasks.md",
+            "category": "kiro-specs",
+            "size": 12053,
+            "lastModified": "2025-08-24T21:39:17.455Z"
+          },
+          {
+            "path": "tododoc\\specs\\content-management-system\\tasks.md",
+            "category": "tododoc-specs",
+            "size": 12053,
+            "lastModified": "2025-08-24T21:41:48.554Z"
+          }
+        ]
+      },
+      {
+        "hash": "a51e7a22a13ed9675c335df3ce9207c9",
+        "files": [
+          {
+            "path": "tododoc\\specs\\homepage-production\\design.md",
+            "category": "tododoc",
+            "size": 10029,
+            "lastModified": "2025-08-24T21:41:48.658Z"
+          },
+          {
+            "path": ".kiro\\specs\\homepage-production\\design.md",
+            "category": "kiro-specs",
+            "size": 10029,
+            "lastModified": "2025-08-24T21:39:17.722Z"
+          },
+          {
+            "path": "tododoc\\specs\\homepage-production\\design.md",
+            "category": "tododoc-specs",
+            "size": 10029,
+            "lastModified": "2025-08-24T21:41:48.658Z"
+          }
+        ]
+      },
+      {
+        "hash": "51b6ab18a1b61bdf69c1eef9ec321a2c",
+        "files": [
+          {
+            "path": "tododoc\\specs\\homepage-production\\requirements.md",
+            "category": "tododoc",
+            "size": 4985,
+            "lastModified": "2025-08-24T21:41:48.702Z"
+          },
+          {
+            "path": ".kiro\\specs\\homepage-production\\requirements.md",
+            "category": "kiro-specs",
+            "size": 4985,
+            "lastModified": "2025-08-24T21:39:17.784Z"
+          },
+          {
+            "path": "tododoc\\specs\\homepage-production\\requirements.md",
+            "category": "tododoc-specs",
+            "size": 4985,
+            "lastModified": "2025-08-24T21:41:48.702Z"
+          }
+        ]
+      },
+      {
+        "hash": "d35598a65311fa64867c885a84db370f",
+        "files": [
+          {
+            "path": "tododoc\\specs\\homepage-production\\tasks.md",
+            "category": "tododoc",
+            "size": 4350,
+            "lastModified": "2025-08-24T21:41:48.745Z"
+          },
+          {
+            "path": ".kiro\\specs\\homepage-production\\tasks.md",
+            "category": "kiro-specs",
+            "size": 4350,
+            "lastModified": "2025-08-24T21:39:17.837Z"
+          },
+          {
+            "path": "tododoc\\specs\\homepage-production\\tasks.md",
+            "category": "tododoc-specs",
+            "size": 4350,
+            "lastModified": "2025-08-24T21:41:48.745Z"
+          }
+        ]
+      },
+      {
+        "hash": "0bee52bea05a1ab1302d07c9d12a4f3f",
+        "files": [
+          {
+            "path": "tododoc\\specs\\supabase-database-setup\\design.md",
+            "category": "tododoc",
+            "size": 7483,
+            "lastModified": "2025-08-24T21:41:48.770Z"
+          },
+          {
+            "path": ".kiro\\specs\\supabase-database-setup\\design.md",
+            "category": "kiro-specs",
+            "size": 7483,
+            "lastModified": "2025-08-24T21:39:17.867Z"
+          },
+          {
+            "path": "tododoc\\specs\\supabase-database-setup\\design.md",
+            "category": "tododoc-specs",
+            "size": 7483,
+            "lastModified": "2025-08-24T21:41:48.770Z"
+          }
+        ]
+      },
+      {
+        "hash": "e634a612d25b4241f225f8a8993fc92e",
+        "files": [
+          {
+            "path": "tododoc\\specs\\supabase-database-setup\\requirements.md",
+            "category": "tododoc",
+            "size": 2995,
+            "lastModified": "2025-08-24T21:41:48.781Z"
+          },
+          {
+            "path": ".kiro\\specs\\supabase-database-setup\\requirements.md",
+            "category": "kiro-specs",
+            "size": 2995,
+            "lastModified": "2025-08-24T21:39:17.889Z"
+          },
+          {
+            "path": "tododoc\\specs\\supabase-database-setup\\requirements.md",
+            "category": "tododoc-specs",
+            "size": 2995,
+            "lastModified": "2025-08-24T21:41:48.781Z"
+          }
+        ]
+      },
+      {
+        "hash": "32752a7a597b2277a8edf2a600b9186e",
+        "files": [
+          {
+            "path": "tododoc\\specs\\supabase-database-setup\\tasks.md",
+            "category": "tododoc",
+            "size": 6833,
+            "lastModified": "2025-08-24T21:41:48.824Z"
+          },
+          {
+            "path": ".kiro\\specs\\supabase-database-setup\\tasks.md",
+            "category": "kiro-specs",
+            "size": 6833,
+            "lastModified": "2025-08-24T21:39:17.928Z"
+          },
+          {
+            "path": "tododoc\\specs\\supabase-database-setup\\tasks.md",
+            "category": "tododoc-specs",
+            "size": 6833,
+            "lastModified": "2025-08-24T21:41:48.824Z"
+          }
+        ]
+      },
+      {
+        "hash": "d9106e6d736e20ce414f60b558a5d1fa",
+        "files": [
+          {
+            "path": "tododoc\\specs\\supabase-role-authentication\\design.md",
+            "category": "tododoc",
+            "size": 6419,
+            "lastModified": "2025-08-24T21:41:48.873Z"
+          },
+          {
+            "path": ".kiro\\specs\\supabase-role-authentication\\design.md",
+            "category": "kiro-specs",
+            "size": 6419,
+            "lastModified": "2025-08-24T21:39:17.977Z"
+          },
+          {
+            "path": "tododoc\\specs\\supabase-role-authentication\\design.md",
+            "category": "tododoc-specs",
+            "size": 6419,
+            "lastModified": "2025-08-24T21:41:48.873Z"
+          }
+        ]
+      },
+      {
+        "hash": "bdeed0d1e6dee00f57b768393380a4a5",
+        "files": [
+          {
+            "path": "tododoc\\specs\\supabase-role-authentication\\requirements.md",
+            "category": "tododoc",
+            "size": 3690,
+            "lastModified": "2025-08-24T21:41:48.899Z"
+          },
+          {
+            "path": ".kiro\\specs\\supabase-role-authentication\\requirements.md",
+            "category": "kiro-specs",
+            "size": 3690,
+            "lastModified": "2025-08-24T21:39:18.003Z"
+          },
+          {
+            "path": "tododoc\\specs\\supabase-role-authentication\\requirements.md",
+            "category": "tododoc-specs",
+            "size": 3690,
+            "lastModified": "2025-08-24T21:41:48.899Z"
+          }
+        ]
+      },
+      {
+        "hash": "8bf50b1243fde9cc5f5b3d3648e56821",
+        "files": [
+          {
+            "path": "tododoc\\specs\\supabase-role-authentication\\tasks.md",
+            "category": "tododoc",
+            "size": 5094,
+            "lastModified": "2025-08-24T21:41:48.932Z"
+          },
+          {
+            "path": ".kiro\\specs\\supabase-role-authentication\\tasks.md",
+            "category": "kiro-specs",
+            "size": 5094,
+            "lastModified": "2025-08-24T21:39:18.041Z"
+          },
+          {
+            "path": "tododoc\\specs\\supabase-role-authentication\\tasks.md",
+            "category": "tododoc-specs",
+            "size": 5094,
+            "lastModified": "2025-08-24T21:41:48.932Z"
+          }
+        ]
+      },
+      {
+        "hash": "29809061e306d3a21d32cfd31fa960da",
+        "files": [
+          {
+            "path": "tododoc\\stakeados_all_tasks_complete.md",
+            "category": "tododoc",
+            "size": 16989,
+            "lastModified": "2025-08-24T21:41:49.016Z"
+          },
+          {
+            "path": "tododoc\\tareasproyectos.md",
+            "category": "tododoc",
+            "size": 16989,
+            "lastModified": "2025-08-24T21:41:55.230Z"
+          }
+        ]
+      },
+      {
+        "hash": "f9161a418bd923efc2db63d05d706efe",
+        "files": [
+          {
+            "path": "tododoc\\stakeados_design_ui_tasks.md",
+            "category": "tododoc",
+            "size": 292593,
+            "lastModified": "2025-08-24T21:41:55.072Z"
+          },
+          {
+            "path": "tododoc\\tareasui.md",
+            "category": "tododoc",
+            "size": 292593,
+            "lastModified": "2025-08-24T21:41:56.595Z"
+          }
+        ]
+      }
+    ],
+    "documentationFiles": [
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\admin-error-handling-monitoring.md",
+        "relativePath": "docs\\admin-error-handling-monitoring.md",
+        "category": "docs",
+        "size": 8842,
+        "lastModified": "2025-08-24T21:40:48.960Z",
+        "hash": "6b01a862da50c0b47e38aef29f09d0e9",
+        "contentPreview": "# Admin Error Handling and Monitoring System  ## Overview  This document describes the comprehensive error handling and monitoring system implemented for the Stakeados admin interface. The system prov",
+        "lineCount": 299,
+        "wordCount": 1043
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\admin-user-guide.md",
+        "relativePath": "docs\\admin-user-guide.md",
+        "category": "docs",
+        "size": 15145,
+        "lastModified": "2025-08-24T21:40:49.083Z",
+        "hash": "90e2bf9c9e55f53cb8b63615cc2853a1",
+        "contentPreview": "# Stakeados Admin User Guide  ## Table of Contents  1. [Getting Started](#getting-started) 2. [Dashboard Overview](#dashboard-overview) 3. [Article Management](#article-management) 4. [News Management",
+        "lineCount": 547,
+        "wordCount": 2100
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\admin-user-setup-guide.md",
+        "relativePath": "docs\\admin-user-setup-guide.md",
+        "category": "docs",
+        "size": 10572,
+        "lastModified": "2025-08-24T21:40:49.213Z",
+        "hash": "ce173921b5362cebdd8fbeb836563b81",
+        "contentPreview": "# Stakeados Admin User Setup Guide  ## Overview  This guide explains how to set up admin users for the Stakeados platform. Admin users have full access to manage content, users, and system settings.  ",
+        "lineCount": 407,
+        "wordCount": 1515
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\api\\admin-analytics-endpoints.md",
+        "relativePath": "docs\\api\\admin-analytics-endpoints.md",
+        "category": "docs",
+        "size": 13926,
+        "lastModified": "2025-08-24T21:40:49.384Z",
+        "hash": "fcc2ead3af1601ed6938c8dbc3d6a02b",
+        "contentPreview": "# Admin Analytics API Endpoints  This document describes the analytics API endpoints for the admin content management system.  ## Authentication  All analytics endpoints require admin authentication. ",
+        "lineCount": 561,
+        "wordCount": 1521
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\api\\admin-article-review-endpoints.md",
+        "relativePath": "docs\\api\\admin-article-review-endpoints.md",
+        "category": "docs",
+        "size": 6654,
+        "lastModified": "2025-08-24T21:40:49.457Z",
+        "hash": "9911ffdaf10ac70d8c924562dd01278e",
+        "contentPreview": "# Admin Article Review API Endpoints  This document describes the article review and approval API endpoints implemented for the admin content management system.  ## Overview  The article review system",
+        "lineCount": 316,
+        "wordCount": 815
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\api\\admin-bulk-operations-endpoints.md",
+        "relativePath": "docs\\api\\admin-bulk-operations-endpoints.md",
+        "category": "docs",
+        "size": 8698,
+        "lastModified": "2025-08-24T21:40:49.535Z",
+        "hash": "8502710f3ca22aa06a5cb50c2e82f956",
+        "contentPreview": "# Admin Bulk Operations API Endpoints  This document describes the bulk operations API endpoints for the Stakeados admin content management system.  ## Overview  The bulk operations system allows admi",
+        "lineCount": 383,
+        "wordCount": 1045
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\api\\admin-categories-endpoints.md",
+        "relativePath": "docs\\api\\admin-categories-endpoints.md",
+        "category": "docs",
+        "size": 6837,
+        "lastModified": "2025-08-24T21:40:49.617Z",
+        "hash": "c0c9ded85ac02802f3d623c591d24f0b",
+        "contentPreview": "# Admin Categories API Endpoints  This document describes the category management API endpoints for the Stakeados admin panel.  ## Authentication  All endpoints require authentication with admin or ed",
+        "lineCount": 354,
+        "wordCount": 802
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\api\\admin-news-endpoints.md",
+        "relativePath": "docs\\api\\admin-news-endpoints.md",
+        "category": "docs",
+        "size": 8856,
+        "lastModified": "2025-08-24T21:40:49.676Z",
+        "hash": "6887497ed883b1f255c3c2580e55d98e",
+        "contentPreview": "# Admin News Management API Endpoints  This document describes the comprehensive news management API endpoints for administrators.  ## Authentication  All endpoints require admin authentication. Users",
+        "lineCount": 437,
+        "wordCount": 997
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\api\\admin-news-sources-endpoints.md",
+        "relativePath": "docs\\api\\admin-news-sources-endpoints.md",
+        "category": "docs",
+        "size": 7989,
+        "lastModified": "2025-08-24T21:40:49.736Z",
+        "hash": "0762740a970285b4ae03950f883d9e16",
+        "contentPreview": "# Admin News Sources API Endpoints  This document describes the API endpoints for managing RSS news sources in the Stakeados admin panel.  ## Authentication  All endpoints require admin or editor perm",
+        "lineCount": 351,
+        "wordCount": 870
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\api\\admin-tags-endpoints.md",
+        "relativePath": "docs\\api\\admin-tags-endpoints.md",
+        "category": "docs",
+        "size": 9261,
+        "lastModified": "2025-08-24T21:40:49.798Z",
+        "hash": "ff01b7f0e468df1b8618602bb8678010",
+        "contentPreview": "# Admin Tag Management API Endpoints  This document describes the API endpoints for managing tags in the admin panel.  ## Overview  The tag management system provides comprehensive CRUD operations for",
+        "lineCount": 426,
+        "wordCount": 1162
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\api\\enhanced-ai-processing-endpoints.md",
+        "relativePath": "docs\\api\\enhanced-ai-processing-endpoints.md",
+        "category": "docs",
+        "size": 12647,
+        "lastModified": "2025-08-24T21:40:49.863Z",
+        "hash": "b07a8cf6de4051c6f5663e0f9d503706",
+        "contentPreview": "# Enhanced AI Processing Endpoints  This document describes the enhanced AI processing endpoints for news content management in the Stakeados admin system.  ## Overview  The enhanced AI processing sys",
+        "lineCount": 496,
+        "wordCount": 1346
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\api\\homepage-stats.md",
+        "relativePath": "docs\\api\\homepage-stats.md",
+        "category": "docs",
+        "size": 5793,
+        "lastModified": "2025-08-24T21:40:49.919Z",
+        "hash": "9752b6d53ce610fe0bf4c2c254122a15",
+        "contentPreview": "# Homepage Statistics API  ## Overview  The Homepage Statistics API provides aggregated statistics for the platform homepage, including counts of articles, news, courses, and users. The API is optimiz",
+        "lineCount": 234,
+        "wordCount": 703
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\configuration-guide.md",
+        "relativePath": "docs\\configuration-guide.md",
+        "category": "docs",
+        "size": 14527,
+        "lastModified": "2025-08-24T21:40:50.010Z",
+        "hash": "1badf7dbc04b40ca874484b882be9313",
+        "contentPreview": "# Admin Configuration Guide  ## Table of Contents  1. [System Configuration](#system-configuration) 2. [AI Processing Settings](#ai-processing-settings) 3. [News Source Configuration](#news-source-con",
+        "lineCount": 604,
+        "wordCount": 1565
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\content-management\\admin-guide.md",
+        "relativePath": "docs\\content-management\\admin-guide.md",
+        "category": "docs",
+        "size": 17574,
+        "lastModified": "2025-08-24T21:40:50.120Z",
+        "hash": "bc0bac2c0e9f64a2d5754c0317e419d4",
+        "contentPreview": "# Content Management System - Administrator Guide  ## Table of Contents  1. [System Overview](#system-overview) 2. [User and Role Management](#user-and-role-management) 3. [Content Moderation](#conten",
+        "lineCount": 586,
+        "wordCount": 2384
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\content-management\\deployment-guide.md",
+        "relativePath": "docs\\content-management\\deployment-guide.md",
+        "category": "docs",
+        "size": 16834,
+        "lastModified": "2025-08-24T21:40:50.206Z",
+        "hash": "edf17b5226bfa5cf00b08d6b3cb663da",
+        "contentPreview": "# Content Management System - Deployment Guide  ## Table of Contents  1. [Deployment Overview](#deployment-overview) 2. [Prerequisites](#prerequisites) 3. [Environment Setup](#environment-setup) 4. [D",
+        "lineCount": 817,
+        "wordCount": 2082
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\content-management\\moderation-training.md",
+        "relativePath": "docs\\content-management\\moderation-training.md",
+        "category": "docs",
+        "size": 23780,
+        "lastModified": "2025-08-24T21:40:50.332Z",
+        "hash": "af2605ef0e0da501a067a246f9ade9ca",
+        "contentPreview": "# Content Moderation Training Guide  ## Table of Contents  1. [Introduction to Content Moderation](#introduction-to-content-moderation) 2. [Platform Guidelines and Standards](#platform-guidelines-and-",
+        "lineCount": 637,
+        "wordCount": 3118
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\content-management\\README.md",
+        "relativePath": "docs\\content-management\\README.md",
+        "category": "docs",
+        "size": 8546,
+        "lastModified": "2025-08-24T21:40:50.392Z",
+        "hash": "04f578545f97de0260b932582ab50ada",
+        "contentPreview": "# Content Management System Documentation  ## Overview  The Stakeados Content Management System is a comprehensive platform for creating, managing, and distributing educational content about blockchai",
+        "lineCount": 296,
+        "wordCount": 1088
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\content-management\\user-guide.md",
+        "relativePath": "docs\\content-management\\user-guide.md",
+        "category": "docs",
+        "size": 11369,
+        "lastModified": "2025-08-24T21:40:50.460Z",
+        "hash": "e8bcff979371db33587e484b53bcf557",
+        "contentPreview": "# Content Management System - User Guide  ## Table of Contents  1. [Getting Started](#getting-started) 2. [Article Creation Workflow](#article-creation-workflow) 3. [News and Content Discovery](#news-",
+        "lineCount": 342,
+        "wordCount": 1568
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\database-deployment-guide.md",
+        "relativePath": "docs\\database-deployment-guide.md",
+        "category": "docs",
+        "size": 4616,
+        "lastModified": "2025-08-24T21:40:50.532Z",
+        "hash": "9b07cde0c32716f03144b3ccce3896da",
+        "contentPreview": "# Stakeados Database Deployment Guide  ## Overview  This guide provides comprehensive instructions for deploying and validating the Stakeados Supabase database setup.  ## Prerequisites  - Supabase pro",
+        "lineCount": 167,
+        "wordCount": 649
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\database-verification-system.md",
+        "relativePath": "docs\\database-verification-system.md",
+        "category": "docs",
+        "size": 7913,
+        "lastModified": "2025-08-24T21:40:50.596Z",
+        "hash": "0d55ce9b93b15a5823b158bf44c9f39a",
+        "contentPreview": "# Database Verification System  This document describes the comprehensive database verification system for the Stakeados platform. The system ensures that the Supabase database setup is complete, corr",
+        "lineCount": 306,
+        "wordCount": 1062
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\deployment\\netlify-secrets-fix.md",
+        "relativePath": "docs\\deployment\\netlify-secrets-fix.md",
+        "category": "docs",
+        "size": 5019,
+        "lastModified": "2025-08-29T03:32:49.112Z",
+        "hash": "a7e72ae44c19ed3ee43ee081e39c1f56",
+        "contentPreview": "# Resolución del Problema de Escaneo de Secretos en Netlify\r \r ## Problema\r \r Netlify detecta automáticamente secretos en los archivos de construcción y falla el build por seguridad. Esto puede ocurri",
+        "lineCount": 216,
+        "wordCount": 545
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\deployment-production-guide.md",
+        "relativePath": "docs\\deployment-production-guide.md",
+        "category": "docs",
+        "size": 11418,
+        "lastModified": "2025-08-24T21:40:50.669Z",
+        "hash": "f0f4418ad9869721ba029e2974b3479e",
+        "contentPreview": "# Stakeados Production Deployment Guide  This guide covers the complete production deployment process for the Stakeados admin content management system, including security, performance, and monitoring",
+        "lineCount": 520,
+        "wordCount": 1377
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\deployment-script-guide.md",
+        "relativePath": "docs\\deployment-script-guide.md",
+        "category": "docs",
+        "size": 9237,
+        "lastModified": "2025-08-24T21:40:50.731Z",
+        "hash": "2898b0345ba6791fac44621397bc5b8f",
+        "contentPreview": "# Stakeados Database Deployment Script Guide  ## Overview  The complete database deployment script (`scripts/deploy-complete-database.sql`) is a comprehensive solution that creates the entire Stakeado",
+        "lineCount": 321,
+        "wordCount": 1268
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\FASE-2.md",
+        "relativePath": "docs\\FASE-2.md",
+        "category": "docs",
+        "size": 4396,
+        "lastModified": "2025-08-24T21:40:50.785Z",
+        "hash": "d9727b18bd8cdc90c6acffc44ea01ba7",
+        "contentPreview": "# Fase 2: Tareas aplazadas  Esta lista agrupa las funcionalidades que posponemos para una segunda fase. Cada ítem incluye breve descripción, dependencias y estado.  ## RBAC avanzado y roles  - [ ] Jer",
+        "lineCount": 78,
+        "wordCount": 563
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\metrics-collection-system.md",
+        "relativePath": "docs\\metrics-collection-system.md",
+        "category": "docs",
+        "size": 11690,
+        "lastModified": "2025-08-24T21:40:50.871Z",
+        "hash": "ee2b9462b39e7b07c926c18ad7c54bd8",
+        "contentPreview": "# Metrics Collection System  ## Overview  The Metrics Collection System provides comprehensive analytics and engagement tracking for articles and news content in the Stakeados platform. It includes re",
+        "lineCount": 488,
+        "wordCount": 1391
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\README.md",
+        "relativePath": "docs\\README.md",
+        "category": "docs",
+        "size": 7579,
+        "lastModified": "2025-08-24T21:40:50.942Z",
+        "hash": "49c43362f487c76ebe2ff2c55bb64546",
+        "contentPreview": "# Stakeados Admin Documentation  Welcome to the comprehensive documentation for the Stakeados admin system. This documentation provides everything you need to effectively use and manage the platform. ",
+        "lineCount": 237,
+        "wordCount": 958
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\TECH_DEBT.md",
+        "relativePath": "docs\\TECH_DEBT.md",
+        "category": "docs",
+        "size": 4459,
+        "lastModified": "2025-08-24T23:15:38.268Z",
+        "hash": "02d4bd757b156a348ee32d7256a2655e",
+        "contentPreview": "# Registro de deudas técnicas y \"trucos\" temporales  Este documento lista todos los atajos aplicados para desbloquear la compilación y qué debemos revertir/verificar más adelante. Mantenerlo actualiza",
+        "lineCount": 87,
+        "wordCount": 457
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\troubleshooting-guide.md",
+        "relativePath": "docs\\troubleshooting-guide.md",
+        "category": "docs",
+        "size": 15244,
+        "lastModified": "2025-08-24T21:40:51.076Z",
+        "hash": "7695074f353c58c6ace517c4867a8165",
+        "contentPreview": "# Admin Troubleshooting Guide  ## Table of Contents  1. [Common Issues](#common-issues) 2. [Authentication Problems](#authentication-problems) 3. [Content Management Issues](#content-management-issues",
+        "lineCount": 539,
+        "wordCount": 2051
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\video-tutorials\\04-article-creation-workflow.md",
+        "relativePath": "docs\\video-tutorials\\04-article-creation-workflow.md",
+        "category": "docs",
+        "size": 7863,
+        "lastModified": "2025-08-24T21:40:51.155Z",
+        "hash": "7aad3b52822e0203d75026178ab3484a",
+        "contentPreview": "# Video Tutorial: Complete Article Creation Workflow  **Duration**: 8-10 minutes   **Difficulty**: Beginner to Intermediate   **Prerequisites**: Admin access to Stakeados platform  ## Tutorial Overvie",
+        "lineCount": 202,
+        "wordCount": 1183
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\video-tutorials\\09-ai-news-processing.md",
+        "relativePath": "docs\\video-tutorials\\09-ai-news-processing.md",
+        "category": "docs",
+        "size": 10178,
+        "lastModified": "2025-08-24T21:40:51.247Z",
+        "hash": "62c0520986a509dcd979d4362af23da6",
+        "contentPreview": "# Video Tutorial: AI News Processing Workflow  **Duration**: 12-15 minutes   **Difficulty**: Intermediate   **Prerequisites**: Admin access, basic understanding of news management  ## Tutorial Overvie",
+        "lineCount": 259,
+        "wordCount": 1411
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\docs\\video-tutorials\\README.md",
+        "relativePath": "docs\\video-tutorials\\README.md",
+        "category": "docs",
+        "size": 3227,
+        "lastModified": "2025-08-24T21:40:51.289Z",
+        "hash": "443828e37209c5479a3dc2aedc1261ac",
+        "contentPreview": "# Admin Video Tutorials  This directory contains scripts and resources for video tutorials covering complex admin workflows in the Stakeados platform.  ## Available Tutorials  ### 1. Getting Started S",
+        "lineCount": 82,
+        "wordCount": 375
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\admin-error-handling-monitoring.md",
+        "relativePath": "tododoc\\admin-error-handling-monitoring.md",
+        "category": "tododoc",
+        "size": 8842,
+        "lastModified": "2025-08-24T21:41:46.077Z",
+        "hash": "6b01a862da50c0b47e38aef29f09d0e9",
+        "contentPreview": "# Admin Error Handling and Monitoring System  ## Overview  This document describes the comprehensive error handling and monitoring system implemented for the Stakeados admin interface. The system prov",
+        "lineCount": 299,
+        "wordCount": 1043
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\admin-user-guide.md",
+        "relativePath": "tododoc\\admin-user-guide.md",
+        "category": "tododoc",
+        "size": 15145,
+        "lastModified": "2025-08-24T21:41:46.222Z",
+        "hash": "90e2bf9c9e55f53cb8b63615cc2853a1",
+        "contentPreview": "# Stakeados Admin User Guide  ## Table of Contents  1. [Getting Started](#getting-started) 2. [Dashboard Overview](#dashboard-overview) 3. [Article Management](#article-management) 4. [News Management",
+        "lineCount": 547,
+        "wordCount": 2100
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\admin-user-setup-guide.md",
+        "relativePath": "tododoc\\admin-user-setup-guide.md",
+        "category": "tododoc",
+        "size": 10572,
+        "lastModified": "2025-08-24T21:41:46.312Z",
+        "hash": "ce173921b5362cebdd8fbeb836563b81",
+        "contentPreview": "# Stakeados Admin User Setup Guide  ## Overview  This guide explains how to set up admin users for the Stakeados platform. Admin users have full access to manage content, users, and system settings.  ",
+        "lineCount": 407,
+        "wordCount": 1515
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\api\\admin-analytics-endpoints.md",
+        "relativePath": "tododoc\\api\\admin-analytics-endpoints.md",
+        "category": "tododoc",
+        "size": 13926,
+        "lastModified": "2025-08-24T21:41:46.389Z",
+        "hash": "fcc2ead3af1601ed6938c8dbc3d6a02b",
+        "contentPreview": "# Admin Analytics API Endpoints  This document describes the analytics API endpoints for the admin content management system.  ## Authentication  All analytics endpoints require admin authentication. ",
+        "lineCount": 561,
+        "wordCount": 1521
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\api\\admin-article-review-endpoints.md",
+        "relativePath": "tododoc\\api\\admin-article-review-endpoints.md",
+        "category": "tododoc",
+        "size": 6654,
+        "lastModified": "2025-08-24T21:41:46.441Z",
+        "hash": "9911ffdaf10ac70d8c924562dd01278e",
+        "contentPreview": "# Admin Article Review API Endpoints  This document describes the article review and approval API endpoints implemented for the admin content management system.  ## Overview  The article review system",
+        "lineCount": 316,
+        "wordCount": 815
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\api\\admin-bulk-operations-endpoints.md",
+        "relativePath": "tododoc\\api\\admin-bulk-operations-endpoints.md",
+        "category": "tododoc",
+        "size": 8698,
+        "lastModified": "2025-08-24T21:41:46.521Z",
+        "hash": "8502710f3ca22aa06a5cb50c2e82f956",
+        "contentPreview": "# Admin Bulk Operations API Endpoints  This document describes the bulk operations API endpoints for the Stakeados admin content management system.  ## Overview  The bulk operations system allows admi",
+        "lineCount": 383,
+        "wordCount": 1045
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\api\\admin-categories-endpoints.md",
+        "relativePath": "tododoc\\api\\admin-categories-endpoints.md",
+        "category": "tododoc",
+        "size": 6837,
+        "lastModified": "2025-08-24T21:41:46.570Z",
+        "hash": "c0c9ded85ac02802f3d623c591d24f0b",
+        "contentPreview": "# Admin Categories API Endpoints  This document describes the category management API endpoints for the Stakeados admin panel.  ## Authentication  All endpoints require authentication with admin or ed",
+        "lineCount": 354,
+        "wordCount": 802
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\api\\admin-news-endpoints.md",
+        "relativePath": "tododoc\\api\\admin-news-endpoints.md",
+        "category": "tododoc",
+        "size": 8856,
+        "lastModified": "2025-08-24T21:41:46.626Z",
+        "hash": "6887497ed883b1f255c3c2580e55d98e",
+        "contentPreview": "# Admin News Management API Endpoints  This document describes the comprehensive news management API endpoints for administrators.  ## Authentication  All endpoints require admin authentication. Users",
+        "lineCount": 437,
+        "wordCount": 997
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\api\\admin-news-sources-endpoints.md",
+        "relativePath": "tododoc\\api\\admin-news-sources-endpoints.md",
+        "category": "tododoc",
+        "size": 7989,
+        "lastModified": "2025-08-24T21:41:46.660Z",
+        "hash": "0762740a970285b4ae03950f883d9e16",
+        "contentPreview": "# Admin News Sources API Endpoints  This document describes the API endpoints for managing RSS news sources in the Stakeados admin panel.  ## Authentication  All endpoints require admin or editor perm",
+        "lineCount": 351,
+        "wordCount": 870
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\api\\admin-tags-endpoints.md",
+        "relativePath": "tododoc\\api\\admin-tags-endpoints.md",
+        "category": "tododoc",
+        "size": 9261,
+        "lastModified": "2025-08-24T21:41:46.740Z",
+        "hash": "ff01b7f0e468df1b8618602bb8678010",
+        "contentPreview": "# Admin Tag Management API Endpoints  This document describes the API endpoints for managing tags in the admin panel.  ## Overview  The tag management system provides comprehensive CRUD operations for",
+        "lineCount": 426,
+        "wordCount": 1162
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\api\\enhanced-ai-processing-endpoints.md",
+        "relativePath": "tododoc\\api\\enhanced-ai-processing-endpoints.md",
+        "category": "tododoc",
+        "size": 12647,
+        "lastModified": "2025-08-24T21:41:46.818Z",
+        "hash": "b07a8cf6de4051c6f5663e0f9d503706",
+        "contentPreview": "# Enhanced AI Processing Endpoints  This document describes the enhanced AI processing endpoints for news content management in the Stakeados admin system.  ## Overview  The enhanced AI processing sys",
+        "lineCount": 496,
+        "wordCount": 1346
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\api\\homepage-stats.md",
+        "relativePath": "tododoc\\api\\homepage-stats.md",
+        "category": "tododoc",
+        "size": 5793,
+        "lastModified": "2025-08-24T21:41:46.889Z",
+        "hash": "9752b6d53ce610fe0bf4c2c254122a15",
+        "contentPreview": "# Homepage Statistics API  ## Overview  The Homepage Statistics API provides aggregated statistics for the platform homepage, including counts of articles, news, courses, and users. The API is optimiz",
+        "lineCount": 234,
+        "wordCount": 703
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\configuration-guide.md",
+        "relativePath": "tododoc\\configuration-guide.md",
+        "category": "tododoc",
+        "size": 14527,
+        "lastModified": "2025-08-24T21:41:46.979Z",
+        "hash": "1badf7dbc04b40ca874484b882be9313",
+        "contentPreview": "# Admin Configuration Guide  ## Table of Contents  1. [System Configuration](#system-configuration) 2. [AI Processing Settings](#ai-processing-settings) 3. [News Source Configuration](#news-source-con",
+        "lineCount": 604,
+        "wordCount": 1565
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\content-management\\admin-guide.md",
+        "relativePath": "tododoc\\content-management\\admin-guide.md",
+        "category": "tododoc",
+        "size": 17574,
+        "lastModified": "2025-08-24T21:41:47.093Z",
+        "hash": "bc0bac2c0e9f64a2d5754c0317e419d4",
+        "contentPreview": "# Content Management System - Administrator Guide  ## Table of Contents  1. [System Overview](#system-overview) 2. [User and Role Management](#user-and-role-management) 3. [Content Moderation](#conten",
+        "lineCount": 586,
+        "wordCount": 2384
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\content-management\\deployment-guide.md",
+        "relativePath": "tododoc\\content-management\\deployment-guide.md",
+        "category": "tododoc",
+        "size": 16834,
+        "lastModified": "2025-08-24T21:41:47.169Z",
+        "hash": "edf17b5226bfa5cf00b08d6b3cb663da",
+        "contentPreview": "# Content Management System - Deployment Guide  ## Table of Contents  1. [Deployment Overview](#deployment-overview) 2. [Prerequisites](#prerequisites) 3. [Environment Setup](#environment-setup) 4. [D",
+        "lineCount": 817,
+        "wordCount": 2082
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\content-management\\moderation-training.md",
+        "relativePath": "tododoc\\content-management\\moderation-training.md",
+        "category": "tododoc",
+        "size": 23780,
+        "lastModified": "2025-08-24T21:41:47.284Z",
+        "hash": "af2605ef0e0da501a067a246f9ade9ca",
+        "contentPreview": "# Content Moderation Training Guide  ## Table of Contents  1. [Introduction to Content Moderation](#introduction-to-content-moderation) 2. [Platform Guidelines and Standards](#platform-guidelines-and-",
+        "lineCount": 637,
+        "wordCount": 3118
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\content-management\\README.md",
+        "relativePath": "tododoc\\content-management\\README.md",
+        "category": "tododoc",
+        "size": 8546,
+        "lastModified": "2025-08-24T21:41:47.332Z",
+        "hash": "04f578545f97de0260b932582ab50ada",
+        "contentPreview": "# Content Management System Documentation  ## Overview  The Stakeados Content Management System is a comprehensive platform for creating, managing, and distributing educational content about blockchai",
+        "lineCount": 296,
+        "wordCount": 1088
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\content-management\\user-guide.md",
+        "relativePath": "tododoc\\content-management\\user-guide.md",
+        "category": "tododoc",
+        "size": 11369,
+        "lastModified": "2025-08-24T21:41:47.403Z",
+        "hash": "e8bcff979371db33587e484b53bcf557",
+        "contentPreview": "# Content Management System - User Guide  ## Table of Contents  1. [Getting Started](#getting-started) 2. [Article Creation Workflow](#article-creation-workflow) 3. [News and Content Discovery](#news-",
+        "lineCount": 342,
+        "wordCount": 1568
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\database-deployment-guide.md",
+        "relativePath": "tododoc\\database-deployment-guide.md",
+        "category": "tododoc",
+        "size": 4616,
+        "lastModified": "2025-08-24T21:41:47.443Z",
+        "hash": "9b07cde0c32716f03144b3ccce3896da",
+        "contentPreview": "# Stakeados Database Deployment Guide  ## Overview  This guide provides comprehensive instructions for deploying and validating the Stakeados Supabase database setup.  ## Prerequisites  - Supabase pro",
+        "lineCount": 167,
+        "wordCount": 649
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\database-verification-system.md",
+        "relativePath": "tododoc\\database-verification-system.md",
+        "category": "tododoc",
+        "size": 7913,
+        "lastModified": "2025-08-24T21:41:47.478Z",
+        "hash": "0d55ce9b93b15a5823b158bf44c9f39a",
+        "contentPreview": "# Database Verification System  This document describes the comprehensive database verification system for the Stakeados platform. The system ensures that the Supabase database setup is complete, corr",
+        "lineCount": 306,
+        "wordCount": 1062
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\deployment-production-guide.md",
+        "relativePath": "tododoc\\deployment-production-guide.md",
+        "category": "tododoc",
+        "size": 11418,
+        "lastModified": "2025-08-24T21:41:47.547Z",
+        "hash": "f0f4418ad9869721ba029e2974b3479e",
+        "contentPreview": "# Stakeados Production Deployment Guide  This guide covers the complete production deployment process for the Stakeados admin content management system, including security, performance, and monitoring",
+        "lineCount": 520,
+        "wordCount": 1377
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\deployment-script-guide.md",
+        "relativePath": "tododoc\\deployment-script-guide.md",
+        "category": "tododoc",
+        "size": 9237,
+        "lastModified": "2025-08-24T21:41:47.595Z",
+        "hash": "2898b0345ba6791fac44621397bc5b8f",
+        "contentPreview": "# Stakeados Database Deployment Script Guide  ## Overview  The complete database deployment script (`scripts/deploy-complete-database.sql`) is a comprehensive solution that creates the entire Stakeado",
+        "lineCount": 321,
+        "wordCount": 1268
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\FASE-2.md",
+        "relativePath": "tododoc\\FASE-2.md",
+        "category": "tododoc",
+        "size": 1866,
+        "lastModified": "2025-08-24T21:41:47.616Z",
+        "hash": "cfdc83f6a06f80cce98f8ce4668d4952",
+        "contentPreview": "# Fase 2: Tareas aplazadas  Esta lista agrupa las funcionalidades que posponemos para una segunda fase. Cada ítem incluye breve descripción, dependencias y estado.  ## RBAC avanzado y roles  - [ ] Jer",
+        "lineCount": 38,
+        "wordCount": 258
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\GEMINI.md",
+        "relativePath": "tododoc\\GEMINI.md",
+        "category": "tododoc",
+        "size": 38605,
+        "lastModified": "2025-08-24T21:41:47.739Z",
+        "hash": "fea37b9f1dc5ebd6debb099f4cfb9ef6",
+        "contentPreview": "# Requirements Document - Stakeados Platform  ## Introduction  Stakeados es una plataforma educativa Web3 multiidioma que combina educación sobre blockchain y criptomonedas con un sistema de NFTs para",
+        "lineCount": 1118,
+        "wordCount": 5060
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\metrics-collection-system.md",
+        "relativePath": "tododoc\\metrics-collection-system.md",
+        "category": "tododoc",
+        "size": 11690,
+        "lastModified": "2025-08-24T21:41:47.792Z",
+        "hash": "ee2b9462b39e7b07c926c18ad7c54bd8",
+        "contentPreview": "# Metrics Collection System  ## Overview  The Metrics Collection System provides comprehensive analytics and engagement tracking for articles and news content in the Stakeados platform. It includes re",
+        "lineCount": 488,
+        "wordCount": 1391
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\PROJECT_STATUS.md",
+        "relativePath": "tododoc\\PROJECT_STATUS.md",
+        "category": "tododoc",
+        "size": 5238,
+        "lastModified": "2025-08-24T21:41:47.825Z",
+        "hash": "ca2e68561fcf39be8fe9df5c167eb1ce",
+        "contentPreview": "# 📊 Estado del Proyecto Stakeados  ## ✅ **COMPLETADO - Sistema de Roles y Autenticación**  ### 🗄️ **Base de Datos (Supabase)**  - ✅ Migración `20250131000015_role_system.sql` creada - ✅ Campo `role`",
+        "lineCount": 184,
+        "wordCount": 718
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\README - copia.md",
+        "relativePath": "tododoc\\README - copia.md",
+        "category": "tododoc",
+        "size": 7579,
+        "lastModified": "2025-08-24T21:41:47.862Z",
+        "hash": "49c43362f487c76ebe2ff2c55bb64546",
+        "contentPreview": "# Stakeados Admin Documentation  Welcome to the comprehensive documentation for the Stakeados admin system. This documentation provides everything you need to effectively use and manage the platform. ",
+        "lineCount": 237,
+        "wordCount": 958
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\README.md",
+        "relativePath": "tododoc\\README.md",
+        "category": "tododoc",
+        "size": 4458,
+        "lastModified": "2025-08-24T21:41:47.880Z",
+        "hash": "a57eaa0693e1634f2676bcf2a90d7d72",
+        "contentPreview": "# Stakeados Platform  A Web3 educational platform combining blockchain education with NFT certifications on Base network.  ## 🚀 Features  - **Educational Content**: Comprehensive courses on blockchai",
+        "lineCount": 171,
+        "wordCount": 570
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\SETUP.md",
+        "relativePath": "tododoc\\SETUP.md",
+        "category": "tododoc",
+        "size": 4859,
+        "lastModified": "2025-08-24T21:41:47.906Z",
+        "hash": "c5c8835257c9779d28271a01256960f7",
+        "contentPreview": "# 🚀 Configuración del Sistema de Roles - Stakeados  Este documento te guiará para configurar el sistema de roles y autenticación en tu proyecto Stakeados.  ## 📋 Prerrequisitos  1. **Supabase CLI ins",
+        "lineCount": 200,
+        "wordCount": 684
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\admin-content-management\\design.md",
+        "relativePath": "tododoc\\specs\\admin-content-management\\design.md",
+        "category": "tododoc",
+        "size": 11545,
+        "lastModified": "2025-08-24T21:41:47.965Z",
+        "hash": "fb415ce37aea554c829abf8fb75c3c66",
+        "contentPreview": "# Design Document  ## Overview  El sistema de gestión administrativa de contenido para Stakeados será una plataforma completa que permita a los administradores gestionar eficientemente artículos y not",
+        "lineCount": 434,
+        "wordCount": 1387
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\admin-content-management\\requirements.md",
+        "relativePath": "tododoc\\specs\\admin-content-management\\requirements.md",
+        "category": "tododoc",
+        "size": 8786,
+        "lastModified": "2025-08-24T21:41:48.002Z",
+        "hash": "7aef449d448f3da12cda17b9dba47a0c",
+        "contentPreview": "# Requirements Document  ## Introduction  Este spec define los requerimientos para completar y mejorar el sistema de gestión administrativa de contenido en Stakeados, específicamente para artículos y ",
+        "lineCount": 124,
+        "wordCount": 1274
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\admin-content-management\\tasks.md",
+        "relativePath": "tododoc\\specs\\admin-content-management\\tasks.md",
+        "category": "tododoc",
+        "size": 12582,
+        "lastModified": "2025-08-24T21:41:48.068Z",
+        "hash": "9c404522a08bad67138b2a2d74b2f615",
+        "contentPreview": "# Implementation Plan  ## Database and Backend Foundation  - [x] 1. Enhance database schema for admin content management   - Create article_history table for tracking changes and versions   - Create c",
+        "lineCount": 353,
+        "wordCount": 1687
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\admin-dashboard-enhancement\\design.md",
+        "relativePath": "tododoc\\specs\\admin-dashboard-enhancement\\design.md",
+        "category": "tododoc",
+        "size": 15264,
+        "lastModified": "2025-08-24T21:41:48.126Z",
+        "hash": "6f92f004168d45795f997ebedfc0dd70",
+        "contentPreview": "# Design Document  ## Overview  This design enhances the existing admin dashboard to provide a comprehensive, data-driven interface with real-time metrics, activity monitoring, system health indicator",
+        "lineCount": 497,
+        "wordCount": 1427
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\admin-dashboard-enhancement\\requirements.md",
+        "relativePath": "tododoc\\specs\\admin-dashboard-enhancement\\requirements.md",
+        "category": "tododoc",
+        "size": 4644,
+        "lastModified": "2025-08-24T21:41:48.166Z",
+        "hash": "00f5e8f10e5547c5aa85055aa1f0b1fd",
+        "contentPreview": "# Requirements Document  ## Introduction  This feature enhances the existing admin dashboard to provide a comprehensive, data-driven interface for platform management. The dashboard will display real-",
+        "lineCount": 96,
+        "wordCount": 757
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\admin-dashboard-enhancement\\tasks.md",
+        "relativePath": "tododoc\\specs\\admin-dashboard-enhancement\\tasks.md",
+        "category": "tododoc",
+        "size": 7479,
+        "lastModified": "2025-08-24T21:41:48.209Z",
+        "hash": "878c510fe36ccacf56a88428f9568702",
+        "contentPreview": "# Implementation Plan  - [ ] 1. Create dashboard data types and interfaces   - Define DashboardMetrics interface with user, content, and engagement data   - Create ActivityItem interface for activity ",
+        "lineCount": 162,
+        "wordCount": 1087
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\admin-only-features\\design.md",
+        "relativePath": "tododoc\\specs\\admin-only-features\\design.md",
+        "category": "tododoc",
+        "size": 7260,
+        "lastModified": "2025-08-24T21:41:48.266Z",
+        "hash": "d903366e7d6609282220d100c1fdfbea",
+        "contentPreview": "# Design Document  ## Overview  This design implements a simplified admin-only feature system where advanced functionalities are protected by admin role verification. The system provides a clean publi",
+        "lineCount": 313,
+        "wordCount": 812
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\admin-only-features\\requirements.md",
+        "relativePath": "tododoc\\specs\\admin-only-features\\requirements.md",
+        "category": "tododoc",
+        "size": 2589,
+        "lastModified": "2025-08-24T21:41:48.292Z",
+        "hash": "cb3a0dd9b1406f042431d1b398714662",
+        "contentPreview": "# Requirements Document  ## Introduction  This feature implements a simplified approach to feature management where advanced functionalities (courses, NFTs, Genesis, certificates, achievements) are on",
+        "lineCount": 52,
+        "wordCount": 406
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\admin-only-features\\tasks.md",
+        "relativePath": "tododoc\\specs\\admin-only-features\\tasks.md",
+        "category": "tododoc",
+        "size": 5697,
+        "lastModified": "2025-08-24T21:41:48.349Z",
+        "hash": "ddd5ebac910a0e99880481d8fa18a035",
+        "contentPreview": "# Implementation Plan  - [ ] 1. Update ProtectedRoute component for admin-only features   - Add requireAdmin prop to existing ProtectedRoute component   - Implement admin role checking using Supabase ",
+        "lineCount": 125,
+        "wordCount": 839
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\content-management-system\\design.md",
+        "relativePath": "tododoc\\specs\\content-management-system\\design.md",
+        "category": "tododoc",
+        "size": 19993,
+        "lastModified": "2025-08-24T21:41:48.431Z",
+        "hash": "9a054a8786d03b6319c13f7844316261",
+        "contentPreview": "# Design Document - Sistema de Gestión de Contenido (Artículos y Noticias)  ## Overview  Este diseño implementa un sistema completo de gestión de contenido para artículos y noticias en la plataforma S",
+        "lineCount": 744,
+        "wordCount": 2064
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\content-management-system\\requirements.md",
+        "relativePath": "tododoc\\specs\\content-management-system\\requirements.md",
+        "category": "tododoc",
+        "size": 8947,
+        "lastModified": "2025-08-24T21:41:48.473Z",
+        "hash": "59e858332970a06a68d61955982e8153",
+        "contentPreview": "# Requirements Document - Sistema de Gestión de Contenido (Artículos y Noticias)  ## Introduction  Este spec se enfoca en implementar completamente el sistema de gestión de contenido para artículos y ",
+        "lineCount": 128,
+        "wordCount": 1337
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\content-management-system\\tasks.md",
+        "relativePath": "tododoc\\specs\\content-management-system\\tasks.md",
+        "category": "tododoc",
+        "size": 12053,
+        "lastModified": "2025-08-24T21:41:48.554Z",
+        "hash": "616f9eb3381082c5851d9770dd3547f3",
+        "contentPreview": "# Implementation Plan - Sistema de Gestión de Contenido (Artículos y Noticias)  - [x] 1. Setup base infrastructure and database schema   - Extend existing Supabase schema with content management table",
+        "lineCount": 289,
+        "wordCount": 1645
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\homepage-production\\design.md",
+        "relativePath": "tododoc\\specs\\homepage-production\\design.md",
+        "category": "tododoc",
+        "size": 10029,
+        "lastModified": "2025-08-24T21:41:48.658Z",
+        "hash": "a51e7a22a13ed9675c335df3ce9207c9",
+        "contentPreview": "# Design Document  ## Overview  The production homepage will serve as the main entry point for the Stakeados platform, showcasing the latest news, featured articles, and providing clear navigation to ",
+        "lineCount": 381,
+        "wordCount": 1270
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\homepage-production\\requirements.md",
+        "relativePath": "tododoc\\specs\\homepage-production\\requirements.md",
+        "category": "tododoc",
+        "size": 4985,
+        "lastModified": "2025-08-24T21:41:48.702Z",
+        "hash": "51b6ab18a1b61bdf69c1eef9ec321a2c",
+        "contentPreview": "# Requirements Document  ## Introduction  This specification defines the requirements for creating a production-ready homepage that serves as the main entry point for users. The homepage will showcase",
+        "lineCount": 92,
+        "wordCount": 823
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\homepage-production\\tasks.md",
+        "relativePath": "tododoc\\specs\\homepage-production\\tasks.md",
+        "category": "tododoc",
+        "size": 4350,
+        "lastModified": "2025-08-24T21:41:48.745Z",
+        "hash": "d35598a65311fa64867c885a84db370f",
+        "contentPreview": "# Implementation Plan  - [x] 1. Create core homepage structure and layout   - Set up the main HomePage component with proper TypeScript interfaces   - Implement responsive grid layout using CSS Grid a",
+        "lineCount": 112,
+        "wordCount": 635
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\supabase-database-setup\\design.md",
+        "relativePath": "tododoc\\specs\\supabase-database-setup\\design.md",
+        "category": "tododoc",
+        "size": 7483,
+        "lastModified": "2025-08-24T21:41:48.770Z",
+        "hash": "0bee52bea05a1ab1302d07c9d12a4f3f",
+        "contentPreview": "# Design Document  ## Overview  This design creates a complete Supabase database schema that perfectly matches the existing Next.js application. The database will be created from scratch, replacing an",
+        "lineCount": 283,
+        "wordCount": 1008
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\supabase-database-setup\\requirements.md",
+        "relativePath": "tododoc\\specs\\supabase-database-setup\\requirements.md",
+        "category": "tododoc",
+        "size": 2995,
+        "lastModified": "2025-08-24T21:41:48.781Z",
+        "hash": "e634a612d25b4241f225f8a8993fc92e",
+        "contentPreview": "# Requirements Document  ## Introduction  This feature creates a complete Supabase database schema that works perfectly with the existing Next.js application. The database will support user authentica",
+        "lineCount": 63,
+        "wordCount": 476
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\supabase-database-setup\\tasks.md",
+        "relativePath": "tododoc\\specs\\supabase-database-setup\\tasks.md",
+        "category": "tododoc",
+        "size": 6833,
+        "lastModified": "2025-08-24T21:41:48.824Z",
+        "hash": "32752a7a597b2277a8edf2a600b9186e",
+        "contentPreview": "# Implementation Plan  - [x] 1. Create comprehensive database reset script   - Write script that safely drops all existing objects using CASCADE   - Handle all possible existing tables, functions, tri",
+        "lineCount": 178,
+        "wordCount": 1017
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\supabase-role-authentication\\design.md",
+        "relativePath": "tododoc\\specs\\supabase-role-authentication\\design.md",
+        "category": "tododoc",
+        "size": 6419,
+        "lastModified": "2025-08-24T21:41:48.873Z",
+        "hash": "d9106e6d736e20ce414f60b558a5d1fa",
+        "contentPreview": "# Design Document  ## Overview  This design implements a comprehensive role-based authentication system leveraging Supabase's existing `profiles` table with the `role` field. The system will provide s",
+        "lineCount": 273,
+        "wordCount": 851
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\supabase-role-authentication\\requirements.md",
+        "relativePath": "tododoc\\specs\\supabase-role-authentication\\requirements.md",
+        "category": "tododoc",
+        "size": 3690,
+        "lastModified": "2025-08-24T21:41:48.899Z",
+        "hash": "bdeed0d1e6dee00f57b768393380a4a5",
+        "contentPreview": "# Requirements Document  ## Introduction  This feature implements a robust role-based authentication system using Supabase's built-in role management capabilities. Instead of hardcoding admin emails, ",
+        "lineCount": 74,
+        "wordCount": 599
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\supabase-role-authentication\\tasks.md",
+        "relativePath": "tododoc\\specs\\supabase-role-authentication\\tasks.md",
+        "category": "tododoc",
+        "size": 5094,
+        "lastModified": "2025-08-24T21:41:48.932Z",
+        "hash": "8bf50b1243fde9cc5f5b3d3648e56821",
+        "contentPreview": "# Implementation Plan  - [ ] 1. Create role types and enums   - Define UserRole enum with admin, genesis, citizen, student values   - Create UserProfile interface extending Supabase user data   - Crea",
+        "lineCount": 119,
+        "wordCount": 751
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\stakeados_all_tasks_complete.md",
+        "relativePath": "tododoc\\stakeados_all_tasks_complete.md",
+        "category": "tododoc",
+        "size": 16989,
+        "lastModified": "2025-08-24T21:41:49.016Z",
+        "hash": "29809061e306d3a21d32cfd31fa960da",
+        "contentPreview": "Actúa como un desarrollador senior full-stack experto en Next.js 14, TypeScript, Supabase y Web3. Estás trabajando en Stakeados, una plataforma educativa Web3 multiidioma.  CONTEXTO DEL PROYECTO:  Pla",
+        "lineCount": 645,
+        "wordCount": 2119
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\stakeados_all_tasks_complete2.md",
+        "relativePath": "tododoc\\stakeados_all_tasks_complete2.md",
+        "category": "tododoc",
+        "size": 666867,
+        "lastModified": "2025-08-24T21:41:53.482Z",
+        "hash": "128c4a2a95a728cce77aed81ba6130f2",
+        "contentPreview": "# 🚀 STAKEADOS - GUÍA COMPLETA DE 185 TAREAS  ## 📋 PROYECTO INFO  - **Total tareas**: 185 - **Dificultad máxima**: 6/10 - **Stack**: Next.js 14 + Supabase + Base Network - **Tiempo estimado**: 35 sem",
+        "lineCount": 25822,
+        "wordCount": 76095
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\stakeados_backup_1750029410.md",
+        "relativePath": "tododoc\\stakeados_backup_1750029410.md",
+        "category": "tododoc",
+        "size": 15297,
+        "lastModified": "2025-08-24T21:41:53.596Z",
+        "hash": "deee2c1fc5d7e2d5b80d69e1eac7953d",
+        "contentPreview": "# 🚀 STAKEADOS - GUÍA COMPLETA DE TAREAS PARA AGENTES IA (185 TAREAS)  ## 📋 INFORMACIÓN DEL PROYECTO  **Proyecto**: Stakeados - Plataforma Educativa Web3   **Total de tareas**: 185   **Dificultad máx",
+        "lineCount": 636,
+        "wordCount": 1999
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\stakeados_complete_guide.md",
+        "relativePath": "tododoc\\stakeados_complete_guide.md",
+        "category": "tododoc",
+        "size": 10787,
+        "lastModified": "2025-08-24T21:41:53.677Z",
+        "hash": "9def9fed54c61254c456b934a06ff06f",
+        "contentPreview": "# 🚀 STAKEADOS - GUÍA COMPLETA DE TAREAS PARA AGENTES IA (185 TAREAS)  ## 📋 INFORMACIÓN DEL PROYECTO  **Proyecto**: Stakeados - Plataforma Educativa Web3   **Total de tareas**: 185   **Dificultad máx",
+        "lineCount": 474,
+        "wordCount": 1472
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\stakeados_design_ui_tasks.md",
+        "relativePath": "tododoc\\stakeados_design_ui_tasks.md",
+        "category": "tododoc",
+        "size": 292593,
+        "lastModified": "2025-08-24T21:41:55.072Z",
+        "hash": "f9161a418bd923efc2db63d05d706efe",
+        "contentPreview": "# 🎨 STAKEADOS - TAREAS DE DISEÑO UI/UX (65 TAREAS)  ## 📋 INFORMACIÓN DE DISEÑO  **Tareas**: 186-250 (65 tareas de diseño)   **Enfoque**: UI/UX, branding, componentes visuales   **Estilo**: Verde neó",
+        "lineCount": 11751,
+        "wordCount": 30254
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\stakeados_executive_summary.md",
+        "relativePath": "tododoc\\stakeados_executive_summary.md",
+        "category": "tododoc",
+        "size": 4673,
+        "lastModified": "2025-08-24T21:41:55.120Z",
+        "hash": "c14b4666d7b9803ab70078c60da5dac5",
+        "contentPreview": "# RESUMEN EJECUTIVO - PROYECTO STAKEADOS 📊  ## 1. ORDEN DE EJECUCIÓN CRÍTICO 🎯  ### Fase 1: Fundamentos (2-3 semanas)  1. Setup inicial del proyecto (Node.js + React/Next.js) 2. Integración con Wall",
+        "lineCount": 206,
+        "wordCount": 678
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\tareasproyectos.md",
+        "relativePath": "tododoc\\tareasproyectos.md",
+        "category": "tododoc",
+        "size": 16989,
+        "lastModified": "2025-08-24T21:41:55.230Z",
+        "hash": "29809061e306d3a21d32cfd31fa960da",
+        "contentPreview": "Actúa como un desarrollador senior full-stack experto en Next.js 14, TypeScript, Supabase y Web3. Estás trabajando en Stakeados, una plataforma educativa Web3 multiidioma.  CONTEXTO DEL PROYECTO:  Pla",
+        "lineCount": 645,
+        "wordCount": 2119
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\tareasui.md",
+        "relativePath": "tododoc\\tareasui.md",
+        "category": "tododoc",
+        "size": 292593,
+        "lastModified": "2025-08-24T21:41:56.595Z",
+        "hash": "f9161a418bd923efc2db63d05d706efe",
+        "contentPreview": "# 🎨 STAKEADOS - TAREAS DE DISEÑO UI/UX (65 TAREAS)  ## 📋 INFORMACIÓN DE DISEÑO  **Tareas**: 186-250 (65 tareas de diseño)   **Enfoque**: UI/UX, branding, componentes visuales   **Estilo**: Verde neó",
+        "lineCount": 11751,
+        "wordCount": 30254
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\tasmania-tests-archive\\src\\test\\README.md",
+        "relativePath": "tododoc\\tasmania-tests-archive\\src\\test\\README.md",
+        "category": "tododoc",
+        "size": 6007,
+        "lastModified": "2025-08-24T21:41:38.028Z",
+        "hash": "dba29b0709d0d314da3f139654df8cf9",
+        "contentPreview": "# Content Management System Testing Suite  This document outlines the comprehensive testing implementation for the Content Management System, covering unit tests, integration tests, and end-to-end tes",
+        "lineCount": 192,
+        "wordCount": 787
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\tasmania-tests-archive\\tasmania\\test\\admin-content-management\\README.md",
+        "relativePath": "tododoc\\tasmania-tests-archive\\tasmania\\test\\admin-content-management\\README.md",
+        "category": "tododoc",
+        "size": 2135,
+        "lastModified": "2025-08-24T21:41:42.762Z",
+        "hash": "2dc2fccc261f4fde9707c6a39bfda0a4",
+        "contentPreview": "# Admin Content Management Test Suite  This directory contains comprehensive tests for the admin content management system, covering:  ## Test Categories  ### 1. Unit Tests  - Component tests for all ",
+        "lineCount": 105,
+        "wordCount": 292
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\tasmania-tests-archive\\tasmania\\test\\admin-content-management\\TESTING_GUIDE.md",
+        "relativePath": "tododoc\\tasmania-tests-archive\\tasmania\\test\\admin-content-management\\TESTING_GUIDE.md",
+        "category": "tododoc",
+        "size": 11950,
+        "lastModified": "2025-08-24T21:41:43.233Z",
+        "hash": "7be6b37a27e03b8ef5e07245401fef4c",
+        "contentPreview": "# Admin Content Management Testing Guide  This guide provides comprehensive information about testing the admin content management system.  ## Overview  The testing suite covers all aspects of the adm",
+        "lineCount": 475,
+        "wordCount": 1471
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\troubleshooting-guide.md",
+        "relativePath": "tododoc\\troubleshooting-guide.md",
+        "category": "tododoc",
+        "size": 15244,
+        "lastModified": "2025-08-24T21:41:56.689Z",
+        "hash": "7695074f353c58c6ace517c4867a8165",
+        "contentPreview": "# Admin Troubleshooting Guide  ## Table of Contents  1. [Common Issues](#common-issues) 2. [Authentication Problems](#authentication-problems) 3. [Content Management Issues](#content-management-issues",
+        "lineCount": 539,
+        "wordCount": 2051
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\video-tutorials\\04-article-creation-workflow.md",
+        "relativePath": "tododoc\\video-tutorials\\04-article-creation-workflow.md",
+        "category": "tododoc",
+        "size": 7863,
+        "lastModified": "2025-08-24T21:41:56.752Z",
+        "hash": "7aad3b52822e0203d75026178ab3484a",
+        "contentPreview": "# Video Tutorial: Complete Article Creation Workflow  **Duration**: 8-10 minutes   **Difficulty**: Beginner to Intermediate   **Prerequisites**: Admin access to Stakeados platform  ## Tutorial Overvie",
+        "lineCount": 202,
+        "wordCount": 1183
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\video-tutorials\\09-ai-news-processing.md",
+        "relativePath": "tododoc\\video-tutorials\\09-ai-news-processing.md",
+        "category": "tododoc",
+        "size": 10178,
+        "lastModified": "2025-08-24T21:41:56.821Z",
+        "hash": "62c0520986a509dcd979d4362af23da6",
+        "contentPreview": "# Video Tutorial: AI News Processing Workflow  **Duration**: 12-15 minutes   **Difficulty**: Intermediate   **Prerequisites**: Admin access, basic understanding of news management  ## Tutorial Overvie",
+        "lineCount": 259,
+        "wordCount": 1411
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\video-tutorials\\README.md",
+        "relativePath": "tododoc\\video-tutorials\\README.md",
+        "category": "tododoc",
+        "size": 3227,
+        "lastModified": "2025-08-24T21:41:56.847Z",
+        "hash": "443828e37209c5479a3dc2aedc1261ac",
+        "contentPreview": "# Admin Video Tutorials  This directory contains scripts and resources for video tutorials covering complex admin workflows in the Stakeados platform.  ## Available Tutorials  ### 1. Getting Started S",
+        "lineCount": 82,
+        "wordCount": 375
+      }
+    ],
+    "specificationFiles": [
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\admin-content-management\\design.md",
+        "relativePath": ".kiro\\specs\\admin-content-management\\design.md",
+        "category": "kiro-specs",
+        "size": 11545,
+        "lastModified": "2025-08-24T21:39:16.406Z",
+        "hash": "fb415ce37aea554c829abf8fb75c3c66",
+        "contentPreview": "# Design Document  ## Overview  El sistema de gestión administrativa de contenido para Stakeados será una plataforma completa que permita a los administradores gestionar eficientemente artículos y not",
+        "lineCount": 434,
+        "wordCount": 1387
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\admin-content-management\\requirements.md",
+        "relativePath": ".kiro\\specs\\admin-content-management\\requirements.md",
+        "category": "kiro-specs",
+        "size": 8786,
+        "lastModified": "2025-08-24T21:39:16.475Z",
+        "hash": "7aef449d448f3da12cda17b9dba47a0c",
+        "contentPreview": "# Requirements Document  ## Introduction  Este spec define los requerimientos para completar y mejorar el sistema de gestión administrativa de contenido en Stakeados, específicamente para artículos y ",
+        "lineCount": 124,
+        "wordCount": 1274
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\admin-content-management\\tasks.md",
+        "relativePath": ".kiro\\specs\\admin-content-management\\tasks.md",
+        "category": "kiro-specs",
+        "size": 12582,
+        "lastModified": "2025-08-24T21:39:16.605Z",
+        "hash": "9c404522a08bad67138b2a2d74b2f615",
+        "contentPreview": "# Implementation Plan  ## Database and Backend Foundation  - [x] 1. Enhance database schema for admin content management   - Create article_history table for tracking changes and versions   - Create c",
+        "lineCount": 353,
+        "wordCount": 1687
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\admin-dashboard-enhancement\\design.md",
+        "relativePath": ".kiro\\specs\\admin-dashboard-enhancement\\design.md",
+        "category": "kiro-specs",
+        "size": 15264,
+        "lastModified": "2025-08-24T21:39:16.791Z",
+        "hash": "6f92f004168d45795f997ebedfc0dd70",
+        "contentPreview": "# Design Document  ## Overview  This design enhances the existing admin dashboard to provide a comprehensive, data-driven interface with real-time metrics, activity monitoring, system health indicator",
+        "lineCount": 497,
+        "wordCount": 1427
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\admin-dashboard-enhancement\\requirements.md",
+        "relativePath": ".kiro\\specs\\admin-dashboard-enhancement\\requirements.md",
+        "category": "kiro-specs",
+        "size": 4644,
+        "lastModified": "2025-08-24T21:39:16.832Z",
+        "hash": "00f5e8f10e5547c5aa85055aa1f0b1fd",
+        "contentPreview": "# Requirements Document  ## Introduction  This feature enhances the existing admin dashboard to provide a comprehensive, data-driven interface for platform management. The dashboard will display real-",
+        "lineCount": 96,
+        "wordCount": 757
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\admin-dashboard-enhancement\\tasks.md",
+        "relativePath": ".kiro\\specs\\admin-dashboard-enhancement\\tasks.md",
+        "category": "kiro-specs",
+        "size": 7479,
+        "lastModified": "2025-08-24T21:39:16.886Z",
+        "hash": "878c510fe36ccacf56a88428f9568702",
+        "contentPreview": "# Implementation Plan  - [ ] 1. Create dashboard data types and interfaces   - Define DashboardMetrics interface with user, content, and engagement data   - Create ActivityItem interface for activity ",
+        "lineCount": 162,
+        "wordCount": 1087
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\admin-only-features\\design.md",
+        "relativePath": ".kiro\\specs\\admin-only-features\\design.md",
+        "category": "kiro-specs",
+        "size": 7260,
+        "lastModified": "2025-08-24T21:39:16.982Z",
+        "hash": "d903366e7d6609282220d100c1fdfbea",
+        "contentPreview": "# Design Document  ## Overview  This design implements a simplified admin-only feature system where advanced functionalities are protected by admin role verification. The system provides a clean publi",
+        "lineCount": 313,
+        "wordCount": 812
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\admin-only-features\\requirements.md",
+        "relativePath": ".kiro\\specs\\admin-only-features\\requirements.md",
+        "category": "kiro-specs",
+        "size": 2589,
+        "lastModified": "2025-08-24T21:39:17.011Z",
+        "hash": "cb3a0dd9b1406f042431d1b398714662",
+        "contentPreview": "# Requirements Document  ## Introduction  This feature implements a simplified approach to feature management where advanced functionalities (courses, NFTs, Genesis, certificates, achievements) are on",
+        "lineCount": 52,
+        "wordCount": 406
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\admin-only-features\\tasks.md",
+        "relativePath": ".kiro\\specs\\admin-only-features\\tasks.md",
+        "category": "kiro-specs",
+        "size": 5697,
+        "lastModified": "2025-08-24T21:39:17.058Z",
+        "hash": "ddd5ebac910a0e99880481d8fa18a035",
+        "contentPreview": "# Implementation Plan  - [ ] 1. Update ProtectedRoute component for admin-only features   - Add requireAdmin prop to existing ProtectedRoute component   - Implement admin role checking using Supabase ",
+        "lineCount": 125,
+        "wordCount": 839
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\content-management-system\\design.md",
+        "relativePath": ".kiro\\specs\\content-management-system\\design.md",
+        "category": "kiro-specs",
+        "size": 19993,
+        "lastModified": "2025-08-24T21:39:17.280Z",
+        "hash": "9a054a8786d03b6319c13f7844316261",
+        "contentPreview": "# Design Document - Sistema de Gestión de Contenido (Artículos y Noticias)  ## Overview  Este diseño implementa un sistema completo de gestión de contenido para artículos y noticias en la plataforma S",
+        "lineCount": 744,
+        "wordCount": 2064
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\content-management-system\\requirements.md",
+        "relativePath": ".kiro\\specs\\content-management-system\\requirements.md",
+        "category": "kiro-specs",
+        "size": 8947,
+        "lastModified": "2025-08-24T21:39:17.348Z",
+        "hash": "59e858332970a06a68d61955982e8153",
+        "contentPreview": "# Requirements Document - Sistema de Gestión de Contenido (Artículos y Noticias)  ## Introduction  Este spec se enfoca en implementar completamente el sistema de gestión de contenido para artículos y ",
+        "lineCount": 128,
+        "wordCount": 1337
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\content-management-system\\tasks.md",
+        "relativePath": ".kiro\\specs\\content-management-system\\tasks.md",
+        "category": "kiro-specs",
+        "size": 12053,
+        "lastModified": "2025-08-24T21:39:17.455Z",
+        "hash": "616f9eb3381082c5851d9770dd3547f3",
+        "contentPreview": "# Implementation Plan - Sistema de Gestión de Contenido (Artículos y Noticias)  - [x] 1. Setup base infrastructure and database schema   - Extend existing Supabase schema with content management table",
+        "lineCount": 289,
+        "wordCount": 1645
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\homepage-production\\design.md",
+        "relativePath": ".kiro\\specs\\homepage-production\\design.md",
+        "category": "kiro-specs",
+        "size": 10029,
+        "lastModified": "2025-08-24T21:39:17.722Z",
+        "hash": "a51e7a22a13ed9675c335df3ce9207c9",
+        "contentPreview": "# Design Document  ## Overview  The production homepage will serve as the main entry point for the Stakeados platform, showcasing the latest news, featured articles, and providing clear navigation to ",
+        "lineCount": 381,
+        "wordCount": 1270
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\homepage-production\\requirements.md",
+        "relativePath": ".kiro\\specs\\homepage-production\\requirements.md",
+        "category": "kiro-specs",
+        "size": 4985,
+        "lastModified": "2025-08-24T21:39:17.784Z",
+        "hash": "51b6ab18a1b61bdf69c1eef9ec321a2c",
+        "contentPreview": "# Requirements Document  ## Introduction  This specification defines the requirements for creating a production-ready homepage that serves as the main entry point for users. The homepage will showcase",
+        "lineCount": 92,
+        "wordCount": 823
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\homepage-production\\tasks.md",
+        "relativePath": ".kiro\\specs\\homepage-production\\tasks.md",
+        "category": "kiro-specs",
+        "size": 4350,
+        "lastModified": "2025-08-24T21:39:17.837Z",
+        "hash": "d35598a65311fa64867c885a84db370f",
+        "contentPreview": "# Implementation Plan  - [x] 1. Create core homepage structure and layout   - Set up the main HomePage component with proper TypeScript interfaces   - Implement responsive grid layout using CSS Grid a",
+        "lineCount": 112,
+        "wordCount": 635
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\project-organization-documentation\\design.md",
+        "relativePath": ".kiro\\specs\\project-organization-documentation\\design.md",
+        "category": "kiro-specs",
+        "size": 11245,
+        "lastModified": "2025-08-29T20:05:45.441Z",
+        "hash": "2ec24c356fc45bd141b5edfbd318b3a7",
+        "contentPreview": "# Design Document\r \r ## Overview\r \r Este documento de diseño establece un plan integral para organizar, documentar y estructurar el proyecto Stakeados. Basándome en el análisis de la documentación exi",
+        "lineCount": 293,
+        "wordCount": 1241
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\project-organization-documentation\\requirements.md",
+        "relativePath": ".kiro\\specs\\project-organization-documentation\\requirements.md",
+        "category": "kiro-specs",
+        "size": 4330,
+        "lastModified": "2025-08-29T20:03:30.652Z",
+        "hash": "f6a4c10da216e49bb1569a847b99c390",
+        "contentPreview": "# Requirements Document\r \r ## Introduction\r \r El proyecto Stakeados ha sido desarrollado por múltiples editores de código y asistentes de IA, resultando en documentación dispersa, especificaciones inc",
+        "lineCount": 73,
+        "wordCount": 611
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\project-organization-documentation\\tasks.md",
+        "relativePath": ".kiro\\specs\\project-organization-documentation\\tasks.md",
+        "category": "kiro-specs",
+        "size": 6441,
+        "lastModified": "2025-08-29T20:14:44.278Z",
+        "hash": "2a03a8a552fdd93f6cf969b708d6469d",
+        "contentPreview": "# Implementation Plan\r \r - [-] 1. Análisis y auditoría inicial del proyecto\r \r \r \r   - Crear script para analizar toda la documentación existente y detectar duplicados\r   - Generar reporte de estado a",
+        "lineCount": 127,
+        "wordCount": 853
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\supabase-database-setup\\design.md",
+        "relativePath": ".kiro\\specs\\supabase-database-setup\\design.md",
+        "category": "kiro-specs",
+        "size": 7483,
+        "lastModified": "2025-08-24T21:39:17.867Z",
+        "hash": "0bee52bea05a1ab1302d07c9d12a4f3f",
+        "contentPreview": "# Design Document  ## Overview  This design creates a complete Supabase database schema that perfectly matches the existing Next.js application. The database will be created from scratch, replacing an",
+        "lineCount": 283,
+        "wordCount": 1008
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\supabase-database-setup\\requirements.md",
+        "relativePath": ".kiro\\specs\\supabase-database-setup\\requirements.md",
+        "category": "kiro-specs",
+        "size": 2995,
+        "lastModified": "2025-08-24T21:39:17.889Z",
+        "hash": "e634a612d25b4241f225f8a8993fc92e",
+        "contentPreview": "# Requirements Document  ## Introduction  This feature creates a complete Supabase database schema that works perfectly with the existing Next.js application. The database will support user authentica",
+        "lineCount": 63,
+        "wordCount": 476
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\supabase-database-setup\\tasks.md",
+        "relativePath": ".kiro\\specs\\supabase-database-setup\\tasks.md",
+        "category": "kiro-specs",
+        "size": 6833,
+        "lastModified": "2025-08-24T21:39:17.928Z",
+        "hash": "32752a7a597b2277a8edf2a600b9186e",
+        "contentPreview": "# Implementation Plan  - [x] 1. Create comprehensive database reset script   - Write script that safely drops all existing objects using CASCADE   - Handle all possible existing tables, functions, tri",
+        "lineCount": 178,
+        "wordCount": 1017
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\supabase-role-authentication\\design.md",
+        "relativePath": ".kiro\\specs\\supabase-role-authentication\\design.md",
+        "category": "kiro-specs",
+        "size": 6419,
+        "lastModified": "2025-08-24T21:39:17.977Z",
+        "hash": "d9106e6d736e20ce414f60b558a5d1fa",
+        "contentPreview": "# Design Document  ## Overview  This design implements a comprehensive role-based authentication system leveraging Supabase's existing `profiles` table with the `role` field. The system will provide s",
+        "lineCount": 273,
+        "wordCount": 851
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\supabase-role-authentication\\requirements.md",
+        "relativePath": ".kiro\\specs\\supabase-role-authentication\\requirements.md",
+        "category": "kiro-specs",
+        "size": 3690,
+        "lastModified": "2025-08-24T21:39:18.003Z",
+        "hash": "bdeed0d1e6dee00f57b768393380a4a5",
+        "contentPreview": "# Requirements Document  ## Introduction  This feature implements a robust role-based authentication system using Supabase's built-in role management capabilities. Instead of hardcoding admin emails, ",
+        "lineCount": 74,
+        "wordCount": 599
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\supabase-role-authentication\\tasks.md",
+        "relativePath": ".kiro\\specs\\supabase-role-authentication\\tasks.md",
+        "category": "kiro-specs",
+        "size": 5094,
+        "lastModified": "2025-08-24T21:39:18.041Z",
+        "hash": "8bf50b1243fde9cc5f5b3d3648e56821",
+        "contentPreview": "# Implementation Plan  - [ ] 1. Create role types and enums   - Define UserRole enum with admin, genesis, citizen, student values   - Create UserProfile interface extending Supabase user data   - Crea",
+        "lineCount": 119,
+        "wordCount": 751
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\supabase-ssr-refactoring\\design.md",
+        "relativePath": ".kiro\\specs\\supabase-ssr-refactoring\\design.md",
+        "category": "kiro-specs",
+        "size": 10489,
+        "lastModified": "2025-08-28T05:36:01.272Z",
+        "hash": "1cfb02a6c0a4eee5f452644df52d6ece",
+        "contentPreview": "# Design Document\r \r ## Overview\r \r Esta refactorización tiene como objetivo migrar correctamente la aplicación Stakeados de un patrón de cliente Supabase incorrecto a una implementación SSR apropiada",
+        "lineCount": 336,
+        "wordCount": 1203
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\supabase-ssr-refactoring\\requirements.md",
+        "relativePath": ".kiro\\specs\\supabase-ssr-refactoring\\requirements.md",
+        "category": "kiro-specs",
+        "size": 3731,
+        "lastModified": "2025-08-28T05:34:37.956Z",
+        "hash": "4e3c4a83f8cce1e964d9c0f96e1b5bd6",
+        "contentPreview": "# Requirements Document\r \r ## Introduction\r \r Esta refactorización tiene como objetivo corregir la implementación de Supabase para Server-Side Rendering (SSR) en la aplicación Stakeados. Actualmente, ",
+        "lineCount": 62,
+        "wordCount": 568
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\.kiro\\specs\\supabase-ssr-refactoring\\tasks.md",
+        "relativePath": ".kiro\\specs\\supabase-ssr-refactoring\\tasks.md",
+        "category": "kiro-specs",
+        "size": 5716,
+        "lastModified": "2025-08-28T06:23:38.355Z",
+        "hash": "c3650db769cd92501a67e0fcac2c8ab5",
+        "contentPreview": "# Implementation Plan\r \r - [x] 1. Update core Supabase client infrastructure\r \r \r \r \r \r   - Refactor browser client to use createBrowserClient from @supabase/ssr\r   - Refactor server client to use cre",
+        "lineCount": 163,
+        "wordCount": 773
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\admin-content-management\\design.md",
+        "relativePath": "tododoc\\specs\\admin-content-management\\design.md",
+        "category": "tododoc-specs",
+        "size": 11545,
+        "lastModified": "2025-08-24T21:41:47.965Z",
+        "hash": "fb415ce37aea554c829abf8fb75c3c66",
+        "contentPreview": "# Design Document  ## Overview  El sistema de gestión administrativa de contenido para Stakeados será una plataforma completa que permita a los administradores gestionar eficientemente artículos y not",
+        "lineCount": 434,
+        "wordCount": 1387
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\admin-content-management\\requirements.md",
+        "relativePath": "tododoc\\specs\\admin-content-management\\requirements.md",
+        "category": "tododoc-specs",
+        "size": 8786,
+        "lastModified": "2025-08-24T21:41:48.002Z",
+        "hash": "7aef449d448f3da12cda17b9dba47a0c",
+        "contentPreview": "# Requirements Document  ## Introduction  Este spec define los requerimientos para completar y mejorar el sistema de gestión administrativa de contenido en Stakeados, específicamente para artículos y ",
+        "lineCount": 124,
+        "wordCount": 1274
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\admin-content-management\\tasks.md",
+        "relativePath": "tododoc\\specs\\admin-content-management\\tasks.md",
+        "category": "tododoc-specs",
+        "size": 12582,
+        "lastModified": "2025-08-24T21:41:48.068Z",
+        "hash": "9c404522a08bad67138b2a2d74b2f615",
+        "contentPreview": "# Implementation Plan  ## Database and Backend Foundation  - [x] 1. Enhance database schema for admin content management   - Create article_history table for tracking changes and versions   - Create c",
+        "lineCount": 353,
+        "wordCount": 1687
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\admin-dashboard-enhancement\\design.md",
+        "relativePath": "tododoc\\specs\\admin-dashboard-enhancement\\design.md",
+        "category": "tododoc-specs",
+        "size": 15264,
+        "lastModified": "2025-08-24T21:41:48.126Z",
+        "hash": "6f92f004168d45795f997ebedfc0dd70",
+        "contentPreview": "# Design Document  ## Overview  This design enhances the existing admin dashboard to provide a comprehensive, data-driven interface with real-time metrics, activity monitoring, system health indicator",
+        "lineCount": 497,
+        "wordCount": 1427
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\admin-dashboard-enhancement\\requirements.md",
+        "relativePath": "tododoc\\specs\\admin-dashboard-enhancement\\requirements.md",
+        "category": "tododoc-specs",
+        "size": 4644,
+        "lastModified": "2025-08-24T21:41:48.166Z",
+        "hash": "00f5e8f10e5547c5aa85055aa1f0b1fd",
+        "contentPreview": "# Requirements Document  ## Introduction  This feature enhances the existing admin dashboard to provide a comprehensive, data-driven interface for platform management. The dashboard will display real-",
+        "lineCount": 96,
+        "wordCount": 757
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\admin-dashboard-enhancement\\tasks.md",
+        "relativePath": "tododoc\\specs\\admin-dashboard-enhancement\\tasks.md",
+        "category": "tododoc-specs",
+        "size": 7479,
+        "lastModified": "2025-08-24T21:41:48.209Z",
+        "hash": "878c510fe36ccacf56a88428f9568702",
+        "contentPreview": "# Implementation Plan  - [ ] 1. Create dashboard data types and interfaces   - Define DashboardMetrics interface with user, content, and engagement data   - Create ActivityItem interface for activity ",
+        "lineCount": 162,
+        "wordCount": 1087
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\admin-only-features\\design.md",
+        "relativePath": "tododoc\\specs\\admin-only-features\\design.md",
+        "category": "tododoc-specs",
+        "size": 7260,
+        "lastModified": "2025-08-24T21:41:48.266Z",
+        "hash": "d903366e7d6609282220d100c1fdfbea",
+        "contentPreview": "# Design Document  ## Overview  This design implements a simplified admin-only feature system where advanced functionalities are protected by admin role verification. The system provides a clean publi",
+        "lineCount": 313,
+        "wordCount": 812
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\admin-only-features\\requirements.md",
+        "relativePath": "tododoc\\specs\\admin-only-features\\requirements.md",
+        "category": "tododoc-specs",
+        "size": 2589,
+        "lastModified": "2025-08-24T21:41:48.292Z",
+        "hash": "cb3a0dd9b1406f042431d1b398714662",
+        "contentPreview": "# Requirements Document  ## Introduction  This feature implements a simplified approach to feature management where advanced functionalities (courses, NFTs, Genesis, certificates, achievements) are on",
+        "lineCount": 52,
+        "wordCount": 406
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\admin-only-features\\tasks.md",
+        "relativePath": "tododoc\\specs\\admin-only-features\\tasks.md",
+        "category": "tododoc-specs",
+        "size": 5697,
+        "lastModified": "2025-08-24T21:41:48.349Z",
+        "hash": "ddd5ebac910a0e99880481d8fa18a035",
+        "contentPreview": "# Implementation Plan  - [ ] 1. Update ProtectedRoute component for admin-only features   - Add requireAdmin prop to existing ProtectedRoute component   - Implement admin role checking using Supabase ",
+        "lineCount": 125,
+        "wordCount": 839
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\content-management-system\\design.md",
+        "relativePath": "tododoc\\specs\\content-management-system\\design.md",
+        "category": "tododoc-specs",
+        "size": 19993,
+        "lastModified": "2025-08-24T21:41:48.431Z",
+        "hash": "9a054a8786d03b6319c13f7844316261",
+        "contentPreview": "# Design Document - Sistema de Gestión de Contenido (Artículos y Noticias)  ## Overview  Este diseño implementa un sistema completo de gestión de contenido para artículos y noticias en la plataforma S",
+        "lineCount": 744,
+        "wordCount": 2064
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\content-management-system\\requirements.md",
+        "relativePath": "tododoc\\specs\\content-management-system\\requirements.md",
+        "category": "tododoc-specs",
+        "size": 8947,
+        "lastModified": "2025-08-24T21:41:48.473Z",
+        "hash": "59e858332970a06a68d61955982e8153",
+        "contentPreview": "# Requirements Document - Sistema de Gestión de Contenido (Artículos y Noticias)  ## Introduction  Este spec se enfoca en implementar completamente el sistema de gestión de contenido para artículos y ",
+        "lineCount": 128,
+        "wordCount": 1337
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\content-management-system\\tasks.md",
+        "relativePath": "tododoc\\specs\\content-management-system\\tasks.md",
+        "category": "tododoc-specs",
+        "size": 12053,
+        "lastModified": "2025-08-24T21:41:48.554Z",
+        "hash": "616f9eb3381082c5851d9770dd3547f3",
+        "contentPreview": "# Implementation Plan - Sistema de Gestión de Contenido (Artículos y Noticias)  - [x] 1. Setup base infrastructure and database schema   - Extend existing Supabase schema with content management table",
+        "lineCount": 289,
+        "wordCount": 1645
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\homepage-production\\design.md",
+        "relativePath": "tododoc\\specs\\homepage-production\\design.md",
+        "category": "tododoc-specs",
+        "size": 10029,
+        "lastModified": "2025-08-24T21:41:48.658Z",
+        "hash": "a51e7a22a13ed9675c335df3ce9207c9",
+        "contentPreview": "# Design Document  ## Overview  The production homepage will serve as the main entry point for the Stakeados platform, showcasing the latest news, featured articles, and providing clear navigation to ",
+        "lineCount": 381,
+        "wordCount": 1270
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\homepage-production\\requirements.md",
+        "relativePath": "tododoc\\specs\\homepage-production\\requirements.md",
+        "category": "tododoc-specs",
+        "size": 4985,
+        "lastModified": "2025-08-24T21:41:48.702Z",
+        "hash": "51b6ab18a1b61bdf69c1eef9ec321a2c",
+        "contentPreview": "# Requirements Document  ## Introduction  This specification defines the requirements for creating a production-ready homepage that serves as the main entry point for users. The homepage will showcase",
+        "lineCount": 92,
+        "wordCount": 823
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\homepage-production\\tasks.md",
+        "relativePath": "tododoc\\specs\\homepage-production\\tasks.md",
+        "category": "tododoc-specs",
+        "size": 4350,
+        "lastModified": "2025-08-24T21:41:48.745Z",
+        "hash": "d35598a65311fa64867c885a84db370f",
+        "contentPreview": "# Implementation Plan  - [x] 1. Create core homepage structure and layout   - Set up the main HomePage component with proper TypeScript interfaces   - Implement responsive grid layout using CSS Grid a",
+        "lineCount": 112,
+        "wordCount": 635
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\supabase-database-setup\\design.md",
+        "relativePath": "tododoc\\specs\\supabase-database-setup\\design.md",
+        "category": "tododoc-specs",
+        "size": 7483,
+        "lastModified": "2025-08-24T21:41:48.770Z",
+        "hash": "0bee52bea05a1ab1302d07c9d12a4f3f",
+        "contentPreview": "# Design Document  ## Overview  This design creates a complete Supabase database schema that perfectly matches the existing Next.js application. The database will be created from scratch, replacing an",
+        "lineCount": 283,
+        "wordCount": 1008
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\supabase-database-setup\\requirements.md",
+        "relativePath": "tododoc\\specs\\supabase-database-setup\\requirements.md",
+        "category": "tododoc-specs",
+        "size": 2995,
+        "lastModified": "2025-08-24T21:41:48.781Z",
+        "hash": "e634a612d25b4241f225f8a8993fc92e",
+        "contentPreview": "# Requirements Document  ## Introduction  This feature creates a complete Supabase database schema that works perfectly with the existing Next.js application. The database will support user authentica",
+        "lineCount": 63,
+        "wordCount": 476
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\supabase-database-setup\\tasks.md",
+        "relativePath": "tododoc\\specs\\supabase-database-setup\\tasks.md",
+        "category": "tododoc-specs",
+        "size": 6833,
+        "lastModified": "2025-08-24T21:41:48.824Z",
+        "hash": "32752a7a597b2277a8edf2a600b9186e",
+        "contentPreview": "# Implementation Plan  - [x] 1. Create comprehensive database reset script   - Write script that safely drops all existing objects using CASCADE   - Handle all possible existing tables, functions, tri",
+        "lineCount": 178,
+        "wordCount": 1017
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\supabase-role-authentication\\design.md",
+        "relativePath": "tododoc\\specs\\supabase-role-authentication\\design.md",
+        "category": "tododoc-specs",
+        "size": 6419,
+        "lastModified": "2025-08-24T21:41:48.873Z",
+        "hash": "d9106e6d736e20ce414f60b558a5d1fa",
+        "contentPreview": "# Design Document  ## Overview  This design implements a comprehensive role-based authentication system leveraging Supabase's existing `profiles` table with the `role` field. The system will provide s",
+        "lineCount": 273,
+        "wordCount": 851
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\supabase-role-authentication\\requirements.md",
+        "relativePath": "tododoc\\specs\\supabase-role-authentication\\requirements.md",
+        "category": "tododoc-specs",
+        "size": 3690,
+        "lastModified": "2025-08-24T21:41:48.899Z",
+        "hash": "bdeed0d1e6dee00f57b768393380a4a5",
+        "contentPreview": "# Requirements Document  ## Introduction  This feature implements a robust role-based authentication system using Supabase's built-in role management capabilities. Instead of hardcoding admin emails, ",
+        "lineCount": 74,
+        "wordCount": 599
+      },
+      {
+        "path": "C:\\Users\\stake\\Desktop\\Stakeados v4\\tododoc\\specs\\supabase-role-authentication\\tasks.md",
+        "relativePath": "tododoc\\specs\\supabase-role-authentication\\tasks.md",
+        "category": "tododoc-specs",
+        "size": 5094,
+        "lastModified": "2025-08-24T21:41:48.932Z",
+        "hash": "8bf50b1243fde9cc5f5b3d3648e56821",
+        "contentPreview": "# Implementation Plan  - [ ] 1. Create role types and enums   - Define UserRole enum with admin, genesis, citizen, student values   - Create UserProfile interface extending Supabase user data   - Crea",
+        "lineCount": 119,
+        "wordCount": 751
+      }
+    ],
+    "implementationStatus": {
+      "srcExists": true,
+      "componentsExists": true,
+      "pagesExists": true,
+      "packageJsonExists": true,
+      "nextConfigExists": true,
+      "supabaseConfigExists": true,
+      "dependencies": [
+        "@account-abstraction/contracts",
+        "@coinbase/onchainkit",
+        "@coinbase/wallet-sdk",
+        "@hello-pangea/dnd",
+        "@heroicons/react",
+        "@highlight-run/next",
+        "@hookform/resolvers",
+        "@radix-ui/react-alert-dialog",
+        "@radix-ui/react-avatar",
+        "@radix-ui/react-checkbox",
+        "@radix-ui/react-dialog",
+        "@radix-ui/react-label",
+        "@radix-ui/react-popover",
+        "@radix-ui/react-progress",
+        "@radix-ui/react-scroll-area",
+        "@radix-ui/react-select",
+        "@radix-ui/react-separator",
+        "@radix-ui/react-slider",
+        "@radix-ui/react-switch",
+        "@radix-ui/react-tabs",
+        "@radix-ui/react-tooltip",
+        "@supabase/ssr",
+        "@supabase/supabase-js",
+        "@tailwindcss/typography",
+        "@tanstack/query-core",
+        "@tanstack/react-query",
+        "@tinymce/tinymce-react",
+        "@types/redis",
+        "@types/uuid",
+        "@wagmi/connectors",
+        "@wagmi/core",
+        "autoprefixer",
+        "class-variance-authority",
+        "clsx",
+        "critters",
+        "date-fns",
+        "fast-xml-parser",
+        "ioredis",
+        "lucide-react",
+        "next",
+        "next-intl",
+        "openai",
+        "permissionless",
+        "postcss",
+        "react",
+        "react-dom",
+        "react-error-boundary",
+        "react-hook-form",
+        "recharts",
+        "redis",
+        "resend",
+        "sonner",
+        "supabase-cli",
+        "tailwind-merge",
+        "tailwindcss",
+        "tinymce",
+        "uuid",
+        "viem",
+        "wagmi",
+        "web-push",
+        "zod"
+      ],
+      "devDependencies": [
+        "@axe-core/playwright",
+        "@next/bundle-analyzer",
+        "@playwright/test",
+        "@storybook/addon-docs",
+        "@storybook/addon-onboarding",
+        "@storybook/nextjs",
+        "@svgr/webpack",
+        "@testing-library/jest-dom",
+        "@testing-library/react",
+        "@testing-library/user-event",
+        "@types/jest",
+        "@types/lodash",
+        "@types/node",
+        "@types/react",
+        "@types/react-dom",
+        "@types/web-push",
+        "@typescript-eslint/eslint-plugin",
+        "@typescript-eslint/parser",
+        "@vitejs/plugin-react",
+        "@vitest/ui",
+        "chromatic",
+        "dotenv",
+        "eslint",
+        "eslint-config-next",
+        "eslint-plugin-storybook",
+        "husky",
+        "jest",
+        "jest-axe",
+        "jest-environment-jsdom",
+        "jsdom",
+        "lint-staged",
+        "msw",
+        "pino-pretty",
+        "playwright",
+        "prettier",
+        "storybook",
+        "supabase",
+        "typescript",
+        "vitest",
+        "webpack-bundle-analyzer"
+      ],
+      "features": {
+        "authentication": {
+          "implemented": true,
+          "files": [
+            "src/lib/supabase/auth.ts",
+            "src/lib/supabase/client.ts",
+            "src/lib/supabase/server.ts"
+          ]
+        },
+        "articles": {
+          "implemented": true,
+          "paths": [
+            "src/components/articles"
+          ]
+        },
+        "community": {
+          "implemented": true,
+          "paths": [
+            "src/components/community"
+          ]
+        },
+        "news": {
+          "implemented": true,
+          "paths": [
+            "src/components/news"
+          ]
+        },
+        "courses": {
+          "implemented": true,
+          "paths": [
+            "src/components/courses"
+          ]
+        },
+        "nfts": {
+          "implemented": true,
+          "files": [
+            "contracts/StakeadosCertificate.sol",
+            "contracts/StakeadosCitizenship.sol"
+          ]
+        },
+        "rbac": {
+          "implemented": true,
+          "files": [
+            "src/middleware.ts"
+          ]
+        }
+      }
+    },
+    "summary": {
+      "totalDocumentationFiles": 96,
+      "totalSpecificationFiles": 48,
+      "totalDuplicateSets": 51,
+      "totalDuplicateFiles": 123,
+      "documentationByCategory": {
+        "docs": 31,
+        "tododoc": 65
+      },
+      "specificationsByCategory": {
+        "kiro-specs": 27,
+        "tododoc-specs": 21
+      },
+      "implementedFeatures": 7,
+      "totalFeatures": 7
+    }
+  },
+  "recommendations": [
+    {
+      "type": "duplicates",
+      "priority": "high",
+      "message": "Found 51 sets of duplicate files. Consider consolidating or removing duplicates.",
+      "action": "Review duplicate files and merge or remove unnecessary copies"
+    },
+    {
+      "type": "organization",
+      "priority": "medium",
+      "message": "Documentation is scattered between /docs and /tododoc directories.",
+      "action": "Consolidate documentation into a single /docs directory structure"
+    }
+  ]
+}
