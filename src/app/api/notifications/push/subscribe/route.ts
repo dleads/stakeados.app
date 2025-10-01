@@ -1,12 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
-import type { Database } from '@/types/supabase';
+import { createClient } from '@/lib/supabase/server';
 import { PushNotificationServiceServer } from '@/lib/services/pushNotificationService.server';
 
 export async function POST(request: NextRequest) {
   try {
-    const supabase = createServerClient<Database>({ cookies });
+    const supabase = await createClient();
     const {
       data: { user },
       error: authError,
@@ -26,7 +24,7 @@ export async function POST(request: NextRequest) {
     }
 
     const userAgent = request.headers.get('user-agent') || undefined;
-    const service = new PushNotificationServiceServer(supabase);
+    const service = new PushNotificationServiceServer();
     const subscription = await service.subscribeToPush(
       user.id,
       body.subscription,
@@ -45,8 +43,7 @@ export async function POST(request: NextRequest) {
 
 export async function GET(_request: NextRequest) {
   try {
-    const supabase = createServerClient<Database>({ cookies });
-    const service = new PushNotificationServiceServer(supabase);
+    const service = new PushNotificationServiceServer();
     const vapidPublicKey = await service.getVapidPublicKey();
 
     return NextResponse.json({ vapidPublicKey });

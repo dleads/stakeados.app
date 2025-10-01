@@ -46,7 +46,7 @@ export async function GET(
     }
 
     // Get related articles based on categories and keywords
-    let relatedArticles: any[] = [];
+    const relatedArticles: any[] = [];
     // Note: categories property doesn't exist in the current schema
     // This section is commented out to fix build issues
     /*

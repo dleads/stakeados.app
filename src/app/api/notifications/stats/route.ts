@@ -1,12 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
-import type { Database } from '@/types/supabase';
-import { NotificationServiceServer } from '@/lib/services/notificationService.server';
+import { createClient } from '@/lib/supabase/server';
 
 export async function GET(_request: NextRequest) {
   try {
-    const supabase = createServerClient<Database>({ cookies });
+    const supabase = await createClient();
     const {
       data: { user },
       error: authError,
@@ -15,8 +12,22 @@ export async function GET(_request: NextRequest) {
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
-    const service = new NotificationServiceServer(supabase);
-    const stats = await service.getNotificationStats(user.id);
+    // Compute basic stats directly
+    const [{ count: unreadCount }, { count: totalCount }] = await Promise.all([
+      supabase
+        .from('notifications')
+        .select('*', { count: 'exact', head: true })
+        .eq('user_id', user.id)
+        .eq('read', false),
+      supabase
+        .from('notifications')
+        .select('*', { count: 'exact', head: true })
+        .eq('user_id', user.id),
+    ]);
+    const stats = {
+      unread: unreadCount ?? 0,
+      total: totalCount ?? 0,
+    };
 
     return NextResponse.json({ stats });
   } catch (error) {

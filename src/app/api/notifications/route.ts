@@ -1,13 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
-import type { Database } from '@/types/supabase';
+import { createClient } from '@/lib/supabase/server';
 import { NotificationServiceServer } from '@/lib/services/notificationService.server';
 import type { NotificationFilters } from '@/types/notifications';
 
 export async function GET(request: NextRequest) {
   try {
-    const supabase = createServerClient<Database>({ cookies });
+    const supabase = await createClient();
     const {
       data: { user },
       error: authError,
@@ -36,13 +34,8 @@ export async function GET(request: NextRequest) {
       };
     }
 
-    const service = new NotificationServiceServer(supabase);
-    const notifications = await service.getUserNotifications(
-      user.id,
-      filters,
-      limit,
-      offset
-    );
+    const service = new NotificationServiceServer();
+    const notifications = await service.getUserNotifications(user.id, limit);
 
     return NextResponse.json({ notifications });
   } catch (error) {
@@ -56,7 +49,7 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const supabase = createServerClient<Database>({ cookies });
+    const supabase = await createClient();
     const {
       data: { user },
       error: authError,
@@ -76,15 +69,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const service = new NotificationServiceServer(supabase);
-    const notification = await service.createNotification({
-      userId: user.id,
-      type: body.type,
-      title: body.title,
-      message: body.message,
-      data: body.data,
-      scheduledFor: body.scheduledFor ? new Date(body.scheduledFor) : undefined,
-    });
+    const service = new NotificationServiceServer();
+    await service.createNotification(
+      user.id,
+      body.type,
+      body.title,
+      body.message,
+      body.data
+    );
+    const notification = { success: true };
 
     return NextResponse.json({ notification }, { status: 201 });
   } catch (error) {

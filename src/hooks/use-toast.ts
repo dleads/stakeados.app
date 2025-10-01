@@ -11,7 +11,7 @@ interface ToastState {
   toasts: Toast[];
 }
 
-let toastState: ToastState = {
+const toastState: ToastState = {
   toasts: [],
 };
 

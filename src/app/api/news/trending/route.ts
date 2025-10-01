@@ -135,7 +135,7 @@ export async function GET(request: NextRequest) {
     const timeWindowStart = new Date();
     timeWindowStart.setHours(timeWindowStart.getHours() - extendedTimeWindow);
 
-    let query = supabase
+    const query = supabase
       .from('news')
       .select(
         `

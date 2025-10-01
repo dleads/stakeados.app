@@ -20,7 +20,12 @@ export function getRedisClient(): Redis {
   }
 
   if (!redis) {
-    const redisUrl = process.env.REDIS_URL || 'redis://localhost:6379';
+    const redisUrl = process.env.REDIS_URL;
+
+    // If no REDIS_URL is configured, use mock to avoid connection attempts during build
+    if (!redisUrl) {
+      return getMockRedis();
+    }
 
     // Use simple URL-based initialization to avoid option type mismatches
     redis = new Redis(redisUrl);

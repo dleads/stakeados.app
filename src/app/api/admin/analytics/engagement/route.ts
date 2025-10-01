@@ -1,5 +1,44 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+export const revalidate = 0;
+
 import { NextRequest, NextResponse } from 'next/server';
 import { requireAdmin } from '@/lib/auth/apiAuth';
+
+type ArticleRow = {
+  id: string;
+  title: string;
+  views?: number | null;
+  likes?: number | null;
+  reading_time?: number | null;
+  published_at?: string | null;
+  created_at?: string | null;
+};
+
+type NewsRow = {
+  id: string;
+  title: string;
+  trending_score?: number | null;
+  published_at?: string | null;
+  created_at?: string | null;
+};
+
+type MetricRecord = {
+  recorded_at: string;
+  metric_type: 'view' | 'like' | 'share' | 'read_time';
+  value: number;
+};
+
+type DailyMetric = {
+  date: string;
+  views: number;
+  likes: number;
+  shares: number;
+  readTime: number;
+  readTimeCount: number;
+  sessions: number;
+};
 
 export async function GET(request: NextRequest) {
   try {
@@ -10,7 +49,7 @@ export async function GET(request: NextRequest) {
         { status: admin.status || 403 }
       );
     }
-    const supabase = admin.supabase!;
+    const supabase = (admin as any).supabase as any;
 
     // Verify admin authentication
     // const { data: { user }, error: authError } = await supabase.auth.getUser();
@@ -87,8 +126,8 @@ export async function GET(request: NextRequest) {
       .order('trending_score', { ascending: false });
 
     // Process metrics data
-    const processMetrics = (metrics: any[]) => {
-      const dailyMetrics = new Map();
+    const processMetrics = (metrics: MetricRecord[]) => {
+      const dailyMetrics = new Map<string, DailyMetric>();
 
       metrics.forEach(metric => {
         const date = new Date(metric.recorded_at).toISOString().split('T')[0];
@@ -104,7 +143,7 @@ export async function GET(request: NextRequest) {
           });
         }
 
-        const dayData = dailyMetrics.get(date);
+        const dayData = dailyMetrics.get(date)!;
 
         switch (metric.metric_type) {
           case 'view':
@@ -215,7 +254,7 @@ export async function GET(request: NextRequest) {
 
     // Content performance analysis
     const contentPerformance = [
-      ...(articles || []).map(article => ({
+      ...((articles || []) as ArticleRow[]).map((article: ArticleRow) => ({
         id: article.id,
         title: article.title,
         type: 'article' as const,
@@ -231,7 +270,7 @@ export async function GET(request: NextRequest) {
         bounceRate: Math.random() * 40 + 20,
         published_at: article.published_at || article.created_at,
       })),
-      ...(news || []).slice(0, 10).map(newsItem => ({
+      ...((news || []) as NewsRow[]).slice(0, 10).map((newsItem: NewsRow) => ({
         id: newsItem.id,
         title: newsItem.title,
         type: 'news' as const,

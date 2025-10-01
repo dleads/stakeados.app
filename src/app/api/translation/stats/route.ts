@@ -180,7 +180,7 @@ async function getGlobalStats(supabase: any) {
         ? ['title', 'content', 'meta_description']
         : ['title', 'summary', 'content'];
 
-    let localeCompleteness = { en: 0, es: 0 };
+    const localeCompleteness = { en: 0, es: 0 };
 
     for (const locale of ['en', 'es']) {
       let translatedFields = 0;

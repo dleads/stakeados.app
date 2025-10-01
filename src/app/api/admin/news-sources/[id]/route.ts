@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createServerClient } from '@supabase/ssr';
-import { cookies } from 'next/headers';
+import { createClient } from '@/lib/supabase/server';
 
 export async function PUT(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
-    const supabase = createServerClient({ cookies });
+    const supabase = await createClient();
 
     // Verificar autenticación
     const {
@@ -69,7 +68,7 @@ export async function DELETE(
   { params }: { params: { id: string } }
 ) {
   try {
-    const supabase = createServerClient({ cookies });
+    const supabase = await createClient();
 
     // Verificar autenticación
     const {

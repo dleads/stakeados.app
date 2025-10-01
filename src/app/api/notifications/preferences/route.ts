@@ -1,13 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
-import type { Database } from '@/types/supabase';
+import { createClient } from '@/lib/supabase/server';
 import { NotificationPreferencesServiceServer } from '@/lib/services/notificationPreferencesService.server';
 import type { NotificationPreferences } from '@/types/notifications';
 
 export async function GET(_request: NextRequest) {
   try {
-    const supabase = createServerClient<Database>({ cookies });
+    const supabase = await createClient();
     const {
       data: { user },
       error: authError,
@@ -33,7 +31,7 @@ export async function GET(_request: NextRequest) {
 
 export async function PATCH(request: NextRequest) {
   try {
-    const supabase = createServerClient<Database>({ cookies });
+    const supabase = await createClient();
     const {
       data: { user },
       error: authError,
@@ -92,7 +90,7 @@ export async function PATCH(request: NextRequest) {
 
 export async function DELETE(_request: NextRequest) {
   try {
-    const supabase = createServerClient<Database>({ cookies });
+    const supabase = await createClient();
     const {
       data: { user },
       error: authError,

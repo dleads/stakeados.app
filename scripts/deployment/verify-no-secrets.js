@@ -69,11 +69,21 @@ const excludePatterns = [
   'out',
   'coverage',
   '.git',
-  'test-reports'
+  'test-reports',
+  // Excluir directorios de tests y fixtures para evitar falsos positivos
+  'src/test',
+  '__tests__',
+  'tests',
+  'e2e'
 ];
 
 function shouldExcludeFile(filePath) {
-  return excludePatterns.some(pattern => filePath.includes(pattern));
+  // Normalize to handle Windows backslashes
+  const normalized = filePath.replace(/\\/g, '/');
+  return excludePatterns.some(pattern => {
+    const normalizedPattern = pattern.replace(/\\/g, '/');
+    return normalized.includes(normalizedPattern);
+  });
 }
 
 function checkFileForSecrets(filePath) {

@@ -58,5 +58,28 @@ export class NotificationPreferencesServiceServer {
       quietHoursEnd: null,
     };
   }
+
+  // Exporta preferencias como JSON (string)
+  async exportPreferences(userId: string): Promise<string> {
+    const prefs = await this.getUserPreferences(userId);
+    return JSON.stringify(prefs);
+  }
+
+  // Importa preferencias desde un JSON (string) y devuelve el objeto resultante
+  async importPreferences(
+    userId: string,
+    preferencesJson: string
+  ): Promise<NotificationPreferences> {
+    try {
+      const parsed = JSON.parse(preferencesJson) as Partial<NotificationPreferences>;
+      const updated = await this.updateUserPreferences(userId, parsed);
+      return updated;
+    } catch (e) {
+      throw new Error('Invalid preferences JSON');
+    }
+  }
 }
+
+// Singleton instance for convenience imports
+export const notificationPreferencesService = new NotificationPreferencesServiceServer();
 

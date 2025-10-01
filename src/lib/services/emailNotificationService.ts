@@ -1,6 +1,6 @@
 import { EmailService } from '@/lib/services/emailService';
-import { notificationService } from '@/lib/services/notificationService';
-import { notificationPreferencesService } from '@/lib/services/notificationPreferencesService';
+import { createClient } from '@/lib/supabase/server';
+import { notificationPreferencesService } from '@/lib/services/notificationPreferencesService.server';
 import type {
   EmailTemplate,
   EmailNotificationData,
@@ -237,13 +237,12 @@ export class EmailNotificationService {
         return;
       }
 
-      // Check quiet hours
-      const quietHoursStatus =
-        await notificationPreferencesService.getQuietHoursStatus(data.user.id);
-      if (
-        quietHoursStatus.inQuietHours &&
-        data.notification.type !== 'breaking_news'
-      ) {
+      // Check quiet hours (basic local check from stored preferences)
+      const inQuietHours = this.isInQuietHours(
+        preferences.quietHoursStart,
+        preferences.quietHoursEnd
+      );
+      if (inQuietHours && data.notification.type !== 'breaking_news') {
         console.log(`User ${data.user.id} is in quiet hours, skipping email`);
         return;
       }
@@ -290,23 +289,15 @@ export class EmailNotificationService {
 
       await EmailService.sendEmail(data.user.email, { subject, html, text });
 
-      // Update delivery status
-      await notificationService.updateDeliveryStatus(
-        data.notification.id,
-        'email',
-        'sent'
-      );
+      // Update delivery status (server-side)
+      await this.updateDeliveryStatus(data.notification.id, 'email', 'sent');
 
       console.log(`Email notification sent to ${data.user.email}`);
     } catch (error) {
       console.error('Error sending email notification:', error);
 
-      // Update delivery status to failed
-      await notificationService.updateDeliveryStatus(
-        data.notification.id,
-        'email',
-        'failed'
-      );
+      // Update delivery status to failed (server-side)
+      await this.updateDeliveryStatus(data.notification.id, 'email', 'failed');
 
       throw error;
     }
@@ -374,6 +365,30 @@ export class EmailNotificationService {
     }
   }
 
+  private async updateDeliveryStatus(
+    notificationId: string,
+    deliveryType: 'in_app' | 'email' | 'push',
+    status: 'sent' | 'failed'
+  ): Promise<void> {
+    const supabase = await createClient();
+    // Fetch current status
+    const { data: notification } = await supabase
+      .from('notifications')
+      .select('delivery_status')
+      .eq('id', notificationId)
+      .single();
+
+    const current: Record<string, string> =
+      ((notification as any)?.delivery_status as Record<string, string>) || {};
+    const updated: any = { ...current, [deliveryType]: status };
+
+    const supabaseAny = supabase as any;
+    await supabaseAny
+      .from('notifications')
+      .update({ delivery_status: updated })
+      .eq('id', notificationId);
+  }
+
   private interpolateTemplate(
     template: string,
     variables: Record<string, any>
@@ -381,6 +396,25 @@ export class EmailNotificationService {
     return template.replace(/\{(\w+)\}/g, (match, key) => {
       return variables[key] !== undefined ? String(variables[key]) : match;
     });
+  }
+
+  private isInQuietHours(start?: string | null, end?: string | null): boolean {
+    if (!start || !end) return false;
+    // Expect HH:mm format
+    const now = new Date();
+    const toMinutes = (hhmm: string) => {
+      const [h, m] = hhmm.split(':').map(Number);
+      return (h % 24) * 60 + (m % 60);
+    };
+    const cur = now.getHours() * 60 + now.getMinutes();
+    const s = toMinutes(start);
+    const e = toMinutes(end);
+    if (Number.isNaN(s) || Number.isNaN(e)) return false;
+    // If window crosses midnight
+    if (s > e) {
+      return cur >= s || cur < e;
+    }
+    return cur >= s && cur < e;
   }
 
   private buildArticlesSection(articles: any[], locale: string): string {
@@ -462,3 +496,7 @@ export class EmailNotificationService {
 }
 
 export const emailNotificationService = new EmailNotificationService();
+// Factory for compatibility with callers importing createEmailNotificationService
+export function createEmailNotificationService() {
+  return new EmailNotificationService();
+}

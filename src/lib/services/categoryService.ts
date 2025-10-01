@@ -39,7 +39,7 @@ class CategoryService {
   }
 
   async getCategories(_includeInactive: boolean = false): Promise<Category[]> {
-    let query = this.supabase
+    const query = this.supabase
       .from('categories')
       .select('*')
       .order('sort_order', { ascending: true });

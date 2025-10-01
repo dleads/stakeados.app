@@ -1,10 +1,42 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createServerClient } from '@supabase/ssr';
-import { cookies } from 'next/headers';
+import { createClient } from '@/lib/supabase/server';
+
+// Tipos locales mínimos para esta ruta (para evitar 'never' e 'implicit any')
+type MetricRow = {
+  metric_type: string;
+  value?: number | null;
+  recorded_at?: string | null;
+};
+
+type ArticleRow = {
+  id: string;
+  title?: any;
+  status?: string | null;
+  views?: number | null;
+  likes?: number | null;
+  reading_time?: number | null;
+  published_at?: string | null;
+  created_at: string;
+  updated_at?: string | null;
+  category_id?: string | null;
+  content_metrics?: MetricRow[];
+};
+
+type ProfileRow = {
+  role?: string | null;
+};
+
+type AuthorRow = {
+  id: string;
+  full_name?: string | null;
+  email?: string | null;
+  created_at: string;
+  articles?: ArticleRow[] | null;
+};
 
 export async function GET(request: NextRequest) {
   try {
-    const supabase = createServerClient({ cookies });
+    const supabase = await createClient();
 
     // Verify admin authentication
     const {
@@ -16,11 +48,11 @@ export async function GET(request: NextRequest) {
     }
 
     // Check admin role
-    const { data: profile } = await supabase
+    const { data: profile } = (await supabase
       .from('profiles')
       .select('role')
       .eq('id', user.id)
-      .single();
+      .single()) as any;
 
     if (!profile || profile.role !== 'admin') {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
@@ -73,7 +105,7 @@ export async function GET(request: NextRequest) {
       authorsQuery = authorsQuery.eq('id', authorId);
     }
 
-    const { data: authors, error } = await authorsQuery;
+    const { data: authors, error }: { data: AuthorRow[] | null; error: any } = await (authorsQuery as any);
 
     if (error) {
       throw error;
@@ -81,25 +113,25 @@ export async function GET(request: NextRequest) {
 
     // Process authors data to calculate productivity metrics
     const processedAuthors =
-      authors?.map(author => {
-        const allArticles = author.articles || [];
+      authors?.map((author: AuthorRow) => {
+        const allArticles = (author.articles ?? []) as ArticleRow[];
         const recentArticles = allArticles.filter(
-          article => new Date(article.created_at) >= startDate
+          (article: ArticleRow) => new Date(article.created_at) >= startDate
         );
         const publishedArticles = allArticles.filter(
-          article => article.status === 'published'
+          (article: ArticleRow) => article.status === 'published'
         );
         const recentPublished = recentArticles.filter(
-          article => article.status === 'published'
+          (article: ArticleRow) => article.status === 'published'
         );
 
         // Calculate engagement metrics
         const totalViews = publishedArticles.reduce(
-          (sum, article) => sum + (article.views || 0),
+          (sum: number, article: ArticleRow) => sum + (article.views || 0),
           0
         );
         const totalLikes = publishedArticles.reduce(
-          (sum, article) => sum + (article.likes || 0),
+          (sum: number, article: ArticleRow) => sum + (article.likes || 0),
           0
         );
         const avgViewsPerArticle =
@@ -113,7 +145,7 @@ export async function GET(request: NextRequest) {
 
         // Calculate reading time statistics
         const totalReadingTime = publishedArticles.reduce(
-          (sum, article) => sum + (article.reading_time || 0),
+          (sum: number, article: ArticleRow) => sum + (article.reading_time || 0),
           0
         );
         const avgReadingTime =
@@ -136,7 +168,7 @@ export async function GET(request: NextRequest) {
 
         // Calculate category distribution
         const categoryDistribution: Record<string, number> = {};
-        publishedArticles.forEach(article => {
+        publishedArticles.forEach((article: ArticleRow) => {
           const categoryName = article.category_id
             ? `Category ${article.category_id}`
             : 'Uncategorized';
@@ -151,7 +183,7 @@ export async function GET(request: NextRequest) {
           date.setMonth(date.getMonth() - i);
           const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
 
-          const monthArticles = allArticles.filter(article => {
+          const monthArticles = allArticles.filter((article: ArticleRow) => {
             const articleDate = new Date(article.created_at);
             return (
               articleDate.getFullYear() === date.getFullYear() &&
@@ -178,13 +210,13 @@ export async function GET(request: NextRequest) {
           let dayViews = 0;
           let dayLikes = 0;
 
-          publishedArticles.forEach(article => {
+          publishedArticles.forEach((article: ArticleRow) => {
             const metrics = article.content_metrics || [];
             const dayMetrics = metrics.filter(
-              m => m.recorded_at && m.recorded_at.startsWith(dateStr)
+              (m: MetricRow) => m.recorded_at && m.recorded_at.startsWith(dateStr)
             );
-            dayViews += dayMetrics.filter(m => m.metric_type === 'view').length;
-            dayLikes += dayMetrics.filter(m => m.metric_type === 'like').length;
+            dayViews += dayMetrics.filter((m: MetricRow) => m.metric_type === 'view').length;
+            dayLikes += dayMetrics.filter((m: MetricRow) => m.metric_type === 'like').length;
           });
 
           engagementTrend.push({
@@ -202,9 +234,8 @@ export async function GET(request: NextRequest) {
           productivity: {
             totalArticles: allArticles.length,
             publishedArticles: publishedArticles.length,
-            draftArticles: allArticles.filter(a => a.status === 'draft').length,
-            reviewArticles: allArticles.filter(a => a.status === 'review')
-              .length,
+            draftArticles: allArticles.filter((a: any) => a.status === 'draft').length,
+            reviewArticles: allArticles.filter((a: any) => a.status === 'review').length,
             recentArticles: recentArticles.length,
             recentPublished: recentPublished.length,
             articlesPerDay,
@@ -217,18 +248,15 @@ export async function GET(request: NextRequest) {
             avgViewsPerArticle,
             avgLikesPerArticle,
             avgReadingTime,
-            engagementRate:
-              totalViews > 0
-                ? Math.round((totalLikes / totalViews) * 10000) / 100
-                : 0,
+            engagementRate: totalViews > 0 ? Math.round((totalLikes / totalViews) * 10000) / 100 : 0,
             engagementTrend,
           },
           content: {
             categoryDistribution,
             topPerformingArticles: publishedArticles
-              .sort((a, b) => (b.views || 0) - (a.views || 0))
+              .sort((a: ArticleRow, b: ArticleRow) => (b.views || 0) - (a.views || 0))
               .slice(0, 5)
-              .map(article => ({
+              .map((article: ArticleRow) => ({
                 id: article.id,
                 title: article.title,
                 views: article.views || 0,
@@ -236,43 +264,27 @@ export async function GET(request: NextRequest) {
                 publishedAt: article.published_at,
               })),
           },
-        };
+        } as any;
       }) || [];
 
     // Apply sorting
-    const sortedAuthors = processedAuthors.sort((a, b) => {
-      let aValue, bValue;
-
+    const sortedAuthors = (processedAuthors as any[]).sort((a: any, b: any) => {
+      let aValue: number, bValue: number;
       switch (sortBy) {
-        case 'totalArticles':
-          aValue = a.productivity.totalArticles;
-          bValue = b.productivity.totalArticles;
-          break;
         case 'publishedArticles':
-          aValue = a.productivity.publishedArticles;
-          bValue = b.productivity.publishedArticles;
-          break;
+          aValue = a.productivity.publishedArticles; bValue = b.productivity.publishedArticles; break;
         case 'totalViews':
-          aValue = a.performance.totalViews;
-          bValue = b.performance.totalViews;
-          break;
+          aValue = a.performance.totalViews; bValue = b.performance.totalViews; break;
         case 'avgViewsPerArticle':
-          aValue = a.performance.avgViewsPerArticle;
-          bValue = b.performance.avgViewsPerArticle;
-          break;
+          aValue = a.performance.avgViewsPerArticle; bValue = b.performance.avgViewsPerArticle; break;
         case 'engagementRate':
-          aValue = a.performance.engagementRate;
-          bValue = b.performance.engagementRate;
-          break;
+          aValue = a.performance.engagementRate; bValue = b.performance.engagementRate; break;
         case 'recentProductivity':
-          aValue = a.productivity.recentProductivity;
-          bValue = b.productivity.recentProductivity;
-          break;
+          aValue = a.productivity.recentProductivity; bValue = b.productivity.recentProductivity; break;
+        case 'totalArticles':
         default:
-          aValue = a.productivity.totalArticles;
-          bValue = b.productivity.totalArticles;
+          aValue = a.productivity.totalArticles; bValue = b.productivity.totalArticles; break;
       }
-
       return sortOrder === 'desc' ? bValue - aValue : aValue - bValue;
     });
 

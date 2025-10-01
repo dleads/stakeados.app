@@ -217,7 +217,7 @@ export function ArticleSchedulingInterface({
     if (!validateForm()) return;
 
     try {
-      let finalData = { ...scheduleData };
+      const finalData = { ...scheduleData };
 
       if (scheduleData.recurring_pattern === 'custom') {
         finalData.recurring_pattern = customPattern;

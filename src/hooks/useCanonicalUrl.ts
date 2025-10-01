@@ -41,8 +41,8 @@ export function useCanonicalUrl(options: UseCanonicalUrlOptions = {}) {
 
     // Add search params if needed
     let finalCanonicalUrl = canonicalUrl;
-    let finalAlternateUrls = alternateUrls;
-    let finalHreflangUrls = hreflangUrls;
+    const finalAlternateUrls = alternateUrls;
+    const finalHreflangUrls = hreflangUrls;
 
     if (includeSearchParams && typeof window !== 'undefined') {
       const searchParams = window.location.search;

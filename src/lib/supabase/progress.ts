@@ -337,7 +337,7 @@ export const getUserLearningStreak = async (
 
   // Calculate consecutive days with activity
   let streak = 0;
-  let currentDate = new Date();
+  const currentDate = new Date();
   currentDate.setHours(0, 0, 0, 0);
 
   const activityDates = (data as any[]).map((item: any) => {

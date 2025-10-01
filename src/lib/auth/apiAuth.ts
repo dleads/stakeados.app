@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createServerClient, type CookieOptions } from '@supabase/ssr';
 import { createClient } from '@/lib/supabase/server';
 import { createAnonClient } from '@/lib/supabase/anon';
@@ -148,7 +149,7 @@ export async function requireAdmin(request: NextRequest) {
   // TEMPORAL: En modo debug, simular admin exitoso
   if (DEBUG_MODE) {
     console.log('🔍 API Auth: Modo debug activado - simulando admin exitoso');
-    const supabase = createClient();
+    const supabase = await createClient();
     return {
       success: true,
       user: {
@@ -174,7 +175,8 @@ export async function requireAdmin(request: NextRequest) {
 
   // Verificar rol de admin
   try {
-    const { data: profile, error: profileError } = await supabase
+    const client = supabase as any;
+    const { data: profile, error: profileError } = await client
       .from('profiles')
       .select('role')
       .eq('id', user.id)

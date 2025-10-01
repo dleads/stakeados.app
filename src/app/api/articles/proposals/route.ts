@@ -1,11 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createServerClient } from '@supabase/ssr';
-import { cookies } from 'next/headers';
+import { createClient } from '@/lib/supabase/server';
 import { articleProposalSchema } from '@/lib/schemas/articles';
 
 export async function POST(req: NextRequest) {
   try {
-    const supabase = createServerClient({ cookies });
+    const supabase = await createClient();
 
     // Check authentication
     const {
@@ -64,7 +63,7 @@ export async function POST(req: NextRequest) {
 
 export async function GET(req: NextRequest) {
   try {
-    const supabase = createServerClient({ cookies });
+    const supabase = await createClient();
 
     // Check authentication
     const {

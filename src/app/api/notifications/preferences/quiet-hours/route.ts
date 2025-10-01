@@ -1,12 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
-import type { Database } from '@/types/supabase';
+import { createClient } from '@/lib/supabase/server';
 import { NotificationPreferencesServiceServer } from '@/lib/services/notificationPreferencesService.server';
 
 export async function GET(_request: NextRequest) {
   try {
-    const supabase = createServerClient<Database>({ cookies });
+    const supabase = await createClient();
     const {
       data: { user },
       error: authError,
@@ -17,7 +15,19 @@ export async function GET(_request: NextRequest) {
     }
 
     const service = new NotificationPreferencesServiceServer(supabase);
-    const status = await service.getQuietHoursStatus(user.id);
+    const prefs = await service.getUserPreferences(user.id);
+    // Compute quiet hours locally
+    const toMinutes = (hhmm?: string | null) =>
+      hhmm ? (() => { const [h,m] = hhmm.split(':').map(Number); return (h%24)*60 + (m%60); })() : null;
+    const now = new Date();
+    const cur = now.getHours()*60 + now.getMinutes();
+    const s = toMinutes(prefs.quietHoursStart);
+    const e = toMinutes(prefs.quietHoursEnd);
+    let inQuietHours = false;
+    if (s !== null && e !== null) {
+      inQuietHours = s > e ? (cur >= s || cur < e) : (cur >= s && cur < e);
+    }
+    const status = { inQuietHours };
 
     return NextResponse.json({ status });
   } catch (error) {

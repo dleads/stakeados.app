@@ -1,12 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
-import type { Database } from '@/types/supabase';
+import { createClient } from '@/lib/supabase/server';
 import { NotificationServiceServer } from '@/lib/services/notificationService.server';
 
 export async function PATCH(_request: NextRequest) {
   try {
-    const supabase = createServerClient<Database>({ cookies });
+    const supabase = await createClient();
     const {
       data: { user },
       error: authError,
@@ -15,8 +13,8 @@ export async function PATCH(_request: NextRequest) {
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
-    const service = new NotificationServiceServer(supabase);
-    await service.markAllNotificationsAsRead(user.id);
+    const service = new NotificationServiceServer();
+    await service.markAllAsRead(user.id);
 
     return NextResponse.json({ success: true });
   } catch (error) {

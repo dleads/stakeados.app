@@ -63,7 +63,7 @@ class SearchService {
 
     try {
       // Build the search query
-      let searchQuery = this.supabase.rpc('search_content' as any, {
+      const searchQuery = this.supabase.rpc('search_content' as any, {
         search_query: query,
         search_categories: categories,
         search_tags: tags,

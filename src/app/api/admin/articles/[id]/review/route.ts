@@ -126,7 +126,7 @@ export async function POST(
 
     // Determine new status based on review action
     let newStatus = currentArticle.status;
-    let updateData: any = {
+    const updateData: any = {
       updated_at: new Date().toISOString(),
     };
 

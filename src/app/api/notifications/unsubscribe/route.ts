@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
-import type { Database } from '@/types/supabase';
+import { createClient } from '@/lib/supabase/server';
 import { SubscriptionService } from '@/lib/services/subscriptionService';
 import { NotificationPreferencesServiceServer } from '@/lib/services/notificationPreferencesService.server';
 
@@ -27,7 +25,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid token' }, { status: 400 });
     }
 
-    const supabase = createServerClient<Database>({ cookies });
+    const supabase = await createClient();
     const subSvc = new SubscriptionService(supabase);
     const prefSvc = new NotificationPreferencesServiceServer(supabase as any);
 

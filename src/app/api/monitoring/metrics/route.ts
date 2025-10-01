@@ -2,13 +2,13 @@ import { NextRequest, NextResponse } from 'next/server';
 import { contentMonitoring } from '@/lib/monitoring/contentMonitoring';
 import { createClient } from '@supabase/supabase-js';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
-
 export async function GET(request: NextRequest) {
   try {
+    // Create Supabase client within request scope
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!
+    );
     const { searchParams } = new URL(request.url);
     const metricName = searchParams.get('metric');
     const timeRange = parseInt(searchParams.get('timeRange') || '3600'); // Default 1 hour

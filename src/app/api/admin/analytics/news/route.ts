@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createServerClient } from '@supabase/ssr';
-import { cookies } from 'next/headers';
+import { createClient } from '@/lib/supabase/server';
 
 export async function GET(request: NextRequest) {
   try {
-    const supabase = createServerClient({ cookies });
+    const supabase = await createClient();
 
     // Verify admin authentication
     const {
@@ -16,11 +15,11 @@ export async function GET(request: NextRequest) {
     }
 
     // Check admin role
-    const { data: profile } = await supabase
+    const { data: profile } = (await supabase
       .from('profiles')
       .select('role')
       .eq('id', user.id)
-      .single();
+      .single()) as any;
 
     if (!profile || profile.role !== 'admin') {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
@@ -85,7 +84,7 @@ export async function GET(request: NextRequest) {
     // Apply pagination
     query = query.range(offset, offset + limit - 1);
 
-    const { data: news, error } = await query;
+    const { data: news, error }: { data: any[] | null; error: any } = await (query as any);
 
     if (error) {
       throw error;
@@ -93,7 +92,7 @@ export async function GET(request: NextRequest) {
 
     // Process news data to include calculated metrics
     const processedNews =
-      news?.map(newsItem => {
+      news?.map((newsItem: any) => {
         const metrics = newsItem.content_metrics || [];
         const aiMetadata = newsItem.ai_metadata || {};
 
@@ -179,16 +178,16 @@ export async function GET(request: NextRequest) {
       countQuery = countQuery.eq('processed', processed === 'true');
     }
 
-    const { count } = await countQuery;
+    const { count } = (await (countQuery as any)) as { count: number | null };
 
     // Get source performance statistics
-    const { data: sourceStats } = await supabase
+    const { data: sourceStats } = (await supabase
       .from('news')
       .select('source_name, processed, trending_score, created_at')
-      .gte('created_at', startDate.toISOString());
+      .gte('created_at', startDate.toISOString())) as { data: any[] | null };
 
     const sourcePerformance: Record<string, any> = {};
-    sourceStats?.forEach(item => {
+    sourceStats?.forEach((item: any) => {
       if (!sourcePerformance[item.source_name]) {
         sourcePerformance[item.source_name] = {
           total: 0,

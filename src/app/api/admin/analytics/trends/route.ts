@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createServerClient } from '@supabase/ssr';
-import { cookies } from 'next/headers';
+import { createClient } from '@/lib/supabase/server';
 
 export async function GET(request: NextRequest) {
   try {
-    const supabase = createServerClient({ cookies });
+    const supabase = await createClient();
 
     // Verify admin authentication
     const {
@@ -16,11 +15,11 @@ export async function GET(request: NextRequest) {
     }
 
     // Check admin role
-    const { data: profile } = await supabase
+    const { data: profile } = (await supabase
       .from('profiles')
       .select('role')
       .eq('id', user.id)
-      .single();
+      .single()) as any;
 
     if (!profile || profile.role !== 'admin') {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
@@ -36,7 +35,7 @@ export async function GET(request: NextRequest) {
     startDate.setDate(startDate.getDate() - days);
 
     // Fetch articles and news data
-    const [articlesData, newsData, categoriesData] = await Promise.all([
+    const [articlesData, newsData, categoriesData] = (await Promise.all([
       // Articles data
       supabase
         .from('articles')
@@ -84,7 +83,7 @@ export async function GET(request: NextRequest) {
 
       // Categories data
       supabase.from('categories').select('id, name, parent_id'),
-    ]);
+    ])) as any[];
 
     if (articlesData.error || newsData.error || categoriesData.error) {
       throw new Error('Failed to fetch trend data');

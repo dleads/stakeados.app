@@ -134,6 +134,8 @@ dump.rdb
 *.spec.js
 __tests__/
 test/
+!src/app/api/notifications/test/**
+!src/app/api/notifications/push/test/**
 
 # Documentation
 docs/
