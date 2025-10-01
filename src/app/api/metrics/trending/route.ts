@@ -1,3 +1,7 @@
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+export const revalidate = 0;
+
 import { NextRequest, NextResponse } from 'next/server';
 // TODO: Use createClient when database functions are available
 // import { createClient } from '../../../../lib/supabase/server'

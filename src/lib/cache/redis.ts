@@ -8,13 +8,24 @@ function getMockRedis(): Redis {
     on: () => {},
     ping: async () => 'PONG',
     quit: async () => {},
+    get: async () => null,
+    set: async () => {},
+    setex: async () => {},
   };
   return mock as Redis;
 }
 
+function isTruthy(v: string | undefined): boolean {
+  if (!v) return false;
+  const val = v.toLowerCase();
+  return val === 'true' || val === '1' || val === 'yes' || val === 'on';
+}
+
 export function getRedisClient(): Redis {
-  const disableRedis =
-    process.env.NODE_ENV === 'test' || process.env.REDIS_DISABLED === 'true';
+  const isNetlify = isTruthy(process.env.NETLIFY);
+  const disableRedisEnv = isTruthy(process.env.REDIS_DISABLED);
+  const disableRedis = process.env.NODE_ENV === 'test' || disableRedisEnv || isNetlify;
+
   if (disableRedis) {
     return getMockRedis();
   }
@@ -22,12 +33,12 @@ export function getRedisClient(): Redis {
   if (!redis) {
     const redisUrl = process.env.REDIS_URL;
 
-    // If no REDIS_URL is configured, use mock to avoid connection attempts during build
+    // Si no hay REDIS_URL configurado, usar mock para evitar conexiones en build/SSR
     if (!redisUrl) {
       return getMockRedis();
     }
 
-    // Use simple URL-based initialization to avoid option type mismatches
+    // Inicialización por URL simple
     redis = new Redis(redisUrl);
 
     redis.on('error', error => {
@@ -43,7 +54,7 @@ export function getRedisClient(): Redis {
     });
   }
 
-  return redis;
+  return redis as Redis;
 }
 
 export async function closeRedisConnection(): Promise<void> {
