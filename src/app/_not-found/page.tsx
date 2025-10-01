@@ -1,3 +1,7 @@
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+export const revalidate = 0;
+
 export default function NotFoundPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white p-8">
