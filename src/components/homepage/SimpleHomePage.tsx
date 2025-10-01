@@ -18,6 +18,7 @@ import {
   Star,
 } from 'lucide-react';
 import type { Locale } from '@/types/content';
+import AdUnit from '@/components/ads/AdUnit';
 
 export interface SimpleHomePageProps {
   locale: Locale;
@@ -28,7 +29,9 @@ export default function SimpleHomePage({ locale }: SimpleHomePageProps) {
   const { t } = useTranslation(locale);
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState<null | { ok: boolean; msg: string }>(null);
+  const [status, setStatus] = useState<null | { ok: boolean; msg: string }>(
+    null
+  );
 
   return (
     <GamingBackground>
@@ -77,6 +80,11 @@ export default function SimpleHomePage({ locale }: SimpleHomePageProps) {
             </div>
           </div>
         </section>
+
+        {/* AdSense Banner */}
+        <div className="container mx-auto px-4 mt-6">
+          <AdUnit slot="6373701520" className="my-4" />
+        </div>
 
         {/* Featured News Section */}
         <section className="py-16 bg-gray-800/30 scan-lines">
@@ -405,6 +413,11 @@ export default function SimpleHomePage({ locale }: SimpleHomePageProps) {
           </div>
         </section>
 
+        {/* AdSense Banner */}
+        <div className="container mx-auto px-4 mt-6">
+          <AdUnit slot="6373701520" className="my-4" />
+        </div>
+
         {/* Quick Navigation Section */}
         <section className="py-16 bg-gray-800/30 matrix-bg">
           <div className="container mx-auto px-4">
@@ -552,7 +565,9 @@ export default function SimpleHomePage({ locale }: SimpleHomePageProps) {
                 {t('course.comingSoon')}
               </h3>
               <p className="text-gray-300 mb-4">{t('course.inDevelopment')}</p>
-              <div className="text-sm text-gray-400 mb-4">{t('course.stayTuned')}</div>
+              <div className="text-sm text-gray-400 mb-4">
+                {t('course.stayTuned')}
+              </div>
 
               {/* Inline newsletter CTA */}
               <form
@@ -573,9 +588,12 @@ export default function SimpleHomePage({ locale }: SimpleHomePageProps) {
                       setStatus({ ok: true, msg: '¡Gracias por suscribirte!' });
                       setEmail('');
                     } else {
-                      setStatus({ ok: false, msg: data?.error || 'No se pudo suscribir' });
+                      setStatus({
+                        ok: false,
+                        msg: data?.error || 'No se pudo suscribir',
+                      });
                     }
-                  } catch (err) {
+                  } catch {
                     setStatus({ ok: false, msg: 'Error de red' });
                   } finally {
                     setLoading(false);
@@ -592,7 +610,6 @@ export default function SimpleHomePage({ locale }: SimpleHomePageProps) {
                   className="w-full sm:w-auto flex-1 min-w-[260px] bg-gray-900/60 border border-yellow-500/30 text-white rounded-gaming px-4 h-10 text-sm focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all"
                 />
                 <button
-                  type="submit"
                   disabled={loading}
                   className="bg-green-600 hover:bg-green-500 text-white font-semibold px-6 h-10 rounded-gaming transition-colors disabled:opacity-60"
                 >
@@ -600,7 +617,10 @@ export default function SimpleHomePage({ locale }: SimpleHomePageProps) {
                 </button>
               </form>
               {status && (
-                <div role="status" className={`mt-3 text-sm text-center ${status.ok ? 'text-green-400' : 'text-red-400'}`}>
+                <div
+                  role="status"
+                  className={`mt-3 text-sm text-center ${status.ok ? 'text-green-400' : 'text-red-400'}`}
+                >
                   {status.msg}
                 </div>
               )}
