@@ -5,6 +5,7 @@ import { AuthProvider } from '@/components/auth/AuthProvider';
 import { RoleProvider } from '@/components/auth/RoleProvider';
 import { Web3Provider } from '@/components/web3/Web3Provider';
 import { NavigationProvider } from '@/components/navigation/NavigationProvider';
+import { NavigationPerformanceProvider } from '@/components/navigation/performance/NavigationPerformanceProvider';
 import MainNavigation from '@/components/navigation/MainNavigation';
 
 type Props = {
@@ -34,12 +35,14 @@ export default async function LocaleLayout({
   const AppTree = (
     <AuthProvider>
       <RoleProvider>
-        <NavigationProvider>
-          <MainNavigation />
-          <main id="main-content" className="min-h-screen">
-            {children}
-          </main>
-        </NavigationProvider>
+        <NavigationPerformanceProvider>
+          <NavigationProvider>
+            <MainNavigation />
+            <main id="main-content" className="min-h-screen">
+              {children}
+            </main>
+          </NavigationProvider>
+        </NavigationPerformanceProvider>
       </RoleProvider>
     </AuthProvider>
   );
