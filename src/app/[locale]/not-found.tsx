@@ -1,5 +1,11 @@
 'use client';
 
+'use client';
+
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+export const revalidate = 0;
+
 import { useEffect, useState } from 'react';
 import { useNavigation } from '@/components/navigation/NavigationProvider';
 import { Button } from '@/components/ui/button';

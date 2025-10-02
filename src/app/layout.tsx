@@ -3,6 +3,7 @@ import '../styles/gaming-effects.css';
 import { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import GA from '@/components/analytics/GA';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Stakeados - Decentralized Learning Platform',
@@ -69,8 +70,10 @@ export default function RootLayout({
         )}
       </head>
       <body suppressHydrationWarning>
-        {isProd && <GA />}
-        {children}
+        <Suspense fallback={null}>
+          {isProd && <GA />}
+          {children}
+        </Suspense>
       </body>
     </html>
   );
