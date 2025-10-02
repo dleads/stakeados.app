@@ -1,12 +1,6 @@
 import { LOCALES } from '@/lib/constants';
 import { notFound } from 'next/navigation';
-import { NextIntlClientProvider } from 'next-intl';
-import { AuthProvider } from '@/components/auth/AuthProvider';
-import { RoleProvider } from '@/components/auth/RoleProvider';
-import { Web3Provider } from '@/components/web3/Web3Provider';
-import { NavigationProvider } from '@/components/navigation/NavigationProvider';
-import { NavigationPerformanceProvider } from '@/components/navigation/performance/NavigationPerformanceProvider';
-import MainNavigation from '@/components/navigation/MainNavigation';
+import AppProviders from '@/components/app/AppProviders';
 
 type Props = {
   children: React.ReactNode;
@@ -32,24 +26,9 @@ export default async function LocaleLayout({
 
   const ENABLE_WEB3 = process.env.NEXT_PUBLIC_WEB3_ENABLED === 'true';
 
-  const AppTree = (
-    <AuthProvider>
-      <RoleProvider>
-        <NavigationPerformanceProvider>
-          <NavigationProvider>
-            <MainNavigation />
-            <main id="main-content" className="min-h-screen">
-              {children}
-            </main>
-          </NavigationProvider>
-        </NavigationPerformanceProvider>
-      </RoleProvider>
-    </AuthProvider>
-  );
-
   return (
-    <NextIntlClientProvider locale={locale} messages={messages} timeZone="UTC">
-      {ENABLE_WEB3 ? <Web3Provider>{AppTree}</Web3Provider> : AppTree}
-    </NextIntlClientProvider>
+    <AppProviders locale={locale} messages={messages} enableWeb3={ENABLE_WEB3}>
+      {children}
+    </AppProviders>
   );
 }
