@@ -1,17 +1,16 @@
-'use client';
-
-'use client';
-
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 export const revalidate = 0;
 
+'use client';
+
+import { Suspense } from 'react';
 import { useEffect, useState } from 'react';
 import { useNavigation } from '@/components/navigation/NavigationProvider';
 import { Button } from '@/components/ui/button';
 import { Home, ArrowLeft, Search, AlertCircle } from 'lucide-react';
 
-export default function NotFound() {
+function Content() {
   const { navigate, goBack, canGoBack, getVisibleSections, currentPath } = useNavigation();
   const [searchQuery, setSearchQuery] = useState('');
   const [suggestions, setSuggestions] = useState<Array<{ label: string; href: string }>>([]);
@@ -166,5 +165,13 @@ export default function NotFound() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function NotFound() {
+  return (
+    <Suspense fallback={null}>
+      <Content />
+    </Suspense>
   );
 }

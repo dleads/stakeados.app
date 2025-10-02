@@ -28,8 +28,11 @@ export default function AdUnit({ slot, className, style }: AdUnitProps) {
     }
   }, []);
 
-  const client =
-    process.env.NEXT_PUBLIC_ADSENSE_CLIENT || 'ca-pub-6769576032098869';
+  const client = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
+  if (process.env.NODE_ENV === 'production' && !client) {
+    // Si no hay client configurado en prod, no renderizamos el bloque de anuncio
+    return null;
+  }
 
   return (
     <div ref={ref} className={className}>

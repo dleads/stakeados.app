@@ -59,13 +59,15 @@ export default function RootLayout({
               `}
             </Script>
 
-            {/* Google AdSense */}
-            <Script
-              id="adsense-script"
-              strategy="afterInteractive"
-              crossOrigin="anonymous"
-              src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT || 'ca-pub-6769576032098869'}`}
-            />
+            {/* Google AdSense (solo si hay client configurado) */}
+            {process.env.NEXT_PUBLIC_ADSENSE_CLIENT ? (
+              <Script
+                id="adsense-script"
+                strategy="afterInteractive"
+                crossOrigin="anonymous"
+                src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT}`}
+              />
+            ) : null}
           </>
         )}
       </head>
