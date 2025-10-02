@@ -29,20 +29,24 @@ export default async function LocaleLayout({
     console.warn(`No se encontraron mensajes para el locale "${locale}"`);
   }
 
+  const ENABLE_WEB3 = process.env.NEXT_PUBLIC_WEB3_ENABLED === 'true';
+
+  const AppTree = (
+    <AuthProvider>
+      <RoleProvider>
+        <NavigationProvider>
+          <MainNavigation />
+          <main id="main-content" className="min-h-screen">
+            {children}
+          </main>
+        </NavigationProvider>
+      </RoleProvider>
+    </AuthProvider>
+  );
+
   return (
     <NextIntlClientProvider locale={locale} messages={messages} timeZone="UTC">
-      <Web3Provider>
-        <AuthProvider>
-          <RoleProvider>
-            <NavigationProvider>
-              <MainNavigation />
-              <main id="main-content" className="min-h-screen">
-                {children}
-              </main>
-            </NavigationProvider>
-          </RoleProvider>
-        </AuthProvider>
-      </Web3Provider>
+      {ENABLE_WEB3 ? <Web3Provider>{AppTree}</Web3Provider> : AppTree}
     </NextIntlClientProvider>
   );
 }
